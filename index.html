@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2b6cb0">
+  <title>Kho bài giảng tiếng Trung</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#fff8ee;color:#142033;line-height:1.6}
+    header{padding:46px 18px 34px;text-align:center;color:white;background:linear-gradient(135deg,#b83280,#2b6cb0 55%,#16835f);border-radius:0 0 34px 34px;box-shadow:0 12px 35px rgba(16,24,40,.14)}
+    .badge{display:inline-block;background:#f2b705;color:#2b2200;padding:6px 15px;border-radius:999px;font-size:12px;font-weight:900;letter-spacing:1px}
+    h1{margin:12px 0 6px;font-size:clamp(34px,8vw,58px);line-height:1.1}
+    .sub{margin:0 auto;max-width:720px;opacity:.92;font-size:17px}
+    main{max-width:1050px;margin:0 auto;padding:28px 16px 50px}
+    .intro{background:white;border:1px solid #eadfce;border-radius:24px;padding:20px;box-shadow:0 10px 28px rgba(16,24,40,.10);margin-bottom:22px}
+    .intro h2{margin:0 0 8px;font-size:24px}.intro p{margin:0;color:#667085}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .folder{background:white;border:1px solid #eadfce;border-radius:26px;padding:24px;min-height:245px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;color:inherit;box-shadow:0 10px 28px rgba(16,24,40,.10);transition:.18s}
+    .folder:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(16,24,40,.16)}
+    .emoji{font-size:54px;margin-bottom:12px}.folder h2{margin:0 0 8px;font-size:26px}.folder p{margin:0;color:#667085;font-size:15px}
+    .open{margin-top:22px;display:inline-flex;color:white;background:#2b6cb0;padding:11px 15px;border-radius:999px;font-weight:900;width:max-content}
+    .folder:nth-child(2) .open{background:#16835f}.folder:nth-child(3) .open{background:#b83280}
+    footer{text-align:center;color:#667085;font-size:13px;padding:10px 16px 36px}
+    @media(max-width:820px){.grid{grid-template-columns:1fr}.folder{min-height:205px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="badge">Chinese Learning Hub</div>
+    <h1>Kho bài giảng tiếng Trung</h1>
+    <p class="sub">Trang chủ để học sinh truy cập các nhóm bài học: MSTUONG, HSK và Tiếng Trung cho nhân viên văn phòng.</p>
+  </header>
+  <main>
+    <section class="intro">
+      <h2>Chọn thư mục bài học</h2>
+      <p>Bấm vào từng mục để mở danh sách bài học. Trang này có thể đăng trực tiếp lên GitHub Pages.</p>
+    </section>
+    <section class="grid">
+      <a class="folder" href="mstuong/"><div><div class="emoji">🎓</div><h2>MSTUONG</h2><p>Khu vực tài liệu lớp MSTUONG, bài giảng riêng và hoạt động luyện tập.</p></div><div class="open">Mở thư mục →</div></a>
+      <a class="folder" href="hsk/"><div><div class="emoji">🀄</div><h2>HSK</h2><p>Bài học HSK, từ vựng, ngữ pháp, flashcard, quiz và luyện nói.</p></div><div class="open">Mở thư mục →</div></a>
+      <a class="folder" href="tieng-trung-nvvp/"><div><div class="emoji">💼</div><h2>Tiếng Trung cho NVVP</h2><p>Tiếng Trung dành cho nhân viên văn phòng: giao tiếp, email, họp và công việc.</p></div><div class="open">Mở thư mục →</div></a>
+    </section>
+  </main>
+  <footer>© Kho bài giảng tiếng Trung · Dùng cho lớp học</footer>
+</body>
+</html>
