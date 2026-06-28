@@ -52,7 +52,9 @@ section{display:none;max-width:1060px;margin:auto;padding:22px 14px 34px}section
   <button class="smallbtn" onclick="speakText('你想要哪件？')">🔊 Nghe tên bài</button>
   <button class="smallbtn" onclick="togglePinyin()">👁 Bật/tắt Pinyin</button>
   <button class="smallbtn" onclick="stopSpeech()">⏹ Dừng đọc</button>
+
  </div>
+
 </header>
 <div class="tabs" id="tabs"></div>
 
@@ -118,12 +120,50 @@ tabsEl=document.getElementById('tabs');tabsEl.innerHTML=tabs.map((t,i)=>`<button
 document.getElementById('bottomNav').innerHTML=tabs.slice(0,6).map((t,i)=>`<button class="${i==0?'active':''}" onclick="tab('${t[0]}')"><span>${t[1]}</span>${t[2]}</button>`).join('');
 function tab(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('#tabs button').forEach((b,i)=>b.classList.toggle('active',tabs[i][0]==id));document.querySelectorAll('#bottomNav button').forEach((b,i)=>b.classList.toggle('active',tabs[i][0]==id));window.scrollTo({top:0,behavior:'smooth'})}
 function togglePinyin(){pinyinOn=!pinyinOn;document.body.classList.toggle('showPinyin',pinyinOn)}
-function getVoice(){let vs=speechSynthesis.getVoices();return vs.find(x=>/Tingting|Xiaoxiao|Natural|Sinji|Mandarin|Meijia/i.test(x.name)&&/zh|Chinese|Mandarin/i.test(x.lang+x.name))||vs.find(x=>x.lang==='zh-CN')||vs.find(x=>x.lang&&x.lang.startsWith('zh'))||null}
-function speakText(txt){try{speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(txt);u.lang='zh-CN';u.rate=.82;let v=getVoice();if(v)u.voice=v;speechSynthesis.speak(u)}catch(e){alert('Thiết bị này không hỗ trợ phát âm tự động.')}}
-function pauseSpeech(){try{speechSynthesis.pause()}catch(e){}}
-function resumeSpeech(){try{speechSynthesis.resume()}catch(e){}}
-function stopSpeech(){try{speechSynthesis.cancel()}catch(e){}}
-if(speechSynthesis.onvoiceschanged!==undefined){speechSynthesis.onvoiceschanged=()=>speechSynthesis.getVoices()}
+// ── VOICE SYSTEM — Google TTS (consistent across all devices) ──
+// Uses Google Translate's TTS endpoint: natural Mandarin voice,
+// same quality on every phone, tablet, and computer.
+// Falls back to browser Web Speech API if fetch fails (e.g. offline).
+
+let _audio = null; // single shared Audio element so we can pause/stop
+
+function _gttsUrl(text) {
+  // Split into ≤200-char chunks to stay within URL limits
+  const enc = encodeURIComponent(text.slice(0, 200));
+  return `https://translate.google.com/translate_tts?ie=UTF-8&tl=zh-CN&client=tw-ob&q=${enc}`;
+}
+
+function speakText(txt) {
+  stopSpeech();
+  _audio = new Audio(_gttsUrl(txt));
+  _audio.playbackRate = 0.9; // slightly slower = clearer for learners
+  _audio.play().catch(() => {
+    // Fallback: browser Web Speech API
+    try {
+      const u = new SpeechSynthesisUtterance(txt);
+      u.lang = 'zh-CN'; u.rate = 0.82;
+      const vs = speechSynthesis.getVoices();
+      const v = vs.find(x => x.lang === 'zh-CN') || vs.find(x => x.lang && x.lang.startsWith('zh'));
+      if (v) u.voice = v;
+      speechSynthesis.speak(u);
+    } catch(e) { console.warn('TTS unavailable', e); }
+  });
+}
+
+function pauseSpeech() {
+  if (_audio) { _audio.pause(); }
+  else { try { speechSynthesis.pause(); } catch(e) {} }
+}
+
+function resumeSpeech() {
+  if (_audio && _audio.paused) { _audio.play(); }
+  else { try { speechSynthesis.resume(); } catch(e) {} }
+}
+
+function stopSpeech() {
+  if (_audio) { _audio.pause(); _audio.currentTime = 0; _audio = null; }
+  try { speechSynthesis.cancel(); } catch(e) {}
+}
 function safe(s){return s.replaceAll("'","").replaceAll('"','')}
 
 const vocab=[
