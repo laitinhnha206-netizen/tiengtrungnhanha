@@ -239,7 +239,7 @@ const subVn = [
 'Đôi giày giá 450 tệ. Mỹ Kinh thấy quá đắt nên hỏi có thể rẻ hơn không. Nhân viên nói 400 tệ được. Mỹ Kinh lại trả giá 350 tệ. Cuối cùng nhân viên đồng ý.'
 ];
 // Text stored in JS array — buttons reference by index, no inline text in onclick
-subText.innerHTML=sub.map((p,i)=>`<div class="line"><span class="sp">第 ${i+1} 段</span><div class="sent cn">${p}</div><div class="vn">${subVn[i]}</div><div class="audioRow"><button class="audio" onclick="speakText(sub[${i}])">▶️ Đọc đoạn</button><button class="audio pause" onclick="pauseSpeech()">⏸ Tạm dừng</button><button class="audio" onclick="resumeSpeech()">▶️ Tiếp tục</button><button class="audio stop" onclick="stopSpeech()">⏹ Dừng</button></div></div>`).join('');
+subText.innerHTML=sub.map((p,i)=>`<div class="line"><span class="sp">第 ${i+1} 段</span><div class="sent cn">${p}</div><div class="vn">${subVn[i]}</div><div class="audioRow"><button class="audio" onclick="speakText(sub[${i}])">▶️ Đọc đoạn</button><button class="audio stop" onclick="stopSpeech()">⏹ Dừng</button></div></div>`).join('');
 
 const speaking=[
 ['您想买什么衣服？',['衣服 / 衬衫 / 裤子','一件 / 一条','我想买……'],'我想买一件衬衫。'],
