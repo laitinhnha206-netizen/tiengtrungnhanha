@@ -135,10 +135,15 @@ function _gttsUrl(text) {
 
 function speakText(txt) {
   stopSpeech();
-  _audio = new Audio(_gttsUrl(txt));
-  _audio.playbackRate = 0.9; // slightly slower = clearer for learners
-  _audio.play().catch(() => {
-    // Fallback: browser Web Speech API
+  const audio = new Audio(_gttsUrl(txt));
+  audio.playbackRate = 0.9; // slightly slower = clearer for learners
+  _audio = audio;
+
+  const useFallback = () => {
+    // Only fall back if this audio is still the "current" one
+    // (avoids racing with a newer speakText() call / stopSpeech())
+    if (_audio !== audio) return;
+    _audio = null; // IMPORTANT: so pause/resume/stop target speechSynthesis instead
     try {
       const u = new SpeechSynthesisUtterance(txt);
       u.lang = 'zh-CN'; u.rate = 0.82;
@@ -147,17 +152,22 @@ function speakText(txt) {
       if (v) u.voice = v;
       speechSynthesis.speak(u);
     } catch(e) { console.warn('TTS unavailable', e); }
-  });
+  };
+
+  // Catches both an immediate play() rejection AND a later load/network error
+  // (Google's TTS endpoint sometimes resolves play() but then fails to load).
+  audio.addEventListener('error', useFallback);
+  audio.play().catch(useFallback);
 }
 
 function pauseSpeech() {
-  if (_audio) { _audio.pause(); }
-  else { try { speechSynthesis.pause(); } catch(e) {} }
+  if (_audio && !_audio.paused) { _audio.pause(); }
+  try { speechSynthesis.pause(); } catch(e) {}
 }
 
 function resumeSpeech() {
-  if (_audio && _audio.paused) { _audio.play(); }
-  else { try { speechSynthesis.resume(); } catch(e) {} }
+  if (_audio && _audio.paused) { _audio.play().catch(()=>{}); }
+  try { speechSynthesis.resume(); } catch(e) {}
 }
 
 function stopSpeech() {
@@ -239,7 +249,7 @@ const subVn = [
 'Đôi giày giá 450 tệ. Mỹ Kinh thấy quá đắt nên hỏi có thể rẻ hơn không. Nhân viên nói 400 tệ được. Mỹ Kinh lại trả giá 350 tệ. Cuối cùng nhân viên đồng ý.'
 ];
 // Text stored in JS array — buttons reference by index, no inline text in onclick
-subText.innerHTML=sub.map((p,i)=>`<div class="line"><span class="sp">第 ${i+1} 段</span><div class="sent cn">${p}</div><div class="vn">${subVn[i]}</div><div class="audioRow"><button class="audio" onclick="speakText(sub[${i}])">▶️ Đọc đoạn</button><button class="audio stop" onclick="stopSpeech()">⏹ Dừng</button></div></div>`).join('');
+subText.innerHTML=sub.map((p,i)=>`<div class="line"><span class="sp">第 ${i+1} 段</span><div class="sent cn">${p}</div><div class="vn">${subVn[i]}</div><div class="audioRow"><button class="audio" onclick="speakText(sub[${i}])">▶️ Đọc đoạn</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶️</button><button class="audio stop" onclick="stopSpeech()">⏹ Dừng</button></div></div>`).join('');
 
 const speaking=[
 ['您想买什么衣服？',['衣服 / 衬衫 / 裤子','一件 / 一条','我想买……'],'我想买一件衬衫。'],
