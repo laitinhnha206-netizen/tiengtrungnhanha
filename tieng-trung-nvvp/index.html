@@ -1,4 +1,74 @@
 <!DOCTYPE html>
-<html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Tiếng Trung cho NVVP</title>
-<style>body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#fff8ee;color:#182033;min-height:100vh;display:grid;place-items:center;padding:24px}.card{max-width:720px;background:white;border:1px solid #eadfce;border-radius:24px;padding:34px;box-shadow:0 12px 35px rgba(16,24,40,.10);text-align:center}.emoji{font-size:56px}h1{font-size:clamp(32px,7vw,54px);margin:12px 0}p{color:#667085;font-size:18px}a{display:inline-block;margin-top:18px;background:#2b6cb0;color:white;text-decoration:none;padding:12px 18px;border-radius:999px;font-weight:800}</style>
-</head><body><main class="card"><div class="emoji">💼</div><h1>Tiếng Trung cho NVVP</h1><p>Tiếng Trung dành cho nhân viên văn phòng.</p><p>Trang này đang chờ thêm bài học.</p><a href="../">← Về trang chủ</a></main></body></html>
+<html lang="vi">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tiếng Trung cho NVVP</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;background:#fff8ee;color:#142033;line-height:1.6}
+    header{padding:46px 18px 34px;text-align:center;color:white;background:linear-gradient(135deg,#b83280,#2b6cb0 55%,#16835f);border-radius:0 0 34px 34px;box-shadow:0 12px 35px rgba(16,24,40,.14)}
+    .badge{display:inline-block;background:#f2b705;color:#2b2200;padding:6px 15px;border-radius:999px;font-size:12px;font-weight:900;letter-spacing:1px}
+    h1{margin:12px 0 6px;font-size:clamp(30px,7vw,50px);line-height:1.1}
+    .sub{margin:0 auto;max-width:600px;opacity:.92;font-size:16px}
+    .back{display:inline-block;margin-top:18px;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);color:white;padding:9px 16px;border-radius:999px;font-weight:800;font-size:13px;text-decoration:none}
+    main{max-width:900px;margin:0 auto;padding:28px 16px 60px}
+ 
+    /* ── LESSON GRID ── */
+    .lessons{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+    .lesson{background:white;border:1px solid #eadfce;border-radius:20px;padding:18px 16px;text-decoration:none;color:inherit;box-shadow:0 6px 18px rgba(16,24,40,.08);transition:.18s;display:flex;flex-direction:column;gap:6px}
+    .lesson:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(16,24,40,.14)}
+    .lesson-num{font-size:11px;font-weight:900;letter-spacing:1px;color:#2b6cb0;text-transform:uppercase}
+    .lesson-cn{font-size:22px;font-weight:900;font-family:"PingFang SC","Noto Serif SC",serif;color:#142033}
+    .lesson-vn{font-size:13px;color:#667085}
+    .lesson-tag{display:inline-block;background:#eaf3ff;color:#1a4a8a;border-radius:999px;padding:3px 10px;font-size:11px;font-weight:900;margin-top:4px;width:max-content}
+    .lesson-arrow{margin-top:auto;padding-top:10px;font-size:13px;font-weight:900;color:#2b6cb0}
+ 
+    /* Coming soon placeholder */
+    .lesson.soon{opacity:.5;cursor:default;pointer-events:none}
+    .lesson.soon .lesson-tag{background:#f2f4f7;color:#667085}
+ 
+    /* Divider between books */
+    .divider{border:none;border-top:1px solid #eadfce;margin:10px 0 32px}
+ 
+    footer{text-align:center;color:#667085;font-size:13px;padding:10px 16px 36px}
+    @media(max-width:520px){.lessons{grid-template-columns:1fr 1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="badge">💼 Tiếng Trung cho NVVP</div>
+  <h1>Tiếng Trung dành cho nhân viên văn phòng.</h1>
+  <p class="sub">Chọn bài học bên dưới để bắt đầu.</p>
+  <a class="back" href="../">← Về trang chủ</a>
+</header>
+
+<main>
+  <!-- ══════════════════════════════════
+       BÀI 1
+  ══════════════════════════════════ -->
+    <div class="lessons">
+      <a class="lesson" href="bai1.html">
+        <span class="lesson-num">Bài 1</span>
+        <span class="lesson-cn">社交活动第一步</span>
+        <span class="lesson-vn">Bước đầu trong giao tiếp xã hội</span>
+        <span class="lesson-tag">✅ Có sẵn</span>
+        <span class="lesson-arrow">Mở bài học →</span>
+      </a>
+ 
+      <div class="lessons">
+        <a class="lesson soon" href="bai2.html">
+          <span class="lesson-num">Bài 2</span>
+          <span class="lesson-cn">...</span>
+          <span class="lesson-vn">Tên bài sẽ cập nhật</span>
+          <span class="lesson-tag">Sắp có</span>
+          <span class="lesson-arrow">Mở bài học →</span>
+      </a>
+ 
+    </div>
+  </div> 
+</main>
+ 
+<footer>© Kho bài giảng tiếng Trung · NVVP</footer>
+</body>
+</html>
