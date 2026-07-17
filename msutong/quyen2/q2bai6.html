@@ -207,7 +207,7 @@ const subVn=[
 'Cuối tuần trước, Tanaka đi mua sắm. Anh ấy mua vài bộ quần áo, một đôi giày và một số đồ ăn. Helen đi tham quan bảo tàng gần Công viên Nhân Dân. Bảo tàng đó rất lớn, đẹp và vé vào cửa không đắt.',
 'Kamala đã đi Công viên Nhân Dân cùng bạn. Cô thấy phong cảnh ở đó rất đẹp, không khí rất tốt. Cô còn chụp rất nhiều ảnh. Cao Tiểu Minh đã đi hiệu sách và mua vài quyển sách tiếng Anh.'
 ];
-subText.innerHTML=sub.map((p,i)=>`<div class="line"><span class="sp">第 ${i+1} 段</span><div class="sent cn">${p}</div><div class="vn">${subVn[i]}</div><div class="audioRow"><button class="audio" onclick="speakText(sub[${i}])">▶️ Đọc đoạn</button></div></div>`).join('');
+subText.innerHTML=sub.map((p,i)=>`<div class="line"><span class="sp">第 ${i+1} 段</span><div class="sent cn">${p}</div><div class="vn">${subVn[i]}</div><div class="audioRow"><button class="audio" onclick="speakText(sub[${i}])">▶️ Đọc đoạn</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶️</button><button class="audio stop" onclick="stopSpeech()">⏹ Dừng</button></div></div>`).join('');
 
 const speaking=[
 ['上个周末你做什么了？',['我去了……','我买了……','我参观了……'],'上个周末我去公园了。'],
