@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2b6cb0">
+<title>第六课 上个周末你做什么了？ | Q2 Bài 6</title>
+<style>
+:root{
+ --ink:#132033;--muted:#667085;--bg:#fffaf0;--card:#fff;--line:#eadfce;
+ --blue:#2b6cb0;--blue2:#eaf3ff;--green:#16835f;--green2:#eaf8f2;
+ --red:#c0392b;--gold:#f2b705;--pink:#b83280;--danger:#c62828;
+ --shadow:0 10px 28px rgba(16,24,40,.10);--radius:20px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.65;font-size:17px;padding-bottom:82px}
+.cn{font-family:"PingFang SC","Noto Serif SC","Songti SC",serif}
+header{padding:calc(28px + env(safe-area-inset-top)) 18px 26px;text-align:center;color:white;background:linear-gradient(135deg,#b83280,#2b6cb0 55%,#16835f);border-radius:0 0 30px 30px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+header:before{content:"上个周末你做什么了？";position:absolute;font-size:64px;opacity:.09;left:50%;top:4px;transform:translateX(-50%);white-space:nowrap}
+.badge{display:inline-block;background:var(--gold);color:#2b2200;padding:5px 14px;border-radius:999px;font-weight:900;font-size:12px;letter-spacing:1px}
+h1{font-size:clamp(31px,7.5vw,53px);margin:10px 0 2px}.sub{margin:0;opacity:.9;font-size:15px}
+.top-actions{display:flex;justify-content:center;gap:10px;margin-top:16px;flex-wrap:wrap}.smallbtn{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.16);color:white;border-radius:999px;padding:9px 13px;font-weight:900;font-size:13px;cursor:pointer}
+.tabs{position:sticky;top:0;z-index:30;background:rgba(255,250,240,.96);backdrop-filter:blur(14px);padding:10px 8px;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;display:flex;gap:8px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:0 0 auto;border:1px solid var(--line);background:white;color:var(--ink);padding:10px 14px;border-radius:999px;font-weight:900;font-size:14px;box-shadow:0 2px 7px rgba(0,0,0,.04);cursor:pointer}.tabs button.active{background:var(--blue);color:white;border-color:var(--blue)}
+section{display:none;max-width:1060px;margin:auto;padding:22px 14px 34px}section.active{display:block;animation:fade .22s ease}@keyframes fade{from{opacity:.25;transform:translateY(6px)}to{opacity:1;transform:none}}
+.title{display:flex;gap:12px;align-items:center;margin:8px 2px 18px}.icon{width:48px;height:48px;border-radius:16px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font-size:23px;flex:0 0 auto}.title h2{margin:0;font-size:24px}.title p{margin:0;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.han{font-size:34px;font-weight:900}.py,.pinyin{color:var(--red);font-size:14px;font-style:italic}.meaning{font-weight:850}.pos{display:inline-block;background:#f2f4f7;color:#475467;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:900;margin:5px 0}
+.ex{margin-top:9px;border-left:4px solid var(--green);padding-left:11px;color:#555;font-size:14px}.vn{color:#555;font-size:15px}.pinyin{display:none;margin:3px 0}.showPinyin .pinyin{display:block}
+.audioRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.audio{border:0;background:var(--blue2);color:#183c85;border-radius:13px;padding:10px 12px;font-weight:900;font-size:15px;cursor:pointer}.pause{background:#fff7e6;color:#8a5a00}.stop{background:#ffeaea;color:#a61919}.wide{width:100%}
+.box{background:white;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:16px}.box-h{background:linear-gradient(90deg,var(--blue),#5a8de4);color:white;padding:13px 16px;font-weight:900}.box-b{padding:14px 16px}.line{padding:14px 0;border-bottom:1px solid #eee}.line:last-child{border-bottom:0}.sp{display:inline-block;background:var(--blue2);color:#183c85;font-weight:900;border-radius:999px;padding:3px 10px;margin-bottom:6px}.sent{font-size:19px;font-weight:750}
+.grammar{border-left:7px solid var(--green);background:var(--green2)}.formula{background:white;border:1px dashed var(--green);padding:11px 13px;border-radius:12px;font-weight:900;margin:9px 0}.pill{display:inline-block;background:var(--blue2);border:1px solid #c4d5ff;color:#183c85;padding:5px 10px;border-radius:999px;margin:4px;font-size:14px}.tip{background:#fff8d9;border-left:4px solid var(--gold);padding:12px;border-radius:0 14px 14px 0;color:#6b5100;font-size:14px}
+.flash{min-height:170px;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;user-select:none}.flash .back{display:none}.flash.flipped .front{display:none}.flash.flipped .back{display:block}.flash .han{font-size:40px}
+.progress{height:10px;background:#eee;border-radius:999px;overflow:hidden;margin:0 2px 16px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--blue));transition:.25s}.quiz-card{background:white;border:2px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--shadow)}.qnum{color:var(--muted);font-size:12px;font-weight:900;letter-spacing:1px}.question{font-size:21px;font-weight:900;margin:8px 0 14px}.opts{display:grid;gap:11px}.opt{border:2px solid transparent;background:#f8f3ea;border-radius:16px;padding:15px 14px;text-align:left;font-weight:850;font-size:16px;cursor:pointer}.opt.correct{background:#e7f8e7;border-color:#1b7d31;color:#1b7d31}.opt.wrong{background:#ffeaea;border-color:#c62828;color:#c62828}.feedback{display:none;margin-top:13px;border-radius:14px;padding:12px;font-weight:900}.feedback.show{display:block}.ok{background:#e7f8e7;color:#1b7d31}.fail{background:#ffeaea;color:#c62828}
+.navq{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:10px}.btn{border:0;background:var(--green);color:white;border-radius:16px;padding:13px 20px;font-weight:900;font-size:16px;cursor:pointer}.btn:disabled{background:#bbb}.score{text-align:center;display:none;padding:30px}.score.show{display:block}.circle{margin:0 auto 16px;width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--blue));display:flex;align-items:center;justify-content:center;color:white;font-size:40px;font-weight:900;box-shadow:var(--shadow)}
+.game-card{display:grid;gap:12px}.game-meaning{font-size:28px;font-weight:900;text-align:center;background:var(--green2);border:1px solid #bdebd9;border-radius:18px;padding:20px}.game-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.game-opt{padding:16px;border:2px solid var(--line);border-radius:16px;background:white;font-weight:900;font-size:20px;cursor:pointer}.game-opt.good{background:#e7f8e7;border-color:#1b7d31;color:#1b7d31}.game-opt.bad{background:#ffeaea;border-color:#c62828;color:#c62828}
+.speakQ{font-size:21px;font-weight:900}.hint{background:var(--green2);border:1px solid #bfecdc;border-radius:14px;padding:12px;margin:10px 0}.hint ul{margin:6px 0 0 20px;padding:0}.sample{background:#fff8d9;border-left:4px solid var(--gold);padding:12px;border-radius:0 14px 14px 0;color:#4d3d00;margin-top:10px}
+.bottomNav{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(15px);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 4px calc(8px + env(safe-area-inset-bottom))}
+.bottomNav button{border:0;background:transparent;color:#667085;font-weight:800;font-size:11px;padding:5px 6px;border-radius:12px;min-width:48px;cursor:pointer}.bottomNav button span{display:block;font-size:21px}.bottomNav button.active{color:var(--blue);background:var(--blue2)}
+.take{border-left:7px solid var(--pink)}.take li{margin:8px 0}.toggleBar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.toggle{background:white;color:var(--blue);border:2px solid var(--blue);border-radius:999px;padding:9px 13px;font-weight:900;cursor:pointer}
+@media(min-width:800px){body{padding-bottom:0}.bottomNav{display:none}.tabs{justify-content:center}.sent{font-size:20px}}
+@media(max-width:520px){body{font-size:16px}.grid{grid-template-columns:1fr}.navq{align-items:stretch}.btn{width:100%}.question{font-size:20px}.game-options{grid-template-columns:1fr}.title h2{font-size:21px}.audioRow .audio{flex:1}}
+</style>
+</head>
+<body>
+<header>
+ <div class="badge">Q2 · 第六课</div>
+ <h1 class="cn">上个周末你做什么了？</h1>
+ <p class="sub">Cuối tuần trước bạn đã làm gì? · Kể về hoạt động đã hoàn thành</p>
+ <div class="top-actions">
+  <button class="smallbtn" onclick="history.back()">← Quay lại</button>
+  <button class="smallbtn" onclick="speakText('上个周末你做什么了？')">🔊 Nghe tên bài</button>
+  <button class="smallbtn" onclick="togglePinyin()">👁 Bật/tắt Pinyin</button>
+  <button class="smallbtn" onclick="stopSpeech()">⏹ Dừng đọc</button>
+ </div>
+</header>
+<div class="tabs" id="tabs"></div>
+
+<section id="home" class="active">
+<div class="title"><div class="icon">🏠</div><div><h2>Tổng quan bài học</h2><p>Nói về những việc đã làm trong quá khứ và cuối tuần trước.</p></div></div>
+<div class="grid">
+ <div class="card"><h3>🎯 Chủ đề</h3><p>Đi mua sắm, tham quan bảo tàng, đi công viên, chụp ảnh và mua sách.</p></div>
+ <div class="card"><h3>📐 Ngữ pháp</h3><p><b>了</b> biểu thị hoàn thành; câu hỏi quá khứ; phủ định với <b>没</b>; câu vị ngữ chủ vị.</p></div>
+ <div class="card"><h3>✅ Học xong em sẽ làm được</h3><p>✓ Hỏi cuối tuần trước đã làm gì<br>✓ Kể một hành động đã hoàn thành<br>✓ Hỏi và trả lời với 了吗 / 没有<br>✓ Miêu tả người trông như thế nào<br>✓ Nói về nơi đã đi và đồ đã mua</p></div>
+</div>
+</section>
+
+<section id="vocab"><div class="title"><div class="icon">📖</div><div><h2>Từ vựng đầy đủ</h2><p>Có ví dụ, dịch nghĩa và nút nghe.</p></div></div><div class="grid" id="vocabGrid"></div></section>
+
+<section id="grammar">
+<div class="title"><div class="icon">📐</div><div><h2>Ngữ pháp</h2><p>Các cấu trúc quan trọng của Bài 6.</p></div></div>
+<div class="card grammar"><h3 class="cn">1. 了 biểu thị hành động đã hoàn thành</h3>
+<div class="formula cn">Động từ + 了 + tân ngữ</div>
+<p>Nếu tân ngữ có bổ nghĩa cụ thể, <b>了</b> đứng sau động từ.</p>
+<p><span class="pill cn">我买了几件衣服。</span> Tôi đã mua vài bộ quần áo.</p>
+<p><span class="pill cn">我参观博物馆了。</span> Tôi đã tham quan bảo tàng.</p>
+</div>
+<div class="card grammar"><h3 class="cn">2. Ba cách hỏi về việc đã xảy ra</h3>
+<p><span class="pill cn">你买什么了？</span></p>
+<p><span class="pill cn">你买衣服了吗？</span></p>
+<p><span class="pill cn">你买衣服了没有？</span></p>
+<p class="tip">Cả ba đều hỏi về hành động trong quá khứ, nhưng trọng tâm hỏi khác nhau.</p>
+</div>
+<div class="card grammar"><h3 class="cn">3. Phủ định với 没</h3>
+<div class="formula cn">没 + động từ + tân ngữ</div>
+<p>Không dùng <b>了</b> sau <b>没</b>, vì hành động không xảy ra.</p>
+<p><span class="pill cn">我没买衣服。</span> Tôi không mua quần áo.</p>
+<p><span class="pill cn">我没去公园。</span> Tôi không đi công viên.</p>
+</div>
+<div class="card grammar"><h3 class="cn">4. Câu vị ngữ chủ vị</h3>
+<p>Phần vị ngữ là một cụm chủ vị nhỏ.</p>
+<p><span class="pill cn">那个博物馆门票不贵。</span> Vé vào bảo tàng đó không đắt.</p>
+<p><span class="pill cn">那儿风景很美，空气非常好。</span> Phong cảnh ở đó đẹp, không khí rất tốt.</p>
+</div>
+</section>
+
+<section id="text1"><div class="title"><div class="icon">🛍️</div><div><h2>课文一：买东西和参观博物馆</h2><p>Hội thoại 1: mua đồ và đi bảo tàng.</p></div></div><div class="toggleBar"><button class="toggle" onclick="speakText(text1.map(x=>x[1]).join('。'))">▶️ Đọc toàn bài 1</button><button class="toggle" onclick="pauseSpeech()">⏸ Pause</button><button class="toggle" onclick="resumeSpeech()">▶️ Resume</button><button class="toggle" onclick="stopSpeech()">⏹ Stop</button></div><div class="box"><div class="box-h">🛍️ 课文一</div><div class="box-b" id="dialogue1"></div></div></section>
+
+<section id="text2"><div class="title"><div class="icon">🌳</div><div><h2>课文二：去人民公园</h2><p>Hội thoại 2: đi công viên, chụp ảnh và mua sách.</p></div></div><div class="toggleBar"><button class="toggle" onclick="speakText(text2.map(x=>x[1]).join('。'))">▶️ Đọc toàn bài 2</button><button class="toggle" onclick="pauseSpeech()">⏸ Pause</button><button class="toggle" onclick="resumeSpeech()">▶️ Resume</button><button class="toggle" onclick="stopSpeech()">⏹ Stop</button></div><div class="box"><div class="box-h">🌳 课文二</div><div class="box-b" id="dialogue2"></div></div></section>
+
+<section id="subtext"><div class="title"><div class="icon">📚</div><div><h2>阅读短文 / Đoạn đọc phụ</h2><p>Đoạn đọc tổng hợp nội dung hai bài khóa.</p></div></div><div class="box"><div class="box-h">📖 阅读短文</div><div class="box-b" id="subText"></div></div></section>
+
+<section id="speak"><div class="title"><div class="icon">🗣️</div><div><h2>6 câu giao tiếp cần biết</h2><p>Dùng để hỏi và kể về cuối tuần trước.</p></div></div><div class="grid" id="speakGrid"></div></section>
+
+<section id="flash"><div class="title"><div class="icon">🃏</div><div><h2>Flashcard</h2><p>Chạm để lật thẻ và đánh dấu từ khó.</p></div></div><div class="grid" id="flashGrid"></div></section>
+
+<section id="listening"><div class="title"><div class="icon">🎧</div><div><h2>Luyện nghe</h2><p>Nghe từ tiếng Trung rồi chọn đúng chữ.</p></div></div>
+<div class="card game-card"><button class="audio wide" onclick="playListening()">🔊 Nghe từ</button><div class="game-options" id="listenOptions"></div><p id="listenResult"></p><button class="btn" onclick="nextListening()">Câu tiếp theo</button></div>
+</section>
+
+<section id="quiz"><div class="title"><div class="icon">🎯</div><div><h2>Quiz 10 câu</h2><p>Từ vựng + ngữ pháp + bài khóa.</p></div></div><div class="progress"><div class="bar" id="bar"></div></div><div id="quizBox"></div><div class="score" id="scoreBox"><div class="circle"><span id="scoreNum">0</span>/10</div><h2 id="scoreMsg"></h2><p id="scoreSub"></p><button class="btn" onclick="restart()">Làm lại</button></div></section>
+
+<section id="game"><div class="title"><div class="icon">🎮</div><div><h2>Game: Nhìn nghĩa Việt chọn chữ Trung</h2><p>Đọc nghĩa tiếng Việt và chọn đúng chữ Hán.</p></div></div><div class="card game-card"><div class="game-meaning" id="gameMeaning"></div><div class="game-options" id="gameOptions"></div><p id="gameResult"></p><button class="btn" onclick="nextGame()">Câu tiếp theo</button></div></section>
+
+<section id="takeaway"><div class="title"><div class="icon">📌</div><div><h2>Take-away cuối bài</h2><p>Phần cần nhớ sau buổi học.</p></div></div><div class="card take"><h3>Hôm nay em học được:</h3><ul>
+<li><b>Từ vựng:</b> <span class="cn">参观、公园、博物馆、风景、门票、看上去、拍、里、真</span></li>
+<li><b>Ngữ pháp:</b> <span class="cn">了、没、了吗、了没有</span></li>
+<li><b>Câu nên nhớ:</b> <span class="cn">上个周末你做什么了？</span></li>
+<li><b>Nói được:</b> Em có thể kể lại những việc mình đã làm vào cuối tuần trước.</li>
+</ul></div></section>
+
+<div class="bottomNav" id="bottomNav"></div>
+
+<script>
+let pinyinOn=false;
+const tabs=[['home','🏠','Tổng quan'],['vocab','📖','Từ'],['grammar','📐','Ngữ pháp'],['text1','🛍️','Bài 1'],['text2','🌳','Bài 2'],['subtext','📚','Đọc'],['speak','🗣️','Nói'],['flash','🃏','Thẻ'],['listening','🎧','Nghe'],['quiz','🎯','Quiz'],['game','🎮','Game'],['takeaway','📌','Nhớ']];
+tabsEl=document.getElementById('tabs');tabsEl.innerHTML=tabs.map((t,i)=>`<button class="${i==0?'active':''}" onclick="tab('${t[0]}')">${t[1]} ${t[2]}</button>`).join('');
+document.getElementById('bottomNav').innerHTML=[tabs[0],tabs[1],tabs[3],tabs[7],tabs[8],tabs[9]].map((t,i)=>`<button class="${i==0?'active':''}" onclick="tab('${t[0]}')"><span>${t[1]}</span>${t[2]}</button>`).join('');
+function tab(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('#tabs button').forEach((b,i)=>b.classList.toggle('active',tabs[i][0]==id));window.scrollTo({top:0,behavior:'smooth'})}
+function togglePinyin(){pinyinOn=!pinyinOn;document.body.classList.toggle('showPinyin',pinyinOn)}
+
+let _audio = null;
+function _gttsUrl(text){const enc=encodeURIComponent(text.slice(0,200));return `https://translate.google.com/translate_tts?ie=UTF-8&tl=zh-CN&client=tw-ob&q=${enc}`}
+function speakText(txt){
+ stopSpeech();
+ const audio=new Audio(_gttsUrl(txt));audio.playbackRate=.9;_audio=audio;
+ const fallback=()=>{if(_audio!==audio)return;_audio=null;try{const u=new SpeechSynthesisUtterance(txt);u.lang='zh-CN';u.rate=.82;const vs=speechSynthesis.getVoices();const preferred=vs.find(v=>/Xiaoxiao/i.test(v.name))||vs.find(v=>/Tingting/i.test(v.name))||vs.find(v=>/Meijia/i.test(v.name))||vs.find(v=>/Yunxi/i.test(v.name))||vs.find(v=>v.lang==='zh-CN')||vs.find(v=>v.lang&&v.lang.startsWith('zh'));if(preferred)u.voice=preferred;speechSynthesis.speak(u)}catch(e){}};
+ audio.addEventListener('error',fallback);audio.play().catch(fallback)
+}
+function pauseSpeech(){if(_audio&&!_audio.paused)_audio.pause();try{speechSynthesis.pause()}catch(e){}}
+function resumeSpeech(){if(_audio&&_audio.paused)_audio.play().catch(()=>{});try{speechSynthesis.resume()}catch(e){}}
+function stopSpeech(){if(_audio){_audio.pause();_audio.currentTime=0;_audio=null}try{speechSynthesis.cancel()}catch(e){}}
+function safe(s){return s.replaceAll("'","").replaceAll('"','')}
+
+const vocab=[
+['了','le','part','trợ từ chỉ hành động đã hoàn thành','昨天你做什么了？','Hôm qua bạn đã làm gì?'],
+['一些','yìxiē','num','một số, một vài','我买了一些东西。','Tôi đã mua một số đồ.'],
+['参观','cānguān','v','tham quan','我们参观博物馆了。','Chúng tôi đã tham quan bảo tàng.'],
+['公园','gōngyuán','n','công viên','我跟朋友去公园了。','Tôi đã đi công viên với bạn.'],
+['累','lèi','a','mệt','你看上去有点儿累。','Bạn trông có vẻ hơi mệt.'],
+['爱','ài','v','yêu, thích','你真爱看书！','Bạn thật sự rất thích đọc sách!'],
+['博物馆','bówùguǎn','n','bảo tàng','那个博物馆非常大。','Bảo tàng đó rất lớn.'],
+['非常','fēicháng','adv','rất, vô cùng','空气非常好。','Không khí rất tốt.'],
+['风景','fēngjǐng','n','phong cảnh','那儿风景很美。','Phong cảnh ở đó rất đẹp.'],
+['票','piào','n','vé','我买了电影票。','Tôi đã mua vé xem phim.'],
+['门票','ménpiào','n','vé vào cổng','博物馆门票不贵。','Vé vào bảo tàng không đắt.'],
+['看上去','kàn shàngqù','v','trông có vẻ','你看上去不开心。','Bạn trông có vẻ không vui.'],
+['好玩儿','hǎowánr','a','vui, thú vị','人民公园很好玩儿。','Công viên Nhân Dân rất thú vị.'],
+['美','měi','a','đẹp','那儿风景很美。','Phong cảnh ở đó rất đẹp.'],
+['空气','kōngqì','n','không khí','那儿空气非常好。','Không khí ở đó rất tốt.'],
+['拍','pāi','v','chụp, quay','我拍了很多照片。','Tôi đã chụp rất nhiều ảnh.'],
+['本','běn','mw','quyển; lượng từ cho sách','我买了几本英文书。','Tôi đã mua vài quyển sách tiếng Anh.'],
+['里','lǐ','n','bên trong','照片在电脑里。','Ảnh ở trong máy tính.'],
+['真','zhēn','adv','thật, thật là','你真爱看书！','Bạn thật sự thích đọc sách!']
+];
+
+vocabGrid.innerHTML=vocab.map(v=>`<div class="card"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><span class="pos">${v[2]}</span><div class="meaning">${v[3]}</div><div class="ex"><div class="cn">${v[4]}</div><div class="vn">${v[5]}</div></div><div class="audioRow"><button class="audio" onclick="speakText('${safe(v[0])}')">🔊 Từ</button><button class="audio" onclick="speakText('${safe(v[4])}')">🔊 Ví dụ</button></div></div>`).join('');
+
+let difficultWords=JSON.parse(localStorage.getItem('bai6_difficult_words')||'[]');
+function toggleDifficult(word){difficultWords=difficultWords.includes(word)?difficultWords.filter(x=>x!==word):[...difficultWords,word];localStorage.setItem('bai6_difficult_words',JSON.stringify(difficultWords));renderFlashcards()}
+function renderFlashcards(){flashGrid.innerHTML=vocab.map(v=>`<div class="card flash" onclick="this.classList.toggle('flipped')" style="position:relative"><button class="audio" style="position:absolute;right:10px;top:10px;padding:6px 9px" onclick="event.stopPropagation();toggleDifficult('${safe(v[0])}')">${difficultWords.includes(v[0])?'⭐':'☆'}</button><div class="front"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><p>Chạm để xem nghĩa</p></div><div class="back"><h2>${v[3]}</h2><p class="cn">${v[4]}</p><p class="vn">${v[5]}</p><button class="audio" onclick="event.stopPropagation();speakText('${safe(v[0])}。${safe(v[4])}')">🔊 Nghe từ và ví dụ</button></div></div>`).join('')}renderFlashcards();
+
+const text1=[
+['海伦','田中，上个周末你做什么了？','Tiánzhōng, shàng ge zhōumò nǐ zuò shénme le?','Tanaka, cuối tuần trước bạn đã làm gì?'],
+['田中','我买了一些东西。','Wǒ mǎi le yìxiē dōngxi.','Tôi đã mua một số đồ.'],
+['海伦','你买了什么？','Nǐ mǎi le shénme?','Bạn đã mua gì?'],
+['田中','我买了几件衣服和一双鞋，还买了一些吃的。海伦，你呢？','Wǒ mǎi le jǐ jiàn yīfu hé yì shuāng xié, hái mǎi le yìxiē chī de. Hǎilún, nǐ ne?','Tôi mua vài bộ quần áo và một đôi giày, còn mua thêm một ít đồ ăn. Helen, còn bạn?'],
+['海伦','我参观博物馆了。','Wǒ cānguān bówùguǎn le.','Tôi đã tham quan bảo tàng.'],
+['田中','哪个博物馆？','Nǎ ge bówùguǎn?','Bảo tàng nào?'],
+['海伦','人民公园附近的博物馆。','Rénmín Gōngyuán fùjìn de bówùguǎn.','Bảo tàng gần Công viên Nhân Dân.'],
+['田中','怎么样？','Zěnmeyàng?','Thế nào?'],
+['海伦','那个博物馆非常大，也非常漂亮，门票也不贵。','Nà ge bówùguǎn fēicháng dà, yě fēicháng piàoliang, ménpiào yě bú guì.','Bảo tàng đó rất lớn, cũng rất đẹp, vé vào cửa cũng không đắt.'],
+['田中','下个周末我也去！','Xià ge zhōumò wǒ yě qù!','Cuối tuần sau tôi cũng đi!']
+];
+dialogue1.innerHTML=text1.map((l,i)=>`<div class="line"><span class="sp">${l[0]}</span><div class="sent cn">${l[1]}</div><div class="pinyin">${l[2]}</div><div class="vn">${l[3]}</div><div class="audioRow"><button class="audio" onclick="speakText(text1[${i}][1])">▶️ Câu</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶️</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div></div>`).join('');
+
+const text2=[
+['高小明','卡玛拉，你看上去有点儿累，周末做什么了？','Kǎmǎlā, nǐ kàn shàngqù yǒudiǎnr lèi, zhōumò zuò shénme le?','Kamala, bạn trông có vẻ hơi mệt, cuối tuần đã làm gì?'],
+['卡玛拉','我跟朋友去人民公园了。','Wǒ gēn péngyou qù Rénmín Gōngyuán le.','Tôi đã đi Công viên Nhân Dân với bạn.'],
+['高小明','怎么样？人民公园好玩儿吗？','Zěnmeyàng? Rénmín Gōngyuán hǎowánr ma?','Thế nào? Công viên Nhân Dân có vui không?'],
+['卡玛拉','很好玩儿。那儿风景很美，空气非常好，人很多。','Hěn hǎowánr. Nàr fēngjǐng hěn měi, kōngqì fēicháng hǎo, rén hěn duō.','Rất vui. Phong cảnh ở đó đẹp, không khí rất tốt, người rất đông.'],
+['高小明','你拍照片了吗？','Nǐ pāi zhàopiàn le ma?','Bạn đã chụp ảnh chưa?'],
+['卡玛拉','拍了，拍了很多照片。','Pāi le, pāi le hěn duō zhàopiàn.','Rồi, tôi đã chụp rất nhiều ảnh.'],
+['高小明','可以给我看一下吗？','Kěyǐ gěi wǒ kàn yíxià ma?','Có thể cho tôi xem một chút không?'],
+['卡玛拉','可以，在我的电脑里，明天给你看。你周末做什么了？','Kěyǐ, zài wǒ de diànnǎo lǐ, míngtiān gěi nǐ kàn. Nǐ zhōumò zuò shénme le?','Được, ở trong máy tính của tôi, ngày mai cho bạn xem. Cuối tuần bạn đã làm gì?'],
+['高小明','我去书店了，买了几本英文书。','Wǒ qù shūdiàn le, mǎi le jǐ běn Yīngwén shū.','Tôi đã đi hiệu sách và mua vài quyển sách tiếng Anh.'],
+['卡玛拉','你真爱看书！','Nǐ zhēn ài kàn shū!','Bạn thật sự rất thích đọc sách!']
+];
+dialogue2.innerHTML=text2.map((l,i)=>`<div class="line"><span class="sp">${l[0]}</span><div class="sent cn">${l[1]}</div><div class="pinyin">${l[2]}</div><div class="vn">${l[3]}</div><div class="audioRow"><button class="audio" onclick="speakText(text2[${i}][1])">▶️ Câu</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶️</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div></div>`).join('');
+
+const sub=[
+'上个周末，田中去买东西了。他买了几件衣服、一双鞋和一些吃的。海伦去参观了人民公园附近的博物馆。那个博物馆很大，也很漂亮，门票不贵。',
+'卡玛拉跟朋友去了人民公园。她觉得那儿风景很美，空气非常好。她还拍了很多照片。高小明去了书店，买了几本英文书。'
+];
+const subVn=[
+'Cuối tuần trước, Tanaka đi mua sắm. Anh ấy mua vài bộ quần áo, một đôi giày và một số đồ ăn. Helen đi tham quan bảo tàng gần Công viên Nhân Dân. Bảo tàng đó rất lớn, đẹp và vé vào cửa không đắt.',
+'Kamala đã đi Công viên Nhân Dân cùng bạn. Cô thấy phong cảnh ở đó rất đẹp, không khí rất tốt. Cô còn chụp rất nhiều ảnh. Cao Tiểu Minh đã đi hiệu sách và mua vài quyển sách tiếng Anh.'
+];
+subText.innerHTML=sub.map((p,i)=>`<div class="line"><span class="sp">第 ${i+1} 段</span><div class="sent cn">${p}</div><div class="vn">${subVn[i]}</div><div class="audioRow"><button class="audio" onclick="speakText(sub[${i}])">▶️ Đọc đoạn</button></div></div>`).join('');
+
+const speaking=[
+['上个周末你做什么了？',['我去了……','我买了……','我参观了……'],'上个周末我去公园了。'],
+['你买了什么？',['几件衣服','一双鞋','几本书'],'我买了几本书。'],
+['你去公园了吗？',['去了','没去','我去博物馆了'],'去了，我跟朋友一起去的。'],
+['那儿怎么样？',['风景很美','空气很好','人很多'],'那儿风景很美，空气也很好。'],
+['你拍照片了吗？',['拍了','没拍','拍了很多照片'],'拍了，我拍了很多照片。'],
+['你周末没做什么？',['没买东西','没去公园','没看电影'],'我没去公园，在家休息了。']
+];
+speakGrid.innerHTML=speaking.map((x,i)=>`<div class="card"><div class="speakQ cn">${i+1}. ${x[0]}</div><button class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Nghe câu hỏi</button><div class="hint"><b>💡 Gợi ý:</b><ul>${x[1].map(h=>`<li class="cn">${h}</li>`).join('')}</ul></div><div class="sample"><b>⭐ Câu mẫu:</b><p class="cn">${x[2]}</p><button class="audio wide" onclick="speakText('${safe(x[2])}')">🔊 Nghe mẫu</button></div></div>`).join('');
+
+let listeningIndex=0;
+function shuffleListening(arr){return [...arr].sort(()=>Math.random()-.5)}
+function renderListening(){const correct=vocab[listeningIndex%vocab.length][0];let options=shuffleListening(vocab.map(v=>v[0])).slice(0,4);if(!options.includes(correct))options[0]=correct;options=shuffleListening(options);listenOptions.innerHTML=options.map(x=>`<button class="game-opt" onclick="chooseListening(this,'${safe(x)}','${safe(correct)}')">${x}</button>`).join('');listenResult.textContent=''}
+function playListening(){speakText(vocab[listeningIndex%vocab.length][0])}
+function chooseListening(btn,choice,answer){document.querySelectorAll('#listenOptions .game-opt').forEach(b=>b.disabled=true);if(choice===answer){btn.classList.add('good');listenResult.innerHTML='✅ Đúng rồi!'}else{btn.classList.add('bad');listenResult.innerHTML='❌ Đáp án: <b class="cn">'+answer+'</b>';document.querySelectorAll('#listenOptions .game-opt').forEach(b=>{if(b.textContent===answer)b.classList.add('good')})}}
+function nextListening(){listeningIndex++;renderListening()}renderListening();
+
+const qs=[
+{q:'“参观” nghĩa là gì?',opts:['tham quan','chụp ảnh','mua vé','đi bộ'],a:0},
+{q:'田中上个周末买了什么？',opts:['几件衣服、一双鞋和一些吃的','几本英文书','一张门票','很多照片'],a:0},
+{q:'海伦去参观了哪里？',opts:['人民公园附近的博物馆','书店','学校','电影院'],a:0},
+{q:'那个博物馆怎么样？',opts:['很大、很漂亮，门票不贵','很小，门票很贵','不好玩儿','空气不好'],a:0},
+{q:'卡玛拉为什么看上去有点儿累？',opts:['她周末去人民公园了','她没睡觉','她去上课了','她生病了'],a:0},
+{q:'卡玛拉拍照片了吗？',opts:['拍了很多照片','没拍','只拍了一张','不知道'],a:0},
+{q:'高小明周末做什么了？',opts:['去书店买了几本英文书','去公园拍照','参观博物馆','买衣服'],a:0},
+{q:'Quá khứ phủ định dùng từ nào?',opts:['没','不','别','没有了'],a:0},
+{q:'Câu nào đúng?',opts:['我买了几本书。','我没买了书。','我买几本书了没。','我不买了书。'],a:0},
+{q:'“你看上去有点儿累” nghĩa là gì?',opts:['Bạn trông có vẻ hơi mệt','Bạn rất vui','Bạn đã đi đâu','Bạn mua gì'],a:0}
+];
+let cur=0,score=0,answered=false;
+function renderQ(){bar.style.width=(cur/qs.length*100)+'%';let x=qs[cur];quizBox.innerHTML=`<div class="quiz-card"><div class="qnum">Câu ${cur+1}/10</div><div class="question cn">${x.q}</div><div class="opts">${x.opts.map((o,i)=>`<button class="opt" onclick="ans(${i})">${o}</button>`).join('')}</div><div id="fb" class="feedback"></div></div><div class="navq"><span>Điểm: <b>${score}</b></span><button class="btn" id="next" onclick="nextQ()" disabled>Tiếp theo →</button></div>`;answered=false}
+function ans(i){if(answered)return;answered=true;let x=qs[cur],ops=document.querySelectorAll('.opt'),fb=document.getElementById('fb');ops.forEach(o=>o.disabled=true);if(i==x.a){ops[i].classList.add('correct');fb.textContent='✅ Đúng rồi!';fb.className='feedback show ok';score++}else{ops[i].classList.add('wrong');ops[x.a].classList.add('correct');fb.textContent='❌ Đáp án: '+x.opts[x.a];fb.className='feedback show fail'}next.disabled=false}
+function nextQ(){cur++;if(cur>=qs.length)showScore();else renderQ()}
+function showScore(){quizBox.innerHTML='';bar.style.width='100%';document.querySelector('#quiz .progress').style.display='none';scoreBox.classList.add('show');scoreNum.textContent=score;scoreMsg.textContent=score>=9?'Xuất sắc!':score>=7?'Rất tốt!':score>=5?'Ổn, cần ôn thêm':'Cần ôn lại bài';scoreSub.textContent='Bạn đã hoàn thành 10 câu của Bài 6.'}
+function restart(){cur=0;score=0;scoreBox.classList.remove('show');document.querySelector('#quiz .progress').style.display='block';renderQ()}renderQ();
+
+const gameData=[['tham quan','参观'],['công viên','公园'],['mệt','累'],['bảo tàng','博物馆'],['phong cảnh','风景'],['vé vào cổng','门票'],['trông có vẻ','看上去'],['chụp','拍'],['quyển','本'],['bên trong','里']];
+let gameIndex=0;
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+function renderGame(){let item=gameData[gameIndex%gameData.length];gameMeaning.textContent=item[0];let all=shuffle(gameData.map(x=>x[1])).slice(0,4);if(!all.includes(item[1]))all[0]=item[1];all=shuffle(all);gameOptions.innerHTML=all.map(x=>`<button class="game-opt" onclick="chooseGame(this,'${x}','${item[1]}')">${x}</button>`).join('');gameResult.textContent=''}
+function chooseGame(btn,choice,answ){document.querySelectorAll('.game-opt').forEach(b=>b.disabled=true);if(choice===answ){btn.classList.add('good');gameResult.innerHTML='✅ Đúng rồi!'}else{btn.classList.add('bad');gameResult.innerHTML='❌ Đáp án: <b class="cn">'+answ+'</b>';document.querySelectorAll('.game-opt').forEach(b=>{if(b.textContent===answ)b.classList.add('good')})}}
+function nextGame(){gameIndex++;renderGame()}renderGame();
+</script>
+</body>
+</html>
