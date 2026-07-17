@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2b6cb0">
+<title>HSK5 Bài 19 · 家乡的萝卜饼</title>
+<style>
+:root{
+ --ink:#132033;--muted:#667085;--bg:#fffaf0;--card:#fff;--line:#eadfce;
+ --blue:#2b6cb0;--blue2:#eaf3ff;--green:#16835f;--green2:#eaf8f2;
+ --red:#c0392b;--gold:#f2b705;--pink:#b83280;--danger:#c62828;
+ --shadow:0 10px 28px rgba(16,24,40,.10);--radius:20px
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.65;font-size:17px;padding-bottom:84px}
+body.dark{--ink:#eef2f7;--muted:#aeb8c7;--bg:#101722;--card:#182230;--line:#2e3a49;--blue2:#20354a;--green2:#18382f;--shadow:0 10px 28px rgba(0,0,0,.28)}
+.cn{font-family:"PingFang SC","Noto Serif SC","Songti SC",serif}
+header{padding:calc(28px + env(safe-area-inset-top)) 18px 26px;text-align:center;color:#fff;background:linear-gradient(135deg,#b83280,#2b6cb0 55%,#16835f);border-radius:0 0 30px 30px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+header:before{content:"家乡的萝卜饼";position:absolute;font-size:72px;opacity:.09;left:50%;top:4px;transform:translateX(-50%);white-space:nowrap}
+.badge{display:inline-block;background:var(--gold);color:#2b2200;padding:5px 14px;border-radius:999px;font-weight:900;font-size:12px;letter-spacing:1px}
+h1{font-size:clamp(33px,8vw,55px);margin:10px 0 2px}.sub{margin:0;opacity:.92;font-size:15px}
+.top-actions{display:flex;justify-content:center;gap:9px;margin-top:16px;flex-wrap:wrap}.smallbtn{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.16);color:#fff;border-radius:999px;padding:9px 13px;font-weight:900;font-size:13px;cursor:pointer}
+.tabs{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(14px);padding:10px 8px;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;display:flex;gap:8px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:0 0 auto;border:1px solid var(--line);background:var(--card);color:var(--ink);padding:10px 14px;border-radius:999px;font-weight:900;font-size:14px;box-shadow:0 2px 7px rgba(0,0,0,.04);cursor:pointer}.tabs button.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+section{display:none;max-width:1060px;margin:auto;padding:22px 14px 34px}section.active{display:block;animation:fade .22s ease}@keyframes fade{from{opacity:.25;transform:translateY(6px)}to{opacity:1;transform:none}}
+.title{display:flex;gap:12px;align-items:center;margin:8px 2px 18px}.icon{width:48px;height:48px;border-radius:16px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:23px;flex:0 0 auto}.title h2{margin:0;font-size:24px}.title p{margin:0;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.han{font-size:34px;font-weight:900}.pinyin{display:none;color:var(--red);font-size:14px;font-style:italic;margin:3px 0}.showPinyin .pinyin{display:block}.meaning{font-weight:850}.pos{display:inline-block;background:#f2f4f7;color:#475467;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:900;margin:5px 0}.dark .pos{background:#263448;color:#d9e1ec}
+.ex{margin-top:9px;border-left:4px solid var(--green);padding-left:11px;color:var(--muted);font-size:14px}.vn{color:var(--muted);font-size:15px}
+.audioRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.audio{border:0;background:var(--blue2);color:#183c85;border-radius:13px;padding:10px 12px;font-weight:900;font-size:15px;cursor:pointer}.dark .audio{color:#d9eaff}.pause{background:#fff7e6;color:#8a5a00}.stop{background:#ffeaea;color:#a61919}.wide{width:100%}
+.box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:16px}.box-h{background:linear-gradient(90deg,var(--blue),#5a8de4);color:#fff;padding:13px 16px;font-weight:900}.box-b{padding:14px 16px}.line{padding:15px 0;border-bottom:1px solid var(--line)}.line:last-child{border-bottom:0}.sp{display:inline-block;background:var(--blue2);color:#183c85;font-weight:900;border-radius:999px;padding:3px 10px;margin-bottom:6px}.dark .sp{color:#d9eaff}.sent{font-size:19px;font-weight:750}
+.grammar{border-left:7px solid var(--green);background:var(--green2);margin-bottom:14px}.formula{background:var(--card);border:1px dashed var(--green);padding:11px 13px;border-radius:12px;font-weight:900;margin:9px 0}.pill{display:inline-block;background:var(--blue2);border:1px solid #c4d5ff;color:#183c85;padding:5px 10px;border-radius:999px;margin:4px;font-size:14px}.dark .pill{color:#d9eaff;border-color:#34506f}.tip{background:#fff8d9;border-left:4px solid var(--gold);padding:12px;border-radius:0 14px 14px 0;color:#6b5100;font-size:14px}.dark .tip{background:#3c351b;color:#ffeaa2}
+.flash{min-height:180px;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;user-select:none}.flash .back{display:none}.flash.flipped .front{display:none}.flash.flipped .back{display:block}.flash .han{font-size:40px}.star{position:absolute;right:12px;top:10px;font-size:24px;cursor:pointer}.flash{position:relative}
+.progress{height:10px;background:#ddd;border-radius:999px;overflow:hidden;margin-bottom:16px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--blue));transition:.25s}.quiz-card{background:var(--card);border:2px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--shadow)}.qnum{color:var(--muted);font-size:12px;font-weight:900}.question{font-size:21px;font-weight:900;margin:8px 0 14px}.opts{display:grid;gap:11px}.opt{border:2px solid transparent;background:#f8f3ea;border-radius:16px;padding:15px 14px;text-align:left;font-weight:850;font-size:16px;cursor:pointer}.dark .opt{background:#253241;color:#eef2f7}.opt.correct{background:#e7f8e7!important;border-color:#1b7d31;color:#1b7d31}.opt.wrong{background:#ffeaea!important;border-color:#c62828;color:#c62828}.feedback{display:none;margin-top:13px;border-radius:14px;padding:12px;font-weight:800}.feedback.show{display:block}.ok{background:#e7f8e7;color:#1b7d31}.fail{background:#ffeaea;color:#c62828}
+.navq{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:10px}.btn{border:0;background:var(--green);color:#fff;border-radius:16px;padding:13px 20px;font-weight:900;font-size:16px;cursor:pointer}.btn:disabled{background:#aaa}.score{text-align:center;padding:25px}.circle{margin:0 auto 16px;width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--blue));display:flex;align-items:center;justify-content:center;color:#fff;font-size:40px;font-weight:900}
+.game-meaning{font-size:28px;font-weight:900;text-align:center;background:var(--green2);border:1px solid #bdebd9;border-radius:18px;padding:20px}.game-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.game-opt{padding:16px;border:2px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);font-weight:900;font-size:20px;cursor:pointer}.game-opt.good{background:#e7f8e7;border-color:#1b7d31;color:#1b7d31}.game-opt.bad{background:#ffeaea;border-color:#c62828;color:#c62828}
+.speakQ{font-size:21px;font-weight:900}.hint{background:var(--green2);border:1px solid #bfecdc;border-radius:14px;padding:12px;margin:10px 0}.sample{background:#fff8d9;border-left:4px solid var(--gold);padding:12px;border-radius:0 14px 14px 0;color:#4d3d00;margin-top:10px}.dark .sample{background:#3c351b;color:#ffeaa2}
+.take{border-left:7px solid var(--pink)}.toggleBar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.toggle{background:var(--card);color:var(--blue);border:2px solid var(--blue);border-radius:999px;padding:9px 13px;font-weight:900;cursor:pointer}
+.bottomNav{position:fixed;bottom:0;left:0;right:0;z-index:40;background:color-mix(in srgb,var(--card) 96%,transparent);backdrop-filter:blur(15px);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 4px calc(8px + env(safe-area-inset-bottom))}
+.bottomNav button{border:0;background:transparent;color:var(--muted);font-weight:800;font-size:11px;padding:5px 6px;border-radius:12px;min-width:48px}.bottomNav button span{display:block;font-size:21px}.bottomNav button.active{color:var(--blue);background:var(--blue2)}
+.lessonText .line{padding:18px 0}.lessonText .sent{font-size:20px}
+.status{font-weight:900;color:var(--green)}
+@media(min-width:800px){body{padding-bottom:0}.bottomNav{display:none}.tabs{justify-content:center}}
+@media(max-width:520px){body{font-size:16px}.grid,.game-options{grid-template-columns:1fr}.audioRow .audio{flex:1}.title h2{font-size:21px}}
+</style>
+</head>
+<body>
+<header>
+<div class="badge">HSK 5 · 第19课</div>
+<h1 class="cn">家乡的萝卜饼</h1>
+<p class="sub">Bánh củ cải quê hương · Món ăn, cách chế biến và dưỡng sinh</p>
+<div class="top-actions">
+<button class="smallbtn" onclick="history.back()">← Quay lại</button>
+<button class="smallbtn" onclick="speakText('家乡的萝卜饼')">🔊 Tên bài</button>
+<button class="smallbtn" onclick="togglePinyin()">👁 Pinyin</button>
+<button class="smallbtn" onclick="toggleDark()">🌙 Dark</button>
+<button class="smallbtn" onclick="stopSpeech()">⏹ Dừng</button>
+</div>
+</header>
+
+<div class="tabs" id="tabs"></div>
+
+<section id="home" class="active">
+<div class="title"><div class="icon">🏠</div><div><h2>Tổng quan bài học</h2><p>Một bài học hoàn chỉnh về bánh củ cải quê hương.</p></div></div>
+<div class="grid">
+<div class="card"><h3>🎯 Chủ đề</h3><p>Ẩm thực quê hương, màu sắc, hương vị, nguyên liệu, cách chế biến và dưỡng sinh.</p></div>
+<div class="card"><h3>📐 Ngữ pháp</h3><p><b>般、怀念/想念、闻、趁</b></p></div>
+<div class="card"><h3>📊 Tiến độ</h3><p id="progressText" class="status">Chưa hoàn thành</p><button class="btn" onclick="markComplete()">Đánh dấu đã học</button></div>
+</div>
+</section>
+
+<section id="vocab"><div class="title"><div class="icon">📖</div><div><h2>Từ vựng</h2><p>Ví dụ, phát âm và lưu từ khó.</p></div></div><div class="grid" id="vocabGrid"></div></section>
+
+<section id="grammar"><div class="title"><div class="icon">📐</div><div><h2>Ngữ pháp</h2><p>4 điểm trọng tâm.</p></div></div>
+<div class="card grammar"><h3 class="cn">1. 般</h3><div class="formula cn">N + 般 + Adj / N + 般的 + N</div><p>So sánh: “như, giống như”.</p><p class="pill cn">紫萝卜像山泉般清淡可口。</p><p class="pill cn">她露出了阳光般的笑容。</p></div>
+<div class="card grammar"><h3 class="cn">2. 怀念 / 想念</h3><p><b>怀念</b>: trang trọng hơn; thường dùng với ký ức, quãng thời gian hoặc người đã mất.</p><p><b>想念</b>: khẩu ngữ hơn; thường dùng với người đang sống hoặc nơi chốn.</p><p class="pill cn">我很怀念小时候的生活。</p><p class="pill cn">女儿很想念出差的爸爸。</p></div>
+<div class="card grammar"><h3 class="cn">3. 闻</h3><p>Trong bài: ngửi, ngửi thấy.</p><p class="pill cn">我闻到了萝卜饼的香味。</p><p class="tip cn">百闻不如一见；增长见闻。</p></div>
+<div class="card grammar"><h3 class="cn">4. 趁</h3><div class="formula cn">趁 + thời điểm/cơ hội + hành động</div><p class="pill cn">萝卜饼要趁热吃。</p><p class="pill cn">趁还没下雨，我们赶紧走吧。</p></div>
+</section>
+
+<section id="text"><div class="title"><div class="icon">📚</div><div><h2>Bài khóa hoàn chỉnh</h2><p>Gộp toàn bộ 4 phần thành một bài đọc liền mạch.</p></div></div>
+<div class="toggleBar">
+<button class="toggle" onclick="speakText(fullText)">▶️ Nghe toàn bài</button>
+<button class="toggle" onclick="pauseSpeech()">⏸ Pause</button>
+<button class="toggle" onclick="resumeSpeech()">▶️ Resume</button>
+<button class="toggle" onclick="stopSpeech()">⏹ Stop</button>
+</div>
+<div class="box lessonText"><div class="box-h">📖 家乡的萝卜饼</div><div class="box-b" id="lessonText"></div></div>
+</section>
+
+<section id="speak"><div class="title"><div class="icon">🗣️</div><div><h2>6 câu giao tiếp</h2><p>Dùng để giới thiệu món ăn quê hương.</p></div></div><div class="grid" id="speakGrid"></div></section>
+
+<section id="flash"><div class="title"><div class="icon">🃏</div><div><h2>Flashcard</h2><p>Chạm để lật. Nhấn ⭐ để lưu từ khó.</p></div></div><div class="grid" id="flashGrid"></div></section>
+
+<section id="listening"><div class="title"><div class="icon">🎧</div><div><h2>Luyện nghe</h2><p>Nghe từ rồi chọn chữ đúng.</p></div></div><div class="card">
+<button class="audio wide" onclick="playListening()">🔊 Nghe từ</button>
+<div class="game-options" id="listenOptions"></div><p id="listenResult"></p><button class="btn" onclick="nextListening()">Câu tiếp theo</button>
+</div></section>
+
+<section id="quiz"><div class="title"><div class="icon">🎯</div><div><h2>Quiz 10 câu</h2><p>Có giải thích đáp án.</p></div></div><div class="progress"><div class="bar" id="bar"></div></div><div id="quizBox"></div></section>
+
+<section id="game"><div class="title"><div class="icon">🎮</div><div><h2>Game chọn chữ</h2><p>Nhìn nghĩa Việt, chọn từ Trung.</p></div></div><div class="card"><div class="game-meaning" id="gameMeaning"></div><div class="game-options" id="gameOptions"></div><p id="gameResult"></p><button class="btn" onclick="nextGame()">Câu tiếp theo</button></div></section>
+
+<section id="takeaway"><div class="title"><div class="icon">📌</div><div><h2>Take-away</h2></div></div><div class="card take"><ul>
+<li><b>Từ vựng:</b> 色彩、清淡、可口、均匀、透明、预防、特色、养生</li>
+<li><b>Ngữ pháp:</b> 般、怀念/想念、闻、趁</li>
+<li><b>Quy trình:</b> 洗净切丝 → 搅拌均匀 → 擀面 → 折叠 → 文火煎</li>
+<li><b>Câu nhớ:</b> 萝卜饼要趁热吃。</li>
+</ul></div></section>
+
+<div class="bottomNav" id="bottomNav"></div>
+
+<script>
+const tabs=[['home','🏠','Tổng quan'],['vocab','📖','Từ'],['grammar','📐','Ngữ pháp'],['text','📚','Bài đọc'],['speak','🗣️','Nói'],['flash','🃏','Thẻ'],['listening','🎧','Nghe'],['quiz','🎯','Quiz'],['game','🎮','Game'],['takeaway','📌','Nhớ']];
+document.getElementById('tabs').innerHTML=tabs.map((t,i)=>`<button class="${i===0?'active':''}" onclick="tab('${t[0]}')">${t[1]} ${t[2]}</button>`).join('');
+document.getElementById('bottomNav').innerHTML=tabs.slice(0,6).map((t,i)=>`<button class="${i===0?'active':''}" onclick="tab('${t[0]}')"><span>${t[1]}</span>${t[2]}</button>`).join('');
+function tab(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('#tabs button').forEach((b,i)=>b.classList.toggle('active',tabs[i][0]===id));window.scrollTo({top:0,behavior:'smooth'})}
+function togglePinyin(){document.body.classList.toggle('showPinyin')}
+function toggleDark(){document.body.classList.toggle('dark');localStorage.setItem('hsk19dark',document.body.classList.contains('dark'))}
+if(localStorage.getItem('hsk19dark')==='true')document.body.classList.add('dark');
+
+let _audio=null;
+function _gttsUrl(text){return `https://translate.google.com/translate_tts?ie=UTF-8&tl=zh-CN&client=tw-ob&q=${encodeURIComponent(text.slice(0,200))}`}
+function speakText(txt){
+ stopSpeech();
+ const a=new Audio(_gttsUrl(txt));a.playbackRate=.9;_audio=a;
+ const fallback=()=>{if(_audio!==a)return;_audio=null;const u=new SpeechSynthesisUtterance(txt);u.lang='zh-CN';u.rate=.82;const vs=speechSynthesis.getVoices();const v=vs.find(x=>/Xiaoxiao|Tingting|Meijia/i.test(x.name))||vs.find(x=>x.lang==='zh-CN')||vs.find(x=>x.lang&&x.lang.startsWith('zh'));if(v)u.voice=v;speechSynthesis.speak(u)};
+ a.addEventListener('error',fallback);a.play().catch(fallback)
+}
+function pauseSpeech(){if(_audio&&!_audio.paused)_audio.pause();try{speechSynthesis.pause()}catch(e){}}
+function resumeSpeech(){if(_audio&&_audio.paused)_audio.play().catch(()=>{});try{speechSynthesis.resume()}catch(e){}}
+function stopSpeech(){if(_audio){_audio.pause();_audio.currentTime=0;_audio=null}try{speechSynthesis.cancel()}catch(e){}}
+function safe(s){return s.replaceAll("'","")}
+
+const vocab=[
+['家乡','jiāxiāng','n','quê hương','我很怀念家乡。','Tôi rất nhớ quê hương.'],['萝卜','luóbo','n','củ cải','家乡有三种萝卜。','Quê tôi có ba loại củ cải.'],['色彩','sècǎi','n','màu sắc','萝卜饼的色彩很丰富。','Màu sắc của bánh rất phong phú.'],['赏心悦目','shǎngxīnyuèmù','a','đẹp mắt, dễ chịu','三种萝卜看起来赏心悦目。','Ba loại củ cải trông rất đẹp mắt.'],['清淡','qīngdàn','a','thanh nhẹ','紫萝卜清淡可口。','Củ cải tím thanh nhẹ và ngon.'],['可口','kěkǒu','a','ngon miệng','萝卜饼非常可口。','Bánh củ cải rất ngon.'],['夸','kuā','v','khen','大家都夸这个菜。','Mọi người đều khen món này.'],['切','qiē','v','thái, cắt','先把萝卜切丝。','Trước tiên thái củ cải thành sợi.'],['丝','sī','n','sợi','把萝卜切成丝。','Thái củ cải thành sợi.'],['搅拌','jiǎobàn','v','trộn, khuấy','用筷子搅拌均匀。','Dùng đũa trộn đều.'],['均匀','jūnyún','a','đều','把原料搅拌均匀。','Trộn nguyên liệu cho đều.'],['原料','yuánliào','n','nguyên liệu','准备好原料。','Chuẩn bị nguyên liệu.'],['擀','gǎn','v','cán bột','把面擀得薄如白纸。','Cán bột mỏng như giấy.'],['薄','báo','a','mỏng','这张饼很薄。','Miếng bánh này rất mỏng.'],['折叠','zhédié','v','gấp','再折叠两三次。','Gấp thêm hai ba lần.'],['透明','tòumíng','a','trong suốt','表皮是透明的。','Vỏ bánh trong suốt.'],['淋','lín','v','rưới','在锅里淋一圈油。','Rưới một vòng dầu trong chảo.'],['预防','yùfáng','v','phòng ngừa','放温水预防糊底。','Cho nước ấm để tránh cháy đáy.'],['文火','wénhuǒ','n','lửa nhỏ','最好用文火。','Tốt nhất dùng lửa nhỏ.'],['焦','jiāo','a','cháy xém','外焦里嫩。','Ngoài xém, trong mềm.'],['嫩','nèn','a','mềm','里面很嫩。','Bên trong rất mềm.'],['特色','tèsè','n','đặc sắc','这是家乡特色。','Đây là nét đặc sắc quê hương.'],['养生','yǎngshēng','n/v','dưỡng sinh','具有养生功能。','Có công dụng dưỡng sinh.'],['平安','píng’ān','a','bình an','青菜萝卜保平安。','Rau xanh củ cải giúp bình an.']
+];
+
+let difficult=JSON.parse(localStorage.getItem('hsk19difficult')||'[]');
+function toggleDifficult(word){difficult=difficult.includes(word)?difficult.filter(x=>x!==word):[...difficult,word];localStorage.setItem('hsk19difficult',JSON.stringify(difficult));renderFlash()}
+vocabGrid.innerHTML=vocab.map(v=>`<div class="card"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><span class="pos">${v[2]}</span><div class="meaning">${v[3]}</div><div class="ex"><div class="cn">${v[4]}</div><div class="vn">${v[5]}</div></div><div class="audioRow"><button class="audio" onclick="speakText('${safe(v[0])}')">🔊 Từ</button><button class="audio" onclick="speakText('${safe(v[4])}')">🔊 Ví dụ</button></div></div>`).join('');
+function renderFlash(){flashGrid.innerHTML=vocab.map(v=>`<div class="card flash" onclick="this.classList.toggle('flipped')"><button class="star" onclick="event.stopPropagation();toggleDifficult('${safe(v[0])}')">${difficult.includes(v[0])?'⭐':'☆'}</button><div class="front"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><p>Chạm để lật</p></div><div class="back"><h2>${v[3]}</h2><p class="cn">${v[4]}</p><p>${v[5]}</p><button class="audio" onclick="event.stopPropagation();speakText('${safe(v[0])}。${safe(v[4])}')">🔊 Nghe</button></div></div>`).join('')}renderFlash();
+
+const paragraphs=[
+'家乡的众多美食中，萝卜饼是最让我怀念的。它那丰富的色彩、微甜的口感，至今仍让我十分想念。',
+'家乡的萝卜有青、红、紫三种。三种萝卜看起来赏心悦目，吃起来，青的甜中带点儿辣，红的辣中带着甜，紫的像山泉般清淡可口。父老乡亲们夸它说：“橘子、葡萄、梨，比不上咱的萝卜皮。”而萝卜饼就是用这三种颜色的萝卜做成的。',
+'萝卜饼的做法极其简单，既不必炒或煮，也不用油炸。先把三色萝卜洗净切丝，放入油、盐等，用筷子搅拌均匀，萝卜饼的原料便做成了。最关键的功夫是擀面。高手往往把面擀得薄如白纸，拌好的萝卜丝儿铺到饼上后，得再折叠两三次，要求饼熟之后表皮是透明的，能透过表皮看见萝卜丝儿。最后用刀切成块状，饼便做好了。',
+'接下来，拿一个平底锅，先在锅里淋一圈油，待油锅烫手时，将切好的萝卜饼一块一块地放进锅里。盖锅前须放进一些温水，预防糊底。火最好用文火，等能闻到香味时，便可开锅了。萝卜饼要趁热吃，喜欢口味重的，还可以加少许酱油和醋。刚出锅的萝卜饼，香味扑鼻，外焦里嫩，吃上一口，便让人永远忘不了。',
+'如今，美食家们对吃提出了更高的要求。他们不仅要观色、闻香、尝味、赏形，而且还要求食物具有养生方面的特色。我想，家乡的萝卜饼完全具备这几个方面的条件。人们不是常说吗——“鱼生火，肉生痰，青菜萝卜保平安。”养生的功能，让我更加喜爱它了。'
+];
+const fullText=paragraphs.join('。');
+lessonText.innerHTML=paragraphs.map((p,i)=>`<div class="line"><span class="sp">第 ${i+1} 段</span><div class="sent cn">${p}</div><div class="audioRow"><button class="audio" onclick="speakText(paragraphs[${i}])">▶️ Đọc đoạn</button></div></div>`).join('');
+
+const speaking=[
+['你最怀念家乡的什么美食？','我最怀念家乡的萝卜饼。'],['这种食物是什么味道？','它吃起来清淡可口。'],['做这道菜需要哪些原料？','需要萝卜、油、盐和面。'],['第一步应该做什么？','先把萝卜洗净切丝。'],['为什么要用文火？','用文火可以预防糊底。'],['这道菜有什么特色？','它不仅好吃，而且具有养生特色。']
+];
+speakGrid.innerHTML=speaking.map((x,i)=>`<div class="card"><div class="speakQ cn">${i+1}. ${x[0]}</div><button class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Câu hỏi</button><div class="sample"><b>⭐ Câu mẫu:</b><p class="cn">${x[1]}</p><button class="audio wide" onclick="speakText('${safe(x[1])}')">🔊 Nghe mẫu</button></div></div>`).join('');
+
+const qs=[
+{q:'“赏心悦目” nghĩa là gì?',opts:['đẹp mắt, dễ chịu','rất cay','rất đắt','rất mềm'],a:0,exp:'赏心悦目 dùng để miêu tả thứ khiến người nhìn cảm thấy dễ chịu.'},
+{q:'紫萝卜的味道怎么样？',opts:['清淡可口','非常油腻','只有辣味','没有味道'],a:0,exp:'Bài đọc nói củ cải tím giống nước suối, thanh nhẹ và ngon.'},
+{q:'做萝卜饼最关键的功夫是什么？',opts:['擀面','油炸','煮萝卜','加醋'],a:0,exp:'最关键的功夫是擀面。'},
+{q:'“趁热吃” nghĩa là gì?',opts:['ăn khi còn nóng','ăn thật chậm','ăn vào buổi tối','ăn ít một'],a:0,exp:'趁热 = tranh thủ lúc còn nóng.'},
+{q:'为了预防糊底，盖锅前要放什么？',opts:['温水','酱油','醋','糖'],a:0,exp:'盖锅前须放进一些温水，预防糊底。'},
+{q:'煎萝卜饼最好用什么火？',opts:['文火','大火','猛火','不用火'],a:0,exp:'火最好用文火。'},
+{q:'“外焦里嫩” nghĩa là gì?',opts:['ngoài xém giòn, trong mềm','ngoài mềm, trong khô','cả trong ngoài đều cháy','rất cay'],a:0,exp:'外焦里嫩 miêu tả lớp ngoài hơi xém giòn và bên trong mềm.'},
+{q:'“怀念” thường mang sắc thái nào?',opts:['trang trọng hơn','chỉ dùng cho đồ ăn','chỉ dùng cho tương lai','không liên quan đến nhớ'],a:0,exp:'怀念 mang sắc thái trang trọng hơn 想念.'},
+{q:'“般” trong bài có nghĩa gần nhất là gì?',opts:['như, giống như','bởi vì','mặc dù','sau đó'],a:0,exp:'般 dùng để tạo phép so sánh.'},
+{q:'美食家还要求食物具有什么？',opts:['养生方面的特色','价格便宜','做法复杂','容易保存'],a:0,exp:'美食家还要求食物具有养生方面的特色。'}
+];
+let cur=0,score=0,answered=false;
+function renderQ(){bar.style.width=(cur/qs.length*100)+'%';let x=qs[cur];quizBox.innerHTML=`<div class="quiz-card"><div class="qnum">Câu ${cur+1}/10</div><div class="question cn">${x.q}</div><div class="opts">${x.opts.map((o,i)=>`<button class="opt" onclick="ans(${i})">${o}</button>`).join('')}</div><div id="fb" class="feedback"></div></div><div class="navq"><span>Điểm: <b>${score}</b></span><button class="btn" id="next" onclick="nextQ()" disabled>Tiếp theo →</button></div>`;answered=false}
+function ans(i){if(answered)return;answered=true;let x=qs[cur],ops=document.querySelectorAll('.opt'),fb=document.getElementById('fb');ops.forEach(o=>o.disabled=true);if(i===x.a){ops[i].classList.add('correct');fb.innerHTML='✅ Đúng!<br>'+x.exp;fb.className='feedback show ok';score++}else{ops[i].classList.add('wrong');ops[x.a].classList.add('correct');fb.innerHTML='❌ Đáp án đúng: '+x.opts[x.a]+'<br>'+x.exp;fb.className='feedback show fail'}next.disabled=false}
+function nextQ(){cur++;if(cur>=qs.length){quizBox.innerHTML=`<div class="score card"><div class="circle">${score}/10</div><h2>${score>=8?'Rất tốt!':'Hãy ôn lại bài nhé!'}</h2><button class="btn" onclick="restart()">Làm lại</button></div>`;bar.style.width='100%';localStorage.setItem('hsk19score',score)}else renderQ()}
+function restart(){cur=0;score=0;renderQ()}renderQ();
+
+const gameData=[['quê hương','家乡'],['củ cải','萝卜'],['màu sắc','色彩'],['thanh nhẹ','清淡'],['ngon miệng','可口'],['trộn đều','搅拌均匀'],['nguyên liệu','原料'],['trong suốt','透明'],['phòng ngừa','预防'],['dưỡng sinh','养生']];
+let gi=0;
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+function renderGame(){let x=gameData[gi%gameData.length];gameMeaning.textContent=x[0];let a=shuffle(gameData.map(y=>y[1])).slice(0,4);if(!a.includes(x[1]))a[0]=x[1];gameOptions.innerHTML=shuffle(a).map(y=>`<button class="game-opt" onclick="chooseGame(this,'${y}','${x[1]}')">${y}</button>`).join('');gameResult.textContent=''}
+function chooseGame(b,c,a){document.querySelectorAll('.game-opt').forEach(x=>x.disabled=true);if(c===a){b.classList.add('good');gameResult.textContent='✅ Đúng rồi!'}else{b.classList.add('bad');gameResult.innerHTML='❌ Đáp án: <b class="cn">'+a+'</b>'}}
+function nextGame(){gi++;renderGame()}renderGame();
+
+let li=0;
+function renderListening(){let correct=vocab[li%vocab.length][0];let pool=shuffle(vocab.map(v=>v[0])).slice(0,4);if(!pool.includes(correct))pool[0]=correct;listenOptions.innerHTML=shuffle(pool).map(x=>`<button class="game-opt" onclick="chooseListen(this,'${x}','${correct}')">${x}</button>`).join('');listenResult.textContent=''}
+function playListening(){speakText(vocab[li%vocab.length][0])}
+function chooseListen(b,c,a){document.querySelectorAll('#listenOptions .game-opt').forEach(x=>x.disabled=true);if(c===a){b.classList.add('good');listenResult.textContent='✅ Đúng rồi!'}else{b.classList.add('bad');listenResult.innerHTML='❌ Đáp án: <b class="cn">'+a+'</b>'}}
+function nextListening(){li++;renderListening()}renderListening();
+
+function markComplete(){localStorage.setItem('hsk19complete','true');progressText.textContent='✓ Đã hoàn thành bài học'}
+if(localStorage.getItem('hsk19complete')==='true')progressText.textContent='✓ Đã hoàn thành bài học';
+</script>
+</body>
+</html>
