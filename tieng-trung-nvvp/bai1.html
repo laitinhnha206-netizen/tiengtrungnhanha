@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2b6cb0">
+<title>第一课 社交活动第一步 | Bài 1</title>
+<style>
+:root{
+ --ink:#132033;--muted:#667085;--bg:#fffaf0;--card:#fff;--line:#eadfce;
+ --blue:#2b6cb0;--blue2:#eaf3ff;--green:#16835f;--green2:#eaf8f2;
+ --red:#c0392b;--gold:#f2b705;--pink:#b83280;--danger:#c62828;
+ --shadow:0 10px 28px rgba(16,24,40,.10);--radius:20px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.65;font-size:17px;padding-bottom:82px}
+.cn{font-family:"PingFang SC","Noto Serif SC","Songti SC",serif}
+header{padding:calc(28px + env(safe-area-inset-top)) 18px 26px;text-align:center;color:white;background:linear-gradient(135deg,#b83280,#2b6cb0 55%,#16835f);border-radius:0 0 30px 30px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+header:before{content:"社交活动第一步";position:absolute;font-size:72px;opacity:.09;left:50%;top:4px;transform:translateX(-50%);white-space:nowrap}
+.badge{display:inline-block;background:var(--gold);color:#2b2200;padding:5px 14px;border-radius:999px;font-weight:900;font-size:12px;letter-spacing:1px}
+h1{font-size:clamp(33px,8vw,55px);margin:10px 0 2px}.sub{margin:0;opacity:.9;font-size:15px}
+.top-actions{display:flex;justify-content:center;gap:10px;margin-top:16px;flex-wrap:wrap}.smallbtn{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.16);color:white;border-radius:999px;padding:9px 13px;font-weight:900;font-size:13px;cursor:pointer}
+.tabs{position:sticky;top:0;z-index:30;background:rgba(255,250,240,.96);backdrop-filter:blur(14px);padding:10px 8px;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;display:flex;gap:8px;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+.tabs button{flex:0 0 auto;border:1px solid var(--line);background:white;color:var(--ink);padding:10px 14px;border-radius:999px;font-weight:900;font-size:14px;box-shadow:0 2px 7px rgba(0,0,0,.04);cursor:pointer}.tabs button.active{background:var(--blue);color:white;border-color:var(--blue)}
+section{display:none;max-width:1060px;margin:auto;padding:22px 14px 34px}section.active{display:block;animation:fade .22s ease}@keyframes fade{from{opacity:.25;transform:translateY(6px)}to{opacity:1;transform:none}}
+.title{display:flex;gap:12px;align-items:center;margin:8px 2px 18px}.icon{width:48px;height:48px;border-radius:16px;background:var(--blue);color:white;display:flex;align-items:center;justify-content:center;font-size:23px;flex:0 0 auto}.title h2{margin:0;font-size:24px}.title p{margin:0;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.han{font-size:34px;font-weight:900}.py,.pinyin{color:var(--red);font-size:14px;font-style:italic}.meaning{font-weight:850}.pos{display:inline-block;background:#f2f4f7;color:#475467;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:900;margin:5px 0}
+.ex{margin-top:9px;border-left:4px solid var(--green);padding-left:11px;color:#555;font-size:14px}.vn{color:#555;font-size:15px}.pinyin{display:none;margin:3px 0}.showPinyin .pinyin{display:block}
+.audioRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.audio{border:0;background:var(--blue2);color:#183c85;border-radius:13px;padding:10px 12px;font-weight:900;font-size:15px;cursor:pointer}.pause{background:#fff7e6;color:#8a5a00}.stop{background:#ffeaea;color:#a61919}.wide{width:100%}
+.box{background:white;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:16px}.box-h{background:linear-gradient(90deg,var(--blue),#5a8de4);color:white;padding:13px 16px;font-weight:900}.box-b{padding:14px 16px}.line{padding:14px 0;border-bottom:1px solid #eee}.line:last-child{border-bottom:0}.sp{display:inline-block;background:var(--blue2);color:#183c85;font-weight:900;border-radius:999px;padding:3px 10px;margin-bottom:6px}.sent{font-size:19px;font-weight:750}
+.grammar{border-left:7px solid var(--green);background:var(--green2)}.formula{background:white;border:1px dashed var(--green);padding:11px 13px;border-radius:12px;font-weight:900;margin:9px 0}.pill{display:inline-block;background:var(--blue2);border:1px solid #c4d5ff;color:#183c85;padding:5px 10px;border-radius:999px;margin:4px;font-size:14px}.tip{background:#fff8d9;border-left:4px solid var(--gold);padding:12px;border-radius:0 14px 14px 0;color:#6b5100;font-size:14px}
+.flash{min-height:170px;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;user-select:none}.flash .back{display:none}.flash.flipped .front{display:none}.flash.flipped .back{display:block}.flash .han{font-size:40px}
+.progress{height:10px;background:#eee;border-radius:999px;overflow:hidden;margin:0 2px 16px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--blue));transition:.25s}.quiz-card{background:white;border:2px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--shadow)}.qnum{color:var(--muted);font-size:12px;font-weight:900;letter-spacing:1px}.question{font-size:21px;font-weight:900;margin:8px 0 14px}.opts{display:grid;gap:11px}.opt{border:2px solid transparent;background:#f8f3ea;border-radius:16px;padding:15px 14px;text-align:left;font-weight:850;font-size:16px;cursor:pointer}.opt.correct{background:#e7f8e7;border-color:#1b7d31;color:#1b7d31}.opt.wrong{background:#ffeaea;border-color:#c62828;color:#c62828}.feedback{display:none;margin-top:13px;border-radius:14px;padding:12px;font-weight:900}.feedback.show{display:block}.ok{background:#e7f8e7;color:#1b7d31}.fail{background:#ffeaea;color:#c62828}
+.navq{display:flex;justify-content:space-between;align-items:center;margin-top:14px;gap:10px}.btn{border:0;background:var(--green);color:white;border-radius:16px;padding:13px 20px;font-weight:900;font-size:16px;cursor:pointer}.btn:disabled{background:#bbb}.score{text-align:center;display:none;padding:30px}.score.show{display:block}.circle{margin:0 auto 16px;width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--blue));display:flex;align-items:center;justify-content:center;color:white;font-size:40px;font-weight:900;box-shadow:var(--shadow)}
+.game-card{display:grid;gap:12px}.game-meaning{font-size:28px;font-weight:900;text-align:center;background:var(--green2);border:1px solid #bdebd9;border-radius:18px;padding:20px}.game-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.game-opt{padding:16px;border:2px solid var(--line);border-radius:16px;background:white;font-weight:900;font-size:20px;cursor:pointer}.game-opt.good{background:#e7f8e7;border-color:#1b7d31;color:#1b7d31}.game-opt.bad{background:#ffeaea;border-color:#c62828;color:#c62828}
+.speakQ{font-size:21px;font-weight:900}.hint{background:var(--green2);border:1px solid #bfecdc;border-radius:14px;padding:12px;margin:10px 0}.hint ul{margin:6px 0 0 20px;padding:0}.sample{background:#fff8d9;border-left:4px solid var(--gold);padding:12px;border-radius:0 14px 14px 0;color:#4d3d00;margin-top:10px}
+.bottomNav{position:fixed;bottom:0;left:0;right:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:blur(15px);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 4px calc(8px + env(safe-area-inset-bottom))}
+.bottomNav button{border:0;background:transparent;color:#667085;font-weight:800;font-size:11px;padding:5px 6px;border-radius:12px;min-width:48px;cursor:pointer}.bottomNav button span{display:block;font-size:21px}.bottomNav button.active{color:var(--blue);background:var(--blue2)}
+.take{border-left:7px solid var(--pink)}.take li{margin:8px 0}.toggleBar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.toggle{background:white;color:var(--blue);border:2px solid var(--blue);border-radius:999px;padding:9px 13px;font-weight:900;cursor:pointer}
+@media(min-width:800px){body{padding-bottom:0}.bottomNav{display:none}.tabs{justify-content:center}.sent{font-size:20px}}
+@media(max-width:520px){body{font-size:16px}.grid{grid-template-columns:1fr}.navq{align-items:stretch}.btn{width:100%}.question{font-size:20px}.game-options{grid-template-columns:1fr}.title h2{font-size:21px}.audioRow .audio{flex:1}}
+</style>
+</head>
+<body>
+<header>
+ <div class="badge">第一课 · BÀI 1</div>
+ <h1 class="cn">社交活动第一步</h1>
+ <p class="sub">Bước đầu trong giao tiếp xã hội · Làm quen trong môi trường công ty</p>
+ <div class="top-actions">
+  <button class="smallbtn" onclick="goBack()">← Quay lại</button>
+  <button class="smallbtn" onclick="speakText('社交活动第一步')">🔊 Nghe tên bài</button>
+  <button class="smallbtn" onclick="togglePinyin()">👁 Bật/tắt Pinyin</button>
+  <button class="smallbtn" onclick="stopSpeech()">⏹ Dừng đọc</button>
+ </div>
+</header>
+<div class="tabs" id="tabs"></div>
+
+<section id="home" class="active">
+<div class="title"><div class="icon">🏠</div><div><h2>Tổng quan bài học</h2><p>Làm quen, tự giới thiệu và giao tiếp với đồng nghiệp mới.</p></div></div>
+<div class="grid">
+ <div class="card"><h3>🎯 Chủ đề</h3><p>Tự giới thiệu, hỏi thời gian đến Việt Nam, hỏi công việc trước đây và khả năng ngôn ngữ.</p></div>
+ <div class="card"><h3>📐 Ngữ pháp</h3><p><b>在 + địa điểm + động từ</b>, <b>会 + động từ</b>, <b>……前</b> và <b>是……的</b>.</p></div>
+ <div class="card"><h3>✅ Học xong em sẽ làm được</h3><p>✓ Chào hỏi lịch sự<br>✓ Tự giới thiệu<br>✓ Hỏi nơi làm việc<br>✓ Hỏi khả năng ngôn ngữ<br>✓ Dùng 请多关照 đúng ngữ cảnh</p></div>
+</div>
+</section>
+
+<section id="vocab"><div class="title"><div class="icon">📖</div><div><h2>Từ vựng đầy đủ</h2><p>Có ví dụ, dịch nghĩa và nút nghe.</p></div></div><div class="grid" id="vocabGrid"></div></section>
+
+<section id="grammar">
+<div class="title"><div class="icon">📐</div><div><h2>Ngữ pháp</h2><p>Các cấu trúc chính trong Bài 1.</p></div></div>
+<div class="card grammar">
+<h3 class="cn">1. 在 + địa điểm + động từ</h3>
+<div class="formula cn">我在公司工作。</div>
+<p>Dùng <b>在</b> trước địa điểm để nói hành động diễn ra ở đâu.</p>
+<p><span class="pill cn">我在北京工作。</span> Tôi làm việc ở Bắc Kinh.</p>
+<p><span class="pill cn">他在大学学习汉语。</span> Anh ấy học tiếng Trung ở đại học.</p>
+</div>
+<div class="card grammar">
+<h3 class="cn">2. 会 + động từ</h3>
+<div class="formula cn">我会说一点儿汉语。</div>
+<p><b>会</b> chỉ khả năng có được sau khi học hoặc luyện tập.</p>
+<p><span class="pill cn">你会说越南语吗？</span> Bạn biết nói tiếng Việt không?</p>
+<p><span class="pill cn">我不会开车。</span> Tôi không biết lái xe.</p>
+</div>
+<div class="card grammar">
+<h3 class="cn">3. ……前</h3>
+<div class="formula cn">来越南前，你做什么工作？</div>
+<p>Dùng sau danh từ hoặc động từ để chỉ thời gian trước một sự việc.</p>
+<p><span class="pill cn">上班前，我喝咖啡。</span> Trước khi đi làm, tôi uống cà phê.</p>
+</div>
+<div class="card grammar">
+<h3 class="cn">4. 是……的</h3>
+<div class="formula cn">你是什么时候来的？</div>
+<p>Dùng để hỏi hoặc nhấn mạnh thời gian, địa điểm, cách thức của một việc đã xảy ra.</p>
+<p><span class="pill cn">你是在哪儿学的？</span> Bạn đã học ở đâu?</p>
+<p><span class="pill cn">我是在大学学的。</span> Tôi học ở đại học.</p>
+<p class="tip">Mẹo nhớ: Khi hỏi một việc đã xảy ra, có thể dùng “是……的” để nhấn mạnh thời gian hoặc địa điểm.</p>
+</div>
+</section>
+
+<section id="text1"><div class="title"><div class="icon">💬</div><div><h2>会话一：初次见面</h2><p>Hội thoại 1 bám sát nội dung sách.</p></div></div><div class="toggleBar"><button class="toggle" onclick="speakText(text1.map(x=>x[1]).join('。'))">▶️ Đọc toàn bài 1</button><button class="toggle" onclick="pauseSpeech()">⏸ Pause</button><button class="toggle" onclick="resumeSpeech()">▶️ Resume</button><button class="toggle" onclick="stopSpeech()">⏹ Stop</button></div><div class="box"><div class="box-h">💼 会话一</div><div class="box-b" id="dialogue1"></div></div></section>
+
+<section id="text2"><div class="title"><div class="icon">🗣️</div><div><h2>会话二：新员工自我介绍</h2><p>Hội thoại mở rộng trong môi trường công ty.</p></div></div><div class="toggleBar"><button class="toggle" onclick="speakText(text2.map(x=>x[1]).join('。'))">▶️ Đọc toàn bài 2</button><button class="toggle" onclick="pauseSpeech()">⏸ Pause</button><button class="toggle" onclick="resumeSpeech()">▶️ Resume</button><button class="toggle" onclick="stopSpeech()">⏹ Stop</button></div><div class="box"><div class="box-h">🏢 会话二</div><div class="box-b" id="dialogue2"></div></div></section>
+
+<section id="subtext"><div class="title"><div class="icon">📚</div><div><h2>阅读短文 / Đoạn đọc phụ</h2><p>Đoạn đọc mở rộng từ nội dung của bài.</p></div></div><div class="box"><div class="box-h">📖 阅读短文</div><div class="box-b" id="subText"></div></div></section>
+
+<section id="speak"><div class="title"><div class="icon">🗣️</div><div><h2>6 câu giao tiếp cần biết</h2><p>Sau bài này học sinh nên nói được các câu này.</p></div></div><div class="grid" id="speakGrid"></div></section>
+
+<section id="flash"><div class="title"><div class="icon">🃏</div><div><h2>Flashcard</h2><p>Chạm để lật thẻ.</p></div></div><div class="grid" id="flashGrid"></div></section>
+
+<section id="quiz"><div class="title"><div class="icon">🎯</div><div><h2>Quiz 10 câu</h2><p>Từ vựng + ngữ pháp + hội thoại.</p></div></div><div class="progress"><div class="bar" id="bar"></div></div><div id="quizBox"></div><div class="score" id="scoreBox"><div class="circle"><span id="scoreNum">0</span>/10</div><h2 id="scoreMsg"></h2><p id="scoreSub"></p><button class="btn" onclick="restart()">Làm lại</button></div></section>
+
+<section id="game"><div class="title"><div class="icon">🎮</div><div><h2>Game: Nhìn nghĩa Việt chọn chữ Trung</h2><p>Đọc nghĩa tiếng Việt và chọn đúng chữ Hán.</p></div></div><div class="card game-card"><div class="game-meaning" id="gameMeaning"></div><div class="game-options" id="gameOptions"></div><p id="gameResult"></p><button class="btn" onclick="nextGame()">Câu tiếp theo</button></div></section>
+
+<section id="takeaway"><div class="title"><div class="icon">📌</div><div><h2>Take-away cuối bài</h2><p>Phần cần nhớ sau buổi học.</p></div></div><div class="card take"><h3>Hôm nay em học được:</h3><ul><li><b>Từ vựng:</b> <span class="cn">麻烦、关照、贸易、公司、加油</span></li><li><b>Ngữ pháp:</b> <span class="cn">在 + địa điểm + động từ；会 + động từ；……前；是……的</span></li><li><b>Câu nên nhớ:</b> <span class="cn">以后请多关照。</span></li><li><b>Nói được:</b> Em có thể tự giới thiệu và làm quen với đồng nghiệp mới bằng tiếng Trung cơ bản.</li></ul></div></section>
+
+<div class="bottomNav" id="bottomNav"></div>
+
+<script>
+let pinyinOn=false;
+const tabs=[['home','🏠','Tổng quan'],['vocab','📖','Từ'],['grammar','📐','Ngữ pháp'],['text1','💬','Bài 1'],['text2','🗣️','Bài 2'],['subtext','📚','Đọc'],['speak','🗣️','Nói'],['quiz','🎯','Quiz'],['game','🎮','Game'],['takeaway','📌','Nhớ']];
+tabsEl=document.getElementById('tabs');tabsEl.innerHTML=tabs.map((t,i)=>`<button class="${i==0?'active':''}" onclick="tab('${t[0]}')">${t[1]} ${t[2]}</button>`).join('');
+document.getElementById('bottomNav').innerHTML=tabs.slice(0,6).map((t,i)=>`<button class="${i==0?'active':''}" onclick="tab('${t[0]}')"><span>${t[1]}</span>${t[2]}</button>`).join('');
+function tab(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('#tabs button').forEach((b,i)=>b.classList.toggle('active',tabs[i][0]==id));document.querySelectorAll('#bottomNav button').forEach((b,i)=>b.classList.toggle('active',tabs[i][0]==id));window.scrollTo({top:0,behavior:'smooth'})}
+function togglePinyin(){pinyinOn=!pinyinOn;document.body.classList.toggle('showPinyin',pinyinOn)}
+function goBack(){window.history.back()}
+
+let _audio=null;
+function _gttsUrl(text){const enc=encodeURIComponent(text.slice(0,200));return `https://translate.google.com/translate_tts?ie=UTF-8&tl=zh-CN&client=tw-ob&q=${enc}`}
+function speakText(txt){
+ stopSpeech();
+ const audio=new Audio(_gttsUrl(txt));audio.playbackRate=.9;_audio=audio;
+ const fallback=()=>{if(_audio!==audio)return;_audio=null;const u=new SpeechSynthesisUtterance(txt);u.lang='zh-CN';u.rate=.82;const vs=speechSynthesis.getVoices();const v=vs.find(x=>x.lang==='zh-CN')||vs.find(x=>x.lang&&x.lang.startsWith('zh'));if(v)u.voice=v;speechSynthesis.speak(u)};
+ audio.addEventListener('error',fallback);audio.play().catch(fallback)
+}
+function pauseSpeech(){if(_audio&&!_audio.paused)_audio.pause();try{speechSynthesis.pause()}catch(e){}}
+function resumeSpeech(){if(_audio&&_audio.paused)_audio.play().catch(()=>{});try{speechSynthesis.resume()}catch(e){}}
+function stopSpeech(){if(_audio){_audio.pause();_audio.currentTime=0;_audio=null}try{speechSynthesis.cancel()}catch(e){}}
+function safe(s){return s.replaceAll("'","").replaceAll('"','')}
+
+const vocab=[
+['麻烦','máfan','a/v','phiền, làm phiền','今天给您添麻烦了。','Hôm nay đã làm phiền ông/bà rồi.'],
+['关照','guānzhào','v','quan tâm, giúp đỡ','以后请多关照。','Sau này mong được giúp đỡ.'],
+['贸易','màoyì','n','thương mại','我在一家贸易公司工作。','Tôi làm việc tại một công ty thương mại.'],
+['公司','gōngsī','n','công ty','这是我们的公司。','Đây là công ty của chúng tôi.'],
+['加油','jiāyóu','v','cố gắng, cố lên','你要加油哦。','Bạn phải cố gắng nhé.'],
+['越南','Yuènán','n','Việt Nam','我一周前来越南。','Tôi đến Việt Nam một tuần trước.'],
+['上海','Shànghǎi','n','Thượng Hải','他以前住在上海。','Trước đây anh ấy sống ở Thượng Hải.'],
+['北京','Běijīng','n','Bắc Kinh','我以前在北京工作。','Trước đây tôi làm việc ở Bắc Kinh.'],
+['一周前','yì zhōu qián','time','một tuần trước','我是一周前来的。','Tôi đến một tuần trước.'],
+['工作','gōngzuò','n/v','công việc; làm việc','你以前做什么工作？','Trước đây bạn làm công việc gì?'],
+['会','huì','aux','biết, có khả năng','你会说越南语吗？','Bạn có biết nói tiếng Việt không?'],
+['一点儿','yìdiǎnr','adv','một chút','我只会一点儿。','Tôi chỉ biết một chút.'],
+['大学','dàxué','n','đại học','我在大学学的。','Tôi học ở đại học.'],
+['学会','xuéhuì','v','học được','我还没学会。','Tôi vẫn chưa học được.'],
+['今后','jīnhòu','time','từ nay về sau','今后我要好好学习。','Từ nay tôi phải học thật tốt.'],
+['大部分','dà bùfen','n','phần lớn, đa số','这里大部分人不懂汉语。','Phần lớn người ở đây không hiểu tiếng Trung.'],
+['懂','dǒng','v','hiểu','我不懂这个问题。','Tôi không hiểu vấn đề này.'],
+['汉语','Hànyǔ','n','tiếng Trung','你会说汉语吗？','Bạn biết nói tiếng Trung không?'],
+['地方','dìfang','n','nơi, chỗ','有什么不懂的地方可以问我。','Có chỗ nào không hiểu thì có thể hỏi tôi.'],
+['问','wèn','v','hỏi','有问题可以问我。','Có vấn đề gì thì có thể hỏi tôi.']
+];
+vocabGrid.innerHTML=vocab.map(v=>`<div class="card"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><span class="pos">${v[2]}</span><div class="meaning">${v[3]}</div><div class="ex"><div class="cn">${v[4]}</div><div class="vn">${v[5]}</div></div><div class="audioRow"><button class="audio" onclick="speakText('${safe(v[0])}')">🔊 Từ</button><button class="audio" onclick="speakText('${safe(v[4])}')">🔊 Ví dụ</button></div></div>`).join('');
+flashGrid.innerHTML=vocab.map(v=>`<div class="card flash" onclick="this.classList.toggle('flipped')"><div class="front"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><p>Chạm để xem nghĩa</p></div><div class="back"><h2>${v[3]}</h2><p class="cn">${v[4]}</p><p class="vn">${v[5]}</p><button class="audio" onclick="event.stopPropagation();speakText('${safe(v[0])}。${safe(v[4])}')">🔊 Nghe</button></div></div>`).join('');
+
+const text1=[
+['陈颖','今天要给您添麻烦了，我是陈颖，请多关照。','Jīntiān yào gěi nín tiān máfan le, wǒ shì Chén Yǐng, qǐng duō guānzhào.','Hôm nay phải làm phiền anh rồi. Tôi là Trần Dĩnh, mong nhận được sự giúp đỡ của anh.'],
+['小林','我是小林，还请你多多关照。小陈什么时候来的越南？','Wǒ shì Xiǎolín, hái qǐng nǐ duōduō guānzhào. Xiǎo Chén shénme shíhou lái de Yuènán?','Tôi là Lâm, mong nhận được sự giúp đỡ của cô. Cô Trần đến Việt Nam khi nào vậy?'],
+['陈颖','一周前。','Yì zhōu qián.','Một tuần trước.'],
+['小林','是吗？来越南前你做什么工作？','Shì ma? Lái Yuènán qián nǐ zuò shénme gōngzuò?','Vậy à? Trước khi đến Việt Nam cô làm công việc gì?'],
+['陈颖','在一家贸易公司工作。','Zài yì jiā màoyì gōngsī gōngzuò.','Tôi làm việc tại một công ty thương mại.'],
+['小林','是在上海吗？','Shì zài Shànghǎi ma?','Có phải ở Thượng Hải không?'],
+['陈颖','不是，是在北京。','Bú shì, shì zài Běijīng.','Không, là ở Bắc Kinh.'],
+['小林','是吗？你会说越南语吗？','Shì ma? Nǐ huì shuō Yuènányǔ ma?','Vậy à? Cô có biết nói tiếng Việt không?'],
+['陈颖','只会一点儿。','Zhǐ huì yìdiǎnr.','Tôi chỉ biết một chút thôi.'],
+['小林','是吗？你在哪儿学的？','Shì ma? Nǐ zài nǎr xué de?','Thế à? Cô học ở đâu vậy?'],
+['陈颖','在大学学的。但是，没怎么学会。今后不好好学可不行啊。','Zài dàxué xué de. Dànshì, méi zěnme xuéhuì. Jīnhòu bù hǎohāo xué kě bùxíng a.','Tôi học ở đại học. Nhưng tôi chưa học được bao nhiêu. Từ nay phải cố gắng học nghiêm túc mới được.'],
+['小林','是呢。这里的人大部分都不懂汉语，你要加油哦。对了，有什么不懂的地方可以问我。','Shì ne. Zhèlǐ de rén dà bùfen dōu bù dǒng Hànyǔ, nǐ yào jiāyóu o. Duì le, yǒu shénme bù dǒng de dìfang kěyǐ wèn wǒ.','Đúng vậy. Đa số mọi người ở đây không hiểu tiếng Trung, cô phải cố gắng nhé. Có chỗ nào không hiểu thì có thể hỏi tôi.'],
+['陈颖','谢谢。','Xièxie.','Cảm ơn anh.']
+];
+dialogue1.innerHTML=text1.map((l,i)=>`<div class="line"><span class="sp">${l[0]}</span><div class="sent cn">${l[1]}</div><div class="pinyin">${l[2]}</div><div class="vn">${l[3]}</div><div class="audioRow"><button class="audio" onclick="speakText(text1[${i}][1])">▶️ Câu</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶️</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div></div>`).join('');
+
+const text2=[
+['安娜','您好，我是今天新来的员工，我叫安娜。','Nín hǎo, wǒ shì jīntiān xīn lái de yuángōng, wǒ jiào Ānnà.','Xin chào, tôi là nhân viên mới đến hôm nay, tôi tên là Anna.'],
+['王经理','你好，欢迎你来我们公司。','Nǐ hǎo, huānyíng nǐ lái wǒmen gōngsī.','Xin chào, chào mừng cô đến công ty chúng tôi.'],
+['安娜','谢谢。以后请您多多关照。','Xièxie. Yǐhòu qǐng nín duōduō guānzhào.','Cảm ơn ông. Sau này mong ông giúp đỡ nhiều hơn.'],
+['王经理','不用客气。你以前在哪儿工作？','Bú yòng kèqi. Nǐ yǐqián zài nǎr gōngzuò?','Không cần khách sáo. Trước đây cô làm việc ở đâu?'],
+['安娜','我以前在一家贸易公司工作。','Wǒ yǐqián zài yì jiā màoyì gōngsī gōngzuò.','Trước đây tôi làm việc tại một công ty thương mại.'],
+['王经理','你会说汉语吗？','Nǐ huì shuō Hànyǔ ma?','Cô có biết nói tiếng Trung không?'],
+['安娜','会说一点儿，但是说得不太好。','Huì shuō yìdiǎnr, dànshì shuō de bú tài hǎo.','Tôi biết nói một chút, nhưng nói chưa tốt lắm.'],
+['王经理','没关系，慢慢来。有什么不懂的地方可以问我。','Méi guānxi, mànmàn lái. Yǒu shénme bù dǒng de dìfang kěyǐ wèn wǒ.','Không sao, cứ từ từ. Có chỗ nào không hiểu thì có thể hỏi tôi.'],
+['安娜','好的，谢谢王经理。','Hǎo de, xièxie Wáng jīnglǐ.','Vâng, cảm ơn Giám đốc Vương.']
+];
+dialogue2.innerHTML=text2.map((l,i)=>`<div class="line"><span class="sp">${l[0]}</span><div class="sent cn">${l[1]}</div><div class="pinyin">${l[2]}</div><div class="vn">${l[3]}</div><div class="audioRow"><button class="audio" onclick="speakText(text2[${i}][1])">▶️ Câu</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶️</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div></div>`).join('');
+
+const sub=[
+'陈颖一周前来越南工作。来越南以前，她在北京的一家贸易公司工作。她会说一点儿越南语，但是说得不太好。',
+'小林告诉她，这里大部分人都不懂汉语，所以她今后要好好学习越南语。小林还说，有什么不懂的地方都可以问他。'
+];
+const subVn=[
+'Trần Dĩnh đến Việt Nam làm việc một tuần trước. Trước khi đến Việt Nam, cô làm việc tại một công ty thương mại ở Bắc Kinh. Cô biết nói một chút tiếng Việt nhưng nói chưa tốt lắm.',
+'Tiểu Lâm nói với cô rằng phần lớn mọi người ở đây không hiểu tiếng Trung, vì vậy từ nay cô cần học tiếng Việt thật tốt. Anh ấy cũng nói rằng có chỗ nào không hiểu thì cô có thể hỏi anh.'
+];
+subText.innerHTML=sub.map((p,i)=>`<div class="line"><span class="sp">第 ${i+1} 段</span><div class="sent cn">${p}</div><div class="vn">${subVn[i]}</div><div class="audioRow"><button class="audio" onclick="speakText(sub[${i}])">▶️ Đọc đoạn</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶️</button><button class="audio stop" onclick="stopSpeech()">⏹ Dừng</button></div></div>`).join('');
+
+const speaking=[
+['请问，您叫什么名字？',['我叫……','我是……','很高兴认识您'],'我叫安娜，很高兴认识您。'],
+['您什么时候来的越南？',['一周前','三天前','上个月'],'我是一周前来越南的。'],
+['您以前在哪儿工作？',['在北京','在上海','在一家贸易公司'],'我以前在北京的一家贸易公司工作。'],
+['您会说越南语吗？',['会一点儿','不会','说得不太好'],'我会说一点儿，但是说得不太好。'],
+['您在哪儿学的汉语？',['在大学','在公司','自己学的'],'我是在大学学的。'],
+['以后请多关照。',['谢谢','不用客气','有问题可以问我'],'谢谢，以后请您多多关照。']
+];
+speakGrid.innerHTML=speaking.map((x,i)=>`<div class="card"><div class="speakQ cn">${i+1}. ${x[0]}</div><button class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Nghe câu hỏi</button><div class="hint"><b>💡 Gợi ý dùng từ:</b><ul>${x[1].map(h=>`<li class="cn">${h}</li>`).join('')}</ul></div><div class="sample"><b>⭐ Câu mẫu:</b><p class="cn">${x[2]}</p><button class="audio wide" onclick="speakText('${safe(x[2])}')">🔊 Nghe mẫu</button></div></div>`).join('');
+
+const qs=[
+{q:'“麻烦” nghĩa là gì?',opts:['cảm ơn','làm phiền','công ty','cố gắng'],a:1},
+{q:'Câu nào có nghĩa là “Mong được giúp đỡ”?',opts:['请多关照。','不客气。','没关系。','再见。'],a:0},
+{q:'陈颖 đến Việt Nam khi nào?',opts:['一周前','一个月前','三天前','昨天'],a:0},
+{q:'Trước đây 陈颖 làm việc ở đâu?',opts:['北京的一家贸易公司','上海的一所大学','越南的一家公司','北京的一所学校'],a:0},
+{q:'“你会说越南语吗？” nghĩa là gì?',opts:['Bạn có biết nói tiếng Việt không?','Bạn có thích Việt Nam không?','Bạn làm việc ở Việt Nam không?','Bạn đến Việt Nam khi nào?'],a:0},
+{q:'陈颖 học tiếng Việt ở đâu?',opts:['大学','公司','家里','网上'],a:0},
+{q:'Câu nào dùng 在 đúng?',opts:['我在公司工作。','我公司在工作。','我工作在公司吗。','在我公司工作。'],a:0},
+{q:'“一周前” nghĩa là gì?',opts:['một tuần trước','một tháng trước','một ngày trước','một năm trước'],a:0},
+{q:'“只会一点儿” nghĩa là gì?',opts:['chỉ biết một chút','biết rất nhiều','không biết gì','học rất nhanh'],a:0},
+{q:'Có chỗ nào không hiểu thì có thể hỏi tôi là:',opts:['有什么不懂的地方可以问我。','我什么地方都不懂。','你不要问我。','我可以问什么地方？'],a:0}
+];
+let cur=0,score=0,answered=false;
+function renderQ(){bar.style.width=(cur/qs.length*100)+'%';let x=qs[cur];quizBox.innerHTML=`<div class="quiz-card"><div class="qnum">Câu ${cur+1}/10</div><div class="question cn">${x.q}</div><div class="opts">${x.opts.map((o,i)=>`<button class="opt" onclick="ans(${i})">${o}</button>`).join('')}</div><div id="fb" class="feedback"></div></div><div class="navq"><span>Điểm: <b>${score}</b></span><button class="btn" id="next" onclick="nextQ()" disabled>Tiếp theo →</button></div>`;answered=false}
+function ans(i){if(answered)return;answered=true;let x=qs[cur],ops=document.querySelectorAll('.opt'),fb=document.getElementById('fb');ops.forEach(o=>o.disabled=true);if(i==x.a){ops[i].classList.add('correct');fb.textContent='✅ Đúng rồi!';fb.className='feedback show ok';score++}else{ops[i].classList.add('wrong');ops[x.a].classList.add('correct');fb.textContent='❌ Chưa đúng. Đáp án: '+x.opts[x.a];fb.className='feedback show fail'}next.disabled=false}
+function nextQ(){cur++;if(cur>=qs.length)showScore();else renderQ()}
+function showScore(){quizBox.innerHTML='';bar.style.width='100%';document.querySelector('#quiz .progress').style.display='none';scoreBox.classList.add('show');scoreNum.textContent=score;scoreMsg.textContent=score>=9?'Xuất sắc!':score>=7?'Rất tốt!':score>=5?'Ổn, cần ôn thêm':'Cần ôn lại bài';scoreSub.textContent='Bạn đã hoàn thành 10 câu của Bài 1.'}
+function restart(){cur=0;score=0;scoreBox.classList.remove('show');document.querySelector('#quiz .progress').style.display='block';renderQ()}renderQ();
+
+const gameData=[
+['làm phiền','麻烦'],['quan tâm, giúp đỡ','关照'],['thương mại','贸易'],['công ty','公司'],['cố lên','加油'],['Việt Nam','越南'],['một tuần trước','一周前'],['đại học','大学'],['hiểu','懂'],['tiếng Trung','汉语']
+];
+let gameIndex=0;
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+function renderGame(){let item=gameData[gameIndex%gameData.length];gameMeaning.textContent=item[0];let all=shuffle(gameData.map(x=>x[1])).slice(0,4);if(!all.includes(item[1]))all[0]=item[1];all=shuffle(all);gameOptions.innerHTML=all.map(x=>`<button class="game-opt" onclick="chooseGame(this,'${x}','${item[1]}')">${x}</button>`).join('');gameResult.textContent=''}
+function chooseGame(btn,choice,answ){document.querySelectorAll('.game-opt').forEach(b=>b.disabled=true);if(choice===answ){btn.classList.add('good');gameResult.innerHTML='✅ Đúng rồi!'}else{btn.classList.add('bad');gameResult.innerHTML='❌ Chưa đúng. Đáp án: <b class="cn">'+answ+'</b>';document.querySelectorAll('.game-opt').forEach(b=>{if(b.textContent===answ)b.classList.add('good')})}}
+function nextGame(){gameIndex++;renderGame()}renderGame();
+</script>
+</body>
+</html>
