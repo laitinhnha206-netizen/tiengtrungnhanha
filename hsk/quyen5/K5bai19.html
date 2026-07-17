@@ -151,7 +151,7 @@ const paragraphs=[
 '如今，美食家们对吃提出了更高的要求。他们不仅要观色、闻香、尝味、赏形，而且还要求食物具有养生方面的特色。我想，家乡的萝卜饼完全具备这几个方面的条件。人们不是常说吗——“鱼生火，肉生痰，青菜萝卜保平安。”养生的功能，让我更加喜爱它了。'
 ];
 const fullText=paragraphs.join('。');
-lessonText.innerHTML=paragraphs.map((p,i)=>`<div class="line"><span class="sp">第 ${i+1} 段</span><div class="sent cn">${p}</div><div class="audioRow"><button class="audio" onclick="speakText(paragraphs[${i}])">▶️ Đọc đoạn</button></div></div>`).join('');
+lessonText.innerHTML=paragraphs.map((p,i)=>`<div class="line"><span class="sp">第 ${i+1} 段</span><div class="sent cn">${p}</div><div class="audioRow"><button class="audio" onclick="speakText(paragraphs[${i}])">▶️ Đọc đoạn</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶️</button><button class="audio stop" onclick="stopSpeech()">⏹ Dừng</button></div></div>`).join('');
 
 const speaking=[
 ['你最怀念家乡的什么美食？','我最怀念家乡的萝卜饼。'],['这种食物是什么味道？','它吃起来清淡可口。'],['做这道菜需要哪些原料？','需要萝卜、油、盐和面。'],['第一步应该做什么？','先把萝卜洗净切丝。'],['为什么要用文火？','用文火可以预防糊底。'],['这道菜有什么特色？','它不仅好吃，而且具有养生特色。']
