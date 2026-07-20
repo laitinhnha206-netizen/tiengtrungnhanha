@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2b6cb0">
+<title>第十课 你这样算老吗？</title>
+<style>
+:root{--ink:#132033;--muted:#667085;--bg:#fffaf0;--card:#fff;--line:#eadfce;--blue:#2b6cb0;--blue2:#eaf3ff;--green:#16835f;--green2:#eaf8f2;--red:#c0392b;--gold:#f2b705;--pink:#b83280;--shadow:0 10px 28px rgba(16,24,40,.10);--radius:20px}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.65;font-size:17px;padding-bottom:82px}
+.cn{font-family:"PingFang SC","Noto Serif SC","Songti SC",serif}
+header{padding:calc(28px + env(safe-area-inset-top)) 18px 26px;text-align:center;color:#fff;background:linear-gradient(135deg,#b83280,#2b6cb0 55%,#16835f);border-radius:0 0 30px 30px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+header:before{content:"你这样算老吗？";position:absolute;font-size:72px;opacity:.09;left:50%;top:4px;transform:translateX(-50%);white-space:nowrap}
+.badge{display:inline-block;background:var(--gold);color:#2b2200;padding:5px 14px;border-radius:999px;font-weight:900;font-size:12px;letter-spacing:1px}
+h1{font-size:clamp(33px,8vw,55px);margin:10px 0 2px}.sub{margin:0;opacity:.9;font-size:15px}
+.top-actions{display:flex;justify-content:center;gap:10px;margin-top:16px;flex-wrap:wrap}.smallbtn{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.16);color:#fff;border-radius:999px;padding:9px 13px;font-weight:900;font-size:13px;cursor:pointer}
+.tabs{position:sticky;top:0;z-index:30;background:rgba(255,250,240,.96);backdrop-filter:blur(14px);padding:10px 8px;border-bottom:1px solid var(--line);overflow-x:auto;white-space:nowrap;display:flex;gap:8px}.tabs button{flex:0 0 auto;border:1px solid var(--line);background:#fff;color:var(--ink);padding:10px 14px;border-radius:999px;font-weight:900;font-size:14px;cursor:pointer}.tabs button.active{background:var(--blue);color:#fff}
+section{display:none;max-width:1060px;margin:auto;padding:22px 14px 34px}section.active{display:block}
+.title{display:flex;gap:12px;align-items:center;margin:8px 2px 18px}.icon{width:48px;height:48px;border-radius:16px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:23px}.title h2{margin:0;font-size:24px}.title p{margin:0;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+.han{font-size:34px;font-weight:900}.pinyin{display:none;color:var(--red);font-size:14px;font-style:italic}.showPinyin .pinyin{display:block}.meaning{font-weight:850}.pos{display:inline-block;background:#f2f4f7;color:#475467;border-radius:999px;padding:3px 9px;font-size:12px;font-weight:900;margin:5px 0}.ex{margin-top:9px;border-left:4px solid var(--green);padding-left:11px;color:#555;font-size:14px}.vn{color:#555}
+.audioRow{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.audio{border:0;background:var(--blue2);color:#183c85;border-radius:13px;padding:10px 12px;font-weight:900;cursor:pointer}.pause{background:#fff7e6;color:#8a5a00}.stop{background:#ffeaea;color:#a61919}.wide{width:100%}
+.box{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;margin-bottom:16px}.box-h{background:linear-gradient(90deg,var(--blue),#5a8de4);color:#fff;padding:13px 16px;font-weight:900}.box-b{padding:14px 16px}.line{padding:14px 0;border-bottom:1px solid #eee}.line:last-child{border-bottom:0}.sp{display:inline-block;background:var(--blue2);color:#183c85;font-weight:900;border-radius:999px;padding:3px 10px;margin-bottom:6px}.sent{font-size:19px;font-weight:750}
+.grammar{border-left:7px solid var(--green);background:var(--green2);margin-bottom:14px}.formula{background:#fff;border:1px dashed var(--green);padding:11px 13px;border-radius:12px;font-weight:900}.pill{display:inline-block;background:var(--blue2);border:1px solid #c4d5ff;color:#183c85;padding:5px 10px;border-radius:999px;margin:4px}.tip{background:#fff8d9;border-left:4px solid var(--gold);padding:12px;color:#6b5100}
+.flash{min-height:180px;display:flex;align-items:center;justify-content:center;text-align:center;cursor:pointer;position:relative}.flash .back{display:none}.flash.flipped .front{display:none}.flash.flipped .back{display:block}.star{position:absolute;right:10px;top:10px;font-size:24px;border:0;background:transparent;cursor:pointer}
+.progress{height:10px;background:#ddd;border-radius:999px;overflow:hidden;margin-bottom:16px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--blue))}.quiz-card{background:#fff;border:2px solid var(--line);border-radius:22px;padding:20px;box-shadow:var(--shadow)}.qnum{color:var(--muted);font-size:12px;font-weight:900}.question{font-size:21px;font-weight:900}.opts{display:grid;gap:11px}.opt{border:2px solid transparent;background:#f8f3ea;border-radius:16px;padding:15px;text-align:left;font-weight:850}.opt.correct{background:#e7f8e7;border-color:#1b7d31}.opt.wrong{background:#ffeaea;border-color:#c62828}.feedback{display:none;margin-top:13px;border-radius:14px;padding:12px;font-weight:900}.feedback.show{display:block}.ok{background:#e7f8e7;color:#1b7d31}.fail{background:#ffeaea;color:#c62828}
+.navq{display:flex;justify-content:space-between;align-items:center;margin-top:14px}.btn{border:0;background:var(--green);color:#fff;border-radius:16px;padding:13px 20px;font-weight:900;cursor:pointer}.btn:disabled{background:#bbb}.score{text-align:center;display:none}.score.show{display:block}.circle{margin:auto;width:140px;height:140px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--blue));display:flex;align-items:center;justify-content:center;color:#fff;font-size:40px;font-weight:900}
+.game-meaning{font-size:28px;font-weight:900;text-align:center;background:var(--green2);padding:20px;border-radius:18px}.game-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.game-opt{padding:16px;border:2px solid var(--line);border-radius:16px;background:#fff;font-weight:900;font-size:20px}.game-opt.good{background:#e7f8e7}.game-opt.bad{background:#ffeaea}.sample{background:#fff8d9;border-left:4px solid var(--gold);padding:12px;color:#4d3d00}.take{border-left:7px solid var(--pink)}
+@media(max-width:520px){.grid,.game-options{grid-template-columns:1fr}.audioRow .audio{flex:1}}
+</style>
+</head>
+<body>
+<header><div class="badge">第十课 · BÀI 10</div><h1 class="cn">你这样算老吗？</h1><p class="sub">Bạn như vậy mà gọi là già sao? · Tuổi tác, tâm thái và cuộc sống</p>
+<div class="top-actions"><button class="smallbtn" onclick="history.back()">← Quay lại</button><button class="smallbtn" onclick="speakText('你这样算老吗？')">🔊 Tên bài</button><button class="smallbtn" onclick="togglePinyin()">👁 Pinyin</button><button class="smallbtn" onclick="stopSpeech()">⏹ Dừng</button></div></header>
+<div class="tabs" id="tabs"></div>
+
+<section id="home" class="active"><div class="title"><div class="icon">🏠</div><div><h2>Tổng quan</h2><p>Thảo luận thế nào mới được coi là già.</p></div></div><div class="grid">
+<div class="card"><h3>🎯 Chủ đề</h3><p>Tuổi tác, nghỉ hưu, già hóa dân số, chất lượng sống và tâm thái.</p></div>
+<div class="card"><h3>📐 Ngữ pháp</h3><p>Câu so sánh có bổ ngữ trạng thái với <b>得</b>.</p></div>
+<div class="card"><h3>✅ Mục tiêu</h3><p>Miêu tả người già/trẻ, so sánh mức độ, nói về tuổi nghỉ hưu và tưởng tượng bản thân khi về già.</p></div></div></section>
+
+<section id="vocab"><div class="title"><div class="icon">📖</div><div><h2>Từ vựng</h2><p>Có ví dụ và âm thanh.</p></div></div><div class="grid" id="vocabGrid"></div></section>
+
+<section id="grammar"><div class="title"><div class="icon">📐</div><div><h2>Ngữ pháp</h2><p>Câu 比 có bổ ngữ trạng thái 得.</p></div></div>
+<div class="card grammar"><h3>1. Câu 比 cơ bản</h3><div class="formula cn">A + 比 + B + tính từ</div><p class="pill cn">他比我高。</p><p class="pill cn">我爸爸比我妈妈喜欢做饭。</p></div>
+<div class="card grammar"><h3>2. Bổ ngữ trạng thái với 得</h3><div class="formula cn">S + V +（O + V）+ 得 + Adj</div><p class="pill cn">他学得很好。</p><p class="pill cn">他汉语学得很好。</p></div>
+<div class="card grammar"><h3>3. Câu 比 có 得</h3><div class="formula cn">A + 比 + B + V + 得 + Adj</div><p class="pill cn">小明比小玉学得好。</p><p class="pill cn">他比你唱得好听。</p><p class="pill cn">我比我弟弟睡得晚。</p></div>
+<div class="card grammar"><h3>4. Hai vị trí của 比</h3><p class="pill cn">他比我起得早。</p><p class="pill cn">他起得比我早。</p><p class="tip">Hai cách đều đúng. Khi có tân ngữ, động từ thường được lặp lại: 爸爸喝茶喝得比妈妈多。</p></div></section>
+
+<section id="text1"><div class="title"><div class="icon">💬</div><div><h2>主课文：你这样算老吗？</h2><p>Hội thoại chính.</p></div></div><div class="audioRow"><button class="audio" onclick="speakText(text1.map(x=>x[1]).join('。'))">▶️ Đọc toàn bài</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶️</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div><div class="box"><div class="box-h">💬 主课文</div><div class="box-b" id="dialogue1"></div></div></section>
+
+<section id="subtext"><div class="title"><div class="icon">📚</div><div><h2>副课文 / Bài đọc phụ</h2><p>Tóm tắt nội dung bài chính.</p></div></div><div class="box"><div class="box-h">📖 副课文</div><div class="box-b" id="subText"></div></div></section>
+
+<section id="speak"><div class="title"><div class="icon">🗣️</div><div><h2>6 câu giao tiếp</h2><p>Dùng để thảo luận về tuổi tác và tâm thái.</p></div></div><div class="grid" id="speakGrid"></div></section>
+
+<section id="flash"><div class="title"><div class="icon">🃏</div><div><h2>Flashcard</h2><p>Chạm để lật, nhấn ⭐ để lưu từ khó.</p></div></div><div class="grid" id="flashGrid"></div></section>
+
+<section id="listening"><div class="title"><div class="icon">🎧</div><div><h2>Luyện nghe</h2><p>Nghe từ rồi chọn chữ đúng.</p></div></div><div class="card"><button class="audio wide" onclick="playListening()">🔊 Nghe từ</button><div class="game-options" id="listenOptions"></div><p id="listenResult"></p><button class="btn" onclick="nextListening()">Câu tiếp theo</button></div></section>
+
+<section id="quiz"><div class="title"><div class="icon">🎯</div><div><h2>Quiz 10 câu</h2><p>Từ vựng, ngữ pháp và bài khóa.</p></div></div><div class="progress"><div class="bar" id="bar"></div></div><div id="quizBox"></div><div class="score" id="scoreBox"><div class="circle"><span id="scoreNum">0</span>/10</div><h2 id="scoreMsg"></h2><button class="btn" onclick="restart()">Làm lại</button></div></section>
+
+<section id="game"><div class="title"><div class="icon">🎮</div><div><h2>Game chọn chữ</h2></div></div><div class="card"><div class="game-meaning" id="gameMeaning"></div><div class="game-options" id="gameOptions"></div><p id="gameResult"></p><button class="btn" onclick="nextGame()">Câu tiếp theo</button></div></section>
+
+<section id="takeaway"><div class="title"><div class="icon">📌</div><div><h2>Take-away</h2></div></div><div class="card take"><ul>
+<li><b>Từ vựng:</b> 论文、难怪、老成、心态、退休、老龄化、古董、预测</li>
+<li><b>Ngữ pháp:</b> A 比 B V 得 Adj / A V 得比 B Adj</li>
+<li><b>Câu nhớ:</b> 年龄增长不一定就表示这个人老了。</li>
+<li><b>Nói được:</b> Trình bày quan điểm “thế nào mới gọi là già”.</li>
+</ul></div></section>
+
+<script>
+const tabs=[['home','🏠','Tổng quan'],['vocab','📖','Từ'],['grammar','📐','Ngữ pháp'],['text1','💬','Bài khóa'],['subtext','📚','Đọc phụ'],['speak','🗣️','Nói'],['flash','🃏','Thẻ'],['listening','🎧','Nghe'],['quiz','🎯','Quiz'],['game','🎮','Game'],['takeaway','📌','Nhớ']];
+tabsEl=document.getElementById('tabs');tabsEl.innerHTML=tabs.map((t,i)=>`<button class="${i===0?'active':''}" onclick="tab('${t[0]}')">${t[1]} ${t[2]}</button>`).join('');
+function tab(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tabs button').forEach((b,i)=>b.classList.toggle('active',tabs[i][0]===id));scrollTo(0,0)}
+function togglePinyin(){document.body.classList.toggle('showPinyin')}
+let _audio=null;
+function _gttsUrl(t){return `https://translate.google.com/translate_tts?ie=UTF-8&tl=zh-CN&client=tw-ob&q=${encodeURIComponent(t.slice(0,200))}`}
+function speakText(t){stopSpeech();const a=new Audio(_gttsUrl(t));a.playbackRate=.9;_audio=a;const f=()=>{if(_audio!==a)return;_audio=null;const u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';u.rate=.82;const vs=speechSynthesis.getVoices();const v=vs.find(x=>/Xiaoxiao|Tingting|Meijia|Yunxi/i.test(x.name))||vs.find(x=>x.lang==='zh-CN')||vs.find(x=>x.lang&&x.lang.startsWith('zh'));if(v)u.voice=v;speechSynthesis.speak(u)};a.addEventListener('error',f);a.play().catch(f)}
+function pauseSpeech(){if(_audio)_audio.pause();speechSynthesis.pause()}function resumeSpeech(){if(_audio)_audio.play().catch(()=>{});speechSynthesis.resume()}function stopSpeech(){if(_audio){_audio.pause();_audio=null}speechSynthesis.cancel()}function safe(s){return s.replaceAll("'","")}
+
+const vocab=[
+['论文','lùnwén','n','luận văn, bài nghiên cứu','她最近一直在写论文。','Gần đây cô ấy luôn bận viết luận văn.'],
+['感觉','gǎnjué','v/n','cảm thấy, cảm giác','我感觉自己变老了。','Tôi cảm thấy mình già đi.'],
+['难怪','nánguài','adv','chẳng trách','难怪最近很少见你。','Chẳng trách gần đây ít gặp bạn.'],
+['老成','lǎochéng','a','chín chắn, già dặn','他少年老成，非常可靠。','Cậu ấy trẻ nhưng rất chín chắn.'],
+['心态','xīntài','n','tâm thái','保持好心态很重要。','Giữ tâm thái tốt rất quan trọng.'],
+['至少','zhìshǎo','adv','ít nhất','年纪至少要八十岁以上。','Tuổi ít nhất phải trên 80.'],
+['退休','tuìxiū','v','nghỉ hưu','他六十岁退休了。','Ông ấy nghỉ hưu ở tuổi 60.'],
+['条件','tiáojiàn','n','điều kiện','生活条件比以前好多了。','Điều kiện sống tốt hơn trước nhiều.'],
+['环境','huánjìng','n','môi trường','我们要保护环境。','Chúng ta phải bảo vệ môi trường.'],
+['注重','zhùzhòng','v','coi trọng','人们更注重生活质量。','Mọi người coi trọng chất lượng sống hơn.'],
+['质量','zhìliàng','n','chất lượng','这个产品质量很好。','Sản phẩm này chất lượng tốt.'],
+['安排','ānpái','v/n','sắp xếp','他把生活安排得很丰富。','Anh ấy sắp xếp cuộc sống rất phong phú.'],
+['丰富','fēngfù','a/v','phong phú','她有丰富的工作经验。','Cô ấy có kinh nghiệm phong phú.'],
+['继续','jìxù','v','tiếp tục','六十岁以后还可以继续工作。','Sau 60 tuổi vẫn có thể tiếp tục làm việc.'],
+['老龄化','lǎolínghuà','n','già hóa dân số','很多城市出现老龄化。','Nhiều thành phố xuất hiện già hóa dân số.'],
+['增长','zēngzhǎng','v','tăng trưởng','人口不断增长。','Dân số không ngừng tăng.'],
+['表示','biǎoshì','v','biểu thị, cho thấy','年龄增长不表示人老了。','Tuổi tăng không có nghĩa là đã già.'],
+['古董','gǔdǒng','n','đồ cổ','他家有很多古董。','Nhà anh ấy có nhiều đồ cổ.'],
+['想法','xiǎngfǎ','n','ý nghĩ, quan điểm','你的想法很时尚。','Ý tưởng của bạn rất hiện đại.'],
+['时尚','shíshàng','a/n','thời thượng','我奶奶的想法很时尚。','Bà tôi có suy nghĩ rất hiện đại.'],
+['明显','míngxiǎn','a','rõ ràng','结果很明显。','Kết quả rất rõ ràng.'],
+['预测','yùcè','v/n','dự đoán','科学家预测人类会更长寿。','Nhà khoa học dự đoán con người sẽ sống lâu hơn.'],
+['分明','fēnmíng','adv/a','rõ ràng, rõ rệt','你分明还是十八岁的样子。','Rõ ràng bạn vẫn như 18 tuổi.']
+];
+vocabGrid.innerHTML=vocab.map(v=>`<div class="card"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><span class="pos">${v[2]}</span><div class="meaning">${v[3]}</div><div class="ex"><div class="cn">${v[4]}</div><div class="vn">${v[5]}</div></div><div class="audioRow"><button class="audio" onclick="speakText('${safe(v[0])}')">🔊 Từ</button><button class="audio" onclick="speakText('${safe(v[4])}')">🔊 Ví dụ</button></div></div>`).join('');
+
+let difficult=JSON.parse(localStorage.getItem('bai10_difficult')||'[]');
+function toggleDifficult(w){difficult=difficult.includes(w)?difficult.filter(x=>x!==w):[...difficult,w];localStorage.setItem('bai10_difficult',JSON.stringify(difficult));renderFlash()}
+function renderFlash(){flashGrid.innerHTML=vocab.map(v=>`<div class="card flash" onclick="this.classList.toggle('flipped')"><button class="star" onclick="event.stopPropagation();toggleDifficult('${safe(v[0])}')">${difficult.includes(v[0])?'⭐':'☆'}</button><div class="front"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><p>Chạm để lật</p></div><div class="back"><h2>${v[3]}</h2><p class="cn">${v[4]}</p><p>${v[5]}</p><button class="audio" onclick="event.stopPropagation();speakText('${safe(v[0])}。${safe(v[4])}')">🔊 Nghe</button></div></div>`).join('')}renderFlash();
+
+const text1=[
+['李梅','最近一个月，我一直在忙着写论文，每天都睡得很晚，感觉自己都变老了。'],
+['赵亮','难怪最近很少见你。老？你这样算老吗？我长得比你着急多了。'],
+['李梅','哈哈，赵亮，你这叫“少年老成”。你虽然长得着急，但心态还是很年轻。'],
+['杰克','你俩在比谁老啊？我看，你们都不老。对了，说到老，你们认为怎样才算老呢？'],
+['艾玛','我认为说到老，年纪至少要八十岁以上。'],
+['李梅','不是吧，在中国，男性年满六十周岁，女性年满五十五周岁，就可以退休了。退休了，就是说你老了。'],
+['赵亮','现在人们的生活条件和环境比以前好多了，长寿的人越来越多。'],
+['杰克','中国人那么早就退休啊，退休以后都做些什么呢？'],
+['赵亮','退休以后，人们更注重生活的质量。很多人吃得比以前讲究，业余生活安排得比以前丰富，比如学做美食、锻炼身体、去旅行、学习自己感兴趣的东西。'],
+['艾玛','长寿的人越来越多，健康的老人也越来越多，其实六十岁以后还可以继续工作。'],
+['李梅','是啊。中国很多城市出现老龄化，以后说不定男性要工作到六十五周岁，女性要工作到六十周岁。'],
+['杰克','你们在说年纪跟“老”的关系。我想年纪的增长不一定就表示这个人老了。'],
+['艾玛','有的人很年轻，心态已经变得比古董还老；有的人年纪不小，但是他们看上去比十七八岁的年轻人还有活力。'],
+['赵亮','我爷爷已经八十多岁了，想法跟年轻人一样时尚，喜欢开玩笑，喜欢新事物。'],
+['李梅','像赵亮爷爷这样的老人，中国很多，别的国家也很多。很多七十多岁的老人画画儿、写书，看上去充满活力。'],
+['杰克','我相信，将来的人们都会活很久很久，但是心态会更年轻。'],
+['艾玛','不是有科学家预测，人类以后可以活到一百五十岁吗？'],
+['赵亮','一百五十岁？那时候我在干什么呢？'],
+['艾玛','中国人说“活到老，学到老”。赵亮，你当然是在学习。'],
+['李梅','赵亮的心态比我年轻。'],
+['杰克','你分明还是十八岁的样子啊！你只是最近忙，想得比我们多了一点儿。'],
+['赵亮','我们这样的心态，怎么都不容易老。']
+];
+dialogue1.innerHTML=text1.map((l,i)=>`<div class="line"><span class="sp">${l[0]}</span><div class="sent cn">${l[1]}</div><div class="audioRow"><button class="audio" onclick="speakText(text1[${i}][1])">▶️ Câu</button></div></div>`).join('');
+
+const sub=[
+'李梅最近一个月忙着写论文，每天睡得很晚，感觉自己老了不少。赵亮说自己看上去长得比李梅着急得多。其实，他们的心态一直很年轻。',
+'现在人们的生活条件和环境比以前好，长寿的人越来越多。退休以后，人们更注重生活质量，业余生活也安排得更加丰富。',
+'年龄增长不一定表示人老了。赵亮的爷爷虽然八十多岁，但是心态像年轻人一样，喜欢开玩笑、喜欢新鲜事物，非常时尚。',
+'他们相信，心态年轻的人不容易老。科学家甚至预测，人类未来可以活到一百五十岁。'
+];
+subText.innerHTML=sub.map((p,i)=>`<div class="line"><span class="sp">第 ${i+1} 段</span><div class="sent cn">${p}</div><div class="audioRow"><button class="audio" onclick="speakText(sub[${i}])">▶️ Đọc đoạn</button></div></div>`).join('');
+
+const speaking=[
+['你认为一个人怎样才算老？','我认为心态老了才算真正老。'],
+['你觉得多少岁可以退休？','我觉得六十五岁左右可以退休。'],
+['退休以后你想做什么？','我想去旅行，也想学习新东西。'],
+['你的心态比以前年轻吗？','我觉得我的心态比以前年轻多了。'],
+['你老了以后会是什么样子？','我希望自己老了以后还很有活力。'],
+['怎样才能保持年轻的心态？','要继续学习、锻炼身体，也要接受新事物。']
+];
+speakGrid.innerHTML=speaking.map((x,i)=>`<div class="card"><h3 class="cn">${i+1}. ${x[0]}</h3><button class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Câu hỏi</button><div class="sample"><p class="cn">${x[1]}</p><button class="audio wide" onclick="speakText('${safe(x[1])}')">🔊 Câu mẫu</button></div></div>`).join('');
+
+let li=0;function shuffle(a){return [...a].sort(()=>Math.random()-.5)}function renderListening(){let ans=vocab[li%vocab.length][0];let p=shuffle(vocab.map(v=>v[0])).slice(0,4);if(!p.includes(ans))p[0]=ans;listenOptions.innerHTML=shuffle(p).map(x=>`<button class="game-opt" onclick="chooseListen(this,'${x}','${ans}')">${x}</button>`).join('');listenResult.textContent=''}function playListening(){speakText(vocab[li%vocab.length][0])}function chooseListen(b,c,a){document.querySelectorAll('#listenOptions .game-opt').forEach(x=>x.disabled=true);b.classList.add(c===a?'good':'bad');listenResult.innerHTML=c===a?'✅ Đúng':'❌ Đáp án: '+a}function nextListening(){li++;renderListening()}renderListening();
+
+const qs=[
+['“难怪” nghĩa là gì?',['chẳng trách','ít nhất','rõ ràng','tiếp tục'],0],
+['艾玛认为多少岁以上才算老？',['八十岁','六十岁','五十五岁','一百岁'],0],
+['在中国，男性一般多少岁可以退休？',['六十岁','五十五岁','六十五岁','七十岁'],0],
+['退休以后，人们更注重什么？',['生活质量','工作时间','考试成绩','房价'],0],
+['赵亮的爷爷有什么特点？',['心态年轻、想法时尚','不喜欢新事物','很少开玩笑','不愿学习'],0],
+['哪一句是带“得”的比字句？',['他比我起得早。','他比我高。','他是老师。','他没有来。'],0],
+['“少年老成” nghĩa là gì?',['trẻ nhưng chín chắn','già mà khỏe','trẻ con','rất thời trang'],0],
+['年龄增长一定表示人老了吗？',['不一定','一定','完全一样','不知道'],0],
+['“活到老，学到老” nghĩa là gì?',['học suốt đời','nghỉ hưu sớm','sống thật lâu','không cần học'],0],
+['“你分明还是十八岁的样子”中的“分明”是什么意思？',['明明、很明显','可能','至少','继续'],0]
+];
+let cur=0,score=0,answered=false;
+function renderQ(){bar.style.width=(cur/qs.length*100)+'%';let q=qs[cur];quizBox.innerHTML=`<div class="quiz-card"><div class="qnum">Câu ${cur+1}/10</div><div class="question cn">${q[0]}</div><div class="opts">${q[1].map((o,i)=>`<button class="opt" onclick="ans(${i})">${o}</button>`).join('')}</div><div id="fb" class="feedback"></div></div><div class="navq"><span>Điểm: ${score}</span><button id="next" class="btn" onclick="nextQ()" disabled>Tiếp theo</button></div>`;answered=false}
+function ans(i){if(answered)return;answered=true;let q=qs[cur],ops=document.querySelectorAll('.opt');ops.forEach(x=>x.disabled=true);ops[i].classList.add(i===q[2]?'correct':'wrong');ops[q[2]].classList.add('correct');fb.textContent=i===q[2]?'✅ Đúng rồi!':'❌ Đáp án: '+q[1][q[2]];fb.className='feedback show '+(i===q[2]?'ok':'fail');if(i===q[2])score++;next.disabled=false}
+function nextQ(){cur++;if(cur>=qs.length){quizBox.innerHTML='';scoreBox.classList.add('show');scoreNum.textContent=score;scoreMsg.textContent=score>=8?'Rất tốt!':'Hãy ôn lại bài nhé!';bar.style.width='100%'}else renderQ()}function restart(){cur=0;score=0;scoreBox.classList.remove('show');renderQ()}renderQ();
+
+const gameData=[['luận văn','论文'],['tâm thái','心态'],['nghỉ hưu','退休'],['môi trường','环境'],['chất lượng','质量'],['già hóa dân số','老龄化'],['đồ cổ','古董'],['thời thượng','时尚'],['dự đoán','预测'],['rõ ràng','明显']];
+let gi=0;function renderGame(){let x=gameData[gi%gameData.length];gameMeaning.textContent=x[0];let p=shuffle(gameData.map(y=>y[1])).slice(0,4);if(!p.includes(x[1]))p[0]=x[1];gameOptions.innerHTML=shuffle(p).map(y=>`<button class="game-opt" onclick="chooseGame(this,'${y}','${x[1]}')">${y}</button>`).join('');gameResult.textContent=''}function chooseGame(b,c,a){document.querySelectorAll('#gameOptions .game-opt').forEach(x=>x.disabled=true);b.classList.add(c===a?'good':'bad');gameResult.innerHTML=c===a?'✅ Đúng':'❌ Đáp án: '+a}function nextGame(){gi++;renderGame()}renderGame();
+</script>
+</body>
+</html>
