@@ -142,7 +142,7 @@ const sub=[
 '年龄增长不一定表示人老了。赵亮的爷爷虽然八十多岁，但是心态像年轻人一样，喜欢开玩笑、喜欢新鲜事物，非常时尚。',
 '他们相信，心态年轻的人不容易老。科学家甚至预测，人类未来可以活到一百五十岁。'
 ];
-subText.innerHTML=sub.map((p,i)=>`<div class="line"><span class="sp">第 ${i+1} 段</span><div class="sent cn">${p}</div><div class="audioRow"><button class="audio" onclick="speakText(sub[${i}])">▶️ Đọc đoạn</button></div></div>`).join('');
+subText.innerHTML=sub.map((p,i)=>`<div class="line"><span class="sp">第 ${i+1} 段</span><div class="sent cn">${p}</div><div class="audioRow"><button class="audio" onclick="speakText(sub[${i}])">▶️ Đọc đoạn</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶️</button><button class="audio stop" onclick="stopSpeech()">⏹ Dừng</button></div></div>`).join('');
 
 const speaking=[
 ['你认为一个人怎样才算老？','我认为心态老了才算真正老。'],
