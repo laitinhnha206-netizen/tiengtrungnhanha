@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>第二课 上下班的问候</title>
+<style>
+:root{--b:#169bd5;--bg:#f7fbfd;--c:#fff;--t:#173042;--m:#667784;--l:#dbeaf1;--g:#16835f;--r:#c83b32}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--t);font:16px/1.65 Arial,sans-serif;padding-bottom:70px}.cn{font-family:"PingFang SC","Noto Serif SC",serif}
+header{background:linear-gradient(135deg,#12a8dc,#2b6cb0,#16835f);color:white;text-align:center;padding:30px 16px;border-radius:0 0 28px 28px}h1{font-size:42px;margin:6px}.badge{background:#f2b705;color:#332900;padding:5px 12px;border-radius:999px;font-weight:bold}
+.actions,.tabs,.audioRow{display:flex;gap:8px;flex-wrap:wrap}.actions{justify-content:center;margin-top:14px}.actions button,.tabs button,.audio,.btn{border:0;border-radius:12px;padding:9px 12px;font-weight:bold;cursor:pointer}.actions button{background:#ffffff25;color:#fff;border:1px solid #ffffff55}
+.tabs{position:sticky;top:0;background:#f7fbfdef;padding:9px;overflow-x:auto;white-space:nowrap;z-index:9;border-bottom:1px solid var(--l)}.tabs button{background:white;border:1px solid var(--l);color:var(--t)}.tabs button.active{background:var(--b);color:white}
+section{display:none;max-width:1050px;margin:auto;padding:22px 14px}section.active{display:block}.title{display:flex;gap:10px;align-items:center;margin-bottom:15px}.icon{background:var(--b);color:#fff;width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:22px}.title h2{margin:0}.title p{margin:0;color:var(--m)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:13px}.card,.box{background:var(--c);border:1px solid var(--l);border-radius:18px;box-shadow:0 8px 25px #17304213}.card{padding:17px}.box{overflow:hidden;margin-bottom:15px}.box-h{background:var(--b);color:white;padding:12px 15px;font-weight:bold}.box-b{padding:12px 15px}
+.han{font-size:31px;font-weight:bold}.pinyin{display:none;color:var(--r);font-style:italic}.showPinyin .pinyin{display:block}.pos{display:inline-block;background:#eef1f3;padding:2px 8px;border-radius:999px;font-size:12px}.meaning{font-weight:bold}.ex{border-left:4px solid var(--g);padding-left:10px;margin-top:8px}.vn{color:#555}
+.audio{background:#e8f6fc;color:#145477}.pause{background:#fff6df;color:#855b00}.stop{background:#ffe8e8;color:#a21f1f}.wide{width:100%}
+.line{padding:13px 0;border-bottom:1px solid #eee}.line:last-child{border-bottom:0}.sp{display:inline-block;background:#e8f6fc;color:#145477;padding:3px 9px;border-radius:999px;font-weight:bold}.sent{font-size:18px;font-weight:bold}
+.grammar{border-left:6px solid var(--g);background:#ebf8f2}.formula{background:white;border:1px dashed var(--g);padding:10px;border-radius:12px;font-weight:bold}.tip{background:#fff7d6;border-left:4px solid #f2b705;padding:11px}.note{background:#edfaff;border-left:6px solid var(--b)}
+.flash{min-height:170px;display:grid;place-items:center;text-align:center;position:relative;cursor:pointer}.flash .back{display:none}.flash.flipped .front{display:none}.flash.flipped .back{display:block}.star{position:absolute;right:8px;top:8px;border:0;background:transparent;font-size:23px}
+.game-options{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.game-opt,.opt{padding:14px;border:2px solid var(--l);border-radius:14px;background:white;font-weight:bold}.good,.correct{background:#e5f8e8!important;border-color:#19853a!important}.bad,.wrong{background:#ffe6e6!important;border-color:#c62e2e!important}.game-meaning{font-size:27px;text-align:center;background:#ebf8f2;padding:18px;border-radius:15px}
+.progress{height:9px;background:#ddd;border-radius:999px;overflow:hidden}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--g),var(--b))}.quiz-card{background:white;border:1px solid var(--l);border-radius:18px;padding:18px}.opts{display:grid;gap:8px}.feedback{display:none;padding:10px;margin-top:10px;border-radius:10px}.feedback.show{display:block}.btn{background:var(--g);color:#fff}
+@media(max-width:600px){.grid,.game-options{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<header><span class="badge">Tiếng Trung thương mại · 第二课</span><h1 class="cn">上下班的问候</h1><p>Chào hỏi khi đi làm và tan ca</p>
+<div class="actions"><button type="button" onclick="history.back()">← Quay lại</button><button type="button" onclick="speakText('上下班的问候')">🔊 Tên bài</button><button type="button" onclick="document.body.classList.toggle('showPinyin')">👁 Pinyin</button><button type="button" onclick="stopSpeech()">⏹ Dừng</button></div></header>
+<noscript><div style="max-width:900px;margin:20px auto;padding:16px;background:#fff3cd;border-radius:12px">Vui lòng bật JavaScript để sử dụng bài học.</div></noscript>
+<div class="tabs" id="tabs"></div>
+
+<section id="home" class="active"><div class="title"><div class="icon">🏠</div><div><h2>Tổng quan</h2><p>Chào hỏi, hỏi thăm sức khỏe và giao tiếp lúc tan ca.</p></div></div><div class="grid">
+<div class="card"><h3>🎯 Chủ đề</h3><p>Cảm cúm, hạ sốt, khách hàng, liên hệ và lời chào trong công ty.</p></div>
+<div class="card"><h3>📐 Ngữ pháp</h3><p><b>V + 了 + 就 + V</b>: làm xong việc trước thì lập tức làm việc sau.</p></div>
+<div class="card"><h3>✅ Mục tiêu</h3><p>Hỏi thăm sức khỏe, chào cấp trên, hỏi đồng nghiệp sao chưa về và nói đang chờ khách hàng.</p></div></div></section>
+
+<section id="vocab"><div class="title"><div class="icon">📖</div><div><h2>Từ vựng</h2><p>Có ví dụ và nút nghe.</p></div></div><div class="grid" id="vocabGrid"></div></section>
+
+<section id="grammar"><div class="title"><div class="icon">📐</div><div><h2>Ngữ pháp</h2></div></div><div class="card grammar">
+<h3 class="cn">V₁ + 了 + 就 + V₂</h3><div class="formula">Hành động 1 hoàn thành → hành động 2 xảy ra ngay sau đó</div>
+<p class="cn">我来了就告诉你。<br>回到家了就给我打电话。<br>选择放弃了就别后悔。<br>昨天回了家吃了药就睡了。</p>
+<div class="tip">“了” đánh dấu việc trước hoàn thành; “就” nhấn mạnh việc sau xảy ra ngay.</div></div></section>
+
+<section id="d1"><div class="title"><div class="icon">💬</div><div><h2>Hội thoại 1 – Trong sách</h2><p>Giữ nguyên nội dung giáo trình.</p></div></div>
+<div class="audioRow"><button type="button" class="audio" onclick="speakText([...text1,...text1b].map(x=>x[1]).join('。'))">▶ Nghe toàn bài</button><button type="button" class="audio pause" onclick="pauseSpeech()">⏸</button><button type="button" class="audio stop" onclick="stopSpeech()">⏹</button></div>
+<div class="box"><div class="box-h">上班时的寒暄</div><div class="box-b" id="d1a"></div></div>
+<div class="box"><div class="box-h">下班时的寒暄</div><div class="box-b" id="d1b"></div></div></section>
+
+<section id="d2"><div class="title"><div class="icon">🗣️</div><div><h2>Hội thoại 2 – Tự biên soạn</h2><p>Dùng đúng từ mới và ngữ pháp của bài.</p></div></div>
+<div class="audioRow"><button type="button" class="audio" onclick="speakText(text2.map(x=>x[1]).join('。'))">▶ Nghe toàn bài</button></div>
+<div class="box"><div class="box-h">会议结束以后</div><div class="box-b" id="d2box"></div></div></section>
+
+<section id="note"><div class="title"><div class="icon">⚠️</div><div><h2>Lưu ý văn hóa công sở</h2></div></div><div class="card note">
+<p>Quan hệ giao tiếp là yếu tố quan trọng giúp công việc diễn ra thuận lợi. Việc xây dựng quan hệ tốt nên bắt đầu từ lời chào hằng ngày.</p>
+<p>Trong công ty, người có chức vụ thấp hơn nên chủ động chào cấp trên và tiền bối. Khi xưng hô với cấp trên hoặc người lớn tuổi hơn, cần chú ý lễ phép.</p></div></section>
+
+<section id="read"><div class="title"><div class="icon">📚</div><div><h2>Đọc phụ</h2></div></div><div class="box"><div class="box-h">公司里的问候</div><div class="box-b" id="readBox"></div></div></section>
+
+<section id="speak"><div class="title"><div class="icon">🗣️</div><div><h2>6 câu giao tiếp</h2></div></div><div class="grid" id="speakGrid"></div></section>
+
+<section id="flash"><div class="title"><div class="icon">🃏</div><div><h2>Flashcard</h2><p>Chạm để lật, nhấn ⭐ để lưu từ khó.</p></div></div><div class="grid" id="flashGrid"></div></section>
+
+<section id="listen"><div class="title"><div class="icon">🎧</div><div><h2>Luyện nghe</h2></div></div><div class="card">
+<button type="button" class="audio wide" onclick="playListening()">🔊 Nghe từ</button><div class="game-options" id="listenOptions"></div><p id="listenResult"></p><button type="button" class="btn" onclick="nextListening()">Câu tiếp theo</button></div></section>
+
+<section id="quiz"><div class="title"><div class="icon">🎯</div><div><h2>Quiz 10 câu</h2></div></div><div class="progress"><div class="bar" id="bar"></div></div><div id="quizBox"></div></section>
+
+<section id="game"><div class="title"><div class="icon">🎮</div><div><h2>Game chọn chữ</h2></div></div><div class="card"><div class="game-meaning" id="gameMeaning"></div><div class="game-options" id="gameOptions"></div><p id="gameResult"></p><button type="button" class="btn" onclick="nextGame()">Câu tiếp theo</button></div></section>
+
+<section id="take"><div class="title"><div class="icon">📌</div><div><h2>Take-away</h2></div></div><div class="card"><ul>
+<li><b>Từ mới:</b> 托……的福、烧、退、感冒、注意、客户、联系</li><li><b>Ngữ pháp:</b> V + 了 + 就 + V</li>
+<li><b>Câu nhớ:</b> 回到家了就给我打电话。</li><li><b>Giao tiếp:</b> Hỏi thăm sức khỏe và chào hỏi khi tan ca.</li></ul></div></section>
+
+<script>
+window.addEventListener('error', function(e){
+  const box = document.createElement('div');
+  box.style.cssText='position:fixed;left:10px;right:10px;bottom:10px;z-index:9999;background:#fff3cd;color:#664d03;border:1px solid #ffecb5;padding:10px;border-radius:10px;font:14px Arial';
+  box.textContent='Trang vẫn mở được, nhưng có một lỗi chức năng: ' + e.message;
+  document.body.appendChild(box);
+});
+const tabs=[['home','🏠','Tổng quan'],['vocab','📖','Từ'],['grammar','📐','Ngữ pháp'],['d1','💬','Hội thoại 1'],['d2','🗣️','Hội thoại 2'],['note','⚠️','Lưu ý'],['read','📚','Đọc phụ'],['speak','🗣️','Nói'],['flash','🃏','Thẻ'],['listen','🎧','Nghe'],['quiz','🎯','Quiz'],['game','🎮','Game'],['take','📌','Nhớ']];
+document.getElementById('tabs').innerHTML=tabs.map((t,i)=>`<button type="button" class="${i==0?'active':''}" onclick="tab('${t[0]}')">${t[1]} ${t[2]}</button>`).join('');
+function tab(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tabs button').forEach((b,i)=>b.classList.toggle('active',tabs[i][0]==id));scrollTo(0,0)}
+let _audio=null;function _gttsUrl(t){return `https://translate.google.com/translate_tts?ie=UTF-8&tl=zh-CN&client=tw-ob&q=${encodeURIComponent(t.slice(0,200))}`}
+function speakText(t){stopSpeech();let a=new Audio(_gttsUrl(t));a.playbackRate=.9;_audio=a;let f=()=>{if(_audio!==a)return;_audio=null;let u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';u.rate=.82;let vs=speechSynthesis.getVoices();let v=vs.find(x=>/Xiaoxiao|Tingting|Meijia|Yunxi/i.test(x.name))||vs.find(x=>x.lang==='zh-CN')||vs.find(x=>x.lang&&x.lang.startsWith('zh'));if(v)u.voice=v;speechSynthesis.speak(u)};a.addEventListener('error',f);a.play().catch(f)}
+function pauseSpeech(){if(_audio)_audio.pause();try{speechSynthesis.pause()}catch(e){}}function stopSpeech(){if(_audio){_audio.pause();_audio=null}try{speechSynthesis.cancel()}catch(e){}}
+function safe(s){return s.replaceAll("'","")}
+
+const vocab=[['托……的福','tuō…de fú','phrase','nhờ phúc của ai','托你的福，我好多了。','Nhờ phúc của cô, tôi đỡ nhiều rồi.'],['烧','shāo','n/v','sốt','你退烧了吗？','Anh đã hạ sốt chưa?'],['退','tuì','v','hạ, bớt','今天已经退烧了。','Hôm nay đã hạ sốt.'],['感冒','gǎnmào','n/v','cảm cúm','最近感冒的人很多。','Dạo này nhiều người bị cảm.'],['注意','zhùyì','v','chú ý','你要注意身体。','Bạn nên chú ý sức khỏe.'],['客户','kèhù','n','khách hàng','我还在等客户。','Tôi vẫn đang chờ khách hàng.'],['联系','liánxì','v/n','liên hệ','客户还没有联系我。','Khách vẫn chưa liên hệ.'],['辛苦','xīnkǔ','a','vất vả','那真是辛苦了。','Vậy thì thật vất vả.'],['会议','huìyì','n','cuộc họp','明天有会议。','Ngày mai có cuộc họp.'],['准备','zhǔnbèi','v','chuẩn bị','我在准备资料。','Tôi đang chuẩn bị tài liệu.']];
+document.getElementById('vocabGrid').innerHTML=vocab.map(v=>`<div class="card"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><span class="pos">${v[2]}</span><div class="meaning">${v[3]}</div><div class="ex"><div class="cn">${v[4]}</div><div class="vn">${v[5]}</div></div><div class="audioRow"><button type="button" class="audio" onclick="speakText('${safe(v[0])}')">🔊 Từ</button><button type="button" class="audio" onclick="speakText('${safe(v[4])}')">🔊 Ví dụ</button></div></div>`).join('');
+
+let difficult=JSON.parse(localStorage.getItem('tttm2diff')||'[]');function toggleDiff(w){difficult=difficult.includes(w)?difficult.filter(x=>x!==w):[...difficult,w];localStorage.setItem('tttm2diff',JSON.stringify(difficult));renderFlash()}
+function renderFlash(){document.getElementById('flashGrid').innerHTML=vocab.map(v=>`<div class="card flash" onclick="this.classList.toggle('flipped')"><button type="button" class="star" onclick="event.stopPropagation();toggleDiff('${safe(v[0])}')">${difficult.includes(v[0])?'⭐':'☆'}</button><div class="front"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><p>Chạm để lật</p></div><div class="back"><h2>${v[3]}</h2><p class="cn">${v[4]}</p><p>${v[5]}</p><button type="button" class="audio" onclick="event.stopPropagation();speakText('${safe(v[0])}。${safe(v[4])}')">🔊 Nghe</button></div></div>`).join('')}renderFlash();
+
+const text1=[['男','早上好。','Zǎoshang hǎo.','Chào cô.'],['女','早上好。没事了吧？','Zǎoshang hǎo. Méishì le ba?','Chào anh. Anh không sao chứ?'],['男','啊，托你的福，今天好多了。昨天的事谢谢你。','A, tuō nǐ de fú, jīntiān hǎo duō le. Zuótiān de shì xièxie nǐ.','Nhờ có cô, hôm nay tôi đỡ nhiều rồi. Hôm qua thật sự cảm ơn cô.'],['女','啊，不客气。烧退了吧？','A, bú kèqi. Shāo tuì le ba?','Không có gì. Anh đỡ sốt rồi chứ?'],['男','嗯，昨天回了家吃了药就睡了。','En, zuótiān huí le jiā chī le yào jiù shuì le.','Hôm qua về nhà uống thuốc xong là tôi ngủ luôn.'],['女','哦，最近感冒的人很多，你要注意啊。','Ó, zuìjìn gǎnmào de rén hěn duō, nǐ yào zhùyì a.','Dạo này nhiều người cảm cúm, anh nên chú ý sức khỏe.'],['男','好的，谢谢。','Hǎo de, xièxie.','Ừ, cảm ơn cô.']];
+const text1b=[['女','还不走吗？','Hái bù zǒu ma?','Anh vẫn chưa về à?'],['男','嗯，还在等客户的联系呢。','En, hái zài děng kèhù de liánxì ne.','Tôi vẫn đang đợi khách hàng liên hệ.'],['女','是吗？那真是辛苦了。那我先走了。','Shì ma? Nà zhēnshi xīnkǔ le. Nà wǒ xiān zǒu le.','Vậy à? Vất vả cho anh quá. Tôi về trước nhé.'],['男','好的。','Hǎo de.','Được.']];
+function renderD(id,data,name){document.getElementById(id).innerHTML=data.map((l,i)=>`<div class="line"><span class="sp">${l[0]}</span><div class="sent cn">${l[1]}</div><div class="pinyin">${l[2]}</div><div class="vn">${l[3]}</div><div class="audioRow"><button type="button" class="audio" onclick="speakText(${name}[${i}][1])">▶ Câu</button></div></div>`).join('')}renderD('d1a',text1,'text1');renderD('d1b',text1b,'text1b');
+
+const text2=[['李娜','王经理，会议结束了吗？','Wáng jīnglǐ, huìyì jiéshù le ma?','Giám đốc Vương, cuộc họp kết thúc chưa?'],['王经理','刚结束。你怎么还没下班？','Gāng jiéshù. Nǐ zěnme hái méi xiàbān?','Vừa xong. Sao cô vẫn chưa tan làm?'],['李娜','我还在等客户的联系。客户回复了，我就回家。','Wǒ hái zài děng kèhù de liánxì. Kèhù huífù le, wǒ jiù huí jiā.','Tôi vẫn đang chờ khách hàng liên hệ. Khách trả lời xong thì tôi về.'],['王经理','那你辛苦了。最近感冒的人很多，要注意身体。','Nà nǐ xīnkǔ le. Zuìjìn gǎnmào de rén hěn duō, yào zhùyì shēntǐ.','Cô vất vả rồi. Dạo này nhiều người cảm, nhớ chú ý sức khỏe.'],['李娜','好的，谢谢经理。您回到家了就早点儿休息吧。','Hǎo de, xièxie jīnglǐ. Nín huí dào jiā le jiù zǎodiǎnr xiūxi ba.','Vâng. Ông về đến nhà thì nghỉ sớm nhé.'],['王经理','好，明天见。','Hǎo, míngtiān jiàn.','Được, mai gặp.']];
+renderD('d2box',text2,'text2');
+
+const sub=['每天上班时，小李都会先向经理和年长的同事问好。她认为，良好的工作关系要从日常问候开始。','有一天，一位同事感冒了。小李问他烧退了没有，还提醒他最近感冒的人很多，要注意身体。','下班以后，小李看见同事还没有走。原来他正在等客户的联系。客户回复了，他就回家。'];
+document.getElementById('readBox').innerHTML=sub.map((p,i)=>`<div class="line"><span class="sp">第${i+1}段</span><div class="sent cn">${p}</div><button type="button" class="audio" onclick="speakText(sub[${i}])">▶ Đọc</button></div>`).join('');
+
+const speaking=[['早上好，没事了吧？','Chào buổi sáng, anh/chị không sao chứ?'],['托你的福，今天好多了。','Nhờ phúc của bạn, hôm nay tôi đỡ nhiều rồi.'],['烧退了吧？','Đã hạ sốt rồi chứ?'],['最近感冒的人很多，你要注意啊。','Dạo này nhiều người cảm, bạn nên chú ý.'],['还不走吗？','Anh/chị vẫn chưa về à?'],['客户联系了，我就回家。','Khách liên hệ xong thì tôi về.']];
+document.getElementById('speakGrid').innerHTML=speaking.map((x,i)=>`<div class="card"><h3 class="cn">${i+1}. ${x[0]}</h3><p>${x[1]}</p><button type="button" class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Nghe</button></div>`).join('');
+
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}let li=0;function renderListening(){let a=vocab[li%vocab.length][0],p=shuffle(vocab.map(v=>v[0])).slice(0,4);if(!p.includes(a))p[0]=a;document.getElementById('listenOptions').innerHTML=shuffle(p).map(x=>`<button type="button" class="game-opt" onclick="chooseListen(this,'${x}','${a}')">${x}</button>`).join('');document.getElementById('listenResult').textContent=''}function playListening(){speakText(vocab[li%vocab.length][0])}function chooseListen(b,c,a){document.querySelectorAll('#listenOptions button').forEach(x=>x.disabled=true);b.classList.add(c===a?'good':'bad');document.getElementById('listenResult').innerHTML=c===a?'✅ Đúng':'❌ Đáp án: '+a}function nextListening(){li++;renderListening()}renderListening();
+
+const qs=[['“托你的福” nghĩa là gì?',['Nhờ phúc của bạn','Xin lỗi','Chúc sức khỏe'],0],['“烧退了吧？” nghĩa là gì?',['Đã hạ sốt rồi chứ?','Đã tan làm chưa?','Đã ăn chưa?'],0],['男的为什么还不走？',['等客户联系','开会','睡觉'],0],['V了就V diễn tả gì?',['Việc sau xảy ra ngay sau việc trước','Hai việc đồng thời','Phủ định'],0],['Câu nào đúng?',['回到家了就给我打电话。','回到家就了给我打电话。','就回到家了给我打电话。'],0],['“注意” nghĩa là gì?',['chú ý','liên hệ','khách hàng'],0],['“客户” nghĩa là gì?',['khách hàng','đồng nghiệp','giám đốc'],0],['Trong công ty ai nên chào cấp trên trước?',['Người cấp dưới','Khách hàng','Không ai'],0],['“那我先走了” nghĩa là gì?',['Tôi về trước nhé','Tôi đến trước','Tôi không đi'],0],['昨天回家以后，他做了什么？',['吃药就睡了','去开会','等客户'],0]];
+let qi=0,score=0;function renderQ(){document.getElementById('bar').style.width=(qi/10*100)+'%';let q=qs[qi];document.getElementById('quizBox').innerHTML=`<div class="quiz-card"><b>Câu ${qi+1}/10</b><h3>${q[0]}</h3><div class="opts">${q[1].map((o,i)=>`<button type="button" class="opt" onclick="answer(${i})">${o}</button>`).join('')}</div><div id="feedback" class="feedback"></div><button type="button" id="next" class="btn" onclick="nextQ()" disabled>Tiếp theo</button></div>`}function answer(i){let q=qs[qi],ops=document.querySelectorAll('.opt');ops.forEach(x=>x.disabled=true);ops[i].classList.add(i===q[2]?'correct':'wrong');ops[q[2]].classList.add('correct');document.getElementById('feedback').textContent=i===q[2]?'✅ Đúng rồi!':'❌ Đáp án: '+q[1][q[2]];document.getElementById('feedback').className='feedback show';if(i===q[2])score++;document.getElementById('next').disabled=false}function nextQ(){qi++;if(qi>=10){document.getElementById('quizBox').innerHTML=`<div class="card"><h2>Kết quả: ${score}/10</h2><button type="button" class="btn" onclick="qi=0;score=0;renderQ()">Làm lại</button></div>`;document.getElementById('bar').style.width='100%'}else renderQ()}renderQ();
+
+const gameData=[['nhờ phúc của ai','托……的福'],['sốt','烧'],['hạ, bớt','退'],['cảm cúm','感冒'],['chú ý','注意'],['khách hàng','客户'],['liên hệ','联系'],['vất vả','辛苦']];let gi=0;function renderGame(){let x=gameData[gi%gameData.length],p=shuffle(gameData.map(y=>y[1])).slice(0,4);if(!p.includes(x[1]))p[0]=x[1];document.getElementById('gameMeaning').textContent=x[0];document.getElementById('gameOptions').innerHTML=shuffle(p).map(y=>`<button type="button" class="game-opt" onclick="chooseGame(this,'${y}','${x[1]}')">${y}</button>`).join('');document.getElementById('gameResult').textContent=''}function chooseGame(b,c,a){document.querySelectorAll('#gameOptions button').forEach(x=>x.disabled=true);b.classList.add(c===a?'good':'bad');document.getElementById('gameResult').innerHTML=c===a?'✅ Đúng':'❌ Đáp án: '+a}function nextGame(){gi++;renderGame()}renderGame();
+</script>
+</body></html>
