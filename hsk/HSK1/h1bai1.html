@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#149bd7">
+<title>第一课 AI小语，你好！</title>
+<style>
+:root{--b:#149bd7;--b2:#e8f6fc;--bg:#f7fbfd;--c:#fff;--t:#173042;--m:#687786;--l:#d9eaf2;--g:#178a62;--g2:#eaf8f2;--r:#d24a3a;--gold:#f2b705;--shadow:0 10px 28px rgba(26,76,105,.10)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--t);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;padding-bottom:78px}
+.cn{font-family:"PingFang SC","Noto Serif SC","Songti SC",serif}
+header{background:linear-gradient(135deg,#12a8dc,#2b6cb0 58%,#16835f);color:#fff;text-align:center;padding:30px 16px;border-radius:0 0 30px 30px;box-shadow:var(--shadow)}
+.badge{display:inline-block;background:var(--gold);color:#332900;padding:5px 13px;border-radius:999px;font-weight:900;font-size:12px}
+h1{font-size:clamp(32px,7vw,52px);margin:8px 0 2px}.sub{margin:0;opacity:.93}.actions,.tabs,.audioRow{display:flex;gap:8px;flex-wrap:wrap}.actions{justify-content:center;margin-top:14px}
+button{font:inherit;cursor:pointer}.actions button,.tabs button,.audio,.btn{border:0;border-radius:12px;padding:10px 13px;font-weight:850}.actions button{background:#ffffff22;color:#fff;border:1px solid #ffffff55}
+.tabs{position:sticky;top:0;z-index:30;background:#f7fbfdf2;backdrop-filter:blur(12px);padding:10px 8px;overflow-x:auto;white-space:nowrap;border-bottom:1px solid var(--l)}
+.tabs button{flex:0 0 auto;background:#fff;border:1px solid var(--l);color:var(--t)}.tabs button.active{background:var(--b);color:#fff}
+section{display:none;max-width:1050px;margin:auto;padding:22px 14px 35px}section.active{display:block}
+.title{display:flex;gap:11px;align-items:center;margin-bottom:17px}.icon{width:48px;height:48px;border-radius:15px;background:var(--b);color:#fff;display:grid;place-items:center;font-size:23px}.title h2{margin:0}.title p{margin:0;color:var(--m);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:13px}.card,.box{background:#fff;border:1px solid var(--l);border-radius:19px;box-shadow:var(--shadow)}.card{padding:17px}.box{overflow:hidden;margin-bottom:15px}.box-h{background:linear-gradient(90deg,var(--b),#56b5df);color:#fff;padding:13px 16px;font-weight:900}.box-b{padding:13px 16px}
+.han{font-size:32px;font-weight:900}.pinyin{display:none;color:var(--r);font-style:italic;font-size:14px}.showPinyin .pinyin{display:block}.pos{display:inline-block;background:#eef1f3;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:850}.meaning{font-weight:850}.ex{border-left:4px solid var(--g);padding-left:10px;margin-top:9px}.vn{color:#555}
+.line{padding:14px 0;border-bottom:1px solid #eee}.line:last-child{border-bottom:0}.sp{display:inline-block;background:var(--b2);color:#145477;padding:3px 9px;border-radius:999px;font-weight:900}.sent{font-size:18px;font-weight:800}
+.audio{background:var(--b2);color:#145477}.pause{background:#fff6df;color:#855b00}.stop{background:#ffe8e8;color:#a21f1f}.wide{width:100%}
+.grammar{border-left:6px solid var(--g);background:var(--g2)}.formula{background:#fff;border:1px dashed var(--g);padding:11px;border-radius:11px;font-weight:900}.tip{background:#fff7d6;border-left:4px solid var(--gold);padding:11px;border-radius:0 12px 12px 0}
+.flash{min-height:180px;text-align:center;display:grid;place-items:center;position:relative;cursor:pointer}.flash .back{display:none}.flash.flipped .front{display:none}.flash.flipped .back{display:block}.star{position:absolute;right:9px;top:9px;border:0;background:transparent;font-size:23px}
+.game-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}.game-opt,.opt{padding:14px;border:2px solid var(--l);border-radius:14px;background:#fff;font-weight:850;text-align:left}.good,.correct{background:#e5f8e8!important;border-color:#19853a!important}.bad,.wrong{background:#ffe6e6!important;border-color:#c62e2e!important}
+.progress{height:10px;background:#ddd;border-radius:999px;overflow:hidden;margin-bottom:15px}.bar{height:100%;background:linear-gradient(90deg,var(--g),var(--b));width:0}.quiz-card{background:#fff;border:1px solid var(--l);border-radius:18px;padding:18px}.opts{display:grid;gap:9px}.feedback{font-weight:800;min-height:28px}
+.fill-input{width:100%;padding:13px;border:2px solid var(--l);border-radius:12px;font-size:18px;margin:10px 0}
+.word-bank,.drop-zone{display:flex;gap:8px;flex-wrap:wrap;min-height:62px;padding:12px;border:2px dashed #b7d9e8;border-radius:14px;background:#f8fcfe;margin:10px 0}.word-chip{padding:9px 12px;border:1px solid #b7d9e8;border-radius:999px;background:#fff;font-weight:850;cursor:grab;user-select:none}.drop-zone .word-chip{background:var(--g2);border-color:#9fd4bf}
+.game-status{font-weight:850;min-height:28px}.take{border-left:7px solid #b83280}
+@media(max-width:600px){.grid,.game-options{grid-template-columns:1fr}.audioRow .audio,.audioRow .btn{flex:1}}
+</style>
+</head>
+<body>
+<header>
+<span class="badge">Tiếng Trung nhập môn · 第一课</span>
+<h1 class="cn">AI小语，你好！</h1>
+<p class="sub">Xin chào AI Tiểu Ngữ!</p>
+<div class="actions">
+<button onclick="history.back()">← Quay lại</button>
+<button onclick="speakText('AI小语，你好！')">🔊 Tên bài</button>
+<button onclick="document.body.classList.toggle('showPinyin')">👁 Pinyin</button>
+<button onclick="pauseSpeech()">⏸ Tạm dừng</button>
+<button onclick="resumeSpeech()">▶ Tiếp tục</button>
+<button onclick="stopSpeech()">⏹ Dừng</button>
+</div>
+</header>
+<div id="tabs" class="tabs"></div>
+
+<section id="home" class="active">
+<div class="title"><div class="icon">🏠</div><div><h2>Tổng quan bài học</h2><p>Chào hỏi cơ bản trong lớp học tiếng Trung.</p></div></div>
+<div class="grid">
+<div class="card"><h3>🎯 Chủ đề</h3><p>Chào hỏi giáo viên, bạn học và nhiều người; cảm ơn và tạm biệt.</p></div>
+<div class="card"><h3>📐 Ngữ pháp</h3><p><b>你 / 您 / 你们 / 名词 + 们</b>: đại từ xưng hô và cách biểu thị số nhiều.</p></div>
+<div class="card"><h3>✅ Sau bài học</h3><p>Học viên có thể chào hỏi, cảm ơn, đáp lại lời cảm ơn và nói lời tạm biệt.</p></div>
+</div>
+</section>
+
+<section id="vocab"><div class="title"><div class="icon">📖</div><div><h2>Từ vựng đầy đủ</h2><p>Pinyin, nghĩa, ví dụ và âm thanh.</p></div></div><div id="vocabGrid" class="grid"></div></section>
+
+<section id="grammar">
+<div class="title"><div class="icon">📐</div><div><h2>Ngữ pháp</h2><p>Đại từ xưng hô, cách nói kính trọng và số nhiều.</p></div></div>
+<div class="card grammar">
+<h3 class="cn">你 / 您 / 你们 / 名词 + 们</h3>
+<div class="formula cn">你 → bạn　　您 → ngài / ông / bà　　你们 → các bạn</div>
+<p><b>您</b> là cách xưng hô kính trọng, dùng thay cho <b>你</b> khi nói với người lớn tuổi hoặc người đáng kính.</p>
+<p class="cn"><b>老师，您好！</b> — Chào thầy/cô ạ!</p>
+<p><b>们</b> đặt sau đại từ hoặc danh từ chỉ người để biểu thị số nhiều.</p>
+<p class="cn"><b>学生 → 学生们</b>　　<b>老师 → 老师们</b></p>
+<div class="tip"><b>Lưu ý:</b> Không dùng 们 sau danh từ khi phía trước đã có số lượng cụ thể.</div>
+</div>
+</section>
+
+<section id="d1"><div class="title"><div class="icon">💬</div><div><h2>Bài khóa 1</h2><p>Chào AI Tiểu Ngữ.</p></div></div>
+<div class="audioRow"><button class="audio" onclick="speakText(D.dialogue1.map(x=>x[1]).join('。'))">▶ Nghe toàn bài</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div>
+<div class="box"><div class="box-h">AI小语，你好！</div><div id="d1box" class="box-b"></div></div></section>
+
+<section id="d2"><div class="title"><div class="icon">🗣️</div><div><h2>Bài khóa 2</h2><p>Chào giáo viên và cả lớp.</p></div></div>
+<div class="audioRow"><button class="audio" onclick="speakText(D.dialogue2.map(x=>x[1]).join('。'))">▶ Nghe toàn bài</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div>
+<div class="box"><div class="box-h">大家好！</div><div id="d2box" class="box-b"></div></div></section>
+
+<section id="express"><div class="title"><div class="icon">⭐</div><div><h2>Cách biểu đạt quan trọng</h2><p>Câu giáo viên và học sinh thường dùng trên lớp.</p></div></div><div id="expressGrid" class="grid"></div></section>
+
+<section id="read"><div class="title"><div class="icon">📚</div><div><h2>Bài khóa 3</h2><p>Cảm ơn và tạm biệt.</p></div></div><div class="box"><div class="box-h">谢谢！再见！</div><div id="readBox" class="box-b"></div></div></section>
+
+<section id="speak"><div class="title"><div class="icon">🗣️</div><div><h2>6 câu giao tiếp cần nhớ</h2><p>Dùng khi chào hỏi và học trên lớp.</p></div></div><div id="speakGrid" class="grid"></div></section>
+
+<section id="flash"><div class="title"><div class="icon">🃏</div><div><h2>Game 4: Lật thẻ</h2><p>Chạm để lật; nhấn ⭐ để lưu từ khó.</p></div></div><div id="flashGrid" class="grid"></div></section>
+
+<section id="listen"><div class="title"><div class="icon">🎧</div><div><h2>Game 1: Nghe và chọn đáp án</h2><p>Vị trí đáp án đúng được xáo trộn ở mỗi lượt.</p></div></div>
+<div class="card"><button class="audio wide" onclick="playListen()">🔊 Nghe câu</button><div id="listenOptions" class="game-options"></div><p id="listenResult" class="game-status"></p><button class="btn" onclick="nextListen()">Câu tiếp theo</button></div></section>
+
+<section id="fill"><div class="title"><div class="icon">✍️</div><div><h2>Game 2: Điền vào chỗ trống</h2><p>Nhập chữ Hán còn thiếu.</p></div></div>
+<div class="card"><div id="fillQuestion" class="sent"></div><input id="fillInput" class="fill-input" placeholder="Nhập chữ Hán còn thiếu"><p id="fillHint" class="vn"></p><p id="fillResult" class="game-status"></p><div class="audioRow"><button class="btn" onclick="checkFill()">Kiểm tra</button><button class="audio" onclick="playFill()">🔊 Nghe câu</button><button class="btn" onclick="nextFill()">Câu tiếp theo</button></div></div></section>
+
+<section id="order"><div class="title"><div class="icon">🧩</div><div><h2>Game 3: Sắp xếp câu kéo thả</h2><p>Có thể kéo hoặc bấm vào từng từ.</p></div></div>
+<div class="card"><p>Kéo các từ vào ô phía dưới theo đúng thứ tự:</p><div id="wordBank" class="word-bank"></div><div id="dropZone" class="drop-zone"></div><p id="orderResult" class="game-status"></p><div class="audioRow"><button class="btn" onclick="checkOrder()">Kiểm tra</button><button class="btn" onclick="resetOrder()">Làm lại</button><button class="audio" onclick="playOrder()">🔊 Nghe câu</button><button class="btn" onclick="nextOrder()">Câu tiếp theo</button></div></div></section>
+
+<section id="quiz"><div class="title"><div class="icon">🎯</div><div><h2>Quiz 10 câu</h2><p>Đáp án được xáo trộn, không cố định ở A.</p></div></div><div class="progress"><div id="bar" class="bar"></div></div><div id="quizBox"></div></section>
+
+<section id="take"><div class="title"><div class="icon">📌</div><div><h2>Take-away</h2></div></div>
+<div class="card take"><ul>
+<li><b>Từ trọng tâm:</b> 你好、大家、学生、老师、您、你们、谢谢、不客气、同学、再见</li>
+<li><b>Ngữ pháp:</b> 您 là cách nói kính trọng; 们 biểu thị số nhiều.</li>
+<li><b>Câu chào:</b> 老师，您好！ / 大家好！ / 你们好！</li>
+<li><b>Cảm ơn và tạm biệt:</b> 谢谢！— 不客气！ / 老师，再见！</li>
+</ul></div></section>
+
+<script>
+const D={"vocab":[["你好","nǐ hǎo","câu chào","xin chào","老师，你好！","Chào thầy/cô!"],["王老师","Wáng lǎoshī","danh từ","cô/thầy Vương","王老师，您好！","Chào cô/thầy Vương ạ!"],["大家","dàjiā","đại từ","mọi người","大家好！","Xin chào mọi người!"],["好","hǎo","tính từ","tốt, đẹp, khỏe","你好！","Xin chào!"],["学生","xuésheng","danh từ","học sinh","我是学生。","Tôi là học sinh."],["们","men","hậu tố","các, những; chỉ số nhiều","学生们，你们好！","Các em học sinh, xin chào!"],["老师","lǎoshī","danh từ","giáo viên","老师，您好！","Chào thầy/cô ạ!"],["您","nín","đại từ","ông, bà, ngài; cách nói kính trọng","您好！","Xin chào ạ!"],["你们","nǐmen","đại từ","các bạn","你们好！","Xin chào các bạn!"],["谢谢","xièxie","động từ","cảm ơn","老师，谢谢！","Cảm ơn thầy/cô!"],["不客气","bú kèqi","cụm từ","không có gì, đừng khách sáo","不客气！","Không có gì!"],["同学","tóngxué","danh từ","bạn học","同学，你好！","Chào bạn!"],["再见","zàijiàn","động từ","tạm biệt","老师，再见！","Tạm biệt thầy/cô!"]],"dialogue1":[["王一飞","AI小语，你好！","AI Xiǎoyǔ, nǐ hǎo!","AI Tiểu Ngữ, xin chào!"],["小语","王老师，你好！","Wáng lǎoshī, nǐ hǎo!","Chào cô Vương!"]],"dialogue2":[["小语","老师，您好！","Lǎoshī, nín hǎo!","Chào cô ạ!"],["王一飞","大家好！","Dàjiā hǎo!","Xin chào mọi người!"],["学生们","你好，小语！","Nǐ hǎo, Xiǎoyǔ!","Chào Tiểu Ngữ!"],["小语","你们好！","Nǐmen hǎo!","Xin chào các bạn!"]],"expressions":[["现在上课。","Xiànzài shàngkè.","Bắt đầu tiết học."],["请打开书，第×页。","Qǐng dǎkāi shū, dì × yè.","Mở sách trang số ×."],["今天学习第×课。","Jīntiān xuéxí dì × kè.","Hôm nay học bài số ×."],["这是什么？","Zhè shì shénme?","Đây là cái gì?"],["请跟我读。","Qǐng gēn wǒ dú.","Hãy đọc theo cô."],["请你读。","Qǐng nǐ dú.","Mời bạn đọc."],["请再读一遍。","Qǐng zài dú yí biàn.","Hãy đọc lại một lần nữa."],["请再说一遍。","Qǐng zài shuō yí biàn.","Cô nói lại một lần nữa ạ."],["老师，请慢点儿说。","Lǎoshī, qǐng màn diǎnr shuō.","Cô nói chậm lại một chút ạ."],["这个是什么意思？","Zhège shì shénme yìsi?","Cái này có nghĩa là gì?"]],"reading":[["小语：谢谢！","Xiǎoyǔ: Xièxie!","Tiểu Ngữ: Cảm ơn!"],["王一飞：不客气！","Wáng Yīfēi: Bú kèqi!","Vương Nhất Phi: Không có gì!"],["王一飞：同学们，再见！","Wáng Yīfēi: Tóngxuémen, zàijiàn!","Vương Nhất Phi: Tạm biệt các em!"],["学生们：老师，再见！","Xuéshēngmen: Lǎoshī, zàijiàn!","Các học sinh: Tạm biệt cô ạ!"]]};
+const tabs=[['home','🏠 Tổng quan'],['vocab','📖 Từ'],['grammar','📐 Ngữ pháp'],['d1','💬 Hội thoại 1'],['d2','🗣️ Hội thoại 2'],['express','⭐ Biểu đạt'],['read','📚 Đọc phụ'],['speak','🗣️ Giao tiếp'],['flash','🃏 Lật thẻ'],['listen','🎧 Nghe chọn'],['fill','✍️ Điền từ'],['order','🧩 Kéo thả'],['quiz','🎯 Quiz'],['take','📌 Nhớ']];
+document.getElementById('tabs').innerHTML=tabs.map((x,i)=>`<button class="${i===0?'active':''}" onclick="tab('${x[0]}')">${x[1]}</button>`).join('');
+function tab(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tabs button').forEach((b,i)=>b.classList.toggle('active',tabs[i][0]===id));window.scrollTo({top:0,behavior:'smooth'})}
+
+let audio=null;
+function gttsUrl(t){return 'https://translate.google.com/translate_tts?ie=UTF-8&tl=zh-CN&client=tw-ob&q='+encodeURIComponent(t.slice(0,200))}
+function speakText(t){
+ stopSpeech();
+ audio=new Audio(gttsUrl(t));audio.playbackRate=.9;
+ const fallback=()=>{const u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';u.rate=.82;const vs=speechSynthesis.getVoices();const v=vs.find(x=>/Xiaoxiao|Tingting|Meijia|Yunxi/i.test(x.name))||vs.find(x=>x.lang==='zh-CN')||vs.find(x=>x.lang&&x.lang.startsWith('zh'));if(v)u.voice=v;speechSynthesis.speak(u)};
+ audio.addEventListener('error',fallback);audio.play().catch(fallback);
+}
+function pauseSpeech(){if(audio&&!audio.paused)audio.pause();try{speechSynthesis.pause()}catch(e){}}
+function resumeSpeech(){if(audio&&audio.paused)audio.play().catch(()=>{});try{speechSynthesis.resume()}catch(e){}}
+function stopSpeech(){if(audio){audio.pause();audio.currentTime=0;audio=null}try{speechSynthesis.cancel()}catch(e){}}
+function safe(s){return s.replaceAll("'","")}
+
+document.getElementById('vocabGrid').innerHTML=D.vocab.map(v=>`<div class="card"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><span class="pos">${v[2]}</span><div class="meaning">${v[3]}</div><div class="ex"><div class="cn">${v[4]}</div><div class="vn">${v[5]}</div></div><div class="audioRow"><button class="audio" onclick="speakText('${safe(v[0])}')">🔊 Từ</button><button class="audio" onclick="speakText('${safe(v[4])}')">🔊 Ví dụ</button></div></div>`).join('');
+
+function renderDialogue(id,data){
+ document.getElementById(id).innerHTML=data.map((x,i)=>`<div class="line"><span class="sp">${x[0]}</span><div class="sent cn">${x[1]}</div><div class="pinyin">${x[2]}</div><div class="vn">${x[3]}</div><div class="audioRow"><button class="audio" onclick="speakText(${id==='d1box'?'D.dialogue1':'D.dialogue2'}[${i}][1])">▶ Nghe câu</button></div></div>`).join('');
+}
+renderDialogue('d1box',D.dialogue1);renderDialogue('d2box',D.dialogue2);
+
+document.getElementById('expressGrid').innerHTML=D.expressions.map((x,i)=>`<div class="card"><h3 class="cn">${i+1}. ${x[0]}</h3><div class="pinyin">${x[1]}</div><p>${x[2]}</p><button class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Nghe</button></div>`).join('');
+
+document.getElementById('readBox').innerHTML=D.reading.map((x,i)=>`<div class="line"><span class="sp">第${i+1}段</span><div class="sent cn">${x[0]}</div><div class="pinyin">${x[1]}</div><div class="vn">${x[2]}</div><div class="audioRow"><button class="audio" onclick="speakText(D.reading[${i}][0])">▶ Đọc đoạn</button></div></div>`).join('');
+
+const speaking=[
+['你好！','Xin chào!'],
+['老师，您好！','Chào thầy/cô ạ!'],
+['大家好！','Xin chào mọi người!'],
+['你们好！','Xin chào các bạn!'],
+['谢谢！','Cảm ơn!'],
+['老师，再见！','Tạm biệt thầy/cô!']
+];
+document.getElementById('speakGrid').innerHTML=speaking.map((x,i)=>`<div class="card"><h3 class="cn">${i+1}. ${x[0]}</h3><p>${x[1]}</p><button class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Nghe</button></div>`).join('');
+
+let difficult=JSON.parse(localStorage.getItem('lesson1_difficult')||'[]');
+function toggleDiff(w){difficult=difficult.includes(w)?difficult.filter(x=>x!==w):[...difficult,w];localStorage.setItem('lesson1_difficult',JSON.stringify(difficult));renderFlash()}
+function renderFlash(){document.getElementById('flashGrid').innerHTML=D.vocab.map(v=>`<div class="card flash" onclick="this.classList.toggle('flipped')"><button class="star" onclick="event.stopPropagation();toggleDiff('${safe(v[0])}')">${difficult.includes(v[0])?'⭐':'☆'}</button><div class="front"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><p>Chạm để xem nghĩa</p></div><div class="back"><h2>${v[3]}</h2><p class="cn">${v[4]}</p><p>${v[5]}</p><button class="audio" onclick="event.stopPropagation();speakText('${safe(v[0])}。${safe(v[4])}')">🔊 Nghe</button></div></div>`).join('')}
+renderFlash();
+
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+
+const listeningQuestions=[
+{audio:'老师，您好！',answer:'Chào thầy/cô ạ!',options:['Chào thầy/cô ạ!','Cảm ơn thầy/cô!','Tạm biệt thầy/cô!','Mời thầy/cô ngồi!']},
+{audio:'大家好！',answer:'Xin chào mọi người!',options:['Xin chào mọi người!','Cảm ơn mọi người!','Các bạn đọc đi!','Tan học rồi!']},
+{audio:'你们好！',answer:'Xin chào các bạn!',options:['Xin chào các bạn!','Tạm biệt các bạn!','Các bạn rất tốt!','Cảm ơn các bạn!']},
+{audio:'谢谢！',answer:'Cảm ơn!',options:['Cảm ơn!','Không có gì!','Xin chào!','Tạm biệt!']},
+{audio:'同学们，再见！',answer:'Tạm biệt các em học sinh!',options:['Tạm biệt các em học sinh!','Chào các em học sinh!','Các em hãy đọc!','Các em hãy ngồi!']}
+];
+let li=0;
+function renderListening(){const q=listeningQuestions[li%listeningQuestions.length];const choices=shuffle(q.options);document.getElementById('listenOptions').innerHTML=choices.map(x=>`<button class="game-opt" onclick="chooseListen(this,${JSON.stringify(x)},${JSON.stringify(q.answer)})">${x}</button>`).join('');document.getElementById('listenResult').textContent=''}
+function playListen(){speakText(listeningQuestions[li%listeningQuestions.length].audio)}
+function chooseListen(btn,choice,answer){document.querySelectorAll('#listenOptions button').forEach(x=>x.disabled=true);if(choice===answer){btn.classList.add('good');document.getElementById('listenResult').textContent='✅ Đúng rồi!'}else{btn.classList.add('bad');document.getElementById('listenResult').textContent='❌ Đáp án đúng: '+answer;[...document.querySelectorAll('#listenOptions button')].find(x=>x.textContent===answer)?.classList.add('good')}}
+function nextListen(){li++;renderListening()}renderListening();
+
+const fillQuestions=[
+{sentence:'老师，____好！',answer:'您',hint:'Cách nói kính trọng'},
+{sentence:'大____好！',answer:'家',hint:'Mọi người'},
+{sentence:'你____好！',answer:'们',hint:'Các bạn'},
+{sentence:'____谢！',answer:'谢',hint:'Cảm ơn'},
+{sentence:'老师，再____！',answer:'见',hint:'Tạm biệt'}
+];
+let fi=0;
+function renderFill(){const q=fillQuestions[fi%fillQuestions.length];document.getElementById('fillQuestion').textContent=q.sentence;document.getElementById('fillHint').textContent='Gợi ý: '+q.hint;document.getElementById('fillInput').value='';document.getElementById('fillResult').textContent=''}
+function checkFill(){const q=fillQuestions[fi%fillQuestions.length];const val=document.getElementById('fillInput').value.trim();document.getElementById('fillResult').textContent=val===q.answer?'✅ Chính xác!':'❌ Đáp án đúng: '+q.answer}
+function playFill(){const q=fillQuestions[fi%fillQuestions.length];speakText(q.sentence.replace('____',q.answer))}
+function nextFill(){fi++;renderFill()}renderFill();
+
+const orderQuestions=[['老师','您','好'],['大家','好'],['你们','好'],['谢谢'],['老师','再见']];
+let oi=0;
+function makeChip(word,index){const el=document.createElement('span');el.className='word-chip';el.textContent=word;el.dataset.index=index;el.draggable=true;el.addEventListener('dragstart',e=>e.dataTransfer.setData('text/plain',index));el.addEventListener('click',()=>moveChip(el));return el}
+function moveChip(el){const bank=document.getElementById('wordBank'),zone=document.getElementById('dropZone');(el.parentElement===bank?zone:bank).appendChild(el)}
+function setupDrop(target){target.addEventListener('dragover',e=>e.preventDefault());target.addEventListener('drop',e=>{e.preventDefault();const index=e.dataTransfer.getData('text/plain');const chip=document.querySelector(`.word-chip[data-index="${index}"]`);if(chip)target.appendChild(chip)})}
+setupDrop(document.getElementById('wordBank'));setupDrop(document.getElementById('dropZone'));
+function renderOrder(){const words=orderQuestions[oi%orderQuestions.length];const bank=document.getElementById('wordBank'),zone=document.getElementById('dropZone');bank.innerHTML='';zone.innerHTML='';shuffle(words.map((w,i)=>({w,i}))).forEach(o=>bank.appendChild(makeChip(o.w,o.i)));document.getElementById('orderResult').textContent=''}
+function checkOrder(){const target=orderQuestions[oi%orderQuestions.length].join('');const current=[...document.querySelectorAll('#dropZone .word-chip')].map(x=>x.textContent).join('');document.getElementById('orderResult').textContent=current===target?'✅ Sắp xếp đúng!':'❌ Đáp án: '+orderQuestions[oi%orderQuestions.length].join(' ')}
+function resetOrder(){renderOrder()}function playOrder(){speakText(orderQuestions[oi%orderQuestions.length].join(''))}function nextOrder(){oi++;renderOrder()}renderOrder();
+
+const quizData=[
+{q:'“你好” nghĩa là gì?',correct:'Xin chào',wrong:['Cảm ơn','Tạm biệt','Không có gì']},
+{q:'Cách nói kính trọng của “你” là gì?',correct:'您',wrong:['们','大家','同学']},
+{q:'“你们” nghĩa là gì?',correct:'Các bạn',wrong:['Mọi người','Giáo viên','Bạn học']},
+{q:'“大家好” nghĩa là gì?',correct:'Xin chào mọi người',wrong:['Tạm biệt mọi người','Cảm ơn mọi người','Mọi người rất khỏe']},
+{q:'Từ nào chỉ “học sinh”?',correct:'学生',wrong:['老师','同学','大家']},
+{q:'“老师，您好！” dùng trong trường hợp nào?',correct:'Chào giáo viên một cách kính trọng',wrong:['Chào bạn thân','Cảm ơn giáo viên','Tạm biệt bạn học']},
+{q:'“谢谢” nghĩa là gì?',correct:'Cảm ơn',wrong:['Xin chào','Không có gì','Tạm biệt']},
+{q:'Đáp lại “谢谢” thế nào?',correct:'不客气',wrong:['你好','再见','您']},
+{q:'“同学们，再见！” nghĩa là gì?',correct:'Tạm biệt các em học sinh',wrong:['Xin chào các em học sinh','Cảm ơn các em học sinh','Các em hãy ngồi']},
+{q:'Hậu tố nào biểu thị số nhiều của người?',correct:'们',wrong:['好','您','再见']}
+];
+let qi=0,score=0;
+function renderQ(){document.getElementById('bar').style.width=(qi/quizData.length*100)+'%';const q=quizData[qi];const options=shuffle([q.correct,...q.wrong]);document.getElementById('quizBox').innerHTML=`<div class="quiz-card"><b>Câu ${qi+1}/10</b><h3>${q.q}</h3><div class="opts">${options.map(o=>`<button class="opt" onclick="answerQuiz(this,${JSON.stringify(o)},${JSON.stringify(q.correct)})">${o}</button>`).join('')}</div><p id="quizFeedback" class="feedback"></p><button id="nextQuiz" class="btn" onclick="nextQ()" disabled>Tiếp theo</button></div>`}
+function answerQuiz(btn,choice,correct){document.querySelectorAll('.opt').forEach(x=>x.disabled=true);if(choice===correct){btn.classList.add('correct');score++;document.getElementById('quizFeedback').textContent='✅ Đúng rồi!'}else{btn.classList.add('wrong');[...document.querySelectorAll('.opt')].find(x=>x.textContent===correct)?.classList.add('correct');document.getElementById('quizFeedback').textContent='❌ Đáp án đúng: '+correct}document.getElementById('nextQuiz').disabled=false}
+function nextQ(){qi++;if(qi===quizData.length){document.getElementById('quizBox').innerHTML=`<div class="card"><h2>Kết quả: ${score}/10</h2><p>${score>=8?'Rất tốt!':'Hãy ôn lại từ mới và ngữ pháp nhé.'}</p><button class="btn" onclick="qi=0;score=0;renderQ()">Làm lại</button></div>`;document.getElementById('bar').style.width='100%'}else renderQ()}renderQ();
+</script>
+</body></html>
