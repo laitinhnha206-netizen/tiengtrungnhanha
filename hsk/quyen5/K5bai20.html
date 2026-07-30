@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#149bd7">
+<title>第二十课 小人书摊</title>
+<style>
+:root{--b:#149bd7;--b2:#e8f6fc;--bg:#f7fbfd;--c:#fff;--t:#173042;--m:#687786;--l:#d9eaf2;--g:#178a62;--g2:#eaf8f2;--r:#d24a3a;--gold:#f2b705;--shadow:0 10px 28px rgba(26,76,105,.10)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--t);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;padding-bottom:78px}
+.cn{font-family:"PingFang SC","Noto Serif SC","Songti SC",serif}
+header{background:linear-gradient(135deg,#12a8dc,#2b6cb0 58%,#16835f);color:#fff;text-align:center;padding:30px 16px;border-radius:0 0 30px 30px;box-shadow:var(--shadow)}
+.badge{display:inline-block;background:var(--gold);color:#332900;padding:5px 13px;border-radius:999px;font-weight:900;font-size:12px}
+h1{font-size:clamp(32px,7vw,52px);margin:8px 0 2px}.sub{margin:0;opacity:.93}.actions,.tabs,.audioRow{display:flex;gap:8px;flex-wrap:wrap}.actions{justify-content:center;margin-top:14px}
+button{font:inherit;cursor:pointer}.actions button,.tabs button,.audio,.btn{border:0;border-radius:12px;padding:10px 13px;font-weight:850}.actions button{background:#ffffff22;color:#fff;border:1px solid #ffffff55}
+.tabs{position:sticky;top:0;z-index:30;background:#f7fbfdf2;backdrop-filter:blur(12px);padding:10px 8px;overflow-x:auto;white-space:nowrap;border-bottom:1px solid var(--l)}
+.tabs button{flex:0 0 auto;background:#fff;border:1px solid var(--l);color:var(--t)}.tabs button.active{background:var(--b);color:#fff}
+section{display:none;max-width:1050px;margin:auto;padding:22px 14px 35px}section.active{display:block}
+.title{display:flex;gap:11px;align-items:center;margin-bottom:17px}.icon{width:48px;height:48px;border-radius:15px;background:var(--b);color:#fff;display:grid;place-items:center;font-size:23px}.title h2{margin:0}.title p{margin:0;color:var(--m);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:13px}.card,.box{background:#fff;border:1px solid var(--l);border-radius:19px;box-shadow:var(--shadow)}.card{padding:17px}.box{overflow:hidden;margin-bottom:15px}.box-h{background:linear-gradient(90deg,var(--b),#56b5df);color:#fff;padding:13px 16px;font-weight:900}.box-b{padding:13px 16px}
+.han{font-size:32px;font-weight:900}.pinyin{display:none;color:var(--r);font-style:italic;font-size:14px}.showPinyin .pinyin{display:block}.pos{display:inline-block;background:#eef1f3;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:850}.meaning{font-weight:850}.ex{border-left:4px solid var(--g);padding-left:10px;margin-top:9px}.vn{color:#555}
+.line{padding:14px 0;border-bottom:1px solid #eee}.line:last-child{border-bottom:0}.sp{display:inline-block;background:var(--b2);color:#145477;padding:3px 9px;border-radius:999px;font-weight:900}.sent{font-size:18px;font-weight:800}
+.audio{background:var(--b2);color:#145477}.pause{background:#fff6df;color:#855b00}.stop{background:#ffe8e8;color:#a21f1f}.wide{width:100%}
+.grammar{border-left:6px solid var(--g);background:var(--g2)}.formula{background:#fff;border:1px dashed var(--g);padding:11px;border-radius:11px;font-weight:900}.tip{background:#fff7d6;border-left:4px solid var(--gold);padding:11px;border-radius:0 12px 12px 0}
+.flash{min-height:180px;text-align:center;display:grid;place-items:center;position:relative;cursor:pointer}.flash .back{display:none}.flash.flipped .front{display:none}.flash.flipped .back{display:block}.star{position:absolute;right:9px;top:9px;border:0;background:transparent;font-size:23px}
+.game-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}.game-opt,.opt{padding:14px;border:2px solid var(--l);border-radius:14px;background:#fff;font-weight:850;text-align:left}.good,.correct{background:#e5f8e8!important;border-color:#19853a!important}.bad,.wrong{background:#ffe6e6!important;border-color:#c62e2e!important}
+.progress{height:10px;background:#ddd;border-radius:999px;overflow:hidden;margin-bottom:15px}.bar{height:100%;background:linear-gradient(90deg,var(--g),var(--b));width:0}.quiz-card{background:#fff;border:1px solid var(--l);border-radius:18px;padding:18px}.opts{display:grid;gap:9px}.feedback{font-weight:800;min-height:28px}
+.fill-input{width:100%;padding:13px;border:2px solid var(--l);border-radius:12px;font-size:18px;margin:10px 0}
+.word-bank,.drop-zone{display:flex;gap:8px;flex-wrap:wrap;min-height:62px;padding:12px;border:2px dashed #b7d9e8;border-radius:14px;background:#f8fcfe;margin:10px 0}.word-chip{padding:9px 12px;border:1px solid #b7d9e8;border-radius:999px;background:#fff;font-weight:850;cursor:grab;user-select:none}.drop-zone .word-chip{background:var(--g2);border-color:#9fd4bf}
+.game-status{font-weight:850;min-height:28px}.take{border-left:7px solid #b83280}
+@media(max-width:600px){.grid,.game-options{grid-template-columns:1fr}.audioRow .audio,.audioRow .btn{flex:1}}
+</style>
+</head>
+<body>
+<header>
+<span class="badge">HSK 5 · 第二十课</span>
+<h1 class="cn">小人书摊</h1>
+<p class="sub">Quầy truyện tranh liên hoàn</p>
+<div class="actions">
+<button onclick="history.back()">← Quay lại</button>
+<button onclick="speakText('小人书摊')">🔊 Tên bài</button>
+<button onclick="document.body.classList.toggle('showPinyin')">👁 Pinyin</button>
+<button onclick="pauseSpeech()">⏸ Tạm dừng</button>
+<button onclick="resumeSpeech()">▶ Tiếp tục</button>
+<button onclick="stopSpeech()">⏹ Dừng</button>
+</div>
+</header>
+<div id="tabs" class="tabs"></div>
+
+<section id="home" class="active">
+<div class="title"><div class="icon">🏠</div><div><h2>Tổng quan bài học</h2><p>Tìm hiểu quầy truyện tranh liên hoàn và ký ức tuổi thơ.</p></div></div>
+<div class="grid">
+<div class="card"><h3>🎯 Chủ đề</h3><p>Tiểu nhân thư, quầy cho thuê sách và sự thay đổi của một nét văn hóa đọc.</p></div>
+<div class="card"><h3>📐 Ngữ pháp</h3><p><b>V + 得/不起; 支; 连……带……; 凭; 记录/纪录</b>.</p></div>
+<div class="card"><h3>✅ Sau bài học</h3><p>Học viên có thể kể lại nội dung bài, mô tả quầy sách và dùng đúng các cấu trúc trọng tâm.</p></div>
+</div>
+</section>
+
+<section id="vocab"><div class="title"><div class="icon">📖</div><div><h2>Từ vựng đầy đủ</h2><p>Pinyin, nghĩa, ví dụ và âm thanh.</p></div></div><div id="vocabGrid" class="grid"></div></section>
+
+<section id="grammar"><div class="title"><div class="icon">📐</div><div><h2>Ngữ pháp</h2><p>5 điểm ngôn ngữ trọng tâm của bài.</p></div></div>
+<div class="card grammar"><h3 class="cn">1. 动词 + 得/不 + 起</h3><div class="formula cn">V + 得起 / 不起</div><p>Biểu thị có hoặc không có khả năng thực hiện hành động.</p><p class="cn"><b>飞机票太贵了，我买不起。</b></p><p class="cn"><b>这种产品经得起检验。</b></p></div>
+<div class="card grammar"><h3 class="cn">2. 支</h3><div class="formula cn">一支笔 / 一支曲子 / 一支队伍</div><p>Lượng từ cho vật hình que, tác phẩm âm nhạc hoặc đội ngũ.</p></div>
+<div class="card grammar"><h3 class="cn">3. 连……带……</h3><div class="formula cn">连 + N1 + 带 + N2</div><p class="cn"><b>连书带钱一起交给老板。</b></p></div>
+<div class="card grammar"><h3 class="cn">4. 凭</h3><div class="formula cn">凭 + danh từ + động từ</div><p class="cn"><b>做工作不能光凭经验。</b></p><p class="cn"><b>请凭票上车。</b></p></div>
+<div class="card grammar"><h3 class="cn">5. 记录 và 纪录</h3><p><b>记录</b>: ghi chép; bản ghi. Có thể là động từ hoặc danh từ.</p><p><b>纪录</b>: kỷ lục; thường gặp trong 纪录片.</p></div></section>
+
+<section id="d1"><div class="title"><div class="icon">💬</div><div><h2>Bài khóa 1 – 小人书是什么</h2><p>Khái niệm, bối cảnh và sự xuất hiện của quầy cho thuê truyện.</p></div></div>
+<div class="audioRow"><button class="audio" onclick="speakText(D.dialogue1.map(x=>x[1]).join('。'))">▶ Nghe toàn bài</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div>
+<div class="box"><div class="box-h">小人书的流行</div><div id="d1box" class="box-b"></div></div></section>
+
+<section id="d2"><div class="title"><div class="icon">🗣️</div><div><h2>Bài khóa 2–3 – 书摊与租书</h2><p>Mô tả quầy sách và cách thuê sách.</p></div></div>
+<div class="audioRow"><button class="audio" onclick="speakText(D.dialogue2.map(x=>x[1]).join('。'))">▶ Nghe toàn bài</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div>
+<div class="box"><div class="box-h">小人书摊的样子</div><div id="d2box" class="box-b"></div></div></section>
+
+<section id="express"><div class="title"><div class="icon">⭐</div><div><h2>Cách biểu đạt quan trọng</h2><p>10 câu trong sách, có pinyin, nghĩa và nút nghe.</p></div></div><div id="expressGrid" class="grid"></div></section>
+
+<section id="read"><div class="title"><div class="icon">📚</div><div><h2>Đọc phụ</h2><p>Đoạn đọc mở rộng theo đúng chủ đề và từ mới.</p></div></div><div class="box"><div class="box-h">小人书摊的记忆</div><div id="readBox" class="box-b"></div></div></section>
+
+<section id="speak"><div class="title"><div class="icon">🗣️</div><div><h2>6 câu giao tiếp cần nhớ</h2><p>Dùng trong môi trường công sở.</p></div></div><div id="speakGrid" class="grid"></div></section>
+
+<section id="flash"><div class="title"><div class="icon">🃏</div><div><h2>Game 4: Lật thẻ</h2><p>Chạm để lật; nhấn ⭐ để lưu từ khó.</p></div></div><div id="flashGrid" class="grid"></div></section>
+
+<section id="listen"><div class="title"><div class="icon">🎧</div><div><h2>Game 1: Nghe và chọn đáp án</h2><p>Vị trí đáp án đúng được xáo trộn ở mỗi lượt.</p></div></div>
+<div class="card"><button class="audio wide" onclick="playListen()">🔊 Nghe câu</button><div id="listenOptions" class="game-options"></div><p id="listenResult" class="game-status"></p><button class="btn" onclick="nextListen()">Câu tiếp theo</button></div></section>
+
+<section id="fill"><div class="title"><div class="icon">✍️</div><div><h2>Game 2: Điền vào chỗ trống</h2><p>Nhập chữ Hán còn thiếu.</p></div></div>
+<div class="card"><div id="fillQuestion" class="sent"></div><input id="fillInput" class="fill-input" placeholder="Nhập chữ Hán còn thiếu"><p id="fillHint" class="vn"></p><p id="fillResult" class="game-status"></p><div class="audioRow"><button class="btn" onclick="checkFill()">Kiểm tra</button><button class="audio" onclick="playFill()">🔊 Nghe câu</button><button class="btn" onclick="nextFill()">Câu tiếp theo</button></div></div></section>
+
+<section id="order"><div class="title"><div class="icon">🧩</div><div><h2>Game 3: Sắp xếp câu kéo thả</h2><p>Có thể kéo hoặc bấm vào từng từ.</p></div></div>
+<div class="card"><p>Kéo các từ vào ô phía dưới theo đúng thứ tự:</p><div id="wordBank" class="word-bank"></div><div id="dropZone" class="drop-zone"></div><p id="orderResult" class="game-status"></p><div class="audioRow"><button class="btn" onclick="checkOrder()">Kiểm tra</button><button class="btn" onclick="resetOrder()">Làm lại</button><button class="audio" onclick="playOrder()">🔊 Nghe câu</button><button class="btn" onclick="nextOrder()">Câu tiếp theo</button></div></div></section>
+
+<section id="quiz"><div class="title"><div class="icon">🎯</div><div><h2>Quiz 10 câu</h2><p>Đáp án được xáo trộn, không cố định ở A.</p></div></div><div class="progress"><div id="bar" class="bar"></div></div><div id="quizBox"></div></section>
+
+<section id="take"><div class="title"><div class="icon">📌</div><div><h2>Take-away</h2></div></div><div class="card take"><ul><li><b>Từ trọng tâm:</b> 出版、年代、单调、娱乐、从事、粗糙、整齐、登记、押金、收藏</li><li><b>Ngữ pháp:</b> V + 得/不起; 支; 连……带……; 凭</li><li><b>Phân biệt:</b> 记录 = ghi chép; 纪录 = kỷ lục / phim tài liệu</li><li><b>Thông điệp bài:</b> 小人书和小人书摊已成为历史的记忆。</li></ul></div></section>
+
+<script>
+const D={"vocab": [["摊", "tān", "n.", "quầy, sạp", "街口有一个小人书摊。", "Ở đầu phố có một quầy truyện tranh."], ["出版", "chūbǎn", "v.", "xuất bản", "这本书是去年出版的。", "Cuốn sách này được xuất bản năm ngoái."], ["连环画", "liánhuánhuà", "n.", "truyện tranh liên hoàn", "爷爷小时候很喜欢看连环画。", "Ông hồi nhỏ rất thích đọc truyện tranh liên hoàn."], ["年代", "niándài", "n.", "thập niên, thời đại", "这首歌在二十世纪八十年代很流行。", "Bài hát này rất thịnh hành vào thập niên 1980."], ["单调", "dāndiào", "adj.", "đơn điệu", "没有网络的生活有时比较单调。", "Cuộc sống không có mạng đôi khi khá đơn điệu."], ["娱乐", "yúlè", "n./v.", "giải trí", "读书是他最喜欢的娱乐活动。", "Đọc sách là hoạt động giải trí yêu thích của anh ấy."], ["无数", "wúshù", "adj.", "vô số", "这本书影响了无数青少年。", "Cuốn sách này ảnh hưởng đến vô số thanh thiếu niên."], ["青少年", "qīngshàonián", "n.", "thanh thiếu niên", "青少年应该多参加体育活动。", "Thanh thiếu niên nên tham gia nhiều hoạt động thể thao."], ["从事", "cóngshì", "v.", "làm, theo đuổi nghề", "她一直从事教育工作。", "Cô ấy luôn làm công việc giáo dục."], ["棚子", "péngzi", "n.", "cái lán, mái che", "书摊是一个靠墙的小棚子。", "Quầy sách là một cái lán nhỏ sát tường."], ["砖头", "zhuāntou", "n.", "gạch", "几块砖头支着木板。", "Vài viên gạch đỡ tấm gỗ."], ["支", "zhī", "m.", "lượng từ cho bút, bài hát, đội ngũ", "请借我一支笔。", "Cho tôi mượn một cây bút."], ["粗糙", "cūcāo", "adj.", "thô ráp, sơ sài", "这块木板很粗糙。", "Tấm gỗ này rất thô ráp."], ["木头", "mùtou", "n.", "gỗ", "桌子是木头做的。", "Cái bàn được làm bằng gỗ."], ["题材", "tícái", "n.", "đề tài", "这里有各种题材的小人书。", "Ở đây có truyện tranh thuộc nhiều đề tài."], ["翻", "fān", "v.", "lật, giở", "请把书翻到第二十页。", "Hãy lật sách đến trang 20."], ["搭", "dā", "v.", "mắc, phủ, dựng", "书翻开搭在绳子上。", "Sách được mở ra và mắc lên dây."], ["整齐", "zhěngqí", "adj.", "ngăn nắp, ngay ngắn", "书名写得很整齐。", "Tên sách được viết rất ngay ngắn."], ["年纪", "niánjì", "n.", "tuổi tác", "摊主是一位上了年纪的老人。", "Chủ quầy là một ông lão có tuổi."], ["身材", "shēncái", "n.", "vóc dáng", "他身材瘦小。", "Ông ấy có vóc dáng nhỏ gầy."], ["成人", "chéngrén", "n.", "người lớn", "不但孩子爱看，成人也爱看。", "Không chỉ trẻ em mà người lớn cũng thích đọc."], ["册", "cè", "m.", "quyển, cuốn", "在摊里看每册一分钱。", "Đọc tại quầy mỗi cuốn một xu."], ["假如", "jiǎrú", "conj.", "nếu như", "假如借回家看，要先登记。", "Nếu mượn về nhà đọc thì phải đăng ký trước."], ["登记", "dēngjì", "v./n.", "đăng ký, ghi chép", "摊主登记了借书人的姓名。", "Chủ quầy ghi tên người mượn sách."], ["记录", "jìlù", "n./v.", "ghi chép, bản ghi", "我把会议内容记录下来了。", "Tôi đã ghi lại nội dung cuộc họp."], ["手续", "shǒuxù", "n.", "thủ tục", "还书手续很简单。", "Thủ tục trả sách rất đơn giản."], ["办理", "bànlǐ", "v.", "xử lý, làm thủ tục", "这些手续已经办理好了。", "Những thủ tục này đã được giải quyết xong."], ["押金", "yājīn", "n.", "tiền đặt cọc", "租书似乎不需要押金。", "Thuê sách dường như không cần tiền đặt cọc."], ["凭", "píng", "prep./v.", "dựa vào, căn cứ vào", "租书全凭信用。", "Việc thuê sách hoàn toàn dựa vào chữ tín."], ["印刷", "yìnshuā", "v.", "in ấn", "这本书印刷得很精美。", "Cuốn sách này được in rất đẹp."], ["涨", "zhǎng", "v.", "tăng lên", "这些旧书的价格涨了很多。", "Giá những cuốn sách cũ này đã tăng nhiều."], ["收藏", "shōucáng", "v./n.", "sưu tầm, bộ sưu tập", "有特色的小人书成了收藏品。", "Những truyện tranh đặc sắc đã trở thành đồ sưu tầm."]], "dialogue1": [["老师", "小人书是什么？", "Xiǎorénshū shì shénme?", "Truyện tiểu nhân là gì?"], ["学生", "小人书是一种以书的形式出版的连环画。", "Xiǎorénshū shì yì zhǒng yǐ shū de xíngshì chūbǎn de liánhuánhuà.", "Đó là một loại truyện tranh liên hoàn được xuất bản dưới dạng sách."], ["老师", "以前为什么很多人喜欢看？", "Yǐqián wèishénme hěn duō rén xǐhuan kàn?", "Tại sao trước đây nhiều người thích đọc?"], ["学生", "因为那时候生活很单调，没有网络，也没有动画片。", "Yīnwèi nà shíhou shēnghuó hěn dāndiào, méiyǒu wǎngluò, yě méiyǒu dònghuàpiàn.", "Vì lúc đó cuộc sống đơn điệu, không có mạng cũng không có phim hoạt hình."], ["老师", "买不起书的人怎么办？", "Mǎi bu qǐ shū de rén zěnme bàn?", "Những người không mua nổi sách thì làm sao?"], ["学生", "他们可以花很少的钱到小人书摊租书看。", "Tāmen kěyǐ huā hěn shǎo de qián dào xiǎorénshū tān zū shū kàn.", "Họ có thể bỏ rất ít tiền để thuê sách ở quầy."]], "dialogue2": [["小王", "这个小人书摊是什么样的？", "Zhège xiǎorénshū tān shì shénme yàng de?", "Quầy truyện tranh này trông như thế nào?"], ["小李", "它是一个靠墙的小棚子，里面有砖头和粗糙的木板。", "Tā shì yí ge kào qiáng de xiǎo péngzi, lǐmiàn yǒu zhuāntou hé cūcāo de mùbǎn.", "Đó là một cái lán nhỏ sát tường, bên trong có gạch và ván gỗ thô."], ["小王", "书怎么摆？", "Shū zěnme bǎi?", "Sách được bày thế nào?"], ["小李", "有些放在床板上，有些翻开搭在绳子上。", "Yǒuxiē fàng zài chuángbǎn shàng, yǒuxiē fānkāi dā zài shéngzi shàng.", "Một số đặt trên tấm ván, một số mở ra và mắc lên dây."], ["小王", "可以借回家吗？", "Kěyǐ jiè huí jiā ma?", "Có thể mượn về nhà không?"], ["小李", "可以。摊主会登记姓名、地址和书名。", "Kěyǐ. Tānzhǔ huì dēngjì xìngmíng, dìzhǐ hé shūmíng.", "Có. Chủ quầy sẽ ghi tên, địa chỉ và tên sách."]], "expressions": [["毫无疑问，这是件大好事。", "Háowú yíwèn, zhè shì jiàn dà hǎoshì.", "Không nghi ngờ gì, đây là một việc rất tốt."], ["飞机票太贵了，我买不起。", "Fēijīpiào tài guì le, wǒ mǎi bu qǐ.", "Vé máy bay quá đắt, tôi không mua nổi."], ["这种产品的质量经得起检验。", "Zhè zhǒng chǎnpǐn de zhìliàng jīng de qǐ jiǎnyàn.", "Chất lượng sản phẩm này chịu được kiểm nghiệm."], ["请借我一支笔。", "Qǐng jiè wǒ yì zhī bǐ.", "Cho tôi mượn một cây bút."], ["看完以后，连书带钱一起交给老板。", "Kàn wán yǐhòu, lián shū dài qián yìqǐ jiāo gěi lǎobǎn.", "Đọc xong thì đưa cả sách lẫn tiền cho chủ."], ["假如借回家看，要先登记。", "Jiǎrú jiè huí jiā kàn, yào xiān dēngjì.", "Nếu mượn về nhà đọc thì phải đăng ký trước."], ["做工作不能光凭经验。", "Zuò gōngzuò bù néng guāng píng jīngyàn.", "Làm việc không thể chỉ dựa vào kinh nghiệm."], ["请凭票上车。", "Qǐng píng piào shàng chē.", "Vui lòng lên xe bằng vé."], ["我已经把会议记录下来了。", "Wǒ yǐjīng bǎ huìyì jìlù xiàlái le.", "Tôi đã ghi lại cuộc họp."], ["他打破了学校纪录。", "Tā dǎpò le xuéxiào jìlù.", "Anh ấy đã phá kỷ lục của trường."]], "reading": [["小人书是一种连环画。在没有网络和动画片的年代，它是儿童、青少年和成人都喜欢的娱乐。", "Xiǎorénshū shì yì zhǒng liánhuánhuà. Zài méiyǒu wǎngluò hé dònghuàpiàn de niándài, tā shì értóng, qīngshàonián hé chéngrén dōu xǐhuan de yúlè.", "Truyện tiểu nhân là một loại truyện tranh liên hoàn. Trong thời chưa có mạng và phim hoạt hình, đó là hình thức giải trí được trẻ em, thanh thiếu niên và người lớn yêu thích."], ["小人书摊通常是一个简单的小棚子，里面摆着各种题材的小人书。书有的放在木板上，有的翻开搭在绳子上。", "Xiǎorénshū tān tōngcháng shì yí ge jiǎndān de xiǎo péngzi, lǐmiàn bǎizhe gè zhǒng tícái de xiǎorénshū. Shū yǒu de fàng zài mùbǎn shàng, yǒu de fānkāi dā zài shéngzi shàng.", "Quầy truyện thường là một cái lán đơn giản, bên trong bày nhiều truyện thuộc các đề tài khác nhau. Có cuốn đặt trên ván, có cuốn mở ra và mắc lên dây."], ["租书很便宜。读者既可以坐在摊里看，也可以登记后借回家。那时似乎没有押金，主要凭信用。", "Zū shū hěn piányi. Dúzhě jì kěyǐ zuò zài tān lǐ kàn, yě kěyǐ dēngjì hòu jiè huí jiā. Nà shí sìhū méiyǒu yājīn, zhǔyào píng xìnyòng.", "Thuê sách rất rẻ. Người đọc có thể ngồi tại quầy hoặc đăng ký rồi mượn về nhà. Khi đó dường như không cần đặt cọc, chủ yếu dựa vào chữ tín."], ["如今，小人书摊已经成为历史记忆。一些印刷精美、有特色的作品身价大涨，成了收藏品，甚至进入了博物馆。", "Rújīn, xiǎorénshū tān yǐjīng chéngwéi lìshǐ jìyì. Yìxiē yìnshuā jīngměi, yǒu tèsè de zuòpǐn shēnjià dà zhǎng, chéng le shōucángpǐn, shènzhì jìnrù le bówùguǎn.", "Ngày nay, quầy truyện đã trở thành ký ức lịch sử. Một số tác phẩm in đẹp và đặc sắc tăng giá mạnh, trở thành đồ sưu tầm, thậm chí vào bảo tàng."]]};
+const tabs=[['home','🏠 Tổng quan'],['vocab','📖 Từ'],['grammar','📐 Ngữ pháp'],['d1','💬 Hội thoại 1'],['d2','🗣️ Hội thoại 2'],['express','⭐ Biểu đạt'],['read','📚 Đọc phụ'],['speak','🗣️ Giao tiếp'],['flash','🃏 Lật thẻ'],['listen','🎧 Nghe chọn'],['fill','✍️ Điền từ'],['order','🧩 Kéo thả'],['quiz','🎯 Quiz'],['take','📌 Nhớ']];
+document.getElementById('tabs').innerHTML=tabs.map((x,i)=>`<button class="${i===0?'active':''}" onclick="tab('${x[0]}')">${x[1]}</button>`).join('');
+function tab(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tabs button').forEach((b,i)=>b.classList.toggle('active',tabs[i][0]===id));window.scrollTo({top:0,behavior:'smooth'})}
+
+let audio=null;
+let speechToken=0;
+function gttsUrl(t){return 'https://translate.google.com/translate_tts?ie=UTF-8&tl=zh-CN&client=tw-ob&q='+encodeURIComponent(t.slice(0,200))}
+function speakText(t){
+ stopSpeech();
+ const myToken=++speechToken;
+ let fallbackStarted=false;
+ const fallback=()=>{
+   if(fallbackStarted||myToken!==speechToken)return;
+   fallbackStarted=true;
+   if(audio){audio.onerror=null;audio.pause();audio=null}
+   try{speechSynthesis.cancel()}catch(e){}
+   const u=new SpeechSynthesisUtterance(t);
+   u.lang='zh-CN';u.rate=.82;
+   const vs=speechSynthesis.getVoices();
+   const v=vs.find(x=>/Xiaoxiao|Tingting|Meijia|Yunxi/i.test(x.name))
+      ||vs.find(x=>x.lang==='zh-CN')
+      ||vs.find(x=>x.lang&&x.lang.startsWith('zh'));
+   if(v)u.voice=v;
+   speechSynthesis.speak(u);
+ };
+ audio=new Audio(gttsUrl(t));
+ audio.playbackRate=.9;
+ audio.preload='auto';
+ audio.onerror=fallback;
+ const p=audio.play();
+ if(p&&typeof p.catch==='function')p.catch(fallback);
+}
+function pauseSpeech(){if(audio&&!audio.paused)audio.pause();try{speechSynthesis.pause()}catch(e){}}
+function resumeSpeech(){if(audio&&audio.paused)audio.play().catch(()=>{});try{speechSynthesis.resume()}catch(e){}}
+function stopSpeech(){
+ speechToken++;
+ if(audio){audio.onerror=null;audio.pause();try{audio.currentTime=0}catch(e){}audio=null}
+ try{speechSynthesis.cancel()}catch(e){}
+}
+function safe(s){return String(s).replaceAll("\\","\\\\").replaceAll("'","\\'")}
+
+document.getElementById('vocabGrid').innerHTML=D.vocab.map(v=>`<div class="card"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><span class="pos">${v[2]}</span><div class="meaning">${v[3]}</div><div class="ex"><div class="cn">${v[4]}</div><div class="vn">${v[5]}</div></div><div class="audioRow"><button class="audio" onclick="speakText('${safe(v[0])}')">🔊 Từ</button><button class="audio" onclick="speakText('${safe(v[4])}')">🔊 Ví dụ</button></div></div>`).join('');
+
+function renderDialogue(id,data){
+ document.getElementById(id).innerHTML=data.map((x,i)=>`<div class="line"><span class="sp">${x[0]}</span><div class="sent cn">${x[1]}</div><div class="pinyin">${x[2]}</div><div class="vn">${x[3]}</div><div class="audioRow"><button class="audio" onclick="speakText(${id==='d1box'?'D.dialogue1':'D.dialogue2'}[${i}][1])">▶ Nghe câu</button></div></div>`).join('');
+}
+renderDialogue('d1box',D.dialogue1);renderDialogue('d2box',D.dialogue2);
+
+document.getElementById('expressGrid').innerHTML=D.expressions.map((x,i)=>`<div class="card"><h3 class="cn">${i+1}. ${x[0]}</h3><div class="pinyin">${x[1]}</div><p>${x[2]}</p><button class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Nghe</button></div>`).join('');
+
+document.getElementById('readBox').innerHTML=D.reading.map((x,i)=>`<div class="line"><span class="sp">第${i+1}段</span><div class="sent cn">${x[0]}</div><div class="pinyin">${x[1]}</div><div class="vn">${x[2]}</div><div class="audioRow"><button class="audio" onclick="speakText(D.reading[${i}][0])">▶ Đọc đoạn</button></div></div>`).join('');
+
+const speaking=[["毫无疑问，这是件大好事。", "Không nghi ngờ gì, đây là một việc rất tốt."], ["这个太贵了，我买不起。", "Cái này quá đắt, tôi không mua nổi."], ["这种产品经得起检验。", "Sản phẩm này chịu được kiểm nghiệm."], ["请借我一支笔。", "Cho tôi mượn một cây bút."], ["假如借回家，要先登记。", "Nếu mượn về nhà thì phải đăng ký trước."], ["请凭票上车。", "Vui lòng lên xe bằng vé."]];
+document.getElementById('speakGrid').innerHTML=speaking.map((x,i)=>`<div class="card"><h3 class="cn">${i+1}. ${x[0]}</h3><p>${x[1]}</p><button class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Nghe</button></div>`).join('');
+
+let difficult=JSON.parse(localStorage.getItem('hsk5_20_difficult')||'[]');
+function toggleDiff(w){difficult=difficult.includes(w)?difficult.filter(x=>x!==w):[...difficult,w];localStorage.setItem('hsk5_20_difficult',JSON.stringify(difficult));renderFlash()}
+function renderFlash(){document.getElementById('flashGrid').innerHTML=D.vocab.map(v=>`<div class="card flash" onclick="this.classList.toggle('flipped')"><button class="star" onclick="event.stopPropagation();toggleDiff('${safe(v[0])}')">${difficult.includes(v[0])?'⭐':'☆'}</button><div class="front"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><p>Chạm để xem nghĩa</p></div><div class="back"><h2>${v[3]}</h2><p class="cn">${v[4]}</p><p>${v[5]}</p><button class="audio" onclick="event.stopPropagation();speakText('${safe(v[0])}。${safe(v[4])}')">🔊 Nghe</button></div></div>`).join('')}
+renderFlash();
+
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+
+const listeningQuestions=[{"audio": "小人书是一种连环画。", "answer": "Truyện tiểu nhân là một loại truyện tranh liên hoàn.", "options": ["Truyện tiểu nhân là một loại truyện tranh liên hoàn.", "Đó là một bộ phim hoạt hình.", "Đó là một tờ báo.", "Đó là một cuốn từ điển."]}, {"audio": "飞机票太贵了，我买不起。", "answer": "Vé máy bay quá đắt, tôi không mua nổi.", "options": ["Vé máy bay quá đắt, tôi không mua nổi.", "Tôi đã mua vé máy bay.", "Vé máy bay rất rẻ.", "Tôi không muốn đi tàu."]}, {"audio": "请借我一支笔。", "answer": "Cho tôi mượn một cây bút.", "options": ["Cho tôi mượn một cây bút.", "Hãy mua cho tôi một quyển sách.", "Hãy trả lại tiền.", "Hãy mở cửa."]}, {"audio": "假如借回家看，要先登记。", "answer": "Nếu mượn về nhà đọc thì phải đăng ký trước.", "options": ["Nếu mượn về nhà đọc thì phải đăng ký trước.", "Không được mang sách về nhà.", "Đọc sách không cần trả tiền.", "Phải mua sách trước."]}, {"audio": "租书全凭信用。", "answer": "Việc thuê sách hoàn toàn dựa vào chữ tín.", "options": ["Việc thuê sách hoàn toàn dựa vào chữ tín.", "Thuê sách cần tiền đặt cọc cao.", "Chỉ trẻ em được thuê sách.", "Thuê sách cần hộ chiếu."]}];
+let li=0;
+function renderListening(){
+ const q=listeningQuestions[li%listeningQuestions.length];
+ const choices=shuffle(q.options);
+ const box=document.getElementById('listenOptions');
+ box.innerHTML='';
+ choices.forEach(choice=>{
+   const btn=document.createElement('button');
+   btn.className='game-opt';
+   btn.type='button';
+   btn.textContent=choice;
+   btn.addEventListener('click',()=>chooseListen(btn,choice,q.answer));
+   box.appendChild(btn);
+ });
+ document.getElementById('listenResult').textContent='';
+}
+function playListen(){speakText(listeningQuestions[li%listeningQuestions.length].audio)}
+function chooseListen(btn,choice,answer){document.querySelectorAll('#listenOptions button').forEach(x=>x.disabled=true);if(choice===answer){btn.classList.add('good');document.getElementById('listenResult').textContent='✅ Đúng rồi!'}else{btn.classList.add('bad');document.getElementById('listenResult').textContent='❌ Đáp án đúng: '+answer;[...document.querySelectorAll('#listenOptions button')].find(x=>x.textContent===answer)?.classList.add('good')}}
+function nextListen(){li++;renderListening()}renderListening();
+
+const fillQuestions=[{"sentence": "毫无____，这是件大好事。", "answer": "疑问", "hint": "Không nghi ngờ gì"}, {"sentence": "飞机票太贵了，我买不____。", "answer": "起", "hint": "Không mua nổi"}, {"sentence": "请借我一____笔。", "answer": "支", "hint": "Lượng từ cho bút"}, {"sentence": "假如借回家看，要先____。", "answer": "登记", "hint": "Đăng ký"}, {"sentence": "租书全____信用。", "answer": "凭", "hint": "Dựa vào"}];
+let fi=0;
+function renderFill(){const q=fillQuestions[fi%fillQuestions.length];document.getElementById('fillQuestion').textContent=q.sentence;document.getElementById('fillHint').textContent='Gợi ý: '+q.hint;document.getElementById('fillInput').value='';document.getElementById('fillResult').textContent=''}
+function checkFill(){const q=fillQuestions[fi%fillQuestions.length];const val=document.getElementById('fillInput').value.trim();document.getElementById('fillResult').textContent=val===q.answer?'✅ Chính xác!':'❌ Đáp án đúng: '+q.answer}
+function playFill(){const q=fillQuestions[fi%fillQuestions.length];speakText(q.sentence.replace('____',q.answer))}
+function nextFill(){fi++;renderFill()}renderFill();
+
+const orderQuestions=[["小人书", "是", "一种", "连环画"], ["飞机票", "太贵了", "我", "买不起"], ["请", "借我", "一支", "笔"], ["假如", "借回家看", "要", "先登记"], ["租书", "全凭", "信用"]];
+let oi=0;
+function makeChip(word,index){
+ const el=document.createElement('button');
+ el.type='button';
+ el.className='word-chip';
+ el.textContent=word;
+ el.dataset.index=index;
+ el.draggable=true;
+ el.addEventListener('dragstart',e=>{
+   e.dataTransfer.effectAllowed='move';
+   e.dataTransfer.setData('text/plain',index);
+ });
+ el.addEventListener('click',()=>moveChip(el));
+ return el;
+}
+function moveChip(el){
+ const bank=document.getElementById('wordBank'),zone=document.getElementById('dropZone');
+ (el.parentElement===bank?zone:bank).appendChild(el);
+}
+function setupDrop(target){
+ target.addEventListener('dragover',e=>{e.preventDefault();e.dataTransfer.dropEffect='move'});
+ target.addEventListener('drop',e=>{
+   e.preventDefault();
+   const index=e.dataTransfer.getData('text/plain');
+   const chip=[...document.querySelectorAll('.word-chip')].find(x=>x.dataset.index===index);
+   if(chip)target.appendChild(chip);
+ });
+}
+setupDrop(document.getElementById('wordBank'));setupDrop(document.getElementById('dropZone'));
+function renderOrder(){const words=orderQuestions[oi%orderQuestions.length];const bank=document.getElementById('wordBank'),zone=document.getElementById('dropZone');bank.innerHTML='';zone.innerHTML='';shuffle(words.map((w,i)=>({w,i}))).forEach(o=>bank.appendChild(makeChip(o.w,o.i)));document.getElementById('orderResult').textContent=''}
+function checkOrder(){const target=orderQuestions[oi%orderQuestions.length].join('');const current=[...document.querySelectorAll('#dropZone .word-chip')].map(x=>x.textContent).join('');document.getElementById('orderResult').textContent=current===target?'✅ Sắp xếp đúng!':'❌ Đáp án: '+orderQuestions[oi%orderQuestions.length].join(' ')}
+function resetOrder(){renderOrder()}function playOrder(){speakText(orderQuestions[oi%orderQuestions.length].join(''))}function nextOrder(){oi++;renderOrder()}renderOrder();
+
+const quizData=[{"q": "“单调” nghĩa là gì?", "correct": "đơn điệu", "wrong": ["ngăn nắp", "thô ráp", "vô số"]}, {"q": "“从事教育工作” nghĩa là gì?", "correct": "làm công việc giáo dục", "wrong": ["nghỉ công việc giáo dục", "ghi chép bài học", "xuất bản sách"]}, {"q": "“买不起” nghĩa là gì?", "correct": "không mua nổi", "wrong": ["không muốn mua", "mua rất nhanh", "mua rồi"]}, {"q": "Lượng từ nào dùng cho “笔”?", "correct": "支", "wrong": ["册", "本", "个"]}, {"q": "“连书带钱” nghĩa là gì?", "correct": "cả sách lẫn tiền", "wrong": ["chỉ có sách", "mượn sách không trả tiền", "sách và bút"]}, {"q": "“凭票上车” nghĩa là gì?", "correct": "lên xe bằng vé", "wrong": ["mua vé trên xe", "xuống xe không vé", "đợi xe ở nhà"]}, {"q": "“记录” có thể là gì?", "correct": "danh từ và động từ", "wrong": ["chỉ là tính từ", "chỉ là lượng từ", "chỉ là giới từ"]}, {"q": "“纪录” thường dùng trong trường hợp nào?", "correct": "kỷ lục hoặc phim tài liệu", "wrong": ["ghi chép cuộc họp", "đăng ký tên", "làm thủ tục"]}, {"q": "Ngày trước thuê tiểu nhân thư chủ yếu dựa vào gì?", "correct": "chữ tín", "wrong": ["hộ chiếu", "tiền đặt cọc cao", "thẻ ngân hàng"]}, {"q": "Ngày nay một số tiểu nhân thư đặc sắc đã trở thành gì?", "correct": "đồ sưu tầm", "wrong": ["sách giáo khoa", "vé xe", "hồ sơ"]}];
+let qi=0,score=0;
+function renderQ(){
+ document.getElementById('bar').style.width=(qi/quizData.length*100)+'%';
+ const q=quizData[qi];
+ const options=shuffle([q.correct,...q.wrong]);
+ const card=document.createElement('div');
+ card.className='quiz-card';
+ const counter=document.createElement('b');
+ counter.textContent=`Câu ${qi+1}/${quizData.length}`;
+ const title=document.createElement('h3');
+ title.textContent=q.q;
+ const opts=document.createElement('div');
+ opts.className='opts';
+ options.forEach(choice=>{
+   const btn=document.createElement('button');
+   btn.type='button';
+   btn.className='opt';
+   btn.textContent=choice;
+   btn.addEventListener('click',()=>answerQuiz(btn,choice,q.correct));
+   opts.appendChild(btn);
+ });
+ const feedback=document.createElement('p');
+ feedback.id='quizFeedback';
+ feedback.className='feedback';
+ const next=document.createElement('button');
+ next.id='nextQuiz';
+ next.type='button';
+ next.className='btn';
+ next.textContent='Tiếp theo';
+ next.disabled=true;
+ next.addEventListener('click',nextQ);
+ card.append(counter,title,opts,feedback,next);
+ const box=document.getElementById('quizBox');
+ box.innerHTML='';
+ box.appendChild(card);
+}
+function answerQuiz(btn,choice,correct){document.querySelectorAll('.opt').forEach(x=>x.disabled=true);if(choice===correct){btn.classList.add('correct');score++;document.getElementById('quizFeedback').textContent='✅ Đúng rồi!'}else{btn.classList.add('wrong');[...document.querySelectorAll('.opt')].find(x=>x.textContent===correct)?.classList.add('correct');document.getElementById('quizFeedback').textContent='❌ Đáp án đúng: '+correct}document.getElementById('nextQuiz').disabled=false}
+function nextQ(){qi++;if(qi===quizData.length){document.getElementById('quizBox').innerHTML=`<div class="card"><h2>Kết quả: ${score}/10</h2><p>${score>=8?'Rất tốt!':'Hãy ôn lại từ mới và ngữ pháp nhé.'}</p><button class="btn" onclick="qi=0;score=0;renderQ()">Làm lại</button></div>`;document.getElementById('bar').style.width='100%'}else renderQ()}renderQ();
+</script>
+</body></html>
