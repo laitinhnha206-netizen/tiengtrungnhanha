@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#149bd7">
+<title>第五课 如何营造和谐谈话气氛</title>
+<style>
+:root{--b:#149bd7;--b2:#e8f6fc;--bg:#f7fbfd;--c:#fff;--t:#173042;--m:#687786;--l:#d9eaf2;--g:#178a62;--g2:#eaf8f2;--r:#d24a3a;--gold:#f2b705;--shadow:0 10px 28px rgba(26,76,105,.10)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--t);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;padding-bottom:78px}
+.cn{font-family:"PingFang SC","Noto Serif SC","Songti SC",serif}
+header{background:linear-gradient(135deg,#12a8dc,#2b6cb0 58%,#16835f);color:#fff;text-align:center;padding:30px 16px;border-radius:0 0 30px 30px;box-shadow:var(--shadow)}
+.badge{display:inline-block;background:var(--gold);color:#332900;padding:5px 13px;border-radius:999px;font-weight:900;font-size:12px}
+h1{font-size:clamp(32px,7vw,52px);margin:8px 0 2px}.sub{margin:0;opacity:.93}.actions,.tabs,.audioRow{display:flex;gap:8px;flex-wrap:wrap}.actions{justify-content:center;margin-top:14px}
+button{font:inherit;cursor:pointer}.actions button,.tabs button,.audio,.btn{border:0;border-radius:12px;padding:10px 13px;font-weight:850}.actions button{background:#ffffff22;color:#fff;border:1px solid #ffffff55}
+.tabs{position:sticky;top:0;z-index:30;background:#f7fbfdf2;backdrop-filter:blur(12px);padding:10px 8px;overflow-x:auto;white-space:nowrap;border-bottom:1px solid var(--l)}
+.tabs button{flex:0 0 auto;background:#fff;border:1px solid var(--l);color:var(--t)}.tabs button.active{background:var(--b);color:#fff}
+section{display:none;max-width:1050px;margin:auto;padding:22px 14px 35px}section.active{display:block}
+.title{display:flex;gap:11px;align-items:center;margin-bottom:17px}.icon{width:48px;height:48px;border-radius:15px;background:var(--b);color:#fff;display:grid;place-items:center;font-size:23px}.title h2{margin:0}.title p{margin:0;color:var(--m);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:13px}.card,.box{background:#fff;border:1px solid var(--l);border-radius:19px;box-shadow:var(--shadow)}.card{padding:17px}.box{overflow:hidden;margin-bottom:15px}.box-h{background:linear-gradient(90deg,var(--b),#56b5df);color:#fff;padding:13px 16px;font-weight:900}.box-b{padding:13px 16px}
+.han{font-size:32px;font-weight:900}.pinyin{display:none;color:var(--r);font-style:italic;font-size:14px}.showPinyin .pinyin{display:block}.pos{display:inline-block;background:#eef1f3;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:850}.meaning{font-weight:850}.ex{border-left:4px solid var(--g);padding-left:10px;margin-top:9px}.vn{color:#555}
+.line{padding:14px 0;border-bottom:1px solid #eee}.line:last-child{border-bottom:0}.sp{display:inline-block;background:var(--b2);color:#145477;padding:3px 9px;border-radius:999px;font-weight:900}.sent{font-size:18px;font-weight:800}
+.audio{background:var(--b2);color:#145477}.pause{background:#fff6df;color:#855b00}.stop{background:#ffe8e8;color:#a21f1f}.wide{width:100%}
+.grammar{border-left:6px solid var(--g);background:var(--g2)}.formula{background:#fff;border:1px dashed var(--g);padding:11px;border-radius:11px;font-weight:900}.tip{background:#fff7d6;border-left:4px solid var(--gold);padding:11px;border-radius:0 12px 12px 0}
+.flash{min-height:180px;text-align:center;display:grid;place-items:center;position:relative;cursor:pointer}.flash .back{display:none}.flash.flipped .front{display:none}.flash.flipped .back{display:block}.star{position:absolute;right:9px;top:9px;border:0;background:transparent;font-size:23px}
+.game-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}.game-opt,.opt{padding:14px;border:2px solid var(--l);border-radius:14px;background:#fff;font-weight:850;text-align:left}.good,.correct{background:#e5f8e8!important;border-color:#19853a!important}.bad,.wrong{background:#ffe6e6!important;border-color:#c62e2e!important}
+.progress{height:10px;background:#ddd;border-radius:999px;overflow:hidden;margin-bottom:15px}.bar{height:100%;background:linear-gradient(90deg,var(--g),var(--b));width:0}.quiz-card{background:#fff;border:1px solid var(--l);border-radius:18px;padding:18px}.opts{display:grid;gap:9px}.feedback{font-weight:800;min-height:28px}
+.fill-input{width:100%;padding:13px;border:2px solid var(--l);border-radius:12px;font-size:18px;margin:10px 0}
+.word-bank,.drop-zone{display:flex;gap:8px;flex-wrap:wrap;min-height:62px;padding:12px;border:2px dashed #b7d9e8;border-radius:14px;background:#f8fcfe;margin:10px 0}.word-chip{padding:9px 12px;border:1px solid #b7d9e8;border-radius:999px;background:#fff;font-weight:850;cursor:grab;user-select:none}.drop-zone .word-chip{background:var(--g2);border-color:#9fd4bf}
+.game-status{font-weight:850;min-height:28px}.take{border-left:7px solid #b83280}
+@media(max-width:600px){.grid,.game-options{grid-template-columns:1fr}.audioRow .audio,.audioRow .btn{flex:1}}
+</style>
+</head>
+<body>
+<header>
+<span class="badge">Tiếng Trung thương mại · 第五课</span>
+<h1 class="cn">如何营造和谐谈话气氛</h1>
+<p class="sub">Cách tạo không khí thoải mái, hòa hợp khi nói chuyện công việc</p>
+<div class="actions">
+<button onclick="history.back()">← Quay lại</button>
+<button onclick="speakText('如何营造和谐谈话气氛')">🔊 Tên bài</button>
+<button onclick="document.body.classList.toggle('showPinyin')">👁 Pinyin</button>
+<button onclick="pauseSpeech()">⏸ Tạm dừng</button>
+<button onclick="resumeSpeech()">▶ Tiếp tục</button>
+<button onclick="stopSpeech()">⏹ Dừng</button>
+</div>
+</header>
+<div id="tabs" class="tabs"></div>
+
+<section id="home" class="active">
+<div class="title"><div class="icon">🏠</div><div><h2>Tổng quan bài học</h2><p>Hàn huyên lịch sự trước khi bước vào trao đổi công việc.</p></div></div>
+<div class="grid">
+<div class="card"><h3>🎯 Chủ đề</h3><p>Hỏi thăm việc đi lại, thời tiết, thể hiện sự cảm ơn và quan tâm tới khách.</p></div>
+<div class="card"><h3>📐 Ngữ pháp</h3><p><b>从</b>: biểu thị điểm xuất phát về nơi chốn, thời gian hoặc góc độ.</p></div>
+<div class="card"><h3>✅ Sau bài học</h3><p>Học viên có thể tạo không khí thoải mái, đáp lại lời khách sáo và chuyển sang chủ đề công việc tự nhiên.</p></div>
+</div></section>
+
+<section id="vocab"><div class="title"><div class="icon">📖</div><div><h2>Từ vựng đầy đủ</h2><p>Pinyin, nghĩa, ví dụ và âm thanh.</p></div></div><div id="vocabGrid" class="grid"></div></section>
+
+<section id="grammar">
+<div class="title"><div class="icon">📐</div><div><h2>Ngữ pháp</h2><p>Cách dùng giới từ 从.</p></div></div>
+<div class="card grammar">
+<h3 class="cn">从 + nơi chốn / thời gian / góc độ</h3>
+<div class="formula cn">从 + điểm xuất phát + động từ / cụm động từ</div>
+<p><b>从</b> có nghĩa là “từ”, chỉ điểm bắt đầu của nơi chốn, thời gian hoặc góc độ xem xét.</p>
+<p class="cn"><b>从这个角度来看……</b> — Nhìn từ góc độ này…</p>
+<p class="cn"><b>从那么远赶过来。</b> — Từ nơi xa như vậy vội đến đây.</p>
+<p class="cn"><b>从那儿到这儿很近。</b> — Từ đó đến đây rất gần.</p>
+<div class="tip"><b>Phân biệt:</b> 从 nhấn mạnh điểm xuất phát; 离 dùng để nói khoảng cách giữa hai nơi.</div>
+</div></section>
+
+<section id="d1"><div class="title"><div class="icon">💬</div><div><h2>Hội thoại chính – Trong sách</h2><p>Hàn huyên trước khi nói chuyện công việc.</p></div></div>
+<div class="audioRow"><button class="audio" onclick="speakText(D.dialogue1.map(x=>x[1]).join('。'))">▶ Nghe toàn bài</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div>
+<div class="box"><div class="box-h">营造和谐谈话气氛</div><div id="d1box" class="box-b"></div></div></section>
+
+<section id="d2"><div class="title"><div class="icon">🗣️</div><div><h2>Hội thoại mở rộng</h2><p>Đón tiếp khách trong ngày mưa.</p></div></div>
+<div class="audioRow"><button class="audio" onclick="speakText(D.dialogue2.map(x=>x[1]).join('。'))">▶ Nghe toàn bài</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div>
+<div class="box"><div class="box-h">下雨天接待客户</div><div id="d2box" class="box-b"></div></div></section>
+
+<section id="express"><div class="title"><div class="icon">⭐</div><div><h2>Cách biểu đạt quan trọng</h2><p>10 câu trong sách, có pinyin, nghĩa và nút nghe.</p></div></div><div id="expressGrid" class="grid"></div></section>
+
+<section id="read"><div class="title"><div class="icon">📚</div><div><h2>Đọc phụ</h2><p>Đoạn đọc mở rộng theo đúng chủ đề và từ mới.</p></div></div><div class="box"><div class="box-h">商务会谈前的寒暄</div><div id="readBox" class="box-b"></div></div></section>
+
+<section id="speak"><div class="title"><div class="icon">🗣️</div><div><h2>6 câu giao tiếp cần nhớ</h2><p>Dùng trong môi trường công sở.</p></div></div><div id="speakGrid" class="grid"></div></section>
+
+<section id="flash"><div class="title"><div class="icon">🃏</div><div><h2>Game 4: Lật thẻ</h2><p>Chạm để lật; nhấn ⭐ để lưu từ khó.</p></div></div><div id="flashGrid" class="grid"></div></section>
+
+<section id="listen"><div class="title"><div class="icon">🎧</div><div><h2>Game 1: Nghe và chọn đáp án</h2><p>Vị trí đáp án đúng được xáo trộn ở mỗi lượt.</p></div></div>
+<div class="card"><button class="audio wide" onclick="playListen()">🔊 Nghe câu</button><div id="listenOptions" class="game-options"></div><p id="listenResult" class="game-status"></p><button class="btn" onclick="nextListen()">Câu tiếp theo</button></div></section>
+
+<section id="fill"><div class="title"><div class="icon">✍️</div><div><h2>Game 2: Điền vào chỗ trống</h2><p>Nhập chữ Hán còn thiếu.</p></div></div>
+<div class="card"><div id="fillQuestion" class="sent"></div><input id="fillInput" class="fill-input" placeholder="Nhập chữ Hán còn thiếu"><p id="fillHint" class="vn"></p><p id="fillResult" class="game-status"></p><div class="audioRow"><button class="btn" onclick="checkFill()">Kiểm tra</button><button class="audio" onclick="playFill()">🔊 Nghe câu</button><button class="btn" onclick="nextFill()">Câu tiếp theo</button></div></div></section>
+
+<section id="order"><div class="title"><div class="icon">🧩</div><div><h2>Game 3: Sắp xếp câu kéo thả</h2><p>Có thể kéo hoặc bấm vào từng từ.</p></div></div>
+<div class="card"><p>Kéo các từ vào ô phía dưới theo đúng thứ tự:</p><div id="wordBank" class="word-bank"></div><div id="dropZone" class="drop-zone"></div><p id="orderResult" class="game-status"></p><div class="audioRow"><button class="btn" onclick="checkOrder()">Kiểm tra</button><button class="btn" onclick="resetOrder()">Làm lại</button><button class="audio" onclick="playOrder()">🔊 Nghe câu</button><button class="btn" onclick="nextOrder()">Câu tiếp theo</button></div></div></section>
+
+<section id="quiz"><div class="title"><div class="icon">🎯</div><div><h2>Quiz 10 câu</h2><p>Đáp án được xáo trộn, không cố định ở A.</p></div></div><div class="progress"><div id="bar" class="bar"></div></div><div id="quizBox"></div></section>
+
+<section id="take"><div class="title"><div class="icon">📌</div><div><h2>Take-away</h2></div></div>
+<div class="card take"><ul>
+<li><b>Từ trọng tâm:</b> 麻烦、开车、路段、堵、电车、休息、业务</li>
+<li><b>Ngữ pháp:</b> 从 + nơi chốn / thời gian / góc độ</li>
+<li><b>Câu thể hiện quan tâm:</b> 那可辛苦您了。</li>
+<li><b>Câu chuyển sang công việc:</b> 关于业务的事，我们下午再谈吧。</li>
+</ul></div></section>
+
+<script>
+const D={"vocab": [["麻烦", "máfan", "v./adj.", "làm phiền; phiền phức", "麻烦您了。", "Phiền ông/bà quá."], ["开车", "kāichē", "v.", "lái xe", "今天您开车来的吗？", "Hôm nay ông/bà lái xe đến à?"], ["路段", "lùduàn", "n.", "đoạn đường", "这个时间路段很堵。", "Tầm này đoạn đường rất tắc."], ["堵", "dǔ", "adj./v.", "tắc, ùn tắc", "下班时间路上很堵。", "Giờ tan làm đường rất tắc."], ["电车", "diànchē", "n.", "xe điện", "我是坐电车来的。", "Tôi đi xe điện đến."], ["休息", "xiūxi", "v.", "nghỉ ngơi", "您快去休息吧。", "Ông/bà mau đi nghỉ đi."], ["业务", "yèwù", "n.", "nghiệp vụ, công việc kinh doanh", "关于业务的事，我们下午再谈吧。", "Về công việc, chiều chúng ta nói tiếp nhé."], ["关照", "guānzhào", "v.", "quan tâm, giúp đỡ", "上次多亏了您的关照。", "Lần trước nhờ ông/bà giúp đỡ rất nhiều."], ["赶过来", "gǎn guòlái", "v.", "vội đến đây", "您从那么远赶过来，辛苦了。", "Ông/bà từ xa vội đến đây, vất vả quá."], ["客气", "kèqi", "adj.", "khách sáo", "您别客气。", "Ông/bà đừng khách sáo."], ["车站", "chēzhàn", "n.", "bến xe, nhà ga", "这里离车站还挺远的。", "Nơi đây cách nhà ga khá xa."], ["心情", "xīnqíng", "n.", "tâm trạng", "今天我的心情不错。", "Hôm nay tâm trạng tôi khá tốt."], ["天气", "tiānqì", "n.", "thời tiết", "今天天气不错。", "Hôm nay thời tiết khá đẹp."], ["走路", "zǒulù", "v.", "đi bộ", "我是走路过来的。", "Tôi đi bộ đến đây."], ["员工", "yuángōng", "n.", "nhân viên", "这个公司有很多员工。", "Công ty này có rất nhiều nhân viên."], ["起飞", "qǐfēi", "v.", "cất cánh", "天气不好，飞机还不能起飞。", "Thời tiết xấu, máy bay vẫn chưa thể cất cánh."], ["计划", "jìhuà", "n./v.", "kế hoạch; lên kế hoạch", "那个计划试着做吧。", "Chúng ta thử làm theo kế hoạch đó xem sao."], ["还是", "háishi", "adv.", "vẫn, vẫn là", "看起来还是那么精神。", "Trông vẫn khỏe khoắn như vậy."], ["辛苦", "xīnkǔ", "adj.", "vất vả", "您从那么远赶过来，辛苦了。", "Ông/bà từ xa đến đây, vất vả quá."], ["前几天", "qián jǐ tiān", "cụm thời gian", "mấy hôm trước", "前几天我去看她了。", "Mấy hôm trước tôi đã đến thăm cô ấy."], ["下雨", "xiàyǔ", "v.", "trời mưa", "今天下着雨，您还来了。", "Hôm nay trời mưa mà ông/bà vẫn đến."], ["和谐", "héxié", "adj.", "hài hòa", "我们要营造和谐的谈话气氛。", "Chúng ta cần tạo không khí trò chuyện hài hòa."], ["气氛", "qìfēn", "n.", "không khí", "会议的气氛很轻松。", "Không khí cuộc họp rất thoải mái."]], "dialogue1": [["女", "麻烦您了。", "Máfan nín le.", "Phiền ông quá."], ["男", "哪里，哪里。上次多亏了您的关照。", "Nǎli, nǎli. Shàng cì duōkuī le nín de guānzhào.", "Đâu có. Lần trước đã phải phiền cô nhiều."], ["女", "您也给了我们很多关照。", "Nín yě gěi le wǒmen hěn duō guānzhào.", "Ông cũng giúp đỡ chúng tôi rất nhiều."], ["男", "今天从那么远赶过来，真是谢谢了。", "Jīntiān cóng nàme yuǎn gǎn guòlái, zhēnshi xièxie le.", "Hôm nay cô từ xa tới đây, thật sự tôi rất cảm ơn."], ["女", "不客气。", "Bú kèqi.", "Ông đừng khách sáo vậy."], ["男", "今天您开车来的吗？", "Jīntiān nín kāichē lái de ma?", "Hôm nay cô lái ô tô đến đây à?"], ["女", "没有，这个时间路段很堵，所以坐电车来的。", "Méiyǒu, zhège shíjiān lùduàn hěn dǔ, suǒyǐ zuò diànchē lái de.", "Không, tầm này đường rất tắc nên tôi đi xe điện tới."], ["男", "是吗？那你从和平站过来的吧？", "Shì ma? Nà nǐ cóng Hépíng zhàn guòlái de ba?", "Vậy à? Cô đi từ ga Hòa Bình tới phải không?"], ["女", "是的。", "Shì de.", "Vâng, đúng thế."], ["男", "那可辛苦您了。这里距车站还挺远的。", "Nà kě xīnkǔ nín le. Zhèlǐ jù chēzhàn hái tǐng yuǎn de.", "Vậy vất vả cho cô quá. Ở đây cách nhà ga khá xa."], ["女", "今天天气不错，走走路过来心情挺不错的。", "Jīntiān tiānqì búcuò, zǒu zou lù guòlái xīnqíng tǐng búcuò de.", "Hôm nay thời tiết đẹp, đi bộ tới đây nên tâm trạng khá thoải mái."], ["男", "啊，是嘛。您快去休息吧，关于业务的事，我们下午再谈吧。", "A, shì ma. Nín kuài qù xiūxi ba, guānyú yèwù de shì, wǒmen xiàwǔ zài tán ba.", "Vậy à! Cô mau đi nghỉ đi, chiều chúng ta bàn công việc nhé."]], "dialogue2": [["客户", "今天下着雨，您还过来，真是太谢谢了。", "Jīntiān xiàzhe yǔ, nín hái guòlái, zhēnshi tài xièxie le.", "Hôm nay trời mưa mà ông vẫn đến, thật sự cảm ơn ông quá."], ["经理", "哪里，哪里。这是应该的。", "Nǎli, nǎli. Zhè shì yīnggāi de.", "Đâu có, đây là việc nên làm."], ["客户", "您是开车来的吗？", "Nín shì kāichē lái de ma?", "Ông lái xe đến à?"], ["经理", "不是，我是坐地铁来的。这个时间路上很堵。", "Bú shì, wǒ shì zuò dìtiě lái de. Zhège shíjiān lùshang hěn dǔ.", "Không, tôi đi tàu điện ngầm đến. Giờ này đường rất tắc."], ["客户", "辛苦您了。先休息一下吧。", "Xīnkǔ nín le. Xiān xiūxi yíxià ba.", "Ông vất vả rồi. Nghỉ một lát trước nhé."], ["经理", "好的，关于合同的事，我们一会儿再谈。", "Hǎo de, guānyú hétong de shì, wǒmen yíhuìr zài tán.", "Được, về hợp đồng chúng ta lát nữa nói tiếp."]], "expressions": [["这个公司有很多员工。", "Zhège gōngsī yǒu hěn duō yuángōng.", "Công ty này có rất nhiều nhân viên."], ["天气不好，飞机还不能起飞。", "Tiānqì bù hǎo, fēijī hái bù néng qǐfēi.", "Thời tiết không đẹp, máy bay vẫn chưa thể cất cánh."], ["我们公司离安和站很近。", "Wǒmen gōngsī lí Ānhé zhàn hěn jìn.", "Công ty chúng ta cách ga An Hòa rất gần."], ["我们有一事想麻烦贵公司。", "Wǒmen yǒu yí shì xiǎng máfan guì gōngsī.", "Chúng tôi có việc phải phiền quý công ty."], ["那个计划试着做吧。", "Nàge jìhuà shìzhe zuò ba.", "Chúng ta thử làm theo kế hoạch đó xem sao."], ["好久不见。", "Hǎojiǔ bú jiàn.", "Lâu rồi không gặp."], ["久违了。", "Jiǔwéi le.", "Lâu rồi không gặp."], ["看起来还是那么精神。", "Kàn qǐlái háishi nàme jīngshen.", "Trông vẫn khỏe khoắn như vậy."], ["那之后怎么样了？", "Nà zhīhòu zěnmeyàng le?", "Vậy sau đó thì sao?"], ["还是老样子，很辛苦。", "Háishi lǎo yàngzi, hěn xīnkǔ.", "Vẫn như vậy, rất vất vả."], ["前几天看她了。", "Qián jǐ tiān kàn tā le.", "Mấy hôm trước đã đến thăm cô ấy rồi."], ["今天下着雨，您还来了，真是太谢谢了。", "Jīntiān xiàzhe yǔ, nín hái lái le, zhēnshi tài xièxie le.", "Hôm nay trời mưa mà ông vẫn đến, thật cảm ơn ông quá."]], "reading": [["在商务会谈开始以前，双方通常不会马上谈业务，而是先说一些轻松的话题，比如天气、交通和最近的情况。", "Zài shāngwù huìtán kāishǐ yǐqián, shuāngfāng tōngcháng bú huì mǎshàng tán yèwù, érshì xiān shuō yìxiē qīngsōng de huàtí, bǐrú tiānqì, jiāotōng hé zuìjìn de qíngkuàng.", "Trước khi bắt đầu đàm phán thương mại, hai bên thường không nói ngay về công việc mà nói trước về những chủ đề nhẹ nhàng như thời tiết, giao thông và tình hình gần đây."], ["如果客人从很远的地方赶过来，主人可以说“辛苦您了”或者“真是太谢谢了”，这样能表示关心和尊重。", "Rúguǒ kèrén cóng hěn yuǎn de dìfang gǎn guòlái, zhǔrén kěyǐ shuō “xīnkǔ nín le” huòzhě “zhēnshi tài xièxie le”, zhèyàng néng biǎoshì guānxīn hé zūnzhòng.", "Nếu khách từ xa đến, chủ nhà có thể nói “Ông/bà vất vả rồi” hoặc “Thật sự cảm ơn ông/bà”, qua đó thể hiện sự quan tâm và tôn trọng."], ["轻松、礼貌的寒暄可以让谈话气氛更加和谐，也能帮助双方更自然地进入正式的业务话题。", "Qīngsōng, lǐmào de hánxuān kěyǐ ràng tánhuà qìfēn gèngjiā héxié, yě néng bāngzhù shuāngfāng gèng zìrán de jìnrù zhèngshì de yèwù huàtí.", "Những lời chào hỏi nhẹ nhàng, lịch sự có thể khiến không khí trò chuyện hài hòa hơn và giúp hai bên đi vào chủ đề công việc chính thức tự nhiên hơn."]]};
+const tabs=[['home','🏠 Tổng quan'],['vocab','📖 Từ'],['grammar','📐 Ngữ pháp'],['d1','💬 Hội thoại 1'],['d2','🗣️ Hội thoại 2'],['express','⭐ Biểu đạt'],['read','📚 Đọc phụ'],['speak','🗣️ Giao tiếp'],['flash','🃏 Lật thẻ'],['listen','🎧 Nghe chọn'],['fill','✍️ Điền từ'],['order','🧩 Kéo thả'],['quiz','🎯 Quiz'],['take','📌 Nhớ']];
+document.getElementById('tabs').innerHTML=tabs.map((x,i)=>`<button class="${i===0?'active':''}" onclick="tab('${x[0]}')">${x[1]}</button>`).join('');
+function tab(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tabs button').forEach((b,i)=>b.classList.toggle('active',tabs[i][0]===id));window.scrollTo({top:0,behavior:'smooth'})}
+
+let audio=null;
+let speechToken=0;
+function gttsUrl(t){return 'https://translate.google.com/translate_tts?ie=UTF-8&tl=zh-CN&client=tw-ob&q='+encodeURIComponent(t.slice(0,200))}
+function speakText(t){
+ stopSpeech();
+ const myToken=++speechToken;
+ let fallbackStarted=false;
+ const fallback=()=>{
+   if(fallbackStarted||myToken!==speechToken)return;
+   fallbackStarted=true;
+   if(audio){audio.onerror=null;audio.pause();audio=null}
+   try{speechSynthesis.cancel()}catch(e){}
+   const u=new SpeechSynthesisUtterance(t);
+   u.lang='zh-CN';u.rate=.82;
+   const vs=speechSynthesis.getVoices();
+   const v=vs.find(x=>/Xiaoxiao|Tingting|Meijia|Yunxi/i.test(x.name))
+      ||vs.find(x=>x.lang==='zh-CN')
+      ||vs.find(x=>x.lang&&x.lang.startsWith('zh'));
+   if(v)u.voice=v;
+   speechSynthesis.speak(u);
+ };
+ audio=new Audio(gttsUrl(t));
+ audio.playbackRate=.9;
+ audio.preload='auto';
+ audio.onerror=fallback;
+ const p=audio.play();
+ if(p&&typeof p.catch==='function')p.catch(fallback);
+}
+function pauseSpeech(){if(audio&&!audio.paused)audio.pause();try{speechSynthesis.pause()}catch(e){}}
+function resumeSpeech(){if(audio&&audio.paused)audio.play().catch(()=>{});try{speechSynthesis.resume()}catch(e){}}
+function stopSpeech(){
+ speechToken++;
+ if(audio){audio.onerror=null;audio.pause();try{audio.currentTime=0}catch(e){}audio=null}
+ try{speechSynthesis.cancel()}catch(e){}
+}
+function safe(s){return String(s).replaceAll("\\","\\\\").replaceAll("'","\\'")}
+
+document.getElementById('vocabGrid').innerHTML=D.vocab.map(v=>`<div class="card"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><span class="pos">${v[2]}</span><div class="meaning">${v[3]}</div><div class="ex"><div class="cn">${v[4]}</div><div class="vn">${v[5]}</div></div><div class="audioRow"><button class="audio" onclick="speakText('${safe(v[0])}')">🔊 Từ</button><button class="audio" onclick="speakText('${safe(v[4])}')">🔊 Ví dụ</button></div></div>`).join('');
+
+function renderDialogue(id,data){
+ document.getElementById(id).innerHTML=data.map((x,i)=>`<div class="line"><span class="sp">${x[0]}</span><div class="sent cn">${x[1]}</div><div class="pinyin">${x[2]}</div><div class="vn">${x[3]}</div><div class="audioRow"><button class="audio" onclick="speakText(${id==='d1box'?'D.dialogue1':'D.dialogue2'}[${i}][1])">▶ Nghe câu</button></div></div>`).join('');
+}
+renderDialogue('d1box',D.dialogue1);renderDialogue('d2box',D.dialogue2);
+
+document.getElementById('expressGrid').innerHTML=D.expressions.map((x,i)=>`<div class="card"><h3 class="cn">${i+1}. ${x[0]}</h3><div class="pinyin">${x[1]}</div><p>${x[2]}</p><button class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Nghe</button></div>`).join('');
+
+document.getElementById('readBox').innerHTML=D.reading.map((x,i)=>`<div class="line"><span class="sp">第${i+1}段</span><div class="sent cn">${x[0]}</div><div class="pinyin">${x[1]}</div><div class="vn">${x[2]}</div><div class="audioRow"><button class="audio" onclick="speakText(D.reading[${i}][0])">▶ Đọc đoạn</button></div></div>`).join('');
+
+const speaking=[["麻烦您了。", "Phiền ông/bà quá."], ["哪里，哪里。", "Đâu có, đâu có."], ["今天您开车来的吗？", "Hôm nay ông/bà lái xe đến à?"], ["那可辛苦您了。", "Vậy vất vả cho ông/bà quá."], ["您快去休息吧。", "Ông/bà mau đi nghỉ đi."], ["关于业务的事，我们下午再谈吧。", "Về công việc, chiều chúng ta nói tiếp nhé."]];
+document.getElementById('speakGrid').innerHTML=speaking.map((x,i)=>`<div class="card"><h3 class="cn">${i+1}. ${x[0]}</h3><p>${x[1]}</p><button class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Nghe</button></div>`).join('');
+
+let difficult=JSON.parse(localStorage.getItem('business_lesson5_difficult')||'[]');
+function toggleDiff(w){difficult=difficult.includes(w)?difficult.filter(x=>x!==w):[...difficult,w];localStorage.setItem('business_lesson5_difficult',JSON.stringify(difficult));renderFlash()}
+function renderFlash(){document.getElementById('flashGrid').innerHTML=D.vocab.map(v=>`<div class="card flash" onclick="this.classList.toggle('flipped')"><button class="star" onclick="event.stopPropagation();toggleDiff('${safe(v[0])}')">${difficult.includes(v[0])?'⭐':'☆'}</button><div class="front"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><p>Chạm để xem nghĩa</p></div><div class="back"><h2>${v[3]}</h2><p class="cn">${v[4]}</p><p>${v[5]}</p><button class="audio" onclick="event.stopPropagation();speakText('${safe(v[0])}。${safe(v[4])}')">🔊 Nghe</button></div></div>`).join('')}
+renderFlash();
+
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+
+const listeningQuestions=[{"audio": "麻烦您了。", "answer": "Phiền ông/bà quá.", "options": ["Phiền ông/bà quá.", "Chúc ông/bà lên đường bình an.", "Ông/bà đừng đi.", "Mời ông/bà gọi điện."]}, {"audio": "这个时间路段很堵。", "answer": "Tầm này đoạn đường rất tắc.", "options": ["Tầm này đoạn đường rất tắc.", "Đoạn đường này rất ngắn.", "Bây giờ trời rất lạnh.", "Xe điện đã đến."]}, {"audio": "我是坐电车来的。", "answer": "Tôi đi xe điện đến.", "options": ["Tôi đi xe điện đến.", "Tôi lái ô tô đến.", "Tôi đi bộ đến.", "Tôi đi xe buýt về."]}, {"audio": "那可辛苦您了。", "answer": "Vậy vất vả cho ông/bà quá.", "options": ["Vậy vất vả cho ông/bà quá.", "Ông/bà làm sai rồi.", "Ông/bà đến muộn rồi.", "Ông/bà đừng khách sáo."]}, {"audio": "关于业务的事，我们下午再谈吧。", "answer": "Về công việc, chiều chúng ta nói tiếp nhé.", "options": ["Về công việc, chiều chúng ta nói tiếp nhé.", "Chúng ta hủy cuộc họp nhé.", "Chiều nay tôi không đến.", "Hãy ký hợp đồng ngay."]}];
+let li=0;
+function renderListening(){
+ const q=listeningQuestions[li%listeningQuestions.length];
+ const choices=shuffle(q.options);
+ const box=document.getElementById('listenOptions');
+ box.innerHTML='';
+ choices.forEach(choice=>{
+   const btn=document.createElement('button');
+   btn.className='game-opt';
+   btn.type='button';
+   btn.textContent=choice;
+   btn.addEventListener('click',()=>chooseListen(btn,choice,q.answer));
+   box.appendChild(btn);
+ });
+ document.getElementById('listenResult').textContent='';
+}
+function playListen(){speakText(listeningQuestions[li%listeningQuestions.length].audio)}
+function chooseListen(btn,choice,answer){document.querySelectorAll('#listenOptions button').forEach(x=>x.disabled=true);if(choice===answer){btn.classList.add('good');document.getElementById('listenResult').textContent='✅ Đúng rồi!'}else{btn.classList.add('bad');document.getElementById('listenResult').textContent='❌ Đáp án đúng: '+answer;[...document.querySelectorAll('#listenOptions button')].find(x=>x.textContent===answer)?.classList.add('good')}}
+function nextListen(){li++;renderListening()}renderListening();
+
+const fillQuestions=[{"sentence": "这个时间路段很____。", "answer": "堵", "hint": "Tắc đường"}, {"sentence": "我是坐____来的。", "answer": "电车", "hint": "Xe điện"}, {"sentence": "那可____您了。", "answer": "辛苦", "hint": "Vất vả"}, {"sentence": "您快去____吧。", "answer": "休息", "hint": "Nghỉ ngơi"}, {"sentence": "关于____的事，我们下午再谈吧。", "answer": "业务", "hint": "Nghiệp vụ, công việc"}];
+let fi=0;
+function renderFill(){const q=fillQuestions[fi%fillQuestions.length];document.getElementById('fillQuestion').textContent=q.sentence;document.getElementById('fillHint').textContent='Gợi ý: '+q.hint;document.getElementById('fillInput').value='';document.getElementById('fillResult').textContent=''}
+function checkFill(){const q=fillQuestions[fi%fillQuestions.length];const val=document.getElementById('fillInput').value.trim();document.getElementById('fillResult').textContent=val===q.answer?'✅ Chính xác!':'❌ Đáp án đúng: '+q.answer}
+function playFill(){const q=fillQuestions[fi%fillQuestions.length];speakText(q.sentence.replace('____',q.answer))}
+function nextFill(){fi++;renderFill()}renderFill();
+
+const orderQuestions=[["麻烦", "您", "了"], ["今天", "您", "开车", "来的吗"], ["我是", "坐电车", "来的"], ["那可", "辛苦", "您了"], ["我们", "下午", "再谈", "吧"]];
+let oi=0;
+function makeChip(word,index){
+ const el=document.createElement('button');
+ el.type='button';
+ el.className='word-chip';
+ el.textContent=word;
+ el.dataset.index=index;
+ el.draggable=true;
+ el.addEventListener('dragstart',e=>{
+   e.dataTransfer.effectAllowed='move';
+   e.dataTransfer.setData('text/plain',index);
+ });
+ el.addEventListener('click',()=>moveChip(el));
+ return el;
+}
+function moveChip(el){
+ const bank=document.getElementById('wordBank'),zone=document.getElementById('dropZone');
+ (el.parentElement===bank?zone:bank).appendChild(el);
+}
+function setupDrop(target){
+ target.addEventListener('dragover',e=>{e.preventDefault();e.dataTransfer.dropEffect='move'});
+ target.addEventListener('drop',e=>{
+   e.preventDefault();
+   const index=e.dataTransfer.getData('text/plain');
+   const chip=[...document.querySelectorAll('.word-chip')].find(x=>x.dataset.index===index);
+   if(chip)target.appendChild(chip);
+ });
+}
+setupDrop(document.getElementById('wordBank'));setupDrop(document.getElementById('dropZone'));
+function renderOrder(){const words=orderQuestions[oi%orderQuestions.length];const bank=document.getElementById('wordBank'),zone=document.getElementById('dropZone');bank.innerHTML='';zone.innerHTML='';shuffle(words.map((w,i)=>({w,i}))).forEach(o=>bank.appendChild(makeChip(o.w,o.i)));document.getElementById('orderResult').textContent=''}
+function checkOrder(){const target=orderQuestions[oi%orderQuestions.length].join('');const current=[...document.querySelectorAll('#dropZone .word-chip')].map(x=>x.textContent).join('');document.getElementById('orderResult').textContent=current===target?'✅ Sắp xếp đúng!':'❌ Đáp án: '+orderQuestions[oi%orderQuestions.length].join(' ')}
+function resetOrder(){renderOrder()}function playOrder(){speakText(orderQuestions[oi%orderQuestions.length].join(''))}function nextOrder(){oi++;renderOrder()}renderOrder();
+
+const quizData=[{"q": "“麻烦您了” nghĩa là gì?", "correct": "Phiền ông/bà quá", "wrong": ["Mời ông/bà ngồi", "Ông/bà đến rồi", "Cảm ơn mọi người"]}, {"q": "“堵” trong bài có nghĩa là gì?", "correct": "tắc đường", "wrong": ["đẹp", "rộng", "gần"]}, {"q": "“电车” nghĩa là gì?", "correct": "xe điện", "wrong": ["xe đạp", "xe tải", "máy bay"]}, {"q": "“业务” nghĩa là gì?", "correct": "nghiệp vụ, công việc kinh doanh", "wrong": ["thời tiết", "nhà ga", "kế hoạch nghỉ ngơi"]}, {"q": "Câu nào dùng để thể hiện sự quan tâm đến người từ xa đến?", "correct": "那可辛苦您了。", "wrong": ["你去哪儿？", "快点儿！", "我不知道。"]}, {"q": "“从那么远赶过来” nghĩa là gì?", "correct": "vội từ nơi xa đến đây", "wrong": ["đi từ đây về nhà", "lái xe rất chậm", "đứng gần nhà ga"]}, {"q": "“从” có thể chỉ điều gì?", "correct": "nơi chốn, thời gian hoặc góc độ xuất phát", "wrong": ["chỉ số lượng", "chỉ nguyên nhân", "chỉ kết quả"]}, {"q": "“这里距车站还挺远的” nghĩa là gì?", "correct": "Ở đây cách nhà ga khá xa", "wrong": ["Nhà ga ở ngay đây", "Không có nhà ga", "Đường đến nhà ga bị đóng"]}, {"q": "Câu nào phù hợp để hoãn bàn công việc một cách lịch sự?", "correct": "关于业务的事，我们下午再谈吧。", "wrong": ["现在别说话。", "你马上回去。", "业务没有意思。"]}, {"q": "Mục đích của lời hàn huyên đầu buổi là gì?", "correct": "Tạo không khí thoải mái và hài hòa", "wrong": ["Kết thúc cuộc họp ngay", "Tránh nói chuyện với khách", "Yêu cầu khách rời đi"]}];
+let qi=0,score=0;
+function renderQ(){
+ document.getElementById('bar').style.width=(qi/quizData.length*100)+'%';
+ const q=quizData[qi];
+ const options=shuffle([q.correct,...q.wrong]);
+ const card=document.createElement('div');
+ card.className='quiz-card';
+ const counter=document.createElement('b');
+ counter.textContent=`Câu ${qi+1}/${quizData.length}`;
+ const title=document.createElement('h3');
+ title.textContent=q.q;
+ const opts=document.createElement('div');
+ opts.className='opts';
+ options.forEach(choice=>{
+   const btn=document.createElement('button');
+   btn.type='button';
+   btn.className='opt';
+   btn.textContent=choice;
+   btn.addEventListener('click',()=>answerQuiz(btn,choice,q.correct));
+   opts.appendChild(btn);
+ });
+ const feedback=document.createElement('p');
+ feedback.id='quizFeedback';
+ feedback.className='feedback';
+ const next=document.createElement('button');
+ next.id='nextQuiz';
+ next.type='button';
+ next.className='btn';
+ next.textContent='Tiếp theo';
+ next.disabled=true;
+ next.addEventListener('click',nextQ);
+ card.append(counter,title,opts,feedback,next);
+ const box=document.getElementById('quizBox');
+ box.innerHTML='';
+ box.appendChild(card);
+}
+function answerQuiz(btn,choice,correct){document.querySelectorAll('.opt').forEach(x=>x.disabled=true);if(choice===correct){btn.classList.add('correct');score++;document.getElementById('quizFeedback').textContent='✅ Đúng rồi!'}else{btn.classList.add('wrong');[...document.querySelectorAll('.opt')].find(x=>x.textContent===correct)?.classList.add('correct');document.getElementById('quizFeedback').textContent='❌ Đáp án đúng: '+correct}document.getElementById('nextQuiz').disabled=false}
+function nextQ(){qi++;if(qi===quizData.length){document.getElementById('quizBox').innerHTML=`<div class="card"><h2>Kết quả: ${score}/10</h2><p>${score>=8?'Rất tốt!':'Hãy ôn lại từ mới và ngữ pháp nhé.'}</p><button class="btn" onclick="qi=0;score=0;renderQ()">Làm lại</button></div>`;document.getElementById('bar').style.width='100%'}else renderQ()}renderQ();
+</script>
+</body></html>
