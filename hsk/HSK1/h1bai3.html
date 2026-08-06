@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#149bd7">
+<title>第三课 我是中国人</title>
+<style>
+:root{--b:#149bd7;--b2:#e8f6fc;--bg:#f7fbfd;--c:#fff;--t:#173042;--m:#687786;--l:#d9eaf2;--g:#178a62;--g2:#eaf8f2;--r:#d24a3a;--gold:#f2b705;--shadow:0 10px 28px rgba(26,76,105,.10)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--t);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;padding-bottom:78px}
+.cn{font-family:"PingFang SC","Noto Serif SC","Songti SC",serif}
+header{background:linear-gradient(135deg,#12a8dc,#2b6cb0 58%,#16835f);color:#fff;text-align:center;padding:30px 16px;border-radius:0 0 30px 30px;box-shadow:var(--shadow)}
+.badge{display:inline-block;background:var(--gold);color:#332900;padding:5px 13px;border-radius:999px;font-weight:900;font-size:12px}
+h1{font-size:clamp(32px,7vw,52px);margin:8px 0 2px}.sub{margin:0;opacity:.93}.actions,.tabs,.audioRow{display:flex;gap:8px;flex-wrap:wrap}.actions{justify-content:center;margin-top:14px}
+button{font:inherit;cursor:pointer}.actions button,.tabs button,.audio,.btn{border:0;border-radius:12px;padding:10px 13px;font-weight:850}.actions button{background:#ffffff22;color:#fff;border:1px solid #ffffff55}
+.tabs{position:sticky;top:0;z-index:30;background:#f7fbfdf2;backdrop-filter:blur(12px);padding:10px 8px;overflow-x:auto;white-space:nowrap;border-bottom:1px solid var(--l)}
+.tabs button{flex:0 0 auto;background:#fff;border:1px solid var(--l);color:var(--t)}.tabs button.active{background:var(--b);color:#fff}
+section{display:none;max-width:1050px;margin:auto;padding:22px 14px 35px}section.active{display:block}
+.title{display:flex;gap:11px;align-items:center;margin-bottom:17px}.icon{width:48px;height:48px;border-radius:15px;background:var(--b);color:#fff;display:grid;place-items:center;font-size:23px}.title h2{margin:0}.title p{margin:0;color:var(--m);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:13px}.card,.box{background:#fff;border:1px solid var(--l);border-radius:19px;box-shadow:var(--shadow)}.card{padding:17px}.box{overflow:hidden;margin-bottom:15px}.box-h{background:linear-gradient(90deg,var(--b),#56b5df);color:#fff;padding:13px 16px;font-weight:900}.box-b{padding:13px 16px}
+.han{font-size:32px;font-weight:900}.pinyin{display:none;color:var(--r);font-style:italic;font-size:14px}.showPinyin .pinyin{display:block}.pos{display:inline-block;background:#eef1f3;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:850}.meaning{font-weight:850}.ex{border-left:4px solid var(--g);padding-left:10px;margin-top:9px}.vn{color:#555}
+.line{padding:14px 0;border-bottom:1px solid #eee}.line:last-child{border-bottom:0}.sp{display:inline-block;background:var(--b2);color:#145477;padding:3px 9px;border-radius:999px;font-weight:900}.sent{font-size:18px;font-weight:800}
+.audio{background:var(--b2);color:#145477}.pause{background:#fff6df;color:#855b00}.stop{background:#ffe8e8;color:#a21f1f}.wide{width:100%}
+.grammar{border-left:6px solid var(--g);background:var(--g2)}.formula{background:#fff;border:1px dashed var(--g);padding:11px;border-radius:11px;font-weight:900}.tip{background:#fff7d6;border-left:4px solid var(--gold);padding:11px;border-radius:0 12px 12px 0}
+.flash{min-height:180px;text-align:center;display:grid;place-items:center;position:relative;cursor:pointer}.flash .back{display:none}.flash.flipped .front{display:none}.flash.flipped .back{display:block}.star{position:absolute;right:9px;top:9px;border:0;background:transparent;font-size:23px}
+.game-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}.game-opt,.opt{padding:14px;border:2px solid var(--l);border-radius:14px;background:#fff;font-weight:850;text-align:left}.good,.correct{background:#e5f8e8!important;border-color:#19853a!important}.bad,.wrong{background:#ffe6e6!important;border-color:#c62e2e!important}
+.progress{height:10px;background:#ddd;border-radius:999px;overflow:hidden;margin-bottom:15px}.bar{height:100%;background:linear-gradient(90deg,var(--g),var(--b));width:0}.quiz-card{background:#fff;border:1px solid var(--l);border-radius:18px;padding:18px}.opts{display:grid;gap:9px}.feedback{font-weight:800;min-height:28px}
+.fill-input{width:100%;padding:13px;border:2px solid var(--l);border-radius:12px;font-size:18px;margin:10px 0}
+.word-bank,.drop-zone{display:flex;gap:8px;flex-wrap:wrap;min-height:62px;padding:12px;border:2px dashed #b7d9e8;border-radius:14px;background:#f8fcfe;margin:10px 0}.word-chip{padding:9px 12px;border:1px solid #b7d9e8;border-radius:999px;background:#fff;font-weight:850;cursor:grab;user-select:none}.drop-zone .word-chip{background:var(--g2);border-color:#9fd4bf}
+.game-status{font-weight:850;min-height:28px}.take{border-left:7px solid #b83280}
+@media(max-width:600px){.grid,.game-options{grid-template-columns:1fr}.audioRow .audio,.audioRow .btn{flex:1}}
+</style>
+</head>
+<body>
+<header>
+<span class="badge">HSK 1 · 第三课 · V2</span>
+<h1 class="cn">我是中国人</h1>
+<p class="sub">Tôi là người Trung Quốc</p>
+<div class="actions">
+<button onclick="history.back()">← Quay lại</button>
+<button onclick="speakText('我是中国人')">🔊 Tên bài</button>
+<button onclick="document.body.classList.toggle('showPinyin')">👁 Pinyin</button>
+<button onclick="pauseSpeech()">⏸ Tạm dừng</button>
+<button onclick="resumeSpeech()">▶ Tiếp tục</button>
+<button onclick="stopSpeech()">⏹ Dừng</button>
+</div>
+</header>
+<div id="tabs" class="tabs"></div>
+
+<section id="home" class="active"><div class="title"><div class="icon">🏠</div><div><h2>Tổng quan bài học</h2><p>Giới thiệu quốc tịch, người quen và hỏi thăm qua điện thoại.</p></div></div><div class="grid"><div class="card"><h3>🎯 Chủ đề</h3><p>Quốc tịch, giới thiệu người khác, công việc và gia đình.</p></div><div class="card"><h3>📐 Ngữ pháp</h3><p><b>是 / 不是</b>, trợ từ sở hữu <b>的</b> và câu hỏi <b>吗</b>.</p></div><div class="card"><h3>🎮 V2</h3><p>30 quiz, 10 nghe, 15 điền từ, 15 sắp xếp, đúng/sai và ghép cặp.</p></div></div></section>
+
+<section id="vocab"><div class="title"><div class="icon">📖</div><div><h2>Từ vựng đầy đủ</h2><p>Pinyin, nghĩa, ví dụ và âm thanh.</p></div></div><div id="vocabGrid" class="grid"></div></section>
+
+<section id="grammar"><div class="title"><div class="icon">📐</div><div><h2>Ngữ pháp</h2><p>Ba điểm ngữ pháp trọng tâm.</p></div></div><div class="card grammar"><h3 class="cn">1. Câu chữ 是</h3><div class="formula cn">A + 是 + B</div><p>Dùng để xác định A là B hoặc A thuộc loại B.</p><p class="cn"><b>我是中国人。</b> — Tôi là người Trung Quốc.</p><p class="cn"><b>她是法国人。</b> — Cô ấy là người Pháp.</p><div class="tip"><b>Phủ định:</b> A + 不是 + B.</div></div><div class="card grammar"><h3 class="cn">2. Trợ từ 的</h3><div class="formula cn">Người sở hữu + 的 + danh từ</div><p class="cn"><b>我的老师</b> — giáo viên của tôi</p><p class="cn"><b>你的名字</b> — tên của bạn</p><div class="tip">Trước danh từ chỉ người thân hoặc người gần gũi, 的 có thể lược bỏ: 我姐姐、我老师、你同学。</div></div><div class="card grammar"><h3 class="cn">3. Câu hỏi với 吗</h3><div class="formula cn">Câu trần thuật + 吗？</div><p class="cn"><b>你是老师吗？</b></p><p class="cn"><b>你工作还忙吗？</b></p><p><b>Trả lời:</b> 是 / 是的 hoặc 不 / 不是.</p></div></section>
+
+<section id="d1"><div class="title"><div class="icon">💬</div><div><h2>Bài khóa 1</h2><p>Giới thiệu quốc tịch.</p></div></div>
+<div class="audioRow"><button class="audio" onclick="speakText(D.dialogue1.map(x=>x[1]).join('。'))">▶ Nghe toàn bài</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div>
+<div class="box"><div class="box-h">我是中国人</div><div id="d1box" class="box-b"></div></div></section>
+
+<section id="d2"><div class="title"><div class="icon">🗣️</div><div><h2>Bài khóa 2</h2><p>Giới thiệu bạn gái và hỏi quốc tịch.</p></div></div>
+<div class="audioRow"><button class="audio" onclick="speakText(D.dialogue2.map(x=>x[1]).join('。'))">▶ Nghe toàn bài</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div>
+<div class="box"><div class="box-h">这是谁？</div><div id="d2box" class="box-b"></div></div></section>
+
+<section id="express"><div class="title"><div class="icon">⭐</div><div><h2>Cách biểu đạt quan trọng</h2><p>10 câu trong sách, có pinyin, nghĩa và nút nghe.</p></div></div><div id="expressGrid" class="grid"></div></section>
+
+<section id="read"><div class="title"><div class="icon">📚</div><div><h2>Bài khóa 3 và đọc phụ</h2><p>Cuộc gọi hỏi thăm và bài đọc ngắn.</p></div></div><div class="box"><div class="box-h">电话问候</div><div id="readBox" class="box-b"></div></div></section>
+
+<section id="speak"><div class="title"><div class="icon">🗣️</div><div><h2>6 câu giao tiếp cần nhớ</h2><p>Dùng trong môi trường công sở.</p></div></div><div id="speakGrid" class="grid"></div></section>
+
+<section id="flash"><div class="title"><div class="icon">🃏</div><div><h2>Game 4: Lật thẻ</h2><p>Chạm để lật; nhấn ⭐ để lưu từ khó.</p></div></div><div id="flashGrid" class="grid"></div></section>
+
+<section id="listen"><div class="title"><div class="icon">🎧</div><div><h2>Game 1: Nghe và chọn đáp án</h2><p>Vị trí đáp án đúng được xáo trộn ở mỗi lượt.</p></div></div>
+<div class="card"><button class="audio wide" onclick="playListen()">🔊 Nghe câu</button><div id="listenOptions" class="game-options"></div><p id="listenResult" class="game-status"></p><button class="btn" onclick="nextListen()">Câu tiếp theo</button></div></section>
+
+<section id="fill"><div class="title"><div class="icon">✍️</div><div><h2>Game 2: Điền vào chỗ trống</h2><p>Nhập chữ Hán còn thiếu.</p></div></div>
+<div class="card"><div id="fillQuestion" class="sent"></div><input id="fillInput" class="fill-input" placeholder="Nhập chữ Hán còn thiếu"><p id="fillHint" class="vn"></p><p id="fillResult" class="game-status"></p><div class="audioRow"><button class="btn" onclick="checkFill()">Kiểm tra</button><button class="audio" onclick="playFill()">🔊 Nghe câu</button><button class="btn" onclick="nextFill()">Câu tiếp theo</button></div></div></section>
+
+<section id="order"><div class="title"><div class="icon">🧩</div><div><h2>Game 3: Sắp xếp câu kéo thả</h2><p>Có thể kéo hoặc bấm vào từng từ.</p></div></div>
+<div class="card"><p>Kéo các từ vào ô phía dưới theo đúng thứ tự:</p><div id="wordBank" class="word-bank"></div><div id="dropZone" class="drop-zone"></div><p id="orderResult" class="game-status"></p><div class="audioRow"><button class="btn" onclick="checkOrder()">Kiểm tra</button><button class="btn" onclick="resetOrder()">Làm lại</button><button class="audio" onclick="playOrder()">🔊 Nghe câu</button><button class="btn" onclick="nextOrder()">Câu tiếp theo</button></div></div></section>
+
+<section id="quiz"><div class="title"><div class="icon">🎯</div><div><h2>Quiz 10 câu</h2><p>Đáp án được xáo trộn, không cố định ở A.</p></div></div><div class="progress"><div id="bar" class="bar"></div></div><div id="quizBox"></div></section>
+
+<section id="tf"><div class="title"><div class="icon">✅</div><div><h2>Đúng hay sai</h2><p>15 câu kiểm tra nhanh.</p></div></div><div class="card"><div id="tfBox"></div></div></section><section id="match"><div class="title"><div class="icon">🔗</div><div><h2>Ghép cặp từ vựng</h2><p>Chọn từ tiếng Trung rồi chọn nghĩa tiếng Việt.</p></div></div><div class="card"><p id="matchStatus" class="game-status"></p><div id="matchLeft" class="game-options"></div><div id="matchRight" class="game-options"></div><button class="btn" onclick="resetMatch()">Làm lại</button></div></section><section id="speed"><div class="title"><div class="icon">⏱️</div><div><h2>Speed Quiz</h2><p>20 câu ngẫu nhiên.</p></div></div><div class="card"><div id="speedBox"></div></div></section><section id="take"><div class="title"><div class="icon">📌</div><div><h2>Take-away</h2></div></div><div class="card take"><ul><li><b>Từ trọng tâm:</b> 人、的、这、谁、哪、她、姐姐、工作、忙、吗、我们、想</li><li><b>Ngữ pháp 1:</b> A + 是 / 不是 + B</li><li><b>Ngữ pháp 2:</b> Người sở hữu + 的 + danh từ</li><li><b>Ngữ pháp 3:</b> Câu trần thuật + 吗？</li><li><b>Câu quan trọng:</b> 你是哪国人？这是谁？你工作还忙吗？</li></ul></div></section>
+
+<script>
+const D={"vocab": [["人", "rén", "n.", "người", "我是中国人。", "Tôi là người Trung Quốc."], ["的", "de", "trợ từ", "của; sở hữu", "这是我的老师。", "Đây là giáo viên của tôi."], ["中国", "Zhōngguó", "tên riêng", "Trung Quốc", "我是中国人。", "Tôi là người Trung Quốc."], ["法国", "Fǎguó", "tên riêng", "nước Pháp", "她是法国人。", "Cô ấy là người Pháp."], ["中文", "Zhōngwén", "n.", "tiếng Trung", "她是我的中文老师。", "Cô ấy là giáo viên tiếng Trung của tôi."], ["这", "zhè", "đại từ", "đây, này", "这是书。", "Đây là sách."], ["谁", "shéi / shuí", "đại từ hỏi", "ai", "这是谁？", "Đây là ai?"], ["女朋友", "nǚpéngyou", "n.", "bạn gái", "她是我女朋友。", "Cô ấy là bạn gái của tôi."], ["哪", "nǎ", "đại từ hỏi", "nào", "你是哪国人？", "Bạn là người nước nào?"], ["国", "guó", "n.", "quốc gia", "你是哪国人？", "Bạn là người nước nào?"], ["她", "tā", "đại từ", "cô ấy", "她也是泰国人。", "Cô ấy cũng là người Thái Lan."], ["泰国", "Tàiguó", "tên riêng", "Thái Lan", "他是泰国人。", "Anh ấy là người Thái Lan."], ["喂", "wèi", "thán từ", "a lô", "喂，一飞！", "A lô, Nhất Phi!"], ["姐姐", "jiějie", "n.", "chị gái", "她是我姐姐。", "Cô ấy là chị gái tôi."], ["工作", "gōngzuò", "n./v.", "công việc; làm việc", "你工作忙吗？", "Công việc của bạn bận không?"], ["还", "hái", "phó từ", "vẫn, còn", "我还很忙。", "Tôi vẫn rất bận."], ["忙", "máng", "adj.", "bận", "我不太忙。", "Tôi không quá bận."], ["吗", "ma", "trợ từ", "dùng cuối câu hỏi có/không", "你是老师吗？", "Bạn là giáo viên phải không?"], ["对", "duì", "adj.", "đúng", "对，我是中国人。", "Đúng, tôi là người Trung Quốc."], ["太", "tài", "phó từ", "quá", "我不太忙。", "Tôi không quá bận."], ["我们", "wǒmen", "đại từ", "chúng tôi", "我们很想你。", "Chúng tôi rất nhớ bạn."], ["想", "xiǎng", "v.", "nhớ; muốn", "我也想你们。", "Tôi cũng nhớ mọi người."], ["美国", "Měiguó", "tên riêng", "nước Mỹ", "你是美国人吗？", "Bạn là người Mỹ phải không?"], ["老师", "lǎoshī", "n.", "giáo viên", "她是我的老师。", "Cô ấy là giáo viên của tôi."], ["学生", "xuésheng", "n.", "học sinh", "我是学生。", "Tôi là học sinh."], ["名字", "míngzi", "n.", "tên", "你的名字是什么？", "Tên của bạn là gì?"]], "dialogue1": [["李文", "我是中国人。", "Wǒ shì Zhōngguó rén.", "Tôi là người Trung Quốc."], ["白家月", "我是法国人。", "Wǒ shì Fǎguó rén.", "Tôi là người Pháp."], ["白家月", "我的中文老师也是中国人。", "Wǒ de Zhōngwén lǎoshī yě shì Zhōngguó rén.", "Giáo viên tiếng Trung của tôi cũng là người Trung Quốc."]], "dialogue2": [["安妮", "这是谁？", "Zhè shì shéi?", "Đây là ai?"], ["陈天中", "这是我女朋友。", "Zhè shì wǒ nǚpéngyou.", "Đây là bạn gái của tôi."], ["安妮", "你女朋友是哪国人？", "Nǐ nǚpéngyou shì nǎ guó rén?", "Bạn gái của bạn là người nước nào?"], ["陈天中", "她也是泰国人。", "Tā yě shì Tàiguó rén.", "Cô ấy cũng là người Thái Lan."]], "expressions": [["我是中国人。", "Wǒ shì Zhōngguó rén.", "Tôi là người Trung Quốc."], ["我是法国人。", "Wǒ shì Fǎguó rén.", "Tôi là người Pháp."], ["我的中文老师也是中国人。", "Wǒ de Zhōngwén lǎoshī yě shì Zhōngguó rén.", "Giáo viên tiếng Trung của tôi cũng là người Trung Quốc."], ["这是谁？", "Zhè shì shéi?", "Đây là ai?"], ["这是我女朋友。", "Zhè shì wǒ nǚpéngyou.", "Đây là bạn gái của tôi."], ["你女朋友是哪国人？", "Nǐ nǚpéngyou shì nǎ guó rén?", "Bạn gái của bạn là người nước nào?"], ["她也是泰国人。", "Tā yě shì Tàiguó rén.", "Cô ấy cũng là người Thái Lan."], ["喂，一飞！", "Wèi, Yīfēi!", "A lô, Nhất Phi!"], ["姐姐！", "Jiějie!", "Chị!"], ["你工作还忙吗？", "Nǐ gōngzuò hái máng ma?", "Công việc của em vẫn bận à?"], ["对，还很忙。你也很忙吗？", "Duì, hái hěn máng. Nǐ yě hěn máng ma?", "Đúng, vẫn rất bận. Chị cũng rất bận à?"], ["我不太忙。我们很想你。", "Wǒ bú tài máng. Wǒmen hěn xiǎng nǐ.", "Chị không quá bận. Chúng tôi rất nhớ em."]], "reading": [["喂，一飞！", "Wèi, Yīfēi!", "A lô, Nhất Phi!"], ["姐姐！", "Jiějie!", "Chị!"], ["你工作还忙吗？", "Nǐ gōngzuò hái máng ma?", "Công việc của em vẫn bận à?"], ["对，还很忙。你也很忙吗？", "Duì, hái hěn máng. Nǐ yě hěn máng ma?", "Đúng, vẫn rất bận. Chị cũng rất bận à?"], ["我不太忙。我们很想你。", "Wǒ bú tài máng. Wǒmen hěn xiǎng nǐ.", "Chị không quá bận. Chúng tôi rất nhớ em."], ["我也想你们。", "Wǒ yě xiǎng nǐmen.", "Em cũng nhớ mọi người."], ["我叫李文，我是中国人。我是学生。我的中文老师也是中国人。", "Wǒ jiào Lǐ Wén, wǒ shì Zhōngguó rén. Wǒ shì xuésheng. Wǒ de Zhōngwén lǎoshī yě shì Zhōngguó rén.", "Tôi tên Lý Văn, tôi là người Trung Quốc. Tôi là học sinh. Giáo viên tiếng Trung của tôi cũng là người Trung Quốc."], ["这是安妮。她不是中国人，她是加拿大人。她是我的同学。", "Zhè shì Ānní. Tā bú shì Zhōngguó rén, tā shì Jiānádà rén. Tā shì wǒ de tóngxué.", "Đây là Annie. Cô ấy không phải người Trung Quốc, cô ấy là người Canada. Cô ấy là bạn học của tôi."]]};
+const tabs=[['home','🏠 Tổng quan'],['vocab','📖 Từ'],['grammar','📐 Ngữ pháp'],['d1','💬 Hội thoại 1'],['d2','🗣️ Hội thoại 2'],['express','⭐ Biểu đạt'],['read','📚 Bài khóa 3 và đọc phụ'],['speak','🗣️ Giao tiếp'],['flash','🃏 Lật thẻ'],['listen','🎧 Nghe chọn'],['fill','✍️ Điền từ'],['order','🧩 Kéo thả'],['quiz','🎯 Quiz'],['tf','✅ Đúng/Sai'],['match','🔗 Ghép cặp'],['speed','⏱️ Speed'],['take','📌 Nhớ']];
+document.getElementById('tabs').innerHTML=tabs.map((x,i)=>`<button class="${i===0?'active':''}" onclick="tab('${x[0]}')">${x[1]}</button>`).join('');
+function tab(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tabs button').forEach((b,i)=>b.classList.toggle('active',tabs[i][0]===id));window.scrollTo({top:0,behavior:'smooth'})}
+
+let audio=null;
+let speechToken=0;
+function gttsUrl(t){return 'https://translate.google.com/translate_tts?ie=UTF-8&tl=zh-CN&client=tw-ob&q='+encodeURIComponent(t.slice(0,200))}
+function speakText(t){
+ stopSpeech();
+ const myToken=++speechToken;
+ let fallbackStarted=false;
+ const fallback=()=>{
+   if(fallbackStarted||myToken!==speechToken)return;
+   fallbackStarted=true;
+   if(audio){audio.onerror=null;audio.pause();audio=null}
+   try{speechSynthesis.cancel()}catch(e){}
+   const u=new SpeechSynthesisUtterance(t);
+   u.lang='zh-CN';u.rate=.82;
+   const vs=speechSynthesis.getVoices();
+   const v=vs.find(x=>/Xiaoxiao|Tingting|Meijia|Yunxi/i.test(x.name))
+      ||vs.find(x=>x.lang==='zh-CN')
+      ||vs.find(x=>x.lang&&x.lang.startsWith('zh'));
+   if(v)u.voice=v;
+   speechSynthesis.speak(u);
+ };
+ audio=new Audio(gttsUrl(t));
+ audio.playbackRate=.9;
+ audio.preload='auto';
+ audio.onerror=fallback;
+ const p=audio.play();
+ if(p&&typeof p.catch==='function')p.catch(fallback);
+}
+function pauseSpeech(){if(audio&&!audio.paused)audio.pause();try{speechSynthesis.pause()}catch(e){}}
+function resumeSpeech(){if(audio&&audio.paused)audio.play().catch(()=>{});try{speechSynthesis.resume()}catch(e){}}
+function stopSpeech(){
+ speechToken++;
+ if(audio){audio.onerror=null;audio.pause();try{audio.currentTime=0}catch(e){}audio=null}
+ try{speechSynthesis.cancel()}catch(e){}
+}
+function safe(s){return String(s).replaceAll("\\","\\\\").replaceAll("'","\\'")}
+
+document.getElementById('vocabGrid').innerHTML=D.vocab.map(v=>`<div class="card"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><span class="pos">${v[2]}</span><div class="meaning">${v[3]}</div><div class="ex"><div class="cn">${v[4]}</div><div class="vn">${v[5]}</div></div><div class="audioRow"><button class="audio" onclick="speakText('${safe(v[0])}')">🔊 Từ</button><button class="audio" onclick="speakText('${safe(v[4])}')">🔊 Ví dụ</button></div></div>`).join('');
+
+function renderDialogue(id,data){
+ document.getElementById(id).innerHTML=data.map((x,i)=>`<div class="line"><span class="sp">${x[0]}</span><div class="sent cn">${x[1]}</div><div class="pinyin">${x[2]}</div><div class="vn">${x[3]}</div><div class="audioRow"><button class="audio" onclick="speakText(${id==='d1box'?'D.dialogue1':'D.dialogue2'}[${i}][1])">▶ Nghe câu</button></div></div>`).join('');
+}
+renderDialogue('d1box',D.dialogue1);renderDialogue('d2box',D.dialogue2);
+
+document.getElementById('expressGrid').innerHTML=D.expressions.map((x,i)=>`<div class="card"><h3 class="cn">${i+1}. ${x[0]}</h3><div class="pinyin">${x[1]}</div><p>${x[2]}</p><button class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Nghe</button></div>`).join('');
+
+document.getElementById('readBox').innerHTML=D.reading.map((x,i)=>`<div class="line"><span class="sp">第${i+1}段</span><div class="sent cn">${x[0]}</div><div class="pinyin">${x[1]}</div><div class="vn">${x[2]}</div><div class="audioRow"><button class="audio" onclick="speakText(D.reading[${i}][0])">▶ Đọc đoạn</button></div></div>`).join('');
+
+const speaking=[["我是中国人。", "Tôi là người Trung Quốc."], ["这是谁？", "Đây là ai?"], ["这是我的老师。", "Đây là giáo viên của tôi."], ["你是哪国人？", "Bạn là người nước nào?"], ["你工作还忙吗？", "Công việc của bạn vẫn bận à?"], ["我也想你们。", "Tôi cũng nhớ mọi người."]];
+document.getElementById('speakGrid').innerHTML=speaking.map((x,i)=>`<div class="card"><h3 class="cn">${i+1}. ${x[0]}</h3><p>${x[1]}</p><button class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Nghe</button></div>`).join('');
+
+let difficult=JSON.parse(localStorage.getItem('hsk1_lesson3_v2_difficult')||'[]');
+function toggleDiff(w){difficult=difficult.includes(w)?difficult.filter(x=>x!==w):[...difficult,w];localStorage.setItem('hsk1_lesson3_v2_difficult',JSON.stringify(difficult));renderFlash()}
+function renderFlash(){document.getElementById('flashGrid').innerHTML=D.vocab.map(v=>`<div class="card flash" onclick="this.classList.toggle('flipped')"><button class="star" onclick="event.stopPropagation();toggleDiff('${safe(v[0])}')">${difficult.includes(v[0])?'⭐':'☆'}</button><div class="front"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><p>Chạm để xem nghĩa</p></div><div class="back"><h2>${v[3]}</h2><p class="cn">${v[4]}</p><p>${v[5]}</p><button class="audio" onclick="event.stopPropagation();speakText('${safe(v[0])}。${safe(v[4])}')">🔊 Nghe</button></div></div>`).join('')}
+renderFlash();
+
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+
+const listeningQuestions=[{"audio": "我是中国人。", "answer": "Tôi là người Trung Quốc.", "options": ["Tôi là người Trung Quốc.", "Đây là câu khác.", "Tôi không biết.", "Không phải ý này."]}, {"audio": "这是谁？", "answer": "Đây là ai?", "options": ["Đây là ai?", "Đây là câu khác.", "Tôi không biết.", "Không phải ý này."]}, {"audio": "这是我的老师。", "answer": "Đây là giáo viên của tôi.", "options": ["Đây là giáo viên của tôi.", "Đây là câu khác.", "Tôi không biết.", "Không phải ý này."]}, {"audio": "你是哪国人？", "answer": "Bạn là người nước nào?", "options": ["Bạn là người nước nào?", "Đây là câu khác.", "Tôi không biết.", "Không phải ý này."]}, {"audio": "你工作还忙吗？", "answer": "Công việc của bạn vẫn bận à?", "options": ["Công việc của bạn vẫn bận à?", "Đây là câu khác.", "Tôi không biết.", "Không phải ý này."]}, {"audio": "我也想你们。", "answer": "Tôi cũng nhớ mọi người.", "options": ["Tôi cũng nhớ mọi người.", "Đây là câu khác.", "Tôi không biết.", "Không phải ý này."]}, {"audio": "她是法国人。", "answer": "Cô ấy là người Pháp.", "options": ["Cô ấy là người Pháp.", "Đây là câu khác.", "Tôi không biết.", "Không phải ý này."]}, {"audio": "她也是泰国人。", "answer": "Cô ấy cũng là người Thái Lan.", "options": ["Cô ấy cũng là người Thái Lan.", "Đây là câu khác.", "Tôi không biết.", "Không phải ý này."]}, {"audio": "我不太忙。", "answer": "Tôi không quá bận.", "options": ["Tôi không quá bận.", "Đây là câu khác.", "Tôi không biết.", "Không phải ý này."]}, {"audio": "我们很想你。", "answer": "Chúng tôi rất nhớ bạn.", "options": ["Chúng tôi rất nhớ bạn.", "Đây là câu khác.", "Tôi không biết.", "Không phải ý này."]}];
+let li=0;
+function renderListening(){
+ const q=listeningQuestions[li%listeningQuestions.length];
+ const choices=shuffle(q.options);
+ const box=document.getElementById('listenOptions');
+ box.innerHTML='';
+ choices.forEach(choice=>{
+   const btn=document.createElement('button');
+   btn.className='game-opt';
+   btn.type='button';
+   btn.textContent=choice;
+   btn.addEventListener('click',()=>chooseListen(btn,choice,q.answer));
+   box.appendChild(btn);
+ });
+ document.getElementById('listenResult').textContent='';
+}
+function playListen(){speakText(listeningQuestions[li%listeningQuestions.length].audio)}
+function chooseListen(btn,choice,answer){document.querySelectorAll('#listenOptions button').forEach(x=>x.disabled=true);if(choice===answer){btn.classList.add('good');document.getElementById('listenResult').textContent='✅ Đúng rồi!'}else{btn.classList.add('bad');document.getElementById('listenResult').textContent='❌ Đáp án đúng: '+answer;[...document.querySelectorAll('#listenOptions button')].find(x=>x.textContent===answer)?.classList.add('good')}}
+function nextListen(){li++;renderListening()}renderListening();
+
+const fillQuestions=[{"sentence": "我____中国人。", "answer": "是", "hint": "là"}, {"sentence": "她____法国人。", "answer": "是", "hint": "là"}, {"sentence": "我____中国人。", "answer": "不是", "hint": "không phải"}, {"sentence": "这是我____老师。", "answer": "的", "hint": "của"}, {"sentence": "这____谁？", "answer": "是", "hint": "là"}, {"sentence": "你是____国人？", "answer": "哪", "hint": "nào"}, {"sentence": "她____是泰国人。", "answer": "也", "hint": "cũng"}, {"sentence": "你工作还忙____？", "answer": "吗", "hint": "trợ từ nghi vấn"}, {"sentence": "我不____忙。", "answer": "太", "hint": "quá"}, {"sentence": "我们很____你。", "answer": "想", "hint": "nhớ"}, {"sentence": "____是我姐姐。", "answer": "她", "hint": "cô ấy"}, {"sentence": "这是____女朋友。", "answer": "我", "hint": "tôi"}, {"sentence": "你____老师吗？", "answer": "是", "hint": "là"}, {"sentence": "这____我的书。", "answer": "不是", "hint": "không phải"}, {"sentence": "____，一飞！", "answer": "喂", "hint": "a lô"}];
+let fi=0;
+function renderFill(){const q=fillQuestions[fi%fillQuestions.length];document.getElementById('fillQuestion').textContent=q.sentence;document.getElementById('fillHint').textContent='Gợi ý: '+q.hint;document.getElementById('fillInput').value='';document.getElementById('fillResult').textContent=''}
+function checkFill(){const q=fillQuestions[fi%fillQuestions.length];const val=document.getElementById('fillInput').value.trim();document.getElementById('fillResult').textContent=val===q.answer?'✅ Chính xác!':'❌ Đáp án đúng: '+q.answer}
+function playFill(){const q=fillQuestions[fi%fillQuestions.length];speakText(q.sentence.replace('____',q.answer))}
+function nextFill(){fi++;renderFill()}renderFill();
+
+const orderQuestions=[["我", "是", "中国人"], ["她", "是", "法国人"], ["这", "是", "谁"], ["这是", "我的", "中文老师"], ["你", "是", "哪国人"], ["她", "也", "是", "泰国人"], ["你", "工作", "还", "忙吗"], ["我", "不太", "忙"], ["我们", "很", "想", "你"], ["我", "也", "想", "你们"], ["这是", "我", "女朋友"], ["她", "是", "我", "姐姐"], ["你", "是", "老师", "吗"], ["这", "不是", "我的", "书"], ["我的", "中文老师", "也是", "中国人"]];
+let oi=0;
+function makeChip(word,index){
+ const el=document.createElement('button');
+ el.type='button';
+ el.className='word-chip';
+ el.textContent=word;
+ el.dataset.index=index;
+ el.draggable=true;
+ el.addEventListener('dragstart',e=>{
+   e.dataTransfer.effectAllowed='move';
+   e.dataTransfer.setData('text/plain',index);
+ });
+ el.addEventListener('click',()=>moveChip(el));
+ return el;
+}
+function moveChip(el){
+ const bank=document.getElementById('wordBank'),zone=document.getElementById('dropZone');
+ (el.parentElement===bank?zone:bank).appendChild(el);
+}
+function setupDrop(target){
+ target.addEventListener('dragover',e=>{e.preventDefault();e.dataTransfer.dropEffect='move'});
+ target.addEventListener('drop',e=>{
+   e.preventDefault();
+   const index=e.dataTransfer.getData('text/plain');
+   const chip=[...document.querySelectorAll('.word-chip')].find(x=>x.dataset.index===index);
+   if(chip)target.appendChild(chip);
+ });
+}
+setupDrop(document.getElementById('wordBank'));setupDrop(document.getElementById('dropZone'));
+function renderOrder(){const words=orderQuestions[oi%orderQuestions.length];const bank=document.getElementById('wordBank'),zone=document.getElementById('dropZone');bank.innerHTML='';zone.innerHTML='';shuffle(words.map((w,i)=>({w,i}))).forEach(o=>bank.appendChild(makeChip(o.w,o.i)));document.getElementById('orderResult').textContent=''}
+function checkOrder(){const target=orderQuestions[oi%orderQuestions.length].join('');const current=[...document.querySelectorAll('#dropZone .word-chip')].map(x=>x.textContent).join('');document.getElementById('orderResult').textContent=current===target?'✅ Sắp xếp đúng!':'❌ Đáp án: '+orderQuestions[oi%orderQuestions.length].join(' ')}
+function resetOrder(){renderOrder()}function playOrder(){speakText(orderQuestions[oi%orderQuestions.length].join(''))}function nextOrder(){oi++;renderOrder()}renderOrder();
+
+const quizData=[{"q": "“人” nghĩa là gì?", "correct": "người", "wrong": ["đất nước", "giáo viên", "tên"]}, {"q": "“法国” nghĩa là gì?", "correct": "nước Pháp", "wrong": ["Trung Quốc", "Thái Lan", "nước Mỹ"]}, {"q": "“谁” dùng để hỏi gì?", "correct": "ai", "wrong": ["cái gì", "ở đâu", "bao nhiêu"]}, {"q": "“哪国人” nghĩa là gì?", "correct": "người nước nào", "wrong": ["người Trung Quốc", "ai", "giáo viên nào"]}, {"q": "Câu nào đúng?", "correct": "她是法国人。", "wrong": ["她法国人是。", "是她法国人。", "法国人她。"]}, {"q": "Dạng phủ định của 是 là gì?", "correct": "不是", "wrong": ["没有", "不有", "没是"]}, {"q": "“这是我的老师” nghĩa là gì?", "correct": "Đây là giáo viên của tôi", "wrong": ["Đây là học sinh của tôi", "Đây là chị gái tôi", "Đây là bạn gái tôi"]}, {"q": "“你是老师吗？” là loại câu gì?", "correct": "Câu hỏi có/không", "wrong": ["Câu hỏi ai", "Câu hỏi lựa chọn", "Câu mệnh lệnh"]}, {"q": "Trả lời khẳng định cho “你是中国人吗？”", "correct": "是，我是中国人。", "wrong": ["不，我是中国人。", "谁是中国人。", "我是吗。"]}, {"q": "“她也是泰国人” nghĩa là gì?", "correct": "Cô ấy cũng là người Thái Lan", "wrong": ["Cô ấy không phải người Thái Lan", "Cô ấy là người Pháp", "Cô ấy là giáo viên Thái Lan"]}, {"q": "“喂” thường dùng khi nào?", "correct": "Khi gọi điện", "wrong": ["Khi cảm ơn", "Khi xin lỗi", "Khi tạm biệt"]}, {"q": "“你工作还忙吗？” nghĩa là gì?", "correct": "Công việc của bạn vẫn bận à?", "wrong": ["Bạn làm nghề gì?", "Bạn có đi làm không?", "Bạn đang ở đâu?"]}, {"q": "“我不太忙” nghĩa là gì?", "correct": "Tôi không quá bận", "wrong": ["Tôi rất bận", "Tôi không làm việc", "Tôi không nhớ bạn"]}, {"q": "“我们很想你” nghĩa là gì?", "correct": "Chúng tôi rất nhớ bạn", "wrong": ["Chúng tôi rất bận", "Chúng tôi là người Trung Quốc", "Chúng tôi không biết bạn"]}, {"q": "Câu nào hỏi “Đây là ai?”", "correct": "这是谁？", "wrong": ["这是什么？", "你是谁？", "她是哪国人？"]}, {"q": "Câu nào hỏi quốc tịch?", "correct": "你是哪国人？", "wrong": ["你叫什么名字？", "你工作忙吗？", "这是谁？"]}, {"q": "“我的中文老师” nghĩa là gì?", "correct": "giáo viên tiếng Trung của tôi", "wrong": ["học sinh Trung Quốc của tôi", "bạn gái Trung Quốc của tôi", "chị gái của tôi"]}, {"q": "Câu nào sai trật tự?", "correct": "她法国人是。", "wrong": ["她是法国人。", "我是中国人。", "这是书。"]}, {"q": "“吗” đứng ở đâu?", "correct": "Cuối câu hỏi", "wrong": ["Đầu câu", "Sau chủ ngữ", "Trước động từ"]}, {"q": "“她” chỉ ai?", "correct": "cô ấy", "wrong": ["anh ấy", "chúng tôi", "bạn"]}, {"q": "“姐姐” nghĩa là gì?", "correct": "chị gái", "wrong": ["em gái", "mẹ", "bạn gái"]}, {"q": "“忙” nghĩa là gì?", "correct": "bận", "wrong": ["rảnh", "vui", "mệt"]}, {"q": "“还” trong bài nghĩa là gì?", "correct": "vẫn", "wrong": ["rất", "cũng", "không"]}, {"q": "“太” trong “不太忙” nghĩa là gì?", "correct": "quá", "wrong": ["cũng", "vẫn", "rất nhiều"]}, {"q": "Câu nào đúng để nói “Đây là bạn gái tôi”?", "correct": "这是我女朋友。", "wrong": ["这是我朋友女。", "我这是女朋友。", "女朋友这是我。"]}, {"q": "“你女朋友是哪国人？” hỏi gì?", "correct": "Bạn gái của bạn là người nước nào?", "wrong": ["Bạn gái của bạn tên gì?", "Bạn gái của bạn bận không?", "Bạn gái của bạn là ai?"]}, {"q": "“我也想你们” nghĩa là gì?", "correct": "Tôi cũng nhớ mọi người", "wrong": ["Tôi không nhớ mọi người", "Tôi cũng rất bận", "Mọi người nhớ tôi"]}, {"q": "Câu phủ định đúng là gì?", "correct": "这不是书。", "wrong": ["这不书。", "这没是书。", "不是这书。"]}, {"q": "“的” trong “我的老师” biểu thị gì?", "correct": "quan hệ sở hữu", "wrong": ["thời gian", "địa điểm", "số lượng"]}, {"q": "“这是书” nghĩa là gì?", "correct": "Đây là sách", "wrong": ["Đây là ai", "Đây là giáo viên", "Đó là người Trung Quốc"]}];
+let qi=0,score=0;
+function renderQ(){
+ document.getElementById('bar').style.width=(qi/quizData.length*100)+'%';
+ const q=quizData[qi];
+ const options=shuffle([q.correct,...q.wrong]);
+ const card=document.createElement('div');
+ card.className='quiz-card';
+ const counter=document.createElement('b');
+ counter.textContent=`Câu ${qi+1}/${quizData.length}`;
+ const title=document.createElement('h3');
+ title.textContent=q.q;
+ const opts=document.createElement('div');
+ opts.className='opts';
+ options.forEach(choice=>{
+   const btn=document.createElement('button');
+   btn.type='button';
+   btn.className='opt';
+   btn.textContent=choice;
+   btn.addEventListener('click',()=>answerQuiz(btn,choice,q.correct));
+   opts.appendChild(btn);
+ });
+ const feedback=document.createElement('p');
+ feedback.id='quizFeedback';
+ feedback.className='feedback';
+ const next=document.createElement('button');
+ next.id='nextQuiz';
+ next.type='button';
+ next.className='btn';
+ next.textContent='Tiếp theo';
+ next.disabled=true;
+ next.addEventListener('click',nextQ);
+ card.append(counter,title,opts,feedback,next);
+ const box=document.getElementById('quizBox');
+ box.innerHTML='';
+ box.appendChild(card);
+}
+function answerQuiz(btn,choice,correct){document.querySelectorAll('.opt').forEach(x=>x.disabled=true);if(choice===correct){btn.classList.add('correct');score++;document.getElementById('quizFeedback').textContent='✅ Đúng rồi!'}else{btn.classList.add('wrong');[...document.querySelectorAll('.opt')].find(x=>x.textContent===correct)?.classList.add('correct');document.getElementById('quizFeedback').textContent='❌ Đáp án đúng: '+correct}document.getElementById('nextQuiz').disabled=false}
+function nextQ(){qi++;if(qi===quizData.length){document.getElementById('quizBox').innerHTML=`<div class="card"><h2>Kết quả: ${score}/10</h2><p>${score>=8?'Rất tốt!':'Hãy ôn lại từ mới và ngữ pháp nhé.'}</p><button class="btn" onclick="qi=0;score=0;renderQ()">Làm lại</button></div>`;document.getElementById('bar').style.width='100%'}else renderQ()}renderQ();
+
+const tfData=[["我是中国人。 có nghĩa là “Tôi là người Trung Quốc”.", true], ["她法国人是。 là câu đúng.", false], ["不是 là dạng phủ định của 是.", true], ["谁 dùng để hỏi quốc tịch.", false], ["哪国人 dùng để hỏi người nước nào.", true], ["吗 thường đứng cuối câu hỏi có/không.", true], ["我不太忙 nghĩa là “Tôi rất bận”.", false], ["她也是泰国人 nghĩa là cô ấy cũng là người Thái Lan.", true], ["喂 thường dùng khi bắt đầu cuộc gọi điện.", true], ["的 luôn bắt buộc phải dùng sau đại từ nhân xưng.", false], ["这是我姐姐 có thể hiểu là đây là chị gái tôi.", true], ["我们很想你 nghĩa là chúng tôi rất nhớ bạn.", true], ["这是谁？ dùng để hỏi “Đây là gì?”.", false], ["你是老师吗？ là câu hỏi có/không.", true], ["我也想你们 nghĩa là tôi cũng nhớ mọi người.", true]];let tfi=0,tfScore=0;function renderTF(){const b=document.getElementById('tfBox');if(tfi>=tfData.length){b.innerHTML=`<h2>Kết quả: ${tfScore}/${tfData.length}</h2><button class="btn" onclick="tfi=0;tfScore=0;renderTF()">Làm lại</button>`;return}const q=tfData[tfi];b.innerHTML=`<b>Câu ${tfi+1}/${tfData.length}</b><h3>${q[0]}</h3><div class="game-options"><button class="game-opt" id="t1">Đúng</button><button class="game-opt" id="t0">Sai</button></div><p id="tr" class="game-status"></p><button id="tn" class="btn" disabled>Tiếp theo</button>`;document.getElementById('t1').onclick=()=>atf(true);document.getElementById('t0').onclick=()=>atf(false);document.getElementById('tn').onclick=()=>{tfi++;renderTF()}}function atf(c){const ok=tfData[tfi][1];document.getElementById('t1').disabled=true;document.getElementById('t0').disabled=true;if(c===ok){tfScore++;document.getElementById('tr').textContent='✅ Đúng rồi!'}else document.getElementById('tr').textContent='❌ Đáp án đúng: '+(ok?'Đúng':'Sai');document.getElementById('tn').disabled=false}renderTF();
+const matchPairs=[["中国", "Trung Quốc"], ["法国", "nước Pháp"], ["泰国", "Thái Lan"], ["人", "người"], ["谁", "ai"], ["哪", "nào"], ["姐姐", "chị gái"], ["忙", "bận"], ["想", "nhớ"], ["工作", "công việc"], ["老师", "giáo viên"], ["学生", "học sinh"], ["女朋友", "bạn gái"], ["我们", "chúng tôi"], ["她", "cô ấy"]];let sl=null,mc=0;function resetMatch(){sl=null;mc=0;const p=shuffle(matchPairs),l=shuffle(p.map(x=>({t:x[0],k:x[0]}))),r=shuffle(p.map(x=>({t:x[1],k:x[0]}))),lb=document.getElementById('matchLeft'),rb=document.getElementById('matchRight');lb.innerHTML='';rb.innerHTML='';l.forEach(o=>{const b=document.createElement('button');b.className='game-opt';b.textContent=o.t;b.dataset.key=o.k;b.onclick=()=>{document.querySelectorAll('#matchLeft .game-opt').forEach(x=>x.classList.remove('correct'));b.classList.add('correct');sl=o.k};lb.appendChild(b)});r.forEach(o=>{const b=document.createElement('button');b.className='game-opt';b.textContent=o.t;b.onclick=()=>{if(!sl)return;if(o.k===sl){b.classList.add('good');b.disabled=true;const x=[...document.querySelectorAll('#matchLeft .game-opt')].find(x=>x.dataset.key===sl);if(x){x.classList.add('good');x.disabled=true}mc++;document.getElementById('matchStatus').textContent=`✅ ${mc}/${p.length}`;sl=null;if(mc===p.length)document.getElementById('matchStatus').textContent='🏆 Hoàn thành!'}else{b.classList.add('bad');setTimeout(()=>b.classList.remove('bad'),400)}};rb.appendChild(b)})}resetMatch();
+let si=0,ss=0,sq=[];function startSpeed(){sq=shuffle(quizData).slice(0,20);si=0;ss=0;renderSpeed()}function renderSpeed(){const b=document.getElementById('speedBox');if(si>=sq.length){b.innerHTML=`<h2>Kết quả: ${ss}/${sq.length}</h2><button class="btn" onclick="startSpeed()">Chơi lại</button>`;return}const q=sq[si],o=shuffle([q.correct,...q.wrong]);b.innerHTML=`<b>Câu ${si+1}/${sq.length}</b><h3>${q.q}</h3><div class="opts" id="so"></div><p id="sr" class="game-status"></p>`;const ob=document.getElementById('so');o.forEach(v=>{const bt=document.createElement('button');bt.className='opt';bt.textContent=v;bt.onclick=()=>{document.querySelectorAll('#so .opt').forEach(x=>x.disabled=true);if(v===q.correct){bt.classList.add('correct');ss++;document.getElementById('sr').textContent='✅ Đúng'}else{bt.classList.add('wrong');document.getElementById('sr').textContent='❌ '+q.correct}[...document.querySelectorAll('#so .opt')].find(x=>x.textContent===q.correct)?.classList.add('correct');setTimeout(()=>{si++;renderSpeed()},650)};ob.appendChild(bt)})}startSpeed();
+</script>
+</body></html>
