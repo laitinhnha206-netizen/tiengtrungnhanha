@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2563eb">
+<title>Ôn tập Bài 1–5 | Tiếng Trung công sở thực chiến</title>
+<style>
+:root{
+ --blue:#2563eb;--blue2:#eff6ff;--green:#15803d;--green2:#ecfdf3;
+ --gold:#f59e0b;--red:#dc2626;--pink:#be185d;--ink:#172033;--muted:#667085;
+ --bg:#f7f9fc;--card:#fff;--line:#dde5ef;--shadow:0 10px 28px rgba(24,55,94,.10);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;padding-bottom:80px}
+.cn{font-family:"PingFang SC","Noto Serif SC","Songti SC",serif}
+header{padding:30px 16px 26px;text-align:center;color:#fff;background:linear-gradient(135deg,#7c3aed,#2563eb 52%,#159468);border-radius:0 0 30px 30px;box-shadow:var(--shadow)}
+.badge{display:inline-block;background:#fde68a;color:#513600;border-radius:999px;padding:5px 13px;font-weight:900;font-size:12px}
+h1{font-size:clamp(30px,7vw,50px);margin:9px 0 3px}
+.sub{margin:0 auto;max-width:760px;opacity:.95}
+.actions,.tabs,.row{display:flex;gap:8px;flex-wrap:wrap}
+.actions{justify-content:center;margin-top:15px}
+button{font:inherit;cursor:pointer}
+.actions button,.tabs button,.btn,.audio,.ghost{border:0;border-radius:13px;padding:10px 13px;font-weight:850}
+.actions button{background:#ffffff20;color:#fff;border:1px solid #ffffff55}
+.tabs{position:sticky;top:0;z-index:20;background:#f7f9fcf2;backdrop-filter:blur(12px);padding:9px 7px;overflow-x:auto;white-space:nowrap;border-bottom:1px solid var(--line)}
+.tabs button{flex:0 0 auto;background:#fff;border:1px solid var(--line);color:var(--ink)}
+.tabs button.active{background:var(--blue);color:#fff}
+section{display:none;max-width:1080px;margin:auto;padding:23px 14px 38px}
+section.active{display:block}
+.title{display:flex;gap:11px;align-items:center;margin-bottom:16px}
+.icon{width:48px;height:48px;border-radius:15px;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:23px;flex:0 0 auto}
+.title h2{margin:0;font-size:24px}.title p{margin:0;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:13px}
+.card,.box{background:#fff;border:1px solid var(--line);border-radius:19px;box-shadow:var(--shadow)}
+.card{padding:17px}.box{overflow:hidden;margin-bottom:15px}
+.box-h{background:linear-gradient(90deg,var(--blue),#5d8dea);color:#fff;padding:13px 16px;font-weight:900}
+.box-b{padding:14px 16px}
+.lesson{border-top:6px solid var(--blue)}
+.lesson:nth-child(2){border-top-color:#0f9f8a}.lesson:nth-child(3){border-top-color:#f59e0b}.lesson:nth-child(4){border-top-color:#be185d}.lesson:nth-child(5){border-top-color:#7c3aed}
+.tag{display:inline-block;border-radius:999px;padding:3px 9px;background:var(--blue2);color:#1d4ed8;font-size:12px;font-weight:850;margin:2px}
+.han{font-size:26px;font-weight:900}
+.big-cn{font-size:30px;font-weight:900}
+.muted{color:var(--muted)}
+.formula{background:var(--green2);border:1px dashed #86cda1;border-radius:13px;padding:10px 12px;font-weight:900;margin:8px 0}
+.tip{background:#fff8da;border-left:5px solid var(--gold);padding:11px 13px;border-radius:0 12px 12px 0}
+.audio{background:var(--blue2);color:#174ea6}.btn{background:var(--green);color:#fff}.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}
+.role{border-left:6px solid var(--pink)}
+.role h3{margin-top:0}
+.role-a{background:#eff6ff;border-radius:14px;padding:12px;margin:8px 0}
+.role-b{background:#fdf2f8;border-radius:14px;padding:12px;margin:8px 0}
+.must{background:#fff8da;border-radius:12px;padding:9px 11px;margin-top:8px}
+.hidden{display:none}
+.reveal{background:#f0fdf4;border:1px solid #bbefcb;border-radius:13px;padding:12px;margin-top:9px}
+.quiz-card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:18px;box-shadow:var(--shadow)}
+.progress{height:10px;background:#e5e7eb;border-radius:999px;overflow:hidden;margin-bottom:14px}.bar{height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--blue))}
+.question{font-size:20px;font-weight:900;margin:7px 0 13px}.opts{display:grid;gap:9px}.opt{padding:13px;border:2px solid var(--line);border-radius:14px;background:#fff;text-align:left;font-weight:800}.correct{background:#e7f8e7!important;border-color:#19853a!important}.wrong{background:#ffe7e7!important;border-color:#c62e2e!important}
+.feedback{font-weight:850;min-height:28px;margin-top:9px}
+.scorebox{text-align:center;padding:25px}.score{font-size:48px;font-weight:900;color:var(--blue)}
+.prompt{font-size:18px;font-weight:850}.speakbox{border-left:6px solid var(--green)}
+.checks label{display:block;margin:7px 0}
+.challenge{background:linear-gradient(135deg,#eef4ff,#f0fdf4)}
+.timer{font-size:40px;font-weight:900;text-align:center;margin:8px 0}
+
+.vocab-tools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}
+.vocab-filter{border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:9px 13px;font-weight:850}
+.vocab-filter.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.vocab-card .han{font-size:29px}.vocab-card .py{color:var(--red);font-style:italic;font-size:14px;margin:2px 0}
+.vocab-card .meaning{font-weight:850}.vocab-card .example{border-left:4px solid var(--green);padding-left:10px;margin-top:8px}
+.vocab-card .lesson-chip{display:inline-block;background:#f2f4f7;color:#475467;border-radius:999px;padding:2px 8px;font-size:11px;font-weight:900;margin-bottom:7px}
+.helpbox{background:#f8fafc;border:1px dashed #b8c6d8;border-radius:13px;padding:11px 12px;margin-top:10px}
+.helpbox b{color:#174ea6}
+
+@media(max-width:600px){.grid{grid-template-columns:1fr}.row .btn,.row .audio,.row .ghost{flex:1}.title h2{font-size:21px}}
+</style>
+</head>
+<body>
+<header>
+ <span class="badge">ÔN TẬP BÀI 1–5 · TIẾNG TRUNG THƯƠNG MẠI</span>
+ <h1 class="cn">公司里的一天</h1>
+ <p class="sub">Một ngày ở công ty · Ôn kiến thức + kiểm tra phản xạ + luyện nói ứng dụng thực tế</p>
+ <div class="actions">
+   <button onclick="document.body.classList.toggle('showPinyin')">👁 Bật/tắt gợi ý</button>
+   <button onclick="speakText('公司里的一天。第一课到第五课综合复习。')">🔊 Nghe tiêu đề</button>
+   <button onclick="stopSpeech()">⏹ Dừng</button>
+ </div>
+</header>
+<div id="tabs" class="tabs"></div>
+
+<section id="home" class="active">
+ <div class="title"><div class="icon">🏢</div><div><h2>Lộ trình buổi ôn</h2><p>Không học lại 5 bài riêng lẻ; đi theo một ngày làm việc thực tế.</p></div></div>
+ <div class="grid">
+   <div class="card"><h3>1️⃣ Ôn nhanh</h3><p>Nhớ lại 5 chủ đề + 8 cấu trúc trọng tâm.</p></div>
+   <div class="card"><h3>2️⃣ Phản xạ</h3><p>Việt → Trung, chọn câu đúng trong tình huống công ty.</p></div>
+   <div class="card"><h3>3️⃣ Role-play</h3><p>8 tình huống: đồng nghiệp, sếp, khách hàng, đàm phán.</p></div>
+   <div class="card"><h3>4️⃣ Kiểm tra</h3><p>20 câu trộn cả 5 bài, chấm điểm tự động.</p></div>
+   <div class="card"><h3>5️⃣ Nói 60 giây</h3><p>Tự nói liên tục, không đọc hội thoại mẫu.</p></div>
+   <div class="card"><h3>🎯 Mục tiêu</h3><p>Học sinh nói được câu phù hợp đúng vai, đúng hoàn cảnh.</p></div>
+ </div>
+ <div class="tip" style="margin-top:16px"><b>Gợi ý dạy:</b> cho học sinh làm phần “Phản xạ” trước khi mở đáp án. Phần Role-play nên đổi vai sau 2–3 phút.</div>
+</section>
+
+<section id="review">
+ <div class="title"><div class="icon">🧠</div><div><h2>Ôn nhanh 5 bài</h2><p>Mỗi bài chỉ giữ lại phần phải nói được.</p></div></div>
+ <div class="grid">
+  <div class="card lesson"><span class="tag">第一课</span><h3 class="cn">社交活动第一步</h3><p><b>Tình huống:</b> nhân viên mới, tự giới thiệu, làm quen.</p><div class="formula cn">在 + địa điểm + V　｜　会 + V　｜　……前　｜　是……的</div><p class="cn">以后请多关照。<br>我以前在北京的一家贸易公司工作。<br>我会说一点儿越南语。</p></div>
+  <div class="card lesson"><span class="tag">第二课</span><h3 class="cn">上下班的问候</h3><p><b>Tình huống:</b> chào đi làm/tan ca, hỏi thăm sức khỏe, chờ khách.</p><div class="formula cn">V₁ + 了 + 就 + V₂</div><p class="cn">你退烧了吗？<br>我还在等客户。<br>回到家了就给我打电话。</p></div>
+  <div class="card lesson"><span class="tag">第三课</span><h3 class="cn">寒暄语</h3><p><b>Tình huống:</b> đi gặp khách, đàm phán, báo cáo tiến triển.</p><div class="formula cn">如果 + điều kiện，就 + kết quả</div><p class="cn">如果有困难，就给我打电话。<br>谈判进展得很顺利。<br>你辛苦了。</p></div>
+  <div class="card lesson"><span class="tag">第四课</span><h3 class="cn">工作中的鼓励与慰问</h3><p><b>Tình huống:</b> khen, động viên, an ủi đồng nghiệp.</p><div class="formula cn">V + 得 + tính từ / cụm tính từ</div><p class="cn">你做得不错。<br>大家继续努力。<br>别灰心，下次一定会更好。</p></div>
+  <div class="card lesson"><span class="tag">第五课</span><h3 class="cn">如何营造和谐谈话气氛</h3><p><b>Tình huống:</b> tiếp khách, hỏi giao thông/thời tiết, small talk trước khi bàn việc.</p><div class="formula cn">从 + điểm xuất phát + V　｜　离 + địa điểm + 近/远</div><p class="cn">您是开车来的吗？<br>我们公司离车站很近。<br>您从那么远赶过来，辛苦您了。</p></div>
+ </div>
+</section>
+
+
+<section id="vocab5">
+ <div class="title"><div class="icon">📚</div><div><h2>Ôn từ vựng Bài 1–5</h2><p>Toàn bộ từ vựng trong 5 bài đã học. Lọc theo bài, xem ví dụ và nghe phát âm.</p></div></div>
+ <div class="vocab-tools" id="vocabFilters">
+   <button class="vocab-filter active" onclick="filterVocab(0,this)">Tất cả</button>
+   <button class="vocab-filter" onclick="filterVocab(1,this)">Bài 1</button>
+   <button class="vocab-filter" onclick="filterVocab(2,this)">Bài 2</button>
+   <button class="vocab-filter" onclick="filterVocab(3,this)">Bài 3</button>
+   <button class="vocab-filter" onclick="filterVocab(4,this)">Bài 4</button>
+   <button class="vocab-filter" onclick="filterVocab(5,this)">Bài 5</button>
+ </div>
+ <div class="tip" style="margin-bottom:15px"><b>Cách ôn trên lớp:</b> che nghĩa → học sinh nói nghĩa + đặt 1 câu; sau đó bấm 🔊 để kiểm tra phát âm.</div>
+ <div id="vocabReviewGrid" class="grid"></div>
+</section>
+
+<section id="reflex">
+ <div class="title"><div class="icon">⚡</div><div><h2>Phản xạ công sở</h2><p>Giáo viên đọc tiếng Việt → học sinh nói tiếng Trung → mới mở đáp án.</p></div></div>
+ <div id="reflexGrid" class="grid"></div>
+</section>
+
+<section id="roleplay">
+ <div class="title"><div class="icon">🎭</div><div><h2>Role-play thực tế</h2><p>8 tình huống nối cả 5 bài. Không cần nói giống mẫu, miễn đúng ý và tự nhiên.</p></div></div>
+ <div id="roleGrid"></div>
+</section>
+
+<section id="mission">
+ <div class="title"><div class="icon">🗂️</div><div><h2>Nhiệm vụ “Một ngày ở công ty”</h2><p>Hoạt động nhóm 15–20 phút.</p></div></div>
+ <div class="box"><div class="box-h">🌅 08:30 — Nhân viên mới đến công ty</div><div class="box-b"><p class="prompt">Bạn gặp một đồng nghiệp Trung Quốc lần đầu. Hãy tự giới thiệu 4–5 câu.</p><div class="must"><b>Phải dùng:</b> 请多关照 · 在…工作 · 会… · …前 / 是…的</div>
+<div class="helpbox"><b>🧩 Từ gợi ý:</b> <span class="cn">贸易 · 公司 · 越南 · 一周前 · 工作 · 会 · 一点儿 · 大学</span><br><b>🗣️ Mẫu câu:</b> <span class="cn">我是……。/ 我以前在……工作。/ 我会说一点儿……。/ 我是在……学的。/ 以后请多关照。</span></div></div></div>
+ <div class="box"><div class="box-h">☕ 09:00 — Gặp đồng nghiệp bị cảm</div><div class="box-b"><p class="prompt">Hỏi thăm sức khỏe, dặn giữ gìn sức khỏe. Người kia trả lời đã đỡ.</p><div class="must"><b>Phải dùng:</b> 感冒 · 退烧 · 注意身体 · V了就V</div>
+<div class="helpbox"><b>🧩 Từ gợi ý:</b> <span class="cn">托……的福 · 烧 · 退 · 感冒 · 注意 · 辛苦</span><br><b>🗣️ Mẫu câu:</b> <span class="cn">烧退了吧？/ 托你的福，今天好多了。/ 我……了就……。/ 你要注意身体。</span></div></div></div>
+ <div class="box"><div class="box-h">🚕 10:00 — Đồng nghiệp đi gặp khách hàng</div><div class="box-b"><p class="prompt">Sếp hỏi tình hình và dặn: nếu gặp khó khăn thì gọi về.</p><div class="must"><b>Phải dùng:</b> 客户 · 谈判 · 如果…就…</div>
+<div class="helpbox"><b>🧩 Từ gợi ý:</b> <span class="cn">副经理 · 谈判 · 进展 · 困难 · 联系 · 客户</span><br><b>🗣️ Mẫu câu:</b> <span class="cn">我去见一下……。/ 如果谈判有困难，就给我打电话。/ 有问题就联系我。</span></div></div></div>
+ <div class="box"><div class="box-h">📈 14:00 — Báo cáo sau cuộc đàm phán</div><div class="box-b"><p class="prompt">Báo cáo đàm phán khá thuận lợi. Sếp khen và động viên tiếp tục cố gắng.</p><div class="must"><b>Phải dùng:</b> 进展 · 顺利 · V得… · 继续努力</div>
+<div class="helpbox"><b>🧩 Từ gợi ý:</b> <span class="cn">谈判 · 进展 · 顺利 · 辛苦 · 表扬 · 继续 · 努力</span><br><b>🗣️ Mẫu câu:</b> <span class="cn">谈判进展得很顺利。/ 你辛苦了。/ 你做得不错。/ 大家继续努力。</span></div></div></div>
+ <div class="box"><div class="box-h">🌧️ 16:00 — Khách đến công ty vào ngày mưa</div><div class="box-b"><p class="prompt">Đón khách, hỏi khách đi bằng gì, nói chuyện giao thông/thời tiết, mời nghỉ rồi mới vào công việc.</p><div class="must"><b>Phải dùng:</b> 开车/坐电车 · 堵 · 离 · 从 · 辛苦您了 · 关于…我们一会儿再谈</div>
+<div class="helpbox"><b>🧩 Từ gợi ý:</b> <span class="cn">麻烦 · 开车 · 路段 · 堵 · 电车 · 车站 · 赶过来 · 休息 · 业务 · 天气 · 走路</span><br><b>🗣️ Mẫu câu:</b> <span class="cn">您是开车来的吗？/ 我是坐电车来的。/ 您从……过来的吗？/ 我们公司离……很近。/ 您先休息一下。/ 关于业务的事，我们一会儿再谈。</span></div></div></div>
+</section>
+
+<section id="quiz">
+ <div class="title"><div class="icon">🎯</div><div><h2>Kiểm tra tổng hợp 20 câu</h2><p>Trộn từ vựng, ngữ pháp và lựa chọn câu theo tình huống.</p></div></div>
+ <div class="progress"><div class="bar" id="bar"></div></div>
+ <div id="quizBox"></div>
+</section>
+
+<section id="speak">
+ <div class="title"><div class="icon">🎤</div><div><h2>Speaking Challenge</h2><p>Nói liên tục, ưu tiên phản xạ hơn độ hoàn hảo.</p></div></div>
+ <div class="grid">
+   <div class="card speakbox"><h3>30 giây · Cá nhân</h3><p>Giới thiệu bản thân như nhân viên mới.</p><div class="must cn">名字 → 什么时候来 → 以前在哪儿工作 → 会什么语言 → 请多关照</div></div>
+   <div class="card speakbox"><h3>45 giây · Cặp đôi</h3><p>Một người đi gặp khách về, một người hỏi kết quả.</p><div class="must cn">谈判 → 进展 → 困难 → 顺利 → 辛苦 → 继续努力</div></div>
+   <div class="card speakbox challenge"><h3>60 giây · Final Boss 👑</h3><p>Đón một khách hàng lần đầu tới công ty và chuyển tự nhiên từ small talk sang công việc.</p><div class="must cn">天气 → 怎么来的 → 堵不堵 → 离公司远不远 → 从哪儿来 → 休息 → 关于业务…</div></div>
+ </div>
+ <div class="card" style="margin-top:15px">
+  <h3>⏱ Đồng hồ 60 giây</h3>
+  <div id="timer" class="timer">60</div>
+  <div class="row"><button class="btn" onclick="startTimer()">Bắt đầu</button><button class="ghost" onclick="resetTimer()">Đặt lại</button></div>
+ </div>
+ <div class="card checks" style="margin-top:15px">
+   <h3>✅ Tự đánh giá sau khi nói</h3>
+   <label><input type="checkbox"> Tôi nói thành câu, không chỉ nói từ đơn.</label>
+   <label><input type="checkbox"> Tôi dùng ít nhất 2 cấu trúc đã học.</label>
+   <label><input type="checkbox"> Tôi phản hồi đúng vai: đồng nghiệp / sếp / khách.</label>
+   <label><input type="checkbox"> Tôi có thể nói tiếp khi quên một từ.</label>
+ </div>
+</section>
+
+<script>
+const tabs=[['home','🏢','Lộ trình'],['review','🧠','Ôn 5 bài'],['vocab5','📚','Từ vựng 1–5'],['reflex','⚡','Phản xạ'],['roleplay','🎭','Role-play'],['mission','🗂️','Nhiệm vụ'],['quiz','🎯','Kiểm tra'],['speak','🎤','Nói']];
+document.getElementById('tabs').innerHTML=tabs.map((x,i)=>`<button class="${i===0?'active':''}" onclick="tab('${x[0]}')">${x[1]} ${x[2]}</button>`).join('');
+function tab(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tabs button').forEach((b,i)=>b.classList.toggle('active',tabs[i][0]===id));scrollTo(0,0)}
+
+let speechToken=0;
+function speakText(t){stopSpeech();const u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';u.rate=.82;const vs=speechSynthesis.getVoices();u.voice=vs.find(v=>v.lang==='zh-CN')||vs.find(v=>v.lang&&v.lang.startsWith('zh'))||null;speechSynthesis.speak(u)}
+function stopSpeech(){speechToken++;try{speechSynthesis.cancel()}catch(e){}}
+
+
+const reviewVocab=[[1, "麻烦", "máfan", "a/v", "phiền, làm phiền", "今天给您添麻烦了。", "Hôm nay đã làm phiền ông/bà rồi."], [1, "关照", "guānzhào", "v", "quan tâm, giúp đỡ", "以后请多关照。", "Sau này mong được giúp đỡ."], [1, "贸易", "màoyì", "n", "thương mại", "我在一家贸易公司工作。", "Tôi làm việc tại một công ty thương mại."], [1, "公司", "gōngsī", "n", "công ty", "这是我们的公司。", "Đây là công ty của chúng tôi."], [1, "加油", "jiāyóu", "v", "cố gắng, cố lên", "你要加油哦。", "Bạn phải cố gắng nhé."], [1, "越南", "Yuènán", "n", "Việt Nam", "我一周前来越南。", "Tôi đến Việt Nam một tuần trước."], [1, "上海", "Shànghǎi", "n", "Thượng Hải", "他以前住在上海。", "Trước đây anh ấy sống ở Thượng Hải."], [1, "北京", "Běijīng", "n", "Bắc Kinh", "我以前在北京工作。", "Trước đây tôi làm việc ở Bắc Kinh."], [1, "一周前", "yì zhōu qián", "time", "một tuần trước", "我是一周前来的。", "Tôi đến một tuần trước."], [1, "工作", "gōngzuò", "n/v", "công việc; làm việc", "你以前做什么工作？", "Trước đây bạn làm công việc gì?"], [1, "会", "huì", "aux", "biết, có khả năng", "你会说越南语吗？", "Bạn có biết nói tiếng Việt không?"], [1, "一点儿", "yìdiǎnr", "adv", "một chút", "我只会一点儿。", "Tôi chỉ biết một chút."], [1, "大学", "dàxué", "n", "đại học", "我在大学学的。", "Tôi học ở đại học."], [1, "学会", "xuéhuì", "v", "học được", "我还没学会。", "Tôi vẫn chưa học được."], [1, "今后", "jīnhòu", "time", "từ nay về sau", "今后我要好好学习。", "Từ nay tôi phải học thật tốt."], [1, "大部分", "dà bùfen", "n", "phần lớn, đa số", "这里大部分人不懂汉语。", "Phần lớn người ở đây không hiểu tiếng Trung."], [1, "懂", "dǒng", "v", "hiểu", "我不懂这个问题。", "Tôi không hiểu vấn đề này."], [1, "汉语", "Hànyǔ", "n", "tiếng Trung", "你会说汉语吗？", "Bạn biết nói tiếng Trung không?"], [1, "地方", "dìfang", "n", "nơi, chỗ", "有什么不懂的地方可以问我。", "Có chỗ nào không hiểu thì có thể hỏi tôi."], [1, "问", "wèn", "v", "hỏi", "有问题可以问我。", "Có vấn đề gì thì có thể hỏi tôi."], [2, "托……的福", "tuō…de fú", "phrase", "nhờ phúc của ai", "托你的福，我好多了。", "Nhờ phúc của cô, tôi đỡ nhiều rồi."], [2, "烧", "shāo", "n/v", "sốt", "你退烧了吗？", "Anh đã hạ sốt chưa?"], [2, "退", "tuì", "v", "hạ, bớt", "今天已经退烧了。", "Hôm nay đã hạ sốt."], [2, "感冒", "gǎnmào", "n/v", "cảm cúm", "最近感冒的人很多。", "Dạo này nhiều người bị cảm."], [2, "注意", "zhùyì", "v", "chú ý", "你要注意身体。", "Bạn nên chú ý sức khỏe."], [2, "客户", "kèhù", "n", "khách hàng", "我还在等客户。", "Tôi vẫn đang chờ khách hàng."], [2, "联系", "liánxì", "v/n", "liên hệ", "客户还没有联系我。", "Khách vẫn chưa liên hệ."], [2, "辛苦", "xīnkǔ", "a", "vất vả", "那真是辛苦了。", "Vậy thì thật vất vả."], [2, "会议", "huìyì", "n", "cuộc họp", "明天有会议。", "Ngày mai có cuộc họp."], [2, "准备", "zhǔnbèi", "v", "chuẩn bị", "我在准备资料。", "Tôi đang chuẩn bị tài liệu."], [3, "副经理", "fù jīnglǐ", "n", "phó giám đốc", "我去见一下李副经理。", "Tôi đi gặp Phó giám đốc Lý một chút."], [3, "谈判", "tánpàn", "v/n", "đàm phán", "我们正在和客户谈判。", "Chúng tôi đang đàm phán với khách hàng."], [3, "进展", "jìnzhǎn", "n/v", "tiến triển", "谈判进展得很顺利。", "Đàm phán tiến triển thuận lợi."], [3, "困难", "kùnnan", "a/n", "khó khăn", "如果有困难，就给我打电话。", "Nếu có khó khăn thì gọi cho tôi."], [3, "顺利", "shùnlì", "a", "thuận lợi", "工作进行得很顺利。", "Công việc diễn ra thuận lợi."], [3, "辛苦", "xīnkǔ", "a", "vất vả", "你辛苦了。", "Bạn vất vả rồi."], [3, "商量", "shāngliang", "v", "thương lượng, bàn bạc", "今天来和你商量一下。", "Hôm nay tôi đến bàn với anh."], [3, "复印", "fùyìn", "v", "phô tô", "请复印一下这个。", "Hãy phô tô cái này."], [3, "提取", "tíqǔ", "v", "rút, trích xuất", "一次可提取十万日元。", "Một lần có thể rút 100.000 yên."], [3, "联系", "liánxì", "v/n", "liên hệ", "请电话联系我。", "Hãy gọi điện liên hệ tôi."], [4, "鼓励", "gǔlì", "v", "cổ vũ, khích lệ", "经理鼓励大家继续努力。", "Giám đốc khích lệ mọi người tiếp tục cố gắng."], [4, "安慰", "ānwèi", "v", "an ủi", "同事失败以后，我们应该安慰他。", "Sau khi đồng nghiệp thất bại, chúng ta nên an ủi anh ấy."], [4, "经理", "jīnglǐ", "n", "giám đốc", "王经理，早上好。", "Chào buổi sáng, Giám đốc Vương."], [4, "松懈", "sōngxiè", "v/a", "lơi là, chểnh mảng", "年底很忙，大家不要松懈。", "Cuối năm rất bận, mọi người đừng lơi là."], [4, "继续", "jìxù", "v", "tiếp tục", "请大家继续努力。", "Mời mọi người tiếp tục cố gắng."], [4, "表扬", "biǎoyáng", "v", "biểu dương, khen ngợi", "经理表扬了小陈。", "Giám đốc đã khen Tiểu Trần."], [4, "预料", "yùliào", "v/n", "dự liệu, dự đoán trước", "结果正是我所预料的。", "Kết quả đúng như tôi dự liệu."], [4, "辜负", "gūfù", "v", "phụ lòng, phụ sự kỳ vọng", "我不会辜负您的期望。", "Tôi sẽ không phụ kỳ vọng của ông."], [4, "期望", "qīwàng", "n/v", "kỳ vọng, mong đợi", "公司对年轻员工有很高的期望。", "Công ty có kỳ vọng cao đối với nhân viên trẻ."], [4, "努力", "nǔlì", "v/a", "nỗ lực, cố gắng", "大家都很努力。", "Mọi người đều rất cố gắng."], [4, "重要", "zhòngyào", "a", "quan trọng", "以后你要负责更重要的工作。", "Sau này cô sẽ phụ trách công việc quan trọng hơn."], [4, "收拾", "shōushi", "v", "thu dọn, sắp xếp", "请收拾一下这边。", "Hãy thu dọn chỗ này một chút."], [5, "麻烦", "máfan", "v./adj.", "làm phiền; phiền phức", "麻烦您了。", "Phiền ông/bà quá."], [5, "开车", "kāichē", "v.", "lái xe", "今天您开车来的吗？", "Hôm nay ông/bà lái xe đến à?"], [5, "路段", "lùduàn", "n.", "đoạn đường", "这个时间路段很堵。", "Tầm này đoạn đường rất tắc."], [5, "堵", "dǔ", "adj./v.", "tắc, ùn tắc", "下班时间路上很堵。", "Giờ tan làm đường rất tắc."], [5, "电车", "diànchē", "n.", "xe điện", "我是坐电车来的。", "Tôi đi xe điện đến."], [5, "休息", "xiūxi", "v.", "nghỉ ngơi", "您快去休息吧。", "Ông/bà mau đi nghỉ đi."], [5, "业务", "yèwù", "n.", "nghiệp vụ, công việc kinh doanh", "关于业务的事，我们下午再谈吧。", "Về công việc, chiều chúng ta nói tiếp nhé."], [5, "关照", "guānzhào", "v.", "quan tâm, giúp đỡ", "上次多亏了您的关照。", "Lần trước nhờ ông/bà giúp đỡ rất nhiều."], [5, "赶过来", "gǎn guòlái", "v.", "vội đến đây", "您从那么远赶过来，辛苦了。", "Ông/bà từ xa vội đến đây, vất vả quá."], [5, "客气", "kèqi", "adj.", "khách sáo", "您别客气。", "Ông/bà đừng khách sáo."], [5, "车站", "chēzhàn", "n.", "bến xe, nhà ga", "这里离车站还挺远的。", "Nơi đây cách nhà ga khá xa."], [5, "心情", "xīnqíng", "n.", "tâm trạng", "今天我的心情不错。", "Hôm nay tâm trạng tôi khá tốt."], [5, "天气", "tiānqì", "n.", "thời tiết", "今天天气不错。", "Hôm nay thời tiết khá đẹp."], [5, "走路", "zǒulù", "v.", "đi bộ", "我是走路过来的。", "Tôi đi bộ đến đây."], [5, "员工", "yuángōng", "n.", "nhân viên", "这个公司有很多员工。", "Công ty này có rất nhiều nhân viên."], [5, "起飞", "qǐfēi", "v.", "cất cánh", "天气不好，飞机还不能起飞。", "Thời tiết xấu, máy bay vẫn chưa thể cất cánh."], [5, "计划", "jìhuà", "n./v.", "kế hoạch; lên kế hoạch", "那个计划试着做吧。", "Chúng ta thử làm theo kế hoạch đó xem sao."], [5, "还是", "háishi", "adv.", "vẫn, vẫn là", "看起来还是那么精神。", "Trông vẫn khỏe khoắn như vậy."], [5, "辛苦", "xīnkǔ", "adj.", "vất vả", "您从那么远赶过来，辛苦了。", "Ông/bà từ xa đến đây, vất vả quá."], [5, "前几天", "qián jǐ tiān", "cụm thời gian", "mấy hôm trước", "前几天我去看她了。", "Mấy hôm trước tôi đã đến thăm cô ấy."], [5, "下雨", "xiàyǔ", "v.", "trời mưa", "今天下着雨，您还来了。", "Hôm nay trời mưa mà ông/bà vẫn đến."], [5, "和谐", "héxié", "adj.", "hài hòa", "我们要营造和谐的谈话气氛。", "Chúng ta cần tạo không khí trò chuyện hài hòa."], [5, "气氛", "qìfēn", "n.", "không khí", "会议的气氛很轻松。", "Không khí cuộc họp rất thoải mái."]];
+function escJS(s){return String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/\n/g,' ')}
+function renderReviewVocab(lesson=0){
+ const items=lesson?reviewVocab.filter(v=>v[0]===lesson):reviewVocab;
+ document.getElementById('vocabReviewGrid').innerHTML=items.map(v=>`
+  <div class="card vocab-card">
+    <span class="lesson-chip">Bài ${v[0]}</span>
+    <div class="han cn">${v[1]}</div>
+    <div class="py">${v[2]}</div>
+    <div class="meaning">${v[4]}</div>
+    <div class="example"><div class="cn">${v[5]}</div><div class="muted">${v[6]}</div></div>
+    <div class="row" style="margin-top:9px">
+      <button class="audio" onclick="speakText('${escJS(v[1])}')">🔊 Từ</button>
+      <button class="audio" onclick="speakText('${escJS(v[5])}')">🔊 Ví dụ</button>
+    </div>
+  </div>`).join('');
+}
+function filterVocab(lesson,btn){
+ document.querySelectorAll('.vocab-filter').forEach(b=>b.classList.remove('active'));
+ btn.classList.add('active');renderReviewVocab(lesson);
+}
+renderReviewVocab();
+
+const reflex=[
+ ['Bạn là nhân viên mới. Hãy nói: “Sau này mong được giúp đỡ.”','以后请多关照。'],
+ ['“Trước đây tôi làm việc tại một công ty thương mại ở Bắc Kinh.”','我以前在北京的一家贸易公司工作。'],
+ ['“Tôi chỉ biết nói một chút tiếng Việt.”','我只会说一点儿越南语。'],
+ ['Đồng nghiệp bị cảm. Hỏi: “Bạn hạ sốt chưa?”','你退烧了吗？'],
+ ['“Về đến nhà thì gọi điện cho tôi nhé.”','回到家了就给我打电话。'],
+ ['“Tôi vẫn đang chờ khách hàng.”','我还在等客户。'],
+ ['“Nếu gặp khó khăn thì gọi điện về cho tôi.”','如果有困难，就给我打电话回来。'],
+ ['“Cuộc đàm phán tiến triển rất thuận lợi.”','谈判进展得很顺利。'],
+ ['Khen đồng nghiệp: “Bạn làm khá tốt.”','你做得不错。'],
+ ['Động viên cả nhóm: “Mọi người tiếp tục cố gắng.”','大家继续努力。'],
+ ['Khách vừa đi xa tới. Nói: “Ông/bà vất vả rồi.”','辛苦您了。'],
+ ['Hỏi khách: “Ông/bà lái xe đến à?”','您是开车来的吗？'],
+ ['“Giờ tan làm đường rất tắc.”','下班时间路上很堵。'],
+ ['“Công ty chúng tôi cách ga rất gần.”','我们公司离车站很近。'],
+ ['“Ông/bà từ xa như vậy đến đây, thật cảm ơn.”','您从那么远赶过来，真是太谢谢了。']
+];
+document.getElementById('reflexGrid').innerHTML=reflex.map((x,i)=>`<div class="card"><div class="muted">Câu ${i+1}</div><div class="prompt">${x[0]}</div><div class="row" style="margin-top:10px"><button class="ghost" onclick="toggleReveal('r${i}')">👀 Mở đáp án</button><button class="audio" onclick="speakText('${x[1].replaceAll("'","\\'")}')">🔊 Nghe</button></div><div id="r${i}" class="reveal hidden"><div class="big-cn cn">${x[1]}</div></div></div>`).join('');
+function toggleReveal(id){document.getElementById(id).classList.toggle('hidden')}
+
+const roles=[
+ {t:'1. Nhân viên mới gặp đồng nghiệp',
+  a:'A — Nhân viên mới: tự giới thiệu, nói trước đây làm ở đâu, biết ngôn ngữ gì.',
+  b:'B — Đồng nghiệp: hỏi khi nào tới Việt Nam, trước đây làm gì, học tiếng Trung/Việt ở đâu.',
+  must:'请多关照 · …前 · 在…工作 · 会… · 是…的',
+  vocab:'关照 · 贸易 · 公司 · 越南 · 一周前 · 工作 · 会 · 一点儿 · 大学 · 汉语',
+  frames:'我是……。 / 我是……前来的。 / 我以前在……工作。 / 我会说一点儿……。 / 我是在……学的。 / 以后请多关照。',
+  sample:'A：您好，我是新来的员工，我叫安娜。以后请多关照。\nB：欢迎你。你什么时候来越南的？\nA：我是一周前来的。来越南前，我在北京的一家贸易公司工作。'},
+ {t:'2. Buổi sáng: đồng nghiệp bị cảm',
+  a:'A — Hỏi thăm: còn sốt không, đã uống thuốc chưa; dặn chú ý sức khỏe.',
+  b:'B — Nói đã hạ sốt, uống thuốc xong thì đi ngủ nên hôm nay đỡ hơn.',
+  must:'感冒 · 退烧 · 注意 · V了就V',
+  vocab:'托……的福 · 烧 · 退 · 感冒 · 注意 · 辛苦',
+  frames:'没事了吧？ / 烧退了吧？ / 托你的福，今天好多了。 / 我……了就……。 / 你要注意身体。',
+  sample:'A：你退烧了吗？\nB：已经退烧了。昨天吃了药就睡了，今天好多了。\nA：那就好，你要注意身体。'},
+ {t:'3. Trước khi đi gặp khách',
+  a:'A — Nhân viên: báo đi gặp khách để đàm phán.',
+  b:'B — Sếp: hỏi về kế hoạch và dặn nếu có khó khăn thì gọi về.',
+  must:'客户 · 谈判 · 如果…就…',
+  vocab:'副经理 · 谈判 · 进展 · 困难 · 联系 · 客户',
+  frames:'我去见一下……。 / 我们要和客户谈判。 / 如果……有困难，你就……。 / 有问题就联系我。',
+  sample:'A：我现在去见客户，跟他们谈一下合同。\nB：好。如果谈判有困难，就给我打电话回来。'},
+ {t:'4. Sau cuộc đàm phán',
+  a:'A — Nhân viên: báo tiến triển khá thuận lợi nhưng hơi vất vả.',
+  b:'B — Sếp: khen làm tốt, ghi nhận và động viên tiếp tục cố gắng.',
+  must:'进展 · 顺利 · 辛苦 · V得… · 继续',
+  vocab:'谈判 · 进展 · 顺利 · 辛苦 · 鼓励 · 继续 · 努力 · 表扬',
+  frames:'谈判怎么样？ / 进展得很顺利。 / 你辛苦了。 / 你做得很不错。 / 继续努力。',
+  sample:'A：今天谈判进展得很顺利。\nB：你辛苦了。这次你做得不错，继续努力。'},
+ {t:'5. Đồng nghiệp làm chưa tốt',
+  a:'A — Đồng nghiệp: buồn vì kết quả công việc chưa tốt.',
+  b:'B — Bạn: an ủi, động viên, nói lần sau sẽ tốt hơn.',
+  must:'安慰 · 鼓励 · 别… · 继续努力',
+  vocab:'鼓励 · 安慰 · 松懈 · 继续 · 努力 · 期望',
+  frames:'这次我做得不太好。 / 别灰心。 / 不要松懈。 / 继续努力。 / 下次一定会更好。',
+  sample:'A：这次我做得不太好。\nB：别灰心。你已经很努力了，下次一定会更好。'},
+ {t:'6. Khách đến vào giờ cao điểm',
+  a:'A — Chủ nhà: hỏi khách lái xe hay đi tàu, đường có tắc không.',
+  b:'B — Khách: nói đi tàu điện vì giờ này đường tắc.',
+  must:'开车 · 电车 · 堵 · 是…的',
+  vocab:'开车 · 路段 · 堵 · 电车 · 车站 · 天气',
+  frames:'您是开车来的吗？ / 我是坐……来的。 / 这个时间路上很堵。 / 您从……过来的吗？',
+  sample:'A：您是开车来的吗？\nB：不是，我是坐电车来的。这个时间路上很堵。'},
+ {t:'7. Khách từ xa đến công ty',
+  a:'A — Chủ nhà: nói khách từ xa tới vất vả, mời nghỉ.',
+  b:'B — Khách: nói công ty không xa ga, thời tiết đẹp nên đi bộ tới.',
+  must:'从 · 离 · 辛苦您了 · 休息',
+  vocab:'赶过来 · 辛苦 · 休息 · 车站 · 走路 · 天气 · 心情',
+  frames:'您从那么远赶过来，辛苦您了。 / 我们公司离……很近/远。 / 我是走路过来的。 / 您先休息一下吧。',
+  sample:'A：您从那么远赶过来，辛苦您了。先休息一下吧。\nB：谢谢。其实贵公司离车站很近，我是走路来的。'},
+ {t:'8. Chuyển từ small talk sang công việc',
+  a:'A — Tiếp khách: hỏi thời tiết/đi lại, tạo không khí thoải mái rồi chuyển chủ đề.',
+  b:'B — Khách: đáp lại lịch sự và đồng ý bàn công việc sau vài phút.',
+  must:'天气 · 交通 · 关于… · 一会儿再谈',
+  vocab:'麻烦 · 客气 · 天气 · 休息 · 业务 · 和谐 · 气氛 · 辛苦',
+  frames:'今天天气不错。 / 您一路还顺利吗？ / 您别客气。 / 您先休息一下。 / 关于业务的事，我们一会儿再谈。',
+  sample:'A：今天天气不错。您一路还顺利吗？\nB：挺顺利的，谢谢。\nA：您先休息一下。关于业务的事，我们一会儿再谈。'}
+]
+document.getElementById('roleGrid').innerHTML=roles.map((r,i)=>`<div class="card role" style="margin-bottom:14px"><h3>${r.t}</h3><div class="role-a">${r.a}</div><div class="role-b">${r.b}</div><div class="must"><b>🎯 Trọng tâm:</b> <span class="cn">${r.must}</span></div><div class="helpbox"><b>🧩 Từ gợi ý:</b> <span class="cn">${r.vocab}</span></div><div class="helpbox"><b>🗣️ Mẫu câu gợi ý:</b><div class="cn" style="margin-top:5px">${r.frames}</div></div><div class="row" style="margin-top:10px"><button class="ghost" onclick="toggleReveal('role${i}')">💡 Xem hội thoại mẫu</button></div><div id="role${i}" class="reveal hidden"><div class="cn" style="white-space:pre-line;font-size:18px">${r.sample}</div></div></div>`).join('');
+
+const qs=[
+{q:'Nhân viên mới muốn nói “Sau này mong được giúp đỡ” nên nói:',o:['以后请多关照。','你辛苦了。','好久不见。','慢走。'],a:0},
+{q:'Câu nào đúng với “Tôi làm việc ở một công ty thương mại”?',o:['我在一家贸易公司工作。','我一家贸易公司在工作。','我工作一家贸易公司。','在我工作贸易公司。'],a:0},
+{q:'“你会说越南语吗？” hỏi về:',o:['khả năng ngôn ngữ','thời gian','địa điểm','sức khỏe'],a:0},
+{q:'Chọn câu đúng: “Về nhà xong thì gọi cho tôi.”',o:['回到家了就给我打电话。','如果回家给我电话。','回家前给我打电话了。','从家给我打电话。'],a:0},
+{q:'Đồng nghiệp bị sốt, câu hỏi tự nhiên nhất là:',o:['你退烧了吗？','你谈判了吗？','你开车了吗？','你工作得好吗？'],a:0},
+{q:'“我还在等客户” nghĩa là:',o:['Tôi vẫn đang chờ khách hàng.','Tôi đã gặp khách hàng.','Tôi không liên hệ khách hàng.','Tôi đang đàm phán.'],a:0},
+{q:'Hoàn thành: 如果有困难，___给我打电话。',o:['就','从','得','前'],a:0},
+{q:'Từ nào nghĩa là “tiến triển”?',o:['进展','关照','感冒','路段'],a:0},
+{q:'“谈判进展得很顺利” nghĩa là:',o:['Đàm phán tiến triển rất thuận lợi.','Đàm phán rất khó.','Khách hàng đến muộn.','Tôi đang chờ đàm phán.'],a:0},
+{q:'Khen nhân viên “Bạn làm khá tốt”:',o:['你做得不错。','你做不错得。','你不错做得。','你得做不错。'],a:0},
+{q:'Cấu trúc V + 得 + tính từ dùng để:',o:['đánh giá mức độ/kết quả hành động','nói điểm xuất phát','nêu điều kiện','nói hai hành động liên tiếp'],a:0},
+{q:'Sếp muốn động viên cả nhóm:',o:['大家继续努力。','大家辛苦吗？','大家从公司来。','大家退烧了。'],a:0},
+{q:'Khách đi xa đến, câu lịch sự phù hợp:',o:['辛苦您了。','你要加油哦。','你退烧了吗？','你会说中文吗？'],a:0},
+{q:'Hỏi khách “Ông/bà lái xe đến à?”',o:['您是开车来的吗？','您会开车吗？','您从开车来吗？','您开车得来吗？'],a:0},
+{q:'“路上很堵” nghĩa là:',o:['Đường rất tắc.','Đường rất xa.','Đường rất gần.','Đường rất đẹp.'],a:0},
+{q:'Nói “Công ty cách ga rất gần” dùng:',o:['公司离车站很近。','公司从车站很近。','公司在车站很近。','公司得车站很近。'],a:0},
+{q:'“从” trong Bài 5 chủ yếu nhấn mạnh:',o:['điểm xuất phát','khoảng cách','mức độ hành động','điều kiện'],a:0},
+{q:'Khách vừa đến, trước khi bàn hợp đồng nên nói tự nhiên:',o:['您先休息一下，关于合同的事我们一会儿再谈。','我们马上谈，不用休息。','你做得不错。','如果感冒就打电话。'],a:0},
+{q:'Tình huống nào phù hợp nhất với “你辛苦了”?',o:['Đồng nghiệp vừa hoàn thành một việc vất vả.','Hỏi tên người mới.','Hỏi khoảng cách tới ga.','Hỏi ai biết tiếng Việt.'],a:0},
+{q:'Chuỗi giao tiếp nào tự nhiên nhất khi tiếp khách?',o:['Chào hỏi → hỏi đường đi/thời tiết → mời nghỉ → vào công việc','Hỏi hợp đồng ngay → hỏi tên → chào','Khen → hỏi sốt → đàm phán','Hỏi ngôn ngữ → tan ca → hỏi thời tiết'],a:0}
+];
+
+function shuffleQuizAnswers(){
+ qs.forEach(x=>{
+   const pairs=x.o.map((choice,i)=>({choice,correct:i===x.a}));
+   for(let i=pairs.length-1;i>0;i--){
+     const j=Math.floor(Math.random()*(i+1));
+     [pairs[i],pairs[j]]=[pairs[j],pairs[i]];
+   }
+   x.o=pairs.map(p=>p.choice);
+   x.a=pairs.findIndex(p=>p.correct);
+ });
+ // Tránh trường hợp ngẫu nhiên quá nhiều đáp án đúng rơi vào A.
+ let countA=qs.filter(x=>x.a===0).length;
+ if(countA>7){
+   qs.forEach((x,idx)=>{
+     if(x.a===0 && idx%2===1){
+       const target=1+(idx%3);
+       [x.o[0],x.o[target]]=[x.o[target],x.o[0]];
+       x.a=target;
+     }
+   });
+ }
+}
+shuffleQuizAnswers();
+
+let qi=0,score=0,answered=false;
+function renderQ(){
+ document.getElementById('bar').style.width=(qi/qs.length*100)+'%';
+ const x=qs[qi];
+ document.getElementById('quizBox').innerHTML=`<div class="quiz-card"><div class="muted">Câu ${qi+1}/${qs.length}</div><div class="question">${x.q}</div><div class="opts">${x.o.map((o,i)=>`<button class="opt" onclick="answer(${i})">${o}</button>`).join('')}</div><div id="fb" class="feedback"></div><div class="row" style="margin-top:10px"><button id="nextBtn" class="btn" onclick="nextQ()" disabled>${qi===qs.length-1?'Xem điểm':'Tiếp theo →'}</button></div></div>`;answered=false
+}
+function answer(i){if(answered)return;answered=true;const x=qs[qi],ops=document.querySelectorAll('#quizBox .opt'),fb=document.getElementById('fb');ops.forEach(b=>b.disabled=true);if(i===x.a){ops[i].classList.add('correct');fb.textContent='✅ Đúng!';score++}else{ops[i].classList.add('wrong');ops[x.a].classList.add('correct');fb.textContent='❌ Đáp án: '+x.o[x.a]}document.getElementById('nextBtn').disabled=false}
+function nextQ(){qi++;if(qi>=qs.length){document.getElementById('bar').style.width='100%';let msg=score>=18?'Xuất sắc — phản xạ rất tốt!':score>=15?'Tốt — có thể vào phần nói tự do.':score>=11?'Khá — nên xem lại các câu sai trước khi role-play.':'Cần ôn lại 5 nhóm tình huống trước khi nói.';document.getElementById('quizBox').innerHTML=`<div class="card scorebox"><div class="score">${score}/20</div><h2>${msg}</h2><button class="btn" onclick="restartQuiz()">Làm lại</button></div>`}else renderQ()}
+function restartQuiz(){qi=0;score=0;shuffleQuizAnswers();renderQ()}renderQ();
+
+let timeLeft=60,timerId=null;
+function drawTimer(){document.getElementById('timer').textContent=timeLeft}
+function startTimer(){if(timerId)return;timerId=setInterval(()=>{timeLeft--;drawTimer();if(timeLeft<=0){clearInterval(timerId);timerId=null;speakText('时间到了');}},1000)}
+function resetTimer(){clearInterval(timerId);timerId=null;timeLeft=60;drawTimer()}
+</script>
+</body></html>
