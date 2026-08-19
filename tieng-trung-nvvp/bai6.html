@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#149bd7">
+<title>第六课 商讨工作中的问题</title>
+<style>
+:root{--b:#149bd7;--b2:#e8f6fc;--bg:#f7fbfd;--c:#fff;--t:#173042;--m:#687786;--l:#d9eaf2;--g:#178a62;--g2:#eaf8f2;--r:#d24a3a;--gold:#f2b705;--shadow:0 10px 28px rgba(26,76,105,.10)}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--t);font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;padding-bottom:78px}
+.cn{font-family:"PingFang SC","Noto Serif SC","Songti SC",serif}
+header{background:linear-gradient(135deg,#12a8dc,#2b6cb0 58%,#16835f);color:#fff;text-align:center;padding:30px 16px;border-radius:0 0 30px 30px;box-shadow:var(--shadow)}
+.badge{display:inline-block;background:var(--gold);color:#332900;padding:5px 13px;border-radius:999px;font-weight:900;font-size:12px}
+h1{font-size:clamp(32px,7vw,52px);margin:8px 0 2px}.sub{margin:0;opacity:.93}.actions,.tabs,.audioRow{display:flex;gap:8px;flex-wrap:wrap}.actions{justify-content:center;margin-top:14px}
+button{font:inherit;cursor:pointer}.actions button,.tabs button,.audio,.btn{border:0;border-radius:12px;padding:10px 13px;font-weight:850}.actions button{background:#ffffff22;color:#fff;border:1px solid #ffffff55}
+.tabs{position:sticky;top:0;z-index:30;background:#f7fbfdf2;backdrop-filter:blur(12px);padding:10px 8px;overflow-x:auto;white-space:nowrap;border-bottom:1px solid var(--l)}
+.tabs button{flex:0 0 auto;background:#fff;border:1px solid var(--l);color:var(--t)}.tabs button.active{background:var(--b);color:#fff}
+section{display:none;max-width:1050px;margin:auto;padding:22px 14px 35px}section.active{display:block}
+.title{display:flex;gap:11px;align-items:center;margin-bottom:17px}.icon{width:48px;height:48px;border-radius:15px;background:var(--b);color:#fff;display:grid;place-items:center;font-size:23px}.title h2{margin:0}.title p{margin:0;color:var(--m);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:13px}.card,.box{background:#fff;border:1px solid var(--l);border-radius:19px;box-shadow:var(--shadow)}.card{padding:17px}.box{overflow:hidden;margin-bottom:15px}.box-h{background:linear-gradient(90deg,var(--b),#56b5df);color:#fff;padding:13px 16px;font-weight:900}.box-b{padding:13px 16px}
+.han{font-size:32px;font-weight:900}.pinyin{display:none;color:var(--r);font-style:italic;font-size:14px}.showPinyin .pinyin{display:block}.pos{display:inline-block;background:#eef1f3;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:850}.meaning{font-weight:850}.ex{border-left:4px solid var(--g);padding-left:10px;margin-top:9px}.vn{color:#555}
+.line{padding:14px 0;border-bottom:1px solid #eee}.line:last-child{border-bottom:0}.sp{display:inline-block;background:var(--b2);color:#145477;padding:3px 9px;border-radius:999px;font-weight:900}.sent{font-size:18px;font-weight:800}
+.audio{background:var(--b2);color:#145477}.pause{background:#fff6df;color:#855b00}.stop{background:#ffe8e8;color:#a21f1f}.wide{width:100%}
+.grammar{border-left:6px solid var(--g);background:var(--g2)}.formula{background:#fff;border:1px dashed var(--g);padding:11px;border-radius:11px;font-weight:900}.tip{background:#fff7d6;border-left:4px solid var(--gold);padding:11px;border-radius:0 12px 12px 0}
+.flash{min-height:180px;text-align:center;display:grid;place-items:center;position:relative;cursor:pointer}.flash .back{display:none}.flash.flipped .front{display:none}.flash.flipped .back{display:block}.star{position:absolute;right:9px;top:9px;border:0;background:transparent;font-size:23px}
+.game-options{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}.game-opt,.opt{padding:14px;border:2px solid var(--l);border-radius:14px;background:#fff;font-weight:850;text-align:left}.good,.correct{background:#e5f8e8!important;border-color:#19853a!important}.bad,.wrong{background:#ffe6e6!important;border-color:#c62e2e!important}
+.progress{height:10px;background:#ddd;border-radius:999px;overflow:hidden;margin-bottom:15px}.bar{height:100%;background:linear-gradient(90deg,var(--g),var(--b));width:0}.quiz-card{background:#fff;border:1px solid var(--l);border-radius:18px;padding:18px}.opts{display:grid;gap:9px}.feedback{font-weight:800;min-height:28px}
+.fill-input{width:100%;padding:13px;border:2px solid var(--l);border-radius:12px;font-size:18px;margin:10px 0}
+.word-bank,.drop-zone{display:flex;gap:8px;flex-wrap:wrap;min-height:62px;padding:12px;border:2px dashed #b7d9e8;border-radius:14px;background:#f8fcfe;margin:10px 0}.word-chip{padding:9px 12px;border:1px solid #b7d9e8;border-radius:999px;background:#fff;font-weight:850;cursor:grab;user-select:none}.drop-zone .word-chip{background:var(--g2);border-color:#9fd4bf}
+.game-status{font-weight:850;min-height:28px}.take{border-left:7px solid #b83280}
+@media(max-width:600px){.grid,.game-options{grid-template-columns:1fr}.audioRow .audio,.audioRow .btn{flex:1}}
+</style>
+</head>
+<body>
+<header>
+<span class="badge">Tiếng Trung thương mại · 第六课 · V2</span>
+<h1 class="cn">商讨工作中的问题</h1>
+<p class="sub">Những vấn đề trong đàm phán về công việc</p>
+<div class="actions">
+<button onclick="history.back()">← Quay lại</button>
+<button onclick="speakText('商讨工作中的问题')">🔊 Tên bài</button>
+<button onclick="document.body.classList.toggle('showPinyin')">👁 Pinyin</button>
+<button onclick="pauseSpeech()">⏸ Tạm dừng</button>
+<button onclick="resumeSpeech()">▶ Tiếp tục</button>
+<button onclick="stopSpeech()">⏹ Dừng</button>
+</div>
+</header>
+<div id="tabs" class="tabs"></div>
+
+<section id="home" class="active">
+<div class="title"><div class="icon">🏠</div><div><h2>Tổng quan bài học</h2><p>Trao đổi và xin lời khuyên khi có vấn đề trong công việc.</p></div></div>
+<div class="grid"><div class="card"><h3>🎯 Chủ đề</h3><p>Mở lời với cấp trên, trình bày mâu thuẫn trong nhóm và xin ý kiến giải quyết.</p></div><div class="card"><h3>📐 Ngữ pháp</h3><p><b>因为……所以…… / 应该 / 能不能…… / 其实是……</b></p></div><div class="card"><h3>🎮 V2</h3><p>15 nghe, 15 điền từ, 15 sắp xếp, 30 quiz, đúng/sai, ghép cặp và speed quiz.</p></div></div></section>
+
+<section id="vocab"><div class="title"><div class="icon">📖</div><div><h2>Từ vựng đầy đủ</h2><p>Pinyin, nghĩa, ví dụ và âm thanh.</p></div></div><div id="vocabGrid" class="grid"></div></section>
+
+<section id="grammar"><div class="title"><div class="icon">📐</div><div><h2>Ngữ pháp & mẫu câu</h2><p>Các cấu trúc quan trọng dùng khi trao đổi vấn đề công việc.</p></div></div>
+<div class="card grammar"><h3 class="cn">1. 因为……所以……</h3><div class="formula cn">因为 + nguyên nhân，所以 + kết quả</div><p class="cn"><b>因为他们总是对立，所以团队很不团结。</b></p><p>Vì họ luôn đối lập nên nhóm rất không đoàn kết.</p></div>
+<div class="card grammar"><h3 class="cn">2. 应该</h3><div class="formula cn">Chủ ngữ + 应该 + động từ</div><p class="cn"><b>我应该早点儿找您商量的。</b></p><p>Tôi nên tìm ông bàn bạc sớm hơn.</p></div>
+<div class="card grammar"><h3 class="cn">3. 能不能……？</h3><div class="formula cn">能不能 + động từ + …？</div><p class="cn"><b>你能不能说得再详细一点儿？</b></p><p>Cô có thể nói cụ thể hơn một chút không?</p></div>
+<div class="card grammar"><h3 class="cn">4. 其实是……</h3><div class="formula cn">其实是 + lý do / tình huống</div><p>Dùng để dẫn vào nguyên nhân thật hoặc vấn đề chính.</p><p class="cn"><b>其实是因为公司的事……</b></p></div>
+<div class="card grammar"><h3 class="cn">5. 说得再 + Adj + 一点儿</h3><div class="formula cn">V + 得 + 再 + Adj + 一点儿</div><p class="cn"><b>请说得再详细一点儿。</b> — Hãy nói cụ thể hơn một chút.</p></div></section>
+
+<section id="d1"><div class="title"><div class="icon">💬</div><div><h2>Hội thoại chính – Trong sách</h2><p>Trao đổi về mâu thuẫn trong nhóm phát triển sản phẩm.</p></div></div>
+<div class="audioRow"><button class="audio" onclick="speakText(D.dialogue1.map(x=>x[1]).join('。'))">▶ Nghe toàn bài</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div>
+<div class="box"><div class="box-h">商讨工作中的问题</div><div id="d1box" class="box-b"></div></div></section>
+
+<section id="d2"><div class="title"><div class="icon">🗣️</div><div><h2>Hội thoại mở rộng</h2><p>Mâu thuẫn cụ thể trong nhóm phát triển sản phẩm.</p></div></div>
+<div class="audioRow"><button class="audio" onclick="speakText(D.dialogue2.map(x=>x[1]).join('。'))">▶ Nghe toàn bài</button><button class="audio pause" onclick="pauseSpeech()">⏸</button><button class="audio" onclick="resumeSpeech()">▶</button><button class="audio stop" onclick="stopSpeech()">⏹</button></div>
+<div class="box"><div class="box-h">产品开发的问题</div><div id="d2box" class="box-b"></div></div></section>
+
+<section id="express"><div class="title"><div class="icon">⭐</div><div><h2>Cách biểu đạt quan trọng</h2><p>10 câu trong sách, có pinyin, nghĩa và nút nghe.</p></div></div><div id="expressGrid" class="grid"></div></section>
+
+<section id="read"><div class="title"><div class="icon">📚</div><div><h2>Đọc phụ</h2><p>Đoạn đọc mở rộng theo đúng chủ đề và từ mới.</p></div></div><div class="box"><div class="box-h">工作中的商量</div><div id="readBox" class="box-b"></div></div></section>
+
+<section id="speak"><div class="title"><div class="icon">🗣️</div><div><h2>6 câu giao tiếp cần nhớ</h2><p>Dùng trong môi trường công sở.</p></div></div><div id="speakGrid" class="grid"></div></section>
+
+<section id="flash"><div class="title"><div class="icon">🃏</div><div><h2>Game 4: Lật thẻ</h2><p>Chạm để lật; nhấn ⭐ để lưu từ khó.</p></div></div><div id="flashGrid" class="grid"></div></section>
+
+<section id="listen"><div class="title"><div class="icon">🎧</div><div><h2>Game 1: Nghe và chọn đáp án</h2><p>Vị trí đáp án đúng được xáo trộn ở mỗi lượt.</p></div></div>
+<div class="card"><button class="audio wide" onclick="playListen()">🔊 Nghe câu</button><div id="listenOptions" class="game-options"></div><p id="listenResult" class="game-status"></p><button class="btn" onclick="nextListen()">Câu tiếp theo</button></div></section>
+
+<section id="fill"><div class="title"><div class="icon">✍️</div><div><h2>Game 2: Điền vào chỗ trống</h2><p>Nhập chữ Hán còn thiếu.</p></div></div>
+<div class="card"><div id="fillQuestion" class="sent"></div><input id="fillInput" class="fill-input" placeholder="Nhập chữ Hán còn thiếu"><p id="fillHint" class="vn"></p><p id="fillResult" class="game-status"></p><div class="audioRow"><button class="btn" onclick="checkFill()">Kiểm tra</button><button class="audio" onclick="playFill()">🔊 Nghe câu</button><button class="btn" onclick="nextFill()">Câu tiếp theo</button></div></div></section>
+
+<section id="order"><div class="title"><div class="icon">🧩</div><div><h2>Game 3: Sắp xếp câu kéo thả</h2><p>Có thể kéo hoặc bấm vào từng từ.</p></div></div>
+<div class="card"><p>Kéo các từ vào ô phía dưới theo đúng thứ tự:</p><div id="wordBank" class="word-bank"></div><div id="dropZone" class="drop-zone"></div><p id="orderResult" class="game-status"></p><div class="audioRow"><button class="btn" onclick="checkOrder()">Kiểm tra</button><button class="btn" onclick="resetOrder()">Làm lại</button><button class="audio" onclick="playOrder()">🔊 Nghe câu</button><button class="btn" onclick="nextOrder()">Câu tiếp theo</button></div></div></section>
+
+<section id="quiz"><div class="title"><div class="icon">🎯</div><div><h2>Quiz 10 câu</h2><p>Đáp án được xáo trộn, không cố định ở A.</p></div></div><div class="progress"><div id="bar" class="bar"></div></div><div id="quizBox"></div></section>
+
+
+<section id="tf"><div class="title"><div class="icon">✅</div><div><h2>Đúng hay sai</h2><p>15 câu kiểm tra nhanh.</p></div></div><div class="card"><div id="tfBox"></div></div></section>
+<section id="match"><div class="title"><div class="icon">🔗</div><div><h2>Ghép cặp từ vựng</h2><p>Ghép tiếng Trung với nghĩa tiếng Việt.</p></div></div><div class="card"><p id="matchStatus" class="game-status"></p><div id="matchLeft" class="game-options"></div><div id="matchRight" class="game-options"></div><button class="btn" onclick="resetMatch()">Làm lại</button></div></section>
+<section id="speed"><div class="title"><div class="icon">⏱️</div><div><h2>Speed Quiz</h2><p>20 câu ngẫu nhiên, trả lời liên tục.</p></div></div><div class="card"><div id="speedBox"></div></div></section>
+
+<section id="take"><div class="title"><div class="icon">📌</div><div><h2>Take-away</h2></div></div><div class="card take"><ul><li><b>Từ trọng tâm:</b> 因为、为难、公司、应该、商量、对立、开发、产品、详细</li><li><b>Mở lời:</b> 您现在有时间吗？ / 能耽误您一点时间吗？</li><li><b>Xin ý kiến:</b> 我想听听您的意见。 / 您说我该怎么办？</li><li><b>Yêu cầu làm rõ:</b> 你能不能说得再详细一点儿？</li><li><b>Trình bày vấn đề:</b> 其实是…… / 事情是这样的……</li></ul></div></section>
+
+<script>
+const D={"vocab": [["因为", "yīnwèi", "liên từ", "bởi vì", "因为公司的事，我想跟您好好地谈一谈。", "Bởi vì việc của công ty, tôi muốn nói chuyện kỹ với ông."], ["为难", "wéinán", "adj./v.", "khó xử, làm khó", "有什么为难的事吗？", "Có chuyện gì khó xử không?"], ["公司", "gōngsī", "n.", "công ty", "因为公司的事，我想跟您谈一谈。", "Vì việc của công ty, tôi muốn nói chuyện với ông một chút."], ["应该", "yīnggāi", "động từ năng nguyện", "nên", "我应该早点儿找您商量的。", "Tôi nên tìm ông bàn bạc sớm hơn."], ["商量", "shāngliang", "v.", "thương lượng, bàn bạc", "我想听听您的意见，跟您商量一下。", "Tôi muốn nghe ý kiến của ông và bàn bạc một chút."], ["对立", "duìlì", "v./adj.", "đối lập", "他们无论在什么事上都对立。", "Trong bất cứ việc gì họ cũng đối lập với nhau."], ["开发", "kāifā", "v.", "phát triển, khai thác", "产品开发团队很不团结。", "Nhóm phát triển sản phẩm rất không đoàn kết."], ["产品", "chǎnpǐn", "n.", "sản phẩm", "这个产品开发得不错。", "Sản phẩm này được phát triển khá tốt."], ["详细", "xiángxì", "adj.", "chi tiết, cụ thể", "你能不能说得再详细一点儿？", "Cô có thể nói cụ thể hơn một chút không?"], ["时间", "shíjiān", "n.", "thời gian", "您现在有时间吗？", "Bây giờ anh có thời gian không?"], ["事情", "shìqing", "n.", "sự việc, chuyện", "事情是这样的。", "Chuyện là như thế này."], ["意见", "yìjiàn", "n.", "ý kiến", "我想听听您的意见。", "Tôi muốn nghe ý kiến của ông."], ["团队", "tuánduì", "n.", "đội, nhóm", "产品开发团队不太团结。", "Nhóm phát triển sản phẩm không được đoàn kết lắm."], ["团结", "tuánjié", "adj./v.", "đoàn kết", "我们应该让团队更团结。", "Chúng ta nên làm cho nhóm đoàn kết hơn."], ["解决", "jiějué", "v.", "giải quyết", "这个问题终于解决了。", "Vấn đề này cuối cùng đã được giải quyết."], ["问题", "wèntí", "n.", "vấn đề", "我们来商量一下这个问题。", "Chúng ta bàn bạc một chút về vấn đề này."], ["机会", "jīhuì", "n.", "cơ hội", "这是一个很好的机会。", "Đây là một cơ hội rất tốt."], ["事实", "shìshí", "n.", "sự thật", "事实上，上个月我被公司解雇了。", "Thực ra, tháng trước tôi đã bị công ty cho nghỉ việc."], ["海外", "hǎiwài", "n./adj.", "nước ngoài, hải ngoại", "你应该去海外研修。", "Bạn nên đi tu nghiệp ở nước ngoài."], ["研修", "yánxiū", "v.", "tu nghiệp, nghiên cứu học tập", "他去海外研修了。", "Anh ấy đã đi tu nghiệp ở nước ngoài."]], "dialogue1": [["女", "您现在有时间吗？", "Nín xiànzài yǒu shíjiān ma?", "Bây giờ anh có thời gian không?"], ["男", "有啊。", "Yǒu a.", "Tôi có."], ["女", "其实是因为公司的事，我想跟您好好地谈一谈。", "Qíshí shì yīnwèi gōngsī de shì, wǒ xiǎng gēn nín hǎohāo de tán yi tán.", "Thực ra vì việc của công ty, nên em muốn thương lượng với anh một chút."], ["男", "有什么为难的事吗？", "Yǒu shénme wéinán de shì ma?", "Có chuyện gì khó khăn ư?"], ["女", "其实我应该早点儿找您商量的，小林和陈先生无论在什么事上都对立，所以产品开发团队就很不团结，我想听听您的意见，我应该怎么做好呢？", "Qíshí wǒ yīnggāi zǎodiǎnr zhǎo nín shāngliang de, Xiǎolín hé Chén xiānsheng wúlùn zài shénme shì shàng dōu duìlì, suǒyǐ chǎnpǐn kāifā tuánduì jiù hěn bù tuánjié, wǒ xiǎng tīngting nín de yìjiàn, wǒ yīnggāi zěnme zuò hǎo ne?", "Thực ra em nên thương lượng với anh sớm hơn. Tiểu Lâm và ông Trần trong bất cứ chuyện gì cũng đối lập ý kiến với nhau, vì vậy nhóm phát triển sản phẩm rất không đoàn kết. Em muốn nghe ý kiến của anh, em nên làm như thế nào ạ?"], ["男", "你能不能说得再详细一点儿？", "Nǐ néng bu néng shuō de zài xiángxì yìdiǎnr?", "Cô có thể nói cụ thể hơn một chút được không?"], ["女", "嗯，事情是这样的……", "En, shìqing shì zhèyàng de...", "Vâng, việc là như thế này ạ..."]], "dialogue2": [["员工", "王经理，您现在有时间吗？", "Wáng jīnglǐ, nín xiànzài yǒu shíjiān ma?", "Quản lý Vương, bây giờ anh có thời gian không?"], ["经理", "有啊。有什么事吗？", "Yǒu a. Yǒu shénme shì ma?", "Có. Có chuyện gì vậy?"], ["员工", "是产品开发的事。我想跟您商量一下。", "Shì chǎnpǐn kāifā de shì. Wǒ xiǎng gēn nín shāngliang yíxià.", "Là chuyện phát triển sản phẩm. Tôi muốn bàn với anh một chút."], ["经理", "好，你说吧。", "Hǎo, nǐ shuō ba.", "Được, cô nói đi."], ["员工", "小林和小陈的意见不一样。小林想做一个简单一点儿的产品，但是小陈想增加很多新的功能。", "Xiǎolín hé Xiǎochén de yìjiàn bù yíyàng. Xiǎolín xiǎng zuò yí ge jiǎndān yìdiǎnr de chǎnpǐn, dànshì Xiǎochén xiǎng zēngjiā hěn duō xīn de gōngnéng.", "Ý kiến của Tiểu Lâm và Tiểu Trần không giống nhau. Tiểu Lâm muốn làm sản phẩm đơn giản hơn một chút, nhưng Tiểu Trần muốn thêm nhiều chức năng mới."], ["经理", "为什么呢？", "Wèishénme ne?", "Tại sao vậy?"], ["员工", "因为小林觉得时间不多了，应该早点儿完成产品。小陈觉得新功能很重要，所以他们每天都在商量，但是一直没有结果。", "Yīnwèi Xiǎolín juéde shíjiān bù duō le, yīnggāi zǎodiǎnr wánchéng chǎnpǐn. Xiǎochén juéde xīn gōngnéng hěn zhòngyào, suǒyǐ tāmen měitiān dōu zài shāngliang, dànshì yìzhí méiyǒu jiéguǒ.", "Vì Tiểu Lâm cảm thấy không còn nhiều thời gian, nên cần hoàn thành sản phẩm sớm. Tiểu Trần lại cho rằng chức năng mới rất quan trọng, vì vậy ngày nào họ cũng bàn bạc nhưng vẫn chưa có kết quả."], ["经理", "现在他们的关系怎么样？", "Xiànzài tāmen de guānxi zěnmeyàng?", "Bây giờ quan hệ của họ thế nào?"], ["员工", "不太好。他们现在很少说话，团队的气氛也不太好。", "Bú tài hǎo. Tāmen xiànzài hěn shǎo shuōhuà, tuánduì de qìfēn yě bú tài hǎo.", "Không được tốt lắm. Bây giờ họ ít nói chuyện với nhau, không khí trong nhóm cũng không được tốt."], ["经理", "我明白了。你应该先听听他们两个人的意见。然后我们一起商量怎么解决这个问题。", "Wǒ míngbai le. Nǐ yīnggāi xiān tīngting tāmen liǎng ge rén de yìjiàn. Ránhòu wǒmen yìqǐ shāngliang zěnme jiějué zhège wèntí.", "Tôi hiểu rồi. Trước tiên cô nên nghe ý kiến của cả hai người. Sau đó chúng ta cùng bàn cách giải quyết vấn đề này."], ["员工", "好。那我先跟他们谈一谈。", "Hǎo. Nà wǒ xiān gēn tāmen tán yi tán.", "Được. Vậy trước tiên tôi sẽ nói chuyện với họ."], ["经理", "好，有问题再来找我。", "Hǎo, yǒu wèntí zài lái zhǎo wǒ.", "Được, nếu có vấn đề thì lại tìm tôi."]], "expressions": [["这个月能取得好的业绩吗？", "Zhège yuè néng qǔdé hǎo de yèjì ma?", "Tháng này có đạt được thành tích tốt không?"], ["我还没跟你讲，事实上，上个月我被公司解雇了。", "Wǒ hái méi gēn nǐ jiǎng, shìshí shàng, shàng ge yuè wǒ bèi gōngsī jiěgù le.", "Tôi vẫn chưa nói với anh, thực ra tháng trước tôi đã bị công ty cho nghỉ việc rồi."], ["你应该去海外研修，多好的机会啊。", "Nǐ yīnggāi qù hǎiwài yánxiū, duō hǎo de jīhuì a.", "Cậu nên đi tu nghiệp ở nước ngoài, có rất nhiều cơ hội tốt đó."], ["无论在什么事上小林都对我很好。", "Wúlùn zài shénme shì shàng Xiǎolín dōu duì wǒ hěn hǎo.", "Dù trong bất cứ chuyện gì, Tiểu Lâm cũng đều đối xử rất tốt với tôi."], ["终于解决了。", "Zhōngyú jiějué le.", "Cuối cùng đã giải quyết rồi."], ["能不能让我看看那个。", "Néng bu néng ràng wǒ kànkan nàge.", "Có thể cho tôi xem cái kia được không?"], ["能耽误您一点时间吗？", "Néng dānwu nín yìdiǎn shíjiān ma?", "Tôi có thể làm phiền ông vài phút không?"], ["很抱歉，您正在工作却来打扰您。", "Hěn bàoqiàn, nín zhèngzài gōngzuò què lái dǎrǎo nín.", "Thật xin lỗi vì làm phiền khi ông đang làm việc thế này."], ["其实是……，您说我该怎么办？", "Qíshí shì..., nín shuō wǒ gāi zěnme bàn?", "Thực ra thì..., theo ông thì tôi nên làm thế nào?"], ["我的这点私事只想和您谈谈。", "Wǒ de zhè diǎn sīshì zhǐ xiǎng hé nín tán tan.", "Chuyện cá nhân này tôi chỉ muốn nói với ông thôi."]], "reading": [["公司里出现问题时，很多人不知道应该怎么开口。其实，如果想找上司商量，可以先问：“您现在有时间吗？”或者“能耽误您一点时间吗？”这样会比较礼貌。", "Gōngsī lǐ chūxiàn wèntí shí, hěn duō rén bù zhīdào yīnggāi zěnme kāikǒu. Qíshí, rúguǒ xiǎng zhǎo shàngsi shāngliang, kěyǐ xiān wèn: “Nín xiànzài yǒu shíjiān ma?” huòzhě “Néng dānwu nín yìdiǎn shíjiān ma?” zhèyàng huì bǐjiào lǐmào.", "Khi trong công ty xuất hiện vấn đề, nhiều người không biết nên mở lời thế nào. Thực ra, nếu muốn tìm cấp trên để bàn bạc, có thể hỏi trước: “Bây giờ ông có thời gian không?” hoặc “Tôi có thể làm phiền ông vài phút không?” như vậy sẽ lịch sự hơn."], ["说明问题时，最好先简单说原因，再详细说明情况。如果同事之间意见对立，可以先听双方的意见，不要马上批评任何一个人。", "Shuōmíng wèntí shí, zuìhǎo xiān jiǎndān shuō yuányīn, zài xiángxì shuōmíng qíngkuàng. Rúguǒ tóngshì zhījiān yìjiàn duìlì, kěyǐ xiān tīng shuāngfāng de yìjiàn, bú yào mǎshàng pīpíng rènhé yí ge rén.", "Khi trình bày vấn đề, tốt nhất nên nói ngắn gọn nguyên nhân trước rồi giải thích tình hình chi tiết. Nếu đồng nghiệp bất đồng ý kiến, có thể nghe ý kiến của cả hai bên trước, không nên lập tức phê bình bất kỳ ai."], ["商量的目的不是争论，而是找到解决问题的方法。说得详细一点儿、听听别人的意见，往往能让团队更团结。", "Shāngliang de mùdì bú shì zhēnglùn, érshì zhǎodào jiějué wèntí de fāngfǎ. Shuō de xiángxì yìdiǎnr, tīngting biérén de yìjiàn, wǎngwǎng néng ràng tuánduì gèng tuánjié.", "Mục đích của việc bàn bạc không phải là tranh cãi mà là tìm ra cách giải quyết vấn đề. Nói cụ thể hơn và lắng nghe ý kiến của người khác thường có thể làm cho đội nhóm đoàn kết hơn."]]};
+const tabs=[['home','🏠 Tổng quan'],['vocab','📖 Từ'],['grammar','📐 Ngữ pháp'],['d1','💬 Hội thoại 1'],['d2','🗣️ Hội thoại 2'],['express','⭐ Biểu đạt'],['read','📚 Đọc phụ'],['speak','🗣️ Giao tiếp'],['flash','🃏 Lật thẻ'],['listen','🎧 Nghe chọn'],['fill','✍️ Điền từ'],['order','🧩 Kéo thả'],['quiz','🎯 Quiz'],['tf','✅ Đúng/Sai'],['match','🔗 Ghép cặp'],['speed','⏱️ Speed'],['take','📌 Nhớ']];
+document.getElementById('tabs').innerHTML=tabs.map((x,i)=>`<button class="${i===0?'active':''}" onclick="tab('${x[0]}')">${x[1]}</button>`).join('');
+function tab(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tabs button').forEach((b,i)=>b.classList.toggle('active',tabs[i][0]===id));window.scrollTo({top:0,behavior:'smooth'})}
+
+let audio=null;
+let speechToken=0;
+function gttsUrl(t){return 'https://translate.google.com/translate_tts?ie=UTF-8&tl=zh-CN&client=tw-ob&q='+encodeURIComponent(t.slice(0,200))}
+function speakText(t){
+ stopSpeech();
+ const myToken=++speechToken;
+ let fallbackStarted=false;
+ const fallback=()=>{
+   if(fallbackStarted||myToken!==speechToken)return;
+   fallbackStarted=true;
+   if(audio){audio.onerror=null;audio.pause();audio=null}
+   try{speechSynthesis.cancel()}catch(e){}
+   const u=new SpeechSynthesisUtterance(t);
+   u.lang='zh-CN';u.rate=.82;
+   const vs=speechSynthesis.getVoices();
+   const v=vs.find(x=>/Xiaoxiao|Tingting|Meijia|Yunxi/i.test(x.name))
+      ||vs.find(x=>x.lang==='zh-CN')
+      ||vs.find(x=>x.lang&&x.lang.startsWith('zh'));
+   if(v)u.voice=v;
+   speechSynthesis.speak(u);
+ };
+ audio=new Audio(gttsUrl(t));
+ audio.playbackRate=.9;
+ audio.preload='auto';
+ audio.onerror=fallback;
+ const p=audio.play();
+ if(p&&typeof p.catch==='function')p.catch(fallback);
+}
+function pauseSpeech(){if(audio&&!audio.paused)audio.pause();try{speechSynthesis.pause()}catch(e){}}
+function resumeSpeech(){if(audio&&audio.paused)audio.play().catch(()=>{});try{speechSynthesis.resume()}catch(e){}}
+function stopSpeech(){
+ speechToken++;
+ if(audio){audio.onerror=null;audio.pause();try{audio.currentTime=0}catch(e){}audio=null}
+ try{speechSynthesis.cancel()}catch(e){}
+}
+function safe(s){return String(s).replaceAll("\\","\\\\").replaceAll("'","\\'")}
+
+document.getElementById('vocabGrid').innerHTML=D.vocab.map(v=>`<div class="card"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><span class="pos">${v[2]}</span><div class="meaning">${v[3]}</div><div class="ex"><div class="cn">${v[4]}</div><div class="vn">${v[5]}</div></div><div class="audioRow"><button class="audio" onclick="speakText('${safe(v[0])}')">🔊 Từ</button><button class="audio" onclick="speakText('${safe(v[4])}')">🔊 Ví dụ</button></div></div>`).join('');
+
+function renderDialogue(id,data){
+ document.getElementById(id).innerHTML=data.map((x,i)=>`<div class="line"><span class="sp">${x[0]}</span><div class="sent cn">${x[1]}</div><div class="pinyin">${x[2]}</div><div class="vn">${x[3]}</div><div class="audioRow"><button class="audio" onclick="speakText(${id==='d1box'?'D.dialogue1':'D.dialogue2'}[${i}][1])">▶ Nghe câu</button></div></div>`).join('');
+}
+renderDialogue('d1box',D.dialogue1);renderDialogue('d2box',D.dialogue2);
+
+document.getElementById('expressGrid').innerHTML=D.expressions.map((x,i)=>`<div class="card"><h3 class="cn">${i+1}. ${x[0]}</h3><div class="pinyin">${x[1]}</div><p>${x[2]}</p><button class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Nghe</button></div>`).join('');
+
+document.getElementById('readBox').innerHTML=D.reading.map((x,i)=>`<div class="line"><span class="sp">第${i+1}段</span><div class="sent cn">${x[0]}</div><div class="pinyin">${x[1]}</div><div class="vn">${x[2]}</div><div class="audioRow"><button class="audio" onclick="speakText(D.reading[${i}][0])">▶ Đọc đoạn</button></div></div>`).join('');
+
+const speaking=[["您现在有时间吗？", "Bây giờ ông có thời gian không?"], ["其实是因为公司的事，我想跟您谈一谈。", "Thực ra vì việc của công ty, tôi muốn nói chuyện với ông một chút."], ["有什么为难的事吗？", "Có chuyện gì khó xử không?"], ["我想听听您的意见。", "Tôi muốn nghe ý kiến của ông."], ["我应该怎么做好呢？", "Tôi nên làm như thế nào cho tốt?"], ["你能不能说得再详细一点儿？", "Cô có thể nói cụ thể hơn một chút không?"]];
+document.getElementById('speakGrid').innerHTML=speaking.map((x,i)=>`<div class="card"><h3 class="cn">${i+1}. ${x[0]}</h3><p>${x[1]}</p><button class="audio wide" onclick="speakText('${safe(x[0])}')">🔊 Nghe</button></div>`).join('');
+
+let difficult=JSON.parse(localStorage.getItem('business_lesson6_v2_difficult')||'[]');
+function toggleDiff(w){difficult=difficult.includes(w)?difficult.filter(x=>x!==w):[...difficult,w];localStorage.setItem('business_lesson6_v2_difficult',JSON.stringify(difficult));renderFlash()}
+function renderFlash(){document.getElementById('flashGrid').innerHTML=D.vocab.map(v=>`<div class="card flash" onclick="this.classList.toggle('flipped')"><button class="star" onclick="event.stopPropagation();toggleDiff('${safe(v[0])}')">${difficult.includes(v[0])?'⭐':'☆'}</button><div class="front"><div class="han cn">${v[0]}</div><div class="pinyin">${v[1]}</div><p>Chạm để xem nghĩa</p></div><div class="back"><h2>${v[3]}</h2><p class="cn">${v[4]}</p><p>${v[5]}</p><button class="audio" onclick="event.stopPropagation();speakText('${safe(v[0])}。${safe(v[4])}')">🔊 Nghe</button></div></div>`).join('')}
+renderFlash();
+
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+
+const listeningQuestions=[{"audio": "您现在有时间吗？", "answer": "Bây giờ ông có thời gian không?", "options": ["Bây giờ ông có thời gian không?", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}, {"audio": "有什么为难的事吗？", "answer": "Có chuyện gì khó xử không?", "options": ["Có chuyện gì khó xử không?", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}, {"audio": "我应该早点儿找您商量的。", "answer": "Tôi nên tìm ông bàn bạc sớm hơn.", "options": ["Tôi nên tìm ông bàn bạc sớm hơn.", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}, {"audio": "他们无论在什么事上都对立。", "answer": "Họ đối lập trong bất cứ chuyện gì.", "options": ["Họ đối lập trong bất cứ chuyện gì.", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}, {"audio": "产品开发团队很不团结。", "answer": "Nhóm phát triển sản phẩm rất không đoàn kết.", "options": ["Nhóm phát triển sản phẩm rất không đoàn kết.", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}, {"audio": "我想听听您的意见。", "answer": "Tôi muốn nghe ý kiến của ông.", "options": ["Tôi muốn nghe ý kiến của ông.", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}, {"audio": "你能不能说得再详细一点儿？", "answer": "Cô có thể nói cụ thể hơn một chút không?", "options": ["Cô có thể nói cụ thể hơn một chút không?", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}, {"audio": "事情是这样的。", "answer": "Chuyện là như thế này.", "options": ["Chuyện là như thế này.", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}, {"audio": "事实上，上个月我被公司解雇了。", "answer": "Thực ra tháng trước tôi đã bị công ty cho nghỉ việc.", "options": ["Thực ra tháng trước tôi đã bị công ty cho nghỉ việc.", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}, {"audio": "你应该去海外研修。", "answer": "Bạn nên đi tu nghiệp ở nước ngoài.", "options": ["Bạn nên đi tu nghiệp ở nước ngoài.", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}, {"audio": "终于解决了。", "answer": "Cuối cùng đã giải quyết rồi.", "options": ["Cuối cùng đã giải quyết rồi.", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}, {"audio": "能不能让我看看那个。", "answer": "Có thể cho tôi xem cái kia được không?", "options": ["Có thể cho tôi xem cái kia được không?", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}, {"audio": "能耽误您一点时间吗？", "answer": "Tôi có thể làm phiền ông vài phút không?", "options": ["Tôi có thể làm phiền ông vài phút không?", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}, {"audio": "我的这点私事只想和您谈谈。", "answer": "Chuyện cá nhân này tôi chỉ muốn nói với ông thôi.", "options": ["Chuyện cá nhân này tôi chỉ muốn nói với ông thôi.", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}, {"audio": "我应该怎么做好呢？", "answer": "Tôi nên làm như thế nào cho tốt?", "options": ["Tôi nên làm như thế nào cho tốt?", "Tôi không muốn nói chuyện.", "Không có vấn đề gì.", "Chúng ta nói chuyện sau nhé."]}];
+let li=0;
+function renderListening(){
+ const q=listeningQuestions[li%listeningQuestions.length];
+ const choices=shuffle(q.options);
+ const box=document.getElementById('listenOptions');
+ box.innerHTML='';
+ choices.forEach(choice=>{
+   const btn=document.createElement('button');
+   btn.className='game-opt';
+   btn.type='button';
+   btn.textContent=choice;
+   btn.addEventListener('click',()=>chooseListen(btn,choice,q.answer));
+   box.appendChild(btn);
+ });
+ document.getElementById('listenResult').textContent='';
+}
+function playListen(){speakText(listeningQuestions[li%listeningQuestions.length].audio)}
+function chooseListen(btn,choice,answer){document.querySelectorAll('#listenOptions button').forEach(x=>x.disabled=true);if(choice===answer){btn.classList.add('good');document.getElementById('listenResult').textContent='✅ Đúng rồi!'}else{btn.classList.add('bad');document.getElementById('listenResult').textContent='❌ Đáp án đúng: '+answer;[...document.querySelectorAll('#listenOptions button')].find(x=>x.textContent===answer)?.classList.add('good')}}
+function nextListen(){li++;renderListening()}renderListening();
+
+const fillQuestions=[{"sentence": "____公司的事，我想跟您谈一谈。", "answer": "因为", "hint": "bởi vì"}, {"sentence": "有什么____的事吗？", "answer": "为难", "hint": "khó xử"}, {"sentence": "我____早点儿找您商量的。", "answer": "应该", "hint": "nên"}, {"sentence": "我想跟您____一下。", "answer": "商量", "hint": "thương lượng"}, {"sentence": "他们无论在什么事上都____。", "answer": "对立", "hint": "đối lập"}, {"sentence": "产品____团队很不团结。", "answer": "开发", "hint": "phát triển"}, {"sentence": "这个____有问题。", "answer": "产品", "hint": "sản phẩm"}, {"sentence": "你能不能说得再____一点儿？", "answer": "详细", "hint": "chi tiết"}, {"sentence": "我想听听您的____。", "answer": "意见", "hint": "ý kiến"}, {"sentence": "团队很不____。", "answer": "团结", "hint": "đoàn kết"}, {"sentence": "这个问题终于____了。", "answer": "解决", "hint": "giải quyết"}, {"sentence": "您现在有____吗？", "answer": "时间", "hint": "thời gian"}, {"sentence": "____上，上个月我被公司解雇了。", "answer": "事实", "hint": "sự thật"}, {"sentence": "你应该去____研修。", "answer": "海外", "hint": "nước ngoài"}, {"sentence": "事情是____的。", "answer": "这样", "hint": "như thế này"}];
+let fi=0;
+function renderFill(){const q=fillQuestions[fi%fillQuestions.length];document.getElementById('fillQuestion').textContent=q.sentence;document.getElementById('fillHint').textContent='Gợi ý: '+q.hint;document.getElementById('fillInput').value='';document.getElementById('fillResult').textContent=''}
+function checkFill(){const q=fillQuestions[fi%fillQuestions.length];const val=document.getElementById('fillInput').value.trim();document.getElementById('fillResult').textContent=val===q.answer?'✅ Chính xác!':'❌ Đáp án đúng: '+q.answer}
+function playFill(){const q=fillQuestions[fi%fillQuestions.length];speakText(q.sentence.replace('____',q.answer))}
+function nextFill(){fi++;renderFill()}renderFill();
+
+const orderQuestions=[["您", "现在", "有时间", "吗"], ["因为", "公司的事", "我想", "跟您", "谈一谈"], ["有什么", "为难的事", "吗"], ["我", "应该", "早点儿", "找您", "商量"], ["他们", "无论", "在什么事上", "都", "对立"], ["产品开发团队", "很", "不团结"], ["我想", "听听", "您的", "意见"], ["我", "应该", "怎么做", "好呢"], ["你", "能不能", "说得", "再详细", "一点儿"], ["事情", "是", "这样的"], ["这个问题", "终于", "解决了"], ["你", "应该", "去海外", "研修"], ["能不能", "让我", "看看", "那个"], ["能", "耽误您", "一点时间", "吗"], ["我的这点私事", "只想", "和您", "谈谈"]];
+let oi=0;
+function makeChip(word,index){
+ const el=document.createElement('button');
+ el.type='button';
+ el.className='word-chip';
+ el.textContent=word;
+ el.dataset.index=index;
+ el.draggable=true;
+ el.addEventListener('dragstart',e=>{
+   e.dataTransfer.effectAllowed='move';
+   e.dataTransfer.setData('text/plain',index);
+ });
+ el.addEventListener('click',()=>moveChip(el));
+ return el;
+}
+function moveChip(el){
+ const bank=document.getElementById('wordBank'),zone=document.getElementById('dropZone');
+ (el.parentElement===bank?zone:bank).appendChild(el);
+}
+function setupDrop(target){
+ target.addEventListener('dragover',e=>{e.preventDefault();e.dataTransfer.dropEffect='move'});
+ target.addEventListener('drop',e=>{
+   e.preventDefault();
+   const index=e.dataTransfer.getData('text/plain');
+   const chip=[...document.querySelectorAll('.word-chip')].find(x=>x.dataset.index===index);
+   if(chip)target.appendChild(chip);
+ });
+}
+setupDrop(document.getElementById('wordBank'));setupDrop(document.getElementById('dropZone'));
+function renderOrder(){const words=orderQuestions[oi%orderQuestions.length];const bank=document.getElementById('wordBank'),zone=document.getElementById('dropZone');bank.innerHTML='';zone.innerHTML='';shuffle(words.map((w,i)=>({w,i}))).forEach(o=>bank.appendChild(makeChip(o.w,o.i)));document.getElementById('orderResult').textContent=''}
+function checkOrder(){const target=orderQuestions[oi%orderQuestions.length].join('');const current=[...document.querySelectorAll('#dropZone .word-chip')].map(x=>x.textContent).join('');document.getElementById('orderResult').textContent=current===target?'✅ Sắp xếp đúng!':'❌ Đáp án: '+orderQuestions[oi%orderQuestions.length].join(' ')}
+function resetOrder(){renderOrder()}function playOrder(){speakText(orderQuestions[oi%orderQuestions.length].join(''))}function nextOrder(){oi++;renderOrder()}renderOrder();
+
+const quizData=[{"q": "“因为” nghĩa là gì?", "correct": "bởi vì", "wrong": ["cho nên", "tuy nhiên", "nếu như"]}, {"q": "“为难” nghĩa là gì?", "correct": "khó xử", "wrong": ["đoàn kết", "chi tiết", "bận rộn"]}, {"q": "“商量” nghĩa là gì?", "correct": "thương lượng, bàn bạc", "wrong": ["phát triển", "giải quyết", "từ chức"]}, {"q": "“对立” nghĩa là gì?", "correct": "đối lập", "wrong": ["đồng ý", "giúp đỡ", "hợp tác"]}, {"q": "“开发产品” nghĩa là gì?", "correct": "phát triển sản phẩm", "wrong": ["mua sản phẩm", "bán sản phẩm", "đổi sản phẩm"]}, {"q": "“详细” nghĩa là gì?", "correct": "chi tiết", "wrong": ["đơn giản", "bí mật", "khó khăn"]}, {"q": "Câu nào mở lời lịch sự để xin thời gian?", "correct": "您现在有时间吗？", "wrong": ["你快说。", "我没时间。", "现在开始。"]}, {"q": "Câu nào hỏi người khác có chuyện khó xử không?", "correct": "有什么为难的事吗？", "wrong": ["有什么产品吗？", "有什么时间吗？", "有什么公司吗？"]}, {"q": "“我应该早点儿找您商量的” nghĩa là gì?", "correct": "Tôi nên tìm ông bàn bạc sớm hơn", "wrong": ["Tôi không nên gặp ông", "Tôi đã bàn bạc xong", "Tôi sẽ nghỉ việc"]}, {"q": "“无论在什么事上都对立” nghĩa là gì?", "correct": "Trong bất cứ chuyện gì cũng đối lập", "wrong": ["Trong mọi việc đều đồng ý", "Chỉ bất đồng một lần", "Không có vấn đề gì"]}, {"q": "Vì sao nhóm phát triển sản phẩm không đoàn kết?", "correct": "Tiểu Lâm và ông Trần luôn đối lập ý kiến", "wrong": ["Không có sản phẩm", "Không có quản lý", "Không có thời gian"]}, {"q": "Người nữ muốn nghe gì?", "correct": "Ý kiến của người nam", "wrong": ["Báo cáo bán hàng", "Giá sản phẩm", "Kế hoạch nghỉ phép"]}, {"q": "“你能不能说得再详细一点儿？” dùng để làm gì?", "correct": "Yêu cầu nói cụ thể hơn", "wrong": ["Yêu cầu nói nhỏ hơn", "Yêu cầu nói nhanh hơn", "Yêu cầu dừng nói"]}, {"q": "“事情是这样的” dùng khi nào?", "correct": "Bắt đầu giải thích tình hình", "wrong": ["Kết thúc cuộc họp", "Từ chối lời mời", "Chào tạm biệt"]}, {"q": "“事实上” gần nghĩa nhất với gì?", "correct": "thực ra, trên thực tế", "wrong": ["có lẽ", "sau đó", "ngay lập tức"]}, {"q": "“终于解决了” nghĩa là gì?", "correct": "Cuối cùng đã giải quyết rồi", "wrong": ["Cuối cùng chưa giải quyết", "Vừa phát sinh vấn đề", "Không cần giải quyết"]}, {"q": "“你应该去海外研修” nghĩa là gì?", "correct": "Bạn nên đi tu nghiệp ở nước ngoài", "wrong": ["Bạn nên nghỉ việc", "Bạn nên về nhà", "Bạn nên mua sản phẩm"]}, {"q": "“能不能让我看看那个” nghĩa là gì?", "correct": "Có thể cho tôi xem cái kia không?", "wrong": ["Có thể cho tôi mua không?", "Có thể cho tôi nghỉ không?", "Có thể gọi tôi không?"]}, {"q": "Câu nào lịch sự hơn khi làm phiền cấp trên?", "correct": "能耽误您一点时间吗？", "wrong": ["你有空吗？快点。", "现在听我说。", "我要跟你谈。"]}, {"q": "“我应该怎么做好呢？” nghĩa là gì?", "correct": "Tôi nên làm thế nào cho tốt?", "wrong": ["Tôi đã làm tốt chưa?", "Ai làm việc này?", "Tôi làm ở đâu?"]}, {"q": "“产品开发团队” nghĩa là gì?", "correct": "nhóm phát triển sản phẩm", "wrong": ["nhóm bán hàng", "nhóm khách hàng", "ban nhân sự"]}, {"q": "“团结” nghĩa là gì?", "correct": "đoàn kết", "wrong": ["đối lập", "chi tiết", "bí mật"]}, {"q": "“意见” nghĩa là gì?", "correct": "ý kiến", "wrong": ["sản phẩm", "thời gian", "cơ hội"]}, {"q": "“机会” nghĩa là gì?", "correct": "cơ hội", "wrong": ["vấn đề", "công ty", "sự thật"]}, {"q": "Câu nào nói về chuyện cá nhân?", "correct": "我的这点私事只想和您谈谈。", "wrong": ["这个产品很好。", "公司有很多员工。", "会议开始了。"]}, {"q": "“因为……所以……” biểu thị quan hệ gì?", "correct": "nguyên nhân – kết quả", "wrong": ["so sánh", "lựa chọn", "điều kiện"]}, {"q": "Câu nào phù hợp để xin lời khuyên?", "correct": "您说我该怎么办？", "wrong": ["你别说了。", "我已经知道了。", "你什么时候来？"]}, {"q": "“被公司解雇了” nghĩa là gì?", "correct": "bị công ty cho nghỉ việc", "wrong": ["được công ty thăng chức", "được công ty thưởng", "được đi công tác"]}, {"q": "Người nam yêu cầu người nữ làm gì?", "correct": "Nói cụ thể hơn một chút", "wrong": ["Rời khỏi công ty", "Viết báo cáo", "Gọi cho Tiểu Lâm"]}, {"q": "Mục tiêu của việc 商量 là gì?", "correct": "Tìm cách giải quyết vấn đề", "wrong": ["Làm vấn đề phức tạp hơn", "Tránh nghe ý kiến", "Kết thúc cuộc nói chuyện ngay"]}];
+let qi=0,score=0;
+function renderQ(){
+ document.getElementById('bar').style.width=(qi/quizData.length*100)+'%';
+ const q=quizData[qi];
+ const options=shuffle([q.correct,...q.wrong]);
+ const card=document.createElement('div');
+ card.className='quiz-card';
+ const counter=document.createElement('b');
+ counter.textContent=`Câu ${qi+1}/${quizData.length}`;
+ const title=document.createElement('h3');
+ title.textContent=q.q;
+ const opts=document.createElement('div');
+ opts.className='opts';
+ options.forEach(choice=>{
+   const btn=document.createElement('button');
+   btn.type='button';
+   btn.className='opt';
+   btn.textContent=choice;
+   btn.addEventListener('click',()=>answerQuiz(btn,choice,q.correct));
+   opts.appendChild(btn);
+ });
+ const feedback=document.createElement('p');
+ feedback.id='quizFeedback';
+ feedback.className='feedback';
+ const next=document.createElement('button');
+ next.id='nextQuiz';
+ next.type='button';
+ next.className='btn';
+ next.textContent='Tiếp theo';
+ next.disabled=true;
+ next.addEventListener('click',nextQ);
+ card.append(counter,title,opts,feedback,next);
+ const box=document.getElementById('quizBox');
+ box.innerHTML='';
+ box.appendChild(card);
+}
+function answerQuiz(btn,choice,correct){document.querySelectorAll('.opt').forEach(x=>x.disabled=true);if(choice===correct){btn.classList.add('correct');score++;document.getElementById('quizFeedback').textContent='✅ Đúng rồi!'}else{btn.classList.add('wrong');[...document.querySelectorAll('.opt')].find(x=>x.textContent===correct)?.classList.add('correct');document.getElementById('quizFeedback').textContent='❌ Đáp án đúng: '+correct}document.getElementById('nextQuiz').disabled=false}
+function nextQ(){qi++;if(qi===quizData.length){document.getElementById('quizBox').innerHTML=`<div class="card"><h2>Kết quả: ${score}/10</h2><p>${score>=8?'Rất tốt!':'Hãy ôn lại từ mới và ngữ pháp nhé.'}</p><button class="btn" onclick="qi=0;score=0;renderQ()">Làm lại</button></div>`;document.getElementById('bar').style.width='100%'}else renderQ()}renderQ();
+
+const tfData=[["因为 nghĩa là “bởi vì”.", true], ["商量 nghĩa là “phát triển sản phẩm”.", false], ["对立 nghĩa là hai bên có ý kiến đối lập.", true], ["详细 nghĩa là “chi tiết”.", true], ["您现在有时间吗？ là cách mở lời khá lịch sự.", true], ["我应该早点儿找您商量的 nghĩa là tôi không nên tìm ông.", false], ["产品开发团队很不团结 nghĩa là nhóm phát triển sản phẩm rất đoàn kết.", false], ["我想听听您的意见 nghĩa là tôi muốn nghe ý kiến của ông.", true], ["事情是这样的 thường dùng để bắt đầu giải thích.", true], ["终于解决了 nghĩa là cuối cùng vẫn chưa giải quyết.", false], ["海外研修 là tu nghiệp ở nước ngoài.", true], ["能不能让我看看那个 là lời yêu cầu lịch sự.", true], ["事实上 nghĩa là “có lẽ”.", false], ["为难 có thể dùng để nói tình huống khó xử.", true], ["能耽误您一点时间吗？ dùng để xin vài phút của người khác.", true]];
+let tfi=0,tfScore=0;
+function renderTF(){const box=document.getElementById('tfBox');if(tfi>=tfData.length){box.innerHTML=`<h2>Kết quả: ${tfScore}/${tfData.length}</h2><button class="btn" onclick="tfi=0;tfScore=0;renderTF()">Làm lại</button>`;return}const q=tfData[tfi];box.innerHTML=`<b>Câu ${tfi+1}/${tfData.length}</b><h3>${q[0]}</h3><div class="game-options"><button class="game-opt" id="tfTrue">Đúng</button><button class="game-opt" id="tfFalse">Sai</button></div><p id="tfResult" class="game-status"></p><button id="tfNext" class="btn" disabled>Tiếp theo</button>`;document.getElementById('tfTrue').onclick=()=>answerTF(true);document.getElementById('tfFalse').onclick=()=>answerTF(false);document.getElementById('tfNext').onclick=()=>{tfi++;renderTF()}}
+function answerTF(choice){const correct=tfData[tfi][1];document.querySelectorAll('#tfBox .game-opt').forEach(x=>x.disabled=true);const chosen=choice?document.getElementById('tfTrue'):document.getElementById('tfFalse');chosen.classList.add(choice===correct?'good':'bad');if(choice===correct){tfScore++;document.getElementById('tfResult').textContent='✅ Đúng rồi!'}else document.getElementById('tfResult').textContent='❌ Đáp án đúng: '+(correct?'Đúng':'Sai');document.getElementById('tfNext').disabled=false}
+renderTF();
+
+const matchPairs=[["因为", "bởi vì"], ["为难", "khó xử"], ["公司", "công ty"], ["应该", "nên"], ["商量", "thương lượng"], ["对立", "đối lập"], ["开发", "phát triển"], ["产品", "sản phẩm"], ["详细", "chi tiết"], ["意见", "ý kiến"], ["团结", "đoàn kết"], ["解决", "giải quyết"], ["问题", "vấn đề"], ["机会", "cơ hội"], ["海外", "nước ngoài"]];
+let selectedLeft=null,matchedCount=0;
+function resetMatch(){selectedLeft=null;matchedCount=0;const pairs=shuffle(matchPairs);const left=shuffle(pairs.map(x=>({text:x[0],key:x[0]})));const right=shuffle(pairs.map(x=>({text:x[1],key:x[0]})));const lbox=document.getElementById('matchLeft'),rbox=document.getElementById('matchRight');lbox.innerHTML='';rbox.innerHTML='';left.forEach(o=>{const b=document.createElement('button');b.type='button';b.className='game-opt';b.textContent=o.text;b.dataset.key=o.key;b.onclick=()=>{document.querySelectorAll('#matchLeft .game-opt').forEach(x=>x.classList.remove('correct'));b.classList.add('correct');selectedLeft=o.key};lbox.appendChild(b)});right.forEach(o=>{const b=document.createElement('button');b.type='button';b.className='game-opt';b.textContent=o.text;b.dataset.key=o.key;b.onclick=()=>{if(!selectedLeft)return;if(o.key===selectedLeft){b.classList.add('good');b.disabled=true;const lb=[...document.querySelectorAll('#matchLeft .game-opt')].find(x=>x.dataset.key===selectedLeft);if(lb){lb.classList.add('good');lb.disabled=true}matchedCount++;document.getElementById('matchStatus').textContent=`✅ ${matchedCount}/${pairs.length}`;selectedLeft=null;if(matchedCount===pairs.length)document.getElementById('matchStatus').textContent='🏆 Hoàn thành tất cả cặp!'}else{b.classList.add('bad');setTimeout(()=>b.classList.remove('bad'),450)}};rbox.appendChild(b)})}
+resetMatch();
+
+const speedPool=[...quizData];let speedIndex=0,speedScore=0,speedQuestions=[];
+function startSpeed(){speedQuestions=shuffle(speedPool).slice(0,20);speedIndex=0;speedScore=0;renderSpeed()}
+function renderSpeed(){const box=document.getElementById('speedBox');if(speedIndex>=speedQuestions.length){box.innerHTML=`<h2>Kết quả: ${speedScore}/${speedQuestions.length}</h2><button class="btn" onclick="startSpeed()">Chơi lại</button>`;return}const q=speedQuestions[speedIndex],opts=shuffle([q.correct,...q.wrong]);box.innerHTML=`<b>Câu ${speedIndex+1}/${speedQuestions.length}</b><h3>${q.q}</h3><div class="opts" id="speedOpts"></div><p id="speedResult" class="game-status"></p>`;const ob=document.getElementById('speedOpts');opts.forEach(o=>{const b=document.createElement('button');b.type='button';b.className='opt';b.textContent=o;b.onclick=()=>{document.querySelectorAll('#speedOpts .opt').forEach(x=>x.disabled=true);if(o===q.correct){b.classList.add('correct');speedScore++;document.getElementById('speedResult').textContent='✅ Đúng'}else{b.classList.add('wrong');document.getElementById('speedResult').textContent='❌ '+q.correct}[...document.querySelectorAll('#speedOpts .opt')].find(x=>x.textContent===q.correct)?.classList.add('correct');setTimeout(()=>{speedIndex++;renderSpeed()},650)};ob.appendChild(b)})}
+startSpeed();
+
+</script>
+</body></html>
