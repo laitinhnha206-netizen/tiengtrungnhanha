@@ -1,0 +1,507 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Ôn tập HSK1 Bài 1–3</title>
+<style>
+:root{--b:#2563eb;--b2:#eff6ff;--g:#15803d;--r:#dc2626;--ink:#172033;--m:#667085;--bg:#f7f9fc;--line:#dde5ef;--shadow:0 10px 28px rgba(24,55,94,.1)}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Arial,sans-serif;padding-bottom:70px}.cn{font-family:"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif}header{padding:28px 16px;text-align:center;color:#fff;background:linear-gradient(135deg,#6d3df2,#2f63dc 55%,#159468);border-radius:0 0 28px 28px}.badge{display:inline-block;background:#fde68a;color:#513600;border-radius:999px;padding:5px 12px;font-weight:900;font-size:12px}h1{font-size:clamp(30px,6vw,50px);margin:8px 0 2px}.sub{margin:0}.controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px}.controls button,.controls select{border:0;border-radius:12px;padding:10px 12px;font-weight:850}.tabs{position:sticky;top:0;z-index:100;display:flex;gap:7px;overflow-x:auto;white-space:nowrap;background:#fff;padding:9px;border-bottom:1px solid var(--line)}.tabs button{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:850}.tabs button.active{background:var(--b);color:#fff}section{display:none;max-width:1080px;margin:auto;padding:22px 14px 36px}section.active{display:block}.title{display:flex;gap:10px;align-items:center;margin-bottom:14px}.icon{width:46px;height:46px;border-radius:14px;background:var(--b);color:#fff;display:grid;place-items:center;font-size:22px}.title h2{margin:0}.title p{margin:0;color:var(--m);font-size:14px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:15px}.tag{display:inline-block;border-radius:999px;padding:3px 8px;background:var(--b2);color:#1d4ed8;font-size:12px;font-weight:850}.han{font-size:29px;font-weight:900}.py{color:var(--r);font-style:italic;font-size:14px}.hide-pinyin .py{display:none!important}.formula{background:#ecfdf3;border:1px dashed #86cda1;border-radius:12px;padding:9px 11px;font-weight:900}.hint{background:#fff8da;border-left:5px solid #f59e0b;padding:10px 12px}.btn,.audio,.ghost,.subtab{border:0;border-radius:12px;padding:10px 12px;font-weight:850;cursor:pointer}.btn{background:var(--g);color:#fff}.audio{background:var(--b2);color:#174ea6}.ghost,.subtab{background:#fff;border:1px solid var(--line)}.subtabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.subtab.active{background:var(--b);color:#fff}.opts{display:grid;gap:8px}.opt{padding:12px;border:2px solid var(--line);border-radius:13px;background:#fff;text-align:left;font-weight:800}.correct{background:#e7f8e7!important;border-color:#19853a!important}.wrong{background:#ffe7e7!important;border-color:#c62e2e!important}.question{font-size:20px;font-weight:900;margin:8px 0 12px}.feedback{font-weight:850;min-height:27px}.speak-step{background:#f8fafc;border:1px solid var(--line);border-radius:11px;padding:9px 11px;margin:7px 0}.builder-bank,.builder-answer{display:flex;gap:8px;flex-wrap:wrap;min-height:58px;padding:10px;border:2px dashed #b8c6d8;border-radius:13px;background:#f8fafc;margin:10px 0}.builder-chip{border:1px solid #b8c6d8;border-radius:999px;background:#fff;padding:9px 12px;font-weight:900}.component-formula{font-size:32px;font-weight:950;text-align:center;background:#f8fafc;border:2px dashed #b8c6d8;border-radius:15px;padding:15px;margin:12px 0}.component-options{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.component-option{padding:14px;border:2px solid var(--line);border-radius:13px;background:#fff;font-size:26px;font-weight:900}.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.memory-card{min-height:76px;border:2px solid var(--line);border-radius:13px;background:#fff;font-weight:900;padding:8px;display:grid;place-items:center;text-align:center}.memory-card.flipped{background:var(--b2)}.memory-card.matched{background:#e7f8e7;border-color:#19853a}@media(max-width:620px){.component-options,.memory-grid{grid-template-columns:1fr 1fr}.controls{display:grid;grid-template-columns:1fr 1fr}.controls select{grid-column:1/-1;width:100%}}
+
+.fold-hint{margin-top:12px}
+.fold-hint summary{cursor:pointer;font-weight:900;list-style:none}
+.fold-hint summary::-webkit-details-marker{display:none}
+.fold-hint summary::after{content:'＋';float:right;font-size:20px}
+.fold-hint[open] summary::after{content:'−'}
+.hint-content{margin-top:10px}
+
+
+button{touch-action:manipulation}
+.opt,.component-option,.memory-card,.builder-chip{pointer-events:auto;cursor:pointer}
+
+button{touch-action:manipulation;-webkit-user-select:none;user-select:none}
+.opts,.builder-bank,.builder-answer{position:relative;z-index:4}
+</style><script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.7/dist/hanzi-writer.min.js">
+const CONTEXT_Q=[{"q": "王老师 nói “大家好！”. Ai nên đáp lại?", "correct": "学生们", "wrong": ["小语", "李文", "陈天中"]}, {"q": "陈天中 gọi nhầm 白家月 là 安妮. Câu nào giúp sửa thông tin mà vẫn lịch sự?", "correct": "我不是安妮，我是白家月。", "wrong": ["你错了！", "我不知道。", "再见！"]}, {"q": "Sau khi biết mình gọi nhầm người, 陈天中 nên nói gì?", "correct": "对不起！", "wrong": ["谢谢！", "大家好！", "不客气！"]}, {"q": "Bạn mới nói “很高兴认识你。” Bạn đáp thế nào sát bài khóa?", "correct": "认识你我也很高兴。", "wrong": ["我很忙。", "没事。", "我是中国人。"]}, {"q": "Bạn hỏi “这是谁？”. Câu trả lời nào đúng cấu trúc và sát bài?", "correct": "这是我女朋友。", "wrong": ["我是哪国人。", "她谁。", "这吗？"]}, {"q": "Muốn hỏi quốc tịch của bạn gái 陈天中, câu nào đúng?", "correct": "你女朋友是哪国人？", "wrong": ["你女朋友是谁国人？", "你是哪女朋友？", "她吗泰国人？"]}, {"q": "王一飞 nói “对，还很忙。” Điều này trả lời câu hỏi nào?", "correct": "你工作还忙吗？", "wrong": ["你叫什么名字？", "你是哪国人？", "这是谁？"]}, {"q": "Nếu muốn nói “Tôi không quá bận”, câu nào sát bài?", "correct": "我不太忙。", "wrong": ["我太不忙。", "我不是忙。", "我没忙吗。"]}, {"q": "“我们很想你。” trong cuộc gọi thể hiện điều gì?", "correct": "Nhớ người đang nói chuyện cùng", "wrong": ["Hỏi tên", "Xin lỗi", "Hỏi quốc tịch"]}, {"q": "Cuối giờ học, cặp câu nào đúng theo bài 1?", "correct": "同学们，再见！— 老师，再见！", "wrong": ["谢谢！— 没关系！", "大家好！— 不客气！", "你好吗？— 我叫李文。"]}];
+
+let cqi=0,cqScore=0;
+function renderContext(){
+ const q=CONTEXT_Q[cqi];
+ const opts=[q.correct,...q.wrong].sort(()=>Math.random()-.5);
+ document.getElementById('contextBox').innerHTML=`
+ <div class="question">${cqi+1}/${CONTEXT_Q.length}. ${q.q}</div>
+ <div class="opts">${opts.map(o=>`<button class="opt cn" onclick="answerContext(this,'${String(o).replaceAll("'","\\'")}')">${o}</button>`).join('')}</div>
+ <div id="contextFb" class="feedback"></div>
+ <button id="contextNext" class="btn" disabled onclick="nextContext()">Tiếp</button>`;
+}
+function answerContext(btn,o){
+ document.querySelectorAll('#contextBox .opt').forEach(x=>x.disabled=true);
+ const q=CONTEXT_Q[cqi];
+ if(o===q.correct){btn.classList.add('correct');cqScore++;document.getElementById('contextFb').textContent='✅ Chính xác.'}
+ else{btn.classList.add('wrong');[...document.querySelectorAll('#contextBox .opt')].find(x=>x.textContent===q.correct)?.classList.add('correct');document.getElementById('contextFb').textContent='❌ Đáp án: '+q.correct}
+ document.getElementById('contextNext').disabled=false;
+}
+function nextContext(){cqi++;if(cqi>=CONTEXT_Q.length){document.getElementById('contextBox').innerHTML=`<h2>Điểm: ${cqScore}/${CONTEXT_Q.length}</h2><button class="btn" onclick="cqi=0;cqScore=0;renderContext()">Làm lại</button>`}else renderContext()}
+renderContext();
+
+</script></head><body>
+<header><span class="badge">HSK 1 · ÔN BÀI 1–3 · BUILD MỚI</span><h1 class="cn">第一课 — 第三课 综合复习</h1><p class="sub">Từ vựng · Ngữ pháp · Luyện nói · Nghe · Trò chơi · Kiểm tra · Luyện viết</p><div class="controls"><button id="pinyinBtn" onclick="togglePinyin()">🙈 Ẩn Pinyin</button><button onclick="speakText('你好！很高兴认识你。你是哪国人？')">🔊 Thử âm thanh</button><select id="voiceSelect"></select></div></header>
+<nav class="tabs"><button class="active" data-tab="home" onclick="openTab('home')">🏠 Tổng quan</button><button data-tab="study" onclick="openTab('study')">📚 Học bài</button><button data-tab="speak" onclick="openTab('speak')">🗣️ Luyện nói</button><button data-tab="practice" onclick="openTab('practice')">🎧 Nghe & Điền</button><button data-tab="games" onclick="openTab('games')">🎮 Trò chơi</button><button data-tab="test" onclick="openTab('test')">🎯 Kiểm tra</button><button data-tab="writing" onclick="openTab('writing')">✍️ Luyện viết</button><button data-tab="quick" onclick="openTab('quick')">📌 Ôn nhanh</button></nav>
+<section id="home" class="active"><div class="title"><div class="icon">🏠</div><div><h2>Tổng quan</h2><p>Chào hỏi → giới thiệu tên → quốc tịch & quan hệ.</p></div></div><div class="grid"><div class="card"><span class="tag">Bài 1</span><h3 class="cn">AI小语，你好！</h3><p>你好、王老师、大家、学生、老师、您、谢谢、不客气、同学、再见…</p><p><b>Ngữ pháp:</b> 人称代词; 吗.</p></div><div class="card"><span class="tag">Bài 2</span><h3 class="cn">我叫李文</h3><p>请问、叫、什么、名字、对不起、没关系、高兴、认识、也…</p><p><b>Ngữ pháp:</b> SVO; 什么; 谁; 也.</p></div><div class="card"><span class="tag">Bài 3</span><h3 class="cn">我是中国人</h3><p>中国、法国、中文、谁、女朋友、哪、国、泰国、姐姐、工作…</p><p><b>Ngữ pháp:</b> 是; 的; 吗; 哪 + danh từ.</p></div></div></section>
+<section id="study"><div class="title"><div class="icon">📚</div><div><h2>Học bài</h2><p>Toàn bộ từ vựng và ngữ pháp Bài 1–3.</p></div></div><div class="subtabs"><button class="subtab active" onclick="pane('study','vocab',this)">📚 Từ vựng</button><button class="subtab" onclick="pane('study','grammar',this)">📐 Ngữ pháp</button></div><div id="study-vocab" class="study-pane"><div class="subtabs"><button class="subtab active" onclick="filterV(0,this)">Tất cả</button><button class="subtab" onclick="filterV(1,this)">Bài 1</button><button class="subtab" onclick="filterV(2,this)">Bài 2</button><button class="subtab" onclick="filterV(3,this)">Bài 3</button></div><div id="vocabGrid" class="grid"></div></div><div id="study-grammar" class="study-pane" style="display:none">
+<div class="grid">
+
+<div class="card"><span class="tag">Bài 1</span><h3>1. 人称代词 — Đại từ nhân xưng</h3>
+<p><b>Công dụng:</b> Dùng để chỉ người nói, người nghe hoặc người được nhắc đến.</p>
+<div class="formula cn">我 · 你 · 您 · 我们 · 你们</div>
+<p><b>Công thức:</b> Đại từ nhân xưng + thành phần còn lại của câu</p>
+<p><b>Ví dụ:</b><br><span class="cn">我是学生。</span> → Tôi là học sinh.<br><span class="cn">你们好！</span> → Xin chào các bạn!<br><span class="cn">老师，您好！</span> → Chào thầy/cô ạ!</p></div>
+
+<div class="card"><span class="tag">Bài 1</span><h3>2. “吗”疑问句 — Câu hỏi với 吗</h3>
+<p><b>Công dụng:</b> Dùng để tạo câu hỏi Có/Không.</p>
+<div class="formula">Câu trần thuật + <span class="cn">吗？</span></div>
+<p><b>Công thức:</b> Chủ ngữ + vị ngữ + <span class="cn">吗？</span></p>
+<p><b>Ví dụ:</b><br><span class="cn">你是学生吗？</span> → Bạn là học sinh phải không?<br><span class="cn">你工作忙吗？</span> → Công việc của bạn có bận không?<br><span class="cn">她是老师吗？</span> → Cô ấy là giáo viên phải không?</p></div>
+
+<div class="card"><span class="tag">Bài 2</span><h3>3. 基本语序 — Trật tự câu cơ bản</h3>
+<p><b>Công dụng:</b> Diễn đạt ai làm gì; đây là trật tự câu cơ bản trong tiếng Trung.</p>
+<div class="formula">Chủ ngữ + Động từ + Tân ngữ (S + V + O)</div>
+<p><b>Ví dụ:</b><br><span class="cn">我叫李文。</span> → Tôi tên Lý Văn.<br><span class="cn">我认识王老师。</span> → Tôi biết thầy/cô Vương.<br><span class="cn">我们想你。</span> → Chúng tôi nhớ bạn.</p></div>
+
+<div class="card"><span class="tag">Bài 2</span><h3>4. “什么”疑问词 — Đại từ nghi vấn 什么: “gì”</h3>
+<p><b>Công dụng:</b> Dùng để hỏi sự vật, nội dung hoặc thông tin chưa biết.</p>
+<div class="formula cn">什么 + Danh từ</div>
+<p><b>Công thức:</b> Chủ ngữ + Động từ + 什么 (+ Danh từ)？</p>
+<p><b>Ví dụ:</b><br><span class="cn">你叫什么名字？</span> → Bạn tên là gì?<br><span class="cn">这是什么？</span> → Đây là gì?<br><span class="cn">你叫什么？</span> → Bạn tên/gọi là gì?</p></div>
+
+<div class="card"><span class="tag">Bài 2</span><h3>5. “谁”疑问词 — Đại từ nghi vấn 谁: “ai”</h3>
+<p><b>Công dụng:</b> Dùng để hỏi về người.</p>
+<div class="formula cn">谁 = ai</div>
+<p><b>Công thức:</b> Chủ ngữ + 是 + 谁？ / 谁 + 是 + ...？</p>
+<p><b>Ví dụ:</b><br><span class="cn">这是谁？</span> → Đây là ai?<br><span class="cn">她是谁？</span> → Cô ấy là ai?<br><span class="cn">谁是老师？</span> → Ai là giáo viên?</p></div>
+
+<div class="card"><span class="tag">Bài 2–3</span><h3>6. 副词“也” — Phó từ 也: “cũng”</h3>
+<p><b>Công dụng:</b> Diễn tả người/vật thứ hai có đặc điểm hoặc hành động giống điều đã nói trước.</p>
+<div class="formula">Chủ ngữ + <span class="cn">也</span> + Động từ / Tính từ</div>
+<p><b>Chú ý:</b> <span class="cn">也</span> đứng trước <span class="cn">是</span> hoặc động từ.</p>
+<p><b>Ví dụ:</b><br><span class="cn">她也是泰国人。</span> → Cô ấy cũng là người Thái Lan.<br><span class="cn">我的中文老师也是中国人。</span> → Giáo viên tiếng Trung của tôi cũng là người Trung Quốc.<br><span class="cn">我也想你们。</span> → Tôi cũng nhớ mọi người.</p></div>
+
+<div class="card"><span class="tag">Bài 3</span><h3>7. “是”字句 — Câu chữ 是</h3>
+<p><b>Công dụng:</b> Dùng để xác định hoặc giới thiệu thân phận, nghề nghiệp, quốc tịch, quan hệ.</p>
+<div class="formula">A + <span class="cn">是</span> + B</div>
+<p><b>Công thức:</b> Chủ ngữ + <span class="cn">是</span> + Danh từ / Cụm danh từ</p>
+<p><b>Ví dụ:</b><br><span class="cn">我是学生。</span> → Tôi là học sinh.<br><span class="cn">我是中国人。</span> → Tôi là người Trung Quốc.<br><span class="cn">这是我女朋友。</span> → Đây là bạn gái của tôi.</p></div>
+
+<div class="card"><span class="tag">Bài 3</span><h3>8. 结构助词“的” — Trợ từ kết cấu 的 / biểu thị sở hữu</h3>
+<p><b>Công dụng:</b> Nối người/vật sở hữu với danh từ phía sau; thường tương đương “của”.</p>
+<div class="formula">A + <span class="cn">的</span> + B = B của A</div>
+<p><b>Ví dụ:</b><br><span class="cn">我的老师</span> → giáo viên của tôi<br><span class="cn">我的中文老师也是中国人。</span> → Giáo viên tiếng Trung của tôi cũng là người Trung Quốc.<br><span class="cn">这是我的书。</span> → Đây là sách của tôi.</p>
+<p class="hint"><b>Chú ý:</b> Với một số quan hệ thân thuộc/gần gũi, <span class="cn">的</span> có thể lược bỏ: <span class="cn">我姐姐、我女朋友</span>.</p></div>
+
+<div class="card"><span class="tag">Bài 3</span><h3>9. “哪”疑问词 — Đại từ nghi vấn 哪: “nào”</h3>
+<p><b>Công dụng:</b> Dùng để hỏi lựa chọn; trong bài dùng <span class="cn">哪国人</span> để hỏi quốc tịch.</p>
+<div class="formula cn">哪 + Danh từ</div>
+<p><b>Công thức:</b> Chủ ngữ + 是 + 哪国人？</p>
+<p><b>Ví dụ:</b><br><span class="cn">你是哪国人？</span> → Bạn là người nước nào?<br><span class="cn">她是哪国人？</span> → Cô ấy là người nước nào?<br><span class="cn">你女朋友是哪国人？</span> → Bạn gái của bạn là người nước nào?</p></div>
+
+<div class="card"><span class="tag">Bài 3</span><h3>10. “不太” — Cấu trúc “không quá / không… lắm”</h3>
+<p><b>Công dụng:</b> Dùng để giảm mức độ của tính từ.</p>
+<div class="formula"><span class="cn">不太</span> + Tính từ</div>
+<p><b>Công thức:</b> Chủ ngữ + <span class="cn">不太</span> + Tính từ</p>
+<p><b>Ví dụ:</b><br><span class="cn">我不太忙。</span> → Tôi không quá bận.<br><span class="cn">我不太高兴。</span> → Tôi không vui lắm.<br><span class="cn">她不太忙。</span> → Cô ấy không quá bận.</p></div>
+
+</div></div></section>
+
+<section id="speak">
+<div class="title"><div class="icon">🗣️</div><div><h2>Luyện nói ứng dụng</h2><p>Tự nói trước; chỉ mở gợi ý khi cần.</p></div></div>
+
+<div class="card" style="margin-bottom:14px">
+<span class="tag">Bài 1 · AI小语，你好！</span>
+<h3>① Chào hỏi trong lớp học</h3>
+<p><b>Nhiệm vụ:</b> Tạo một tình huống từ lúc gặp giáo viên đến lúc tan học.</p>
+<div class="speak-step"><b>1.</b> Chào 王老师.</div>
+<div class="speak-step"><b>2.</b> Chào giáo viên bằng cách kính trọng với 您.</div>
+<div class="speak-step"><b>3.</b> Giáo viên chào cả lớp.</div>
+<div class="speak-step"><b>4.</b> Học sinh đáp lại giáo viên.</div>
+<div class="speak-step"><b>5.</b> Dùng 谢谢 và đáp lại.</div>
+<div class="speak-step"><b>6.</b> Kết thúc tiết học bằng lời tạm biệt.</div>
+<details class="hint fold-hint">
+<summary>💡 Mở gợi ý khi cần</summary>
+<div class="hint-content">
+<b>Từ/câu nên dùng:</b><br>
+<span class="cn">王老师，你好！ · 老师，您好！ · 大家好！ · 你们好！ · 谢谢！ · 不客气！ · 同学们，再见！ · 老师，再见！</span>
+<br><br>
+<b>Khung tham khảo:</b><br>
+<span class="cn">A：王老师，你好！<br>B：你好，小语！<br>B：大家好！<br>学生们：老师，您好！<br>A：谢谢！<br>B：不客气！<br>B：同学们，再见！<br>学生们：老师，再见！</span>
+<br><button class="audio" onclick="speakText('王老师，你好！你好，小语！大家好！老师，您好！谢谢！不客气！同学们，再见！老师，再见！')">🔊 Nghe mẫu</button>
+</div>
+</details>
+</div>
+
+<div class="card" style="margin-bottom:14px">
+<span class="tag">Bài 2 · 我叫李文</span>
+<h3>② Làm quen + gọi nhầm tên + xin lỗi</h3>
+<p><b>Nhiệm vụ:</b> Khai thác đầy đủ bài: hỏi tên → giới thiệu tên → gọi nhầm người → sửa lại → xin lỗi → đáp lời → làm quen.</p>
+<div class="speak-step"><b>1.</b> Dùng 请问 để mở lời.</div>
+<div class="speak-step"><b>2.</b> Hỏi tên và tự giới thiệu.</div>
+<div class="speak-step"><b>3.</b> Giả sử người kia gọi nhầm bạn là 安妮; hãy sửa lại.</div>
+<div class="speak-step"><b>4.</b> Dùng 对不起 và 没关系 / 没事.</div>
+<div class="speak-step"><b>5.</b> Dùng 很高兴认识你 và 也.</div>
+<div class="speak-step"><b>6.</b> Thêm câu hỏi “Bạn có phải giáo viên không?” và trả lời phủ định.</div>
+<details class="hint fold-hint">
+<summary>💡 Mở gợi ý khi cần</summary>
+<div class="hint-content">
+<b>Từ/câu nên dùng:</b><br>
+<span class="cn">请问 · 你叫什么名字？ · 我叫…… · 我不是安妮，我是…… · 对不起 · 没关系 / 没事 · 很高兴认识你 · 我也很高兴认识你 · 你是老师吗？ · 不，我不是老师，我是学生。</span>
+<br><br>
+<b>Khung tham khảo:</b><br>
+<span class="cn">A：你好！请问，你叫什么名字？<br>B：我叫陈天中。你呢？<br>A：我叫白家月。<br>B：你好，安妮！<br>A：我不是安妮，我是白家月。<br>B：对不起！<br>A：没关系。<br>B：很高兴认识你。<br>A：我也很高兴认识你。</span>
+<br><button class="audio" onclick="speakText('你好！请问，你叫什么名字？我叫陈天中。你呢？我叫白家月。我不是安妮，我是白家月。对不起！没关系。很高兴认识你。我也很高兴认识你。')">🔊 Nghe mẫu</button>
+</div>
+</details>
+</div>
+
+<div class="card" style="margin-bottom:14px">
+<span class="tag">Bài 3 · 我是中国人</span>
+<h3>③ Quốc tịch + giới thiệu người quen</h3>
+<p><b>Nhiệm vụ:</b> Nói về bản thân, giáo viên và một người quen.</p>
+<div class="speak-step"><b>1.</b> Nói quốc tịch của bạn.</div>
+<div class="speak-step"><b>2.</b> Nói quốc tịch của giáo viên tiếng Trung.</div>
+<div class="speak-step"><b>3.</b> Cho xem ảnh và để bạn hỏi 这是谁？</div>
+<div class="speak-step"><b>4.</b> Trả lời bằng 女朋友 / 姐姐 / 老师 / 同学.</div>
+<div class="speak-step"><b>5.</b> Hỏi người đó là người nước nào.</div>
+<div class="speak-step"><b>6.</b> Dùng 也 trong câu trả lời.</div>
+<details class="hint fold-hint">
+<summary>💡 Mở gợi ý khi cần</summary>
+<div class="hint-content">
+<span class="cn">我是中国人。 · 我是法国人。 · 我的中文老师也是中国人。 · 这是谁？ · 这是我女朋友。 · 她是哪国人？ · 她也是泰国人。</span>
+<br><br>
+<b>Khung tham khảo:</b><br>
+<span class="cn">A：你是哪国人？<br>B：我是法国人。我的中文老师也是中国人。<br>A：这是谁？<br>B：这是我女朋友。<br>A：你女朋友是哪国人？<br>B：她也是泰国人。</span>
+<br><button class="audio" onclick="speakText('你是哪国人？我是法国人。我的中文老师也是中国人。这是谁？这是我女朋友。你女朋友是哪国人？她也是泰国人。')">🔊 Nghe mẫu</button>
+</div>
+</details>
+</div>
+
+<div class="card" style="margin-bottom:14px">
+<span class="tag">Bài 3 · 电话</span>
+<h3>④ Gọi điện hỏi thăm công việc</h3>
+<p><b>Nhiệm vụ:</b> Đóng vai 王一雪 và 王一飞.</p>
+<div class="speak-step"><b>1.</b> Bắt đầu cuộc gọi bằng 喂.</div>
+<div class="speak-step"><b>2.</b> Hỏi công việc có vẫn bận không.</div>
+<div class="speak-step"><b>3.</b> Trả lời “vẫn rất bận”, rồi hỏi ngược lại.</div>
+<div class="speak-step"><b>4.</b> Trả lời “không quá bận”.</div>
+<div class="speak-step"><b>5.</b> Nói “chúng tôi rất nhớ bạn/em”.</div>
+<div class="speak-step"><b>6.</b> Đáp “tôi/em cũng nhớ mọi người”.</div>
+<details class="hint fold-hint">
+<summary>💡 Mở gợi ý khi cần</summary>
+<div class="hint-content">
+<span class="cn">A：喂，一飞！<br>B：姐姐！<br>A：你工作还忙吗？<br>B：对，还很忙。你也很忙吗？<br>A：我不太忙。我们很想你。<br>B：我也想你们。</span>
+<br><button class="audio" onclick="speakText('喂，一飞！姐姐！你工作还忙吗？对，还很忙。你也很忙吗？我不太忙。我们很想你。我也想你们。')">🔊 Nghe mẫu</button>
+</div>
+</details>
+</div>
+
+<div class="card">
+<span class="tag">Tổng hợp Bài 1–3</span>
+<h3>⑤ Thử thách nói 60–90 giây</h3>
+<p>Không mở gợi ý trước. Cố gắng đưa vào càng nhiều nội dung càng tốt:</p>
+<div class="speak-step">Chào hỏi → hỏi tên → giới thiệu tên → xin lỗi → đáp lời → làm quen → quốc tịch → giới thiệu người → hỏi ai → hỏi quốc tịch → hỏi công việc → dùng 也 / 还 / 不太 / 想.</div>
+<details class="hint fold-hint">
+<summary>💡 Mở bộ từ hỗ trợ</summary>
+<div class="hint-content">
+<span class="cn">你好 · 您好 · 请问 · 叫什么名字 · 我叫 · 对不起 · 没关系 · 很高兴认识你 · 也 · 是 · 不是 · 中国人 · 法国人 · 泰国人 · 这是谁 · 女朋友 · 姐姐 · 哪国人 · 工作 · 还忙吗 · 不太忙 · 我们 · 想</span>
+</div>
+</details>
+</div>
+</section>
+
+<section id="practice"><div class="title"><div class="icon">🎧</div><div><h2>Nghe & Điền</h2><p>27 câu nghe từ bài khóa · 22 câu điền · 19 câu sắp xếp.</p></div></div><div class="subtabs"><button class="subtab active" onclick="pane('practice','listen',this)">🎧 Nghe chọn</button><button class="subtab" onclick="pane('practice','fill',this)">✍️ Điền từ</button><button class="subtab" onclick="pane('practice','order',this)">🧩 Sắp xếp</button></div><div id="practice-listen" class="practice-pane"><div class="card"><div id="listenBox"></div></div></div><div id="practice-fill" class="practice-pane" style="display:none"><div class="card"><div id="fillBox"></div></div></div><div id="practice-order" class="practice-pane" style="display:none"><div class="card"><div id="orderBox"></div></div></div></section>
+
+
+<section id="games">
+<div class="title"><div class="icon">🎮</div><div><h2>Trò chơi</h2><p>3 trò chơi chính: ghép bộ phận chữ Hán, Memory và xây câu. Memory có thể tạo bộ mới để luyện thêm từ.</p></div></div>
+<div class="subtabs">
+<button class="subtab active" onclick="pane('game','component',this)">🧱 Ghép bộ phận chữ</button>
+<button class="subtab" onclick="pane('game','memory',this)">🧠 Memory</button>
+<button class="subtab" onclick="pane('game','builder',this)">🚂 Xây câu</button>
+</div>
+<div id="game-component" class="game-pane">
+<div class="card"><div id="componentBox"></div></div>
+</div>
+<div id="game-memory" class="game-pane" style="display:none">
+<div class="card"><p id="memoryStatus" class="feedback"></p><div id="memoryGrid" class="memory-grid"></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button type="button" class="btn" onclick="startMemory(false)">Chơi lại bộ này</button><button type="button" class="ghost" onclick="startMemory(true)">🔄 Tạo bộ mới</button></div></div>
+</div>
+<div id="game-builder" class="game-pane" style="display:none">
+<div class="card">
+<div id="builderQuestion" class="question"></div>
+<div id="builderBank" class="builder-bank"></div>
+<div id="builderAnswer" class="builder-answer"></div>
+<div id="builderFeedback" class="feedback"></div>
+<button class="btn" onclick="checkBuilder()">Kiểm tra</button>
+<button class="ghost" onclick="nextBuilder()">Câu tiếp</button>
+<button class="audio" onclick="playBuilder()">🔊 Nghe</button>
+</div>
+</div>
+</section>
+
+
+<section id="test">
+<div class="title"><div class="icon">🎯</div><div><h2>Kiểm tra</h2><p>Câu hỏi bám sát bài khóa, tình huống và ngữ pháp Bài 1–3.</p></div></div>
+<div class="subtabs">
+<button class="subtab active" onclick="pane('test','quiz',this)">🎯 Quiz tổng hợp</button>
+<button class="subtab" onclick="pane('test','tf',this)">✅ Đúng/Sai</button>
+<button class="subtab" onclick="pane('test','speed',this)">⏱️ Speed</button>
+</div>
+</div>
+<div id="test-quiz" class="test-pane"><div id="quizBox"></div></div>
+<div id="test-tf" class="test-pane" style="display:none"><div class="card"><div id="tfBox"></div></div></div>
+<div id="test-speed" class="test-pane" style="display:none"><div class="card"><div id="speedBox"></div></div></div>
+</section>
+
+<section id="writing">
+<div class="title"><div class="icon">✍️</div><div><h2>Luyện viết chữ Hán</h2><p>Đầy đủ chữ trong từ vựng Bài 1–3 · xem nét · pinyin · nghĩa · mẹo nhớ.</p></div></div>
+<div class="card" style="margin-bottom:14px">
+<h3>Chọn chữ</h3>
+<p style="color:var(--m)">Có <b id="charCount"></b> chữ. Chạm vào chữ để xem chi tiết và luyện viết.</p>
+<div id="writeChars" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:8px"></div>
+</div>
+<div class="card">
+<h3 style="text-align:center">Chữ: <span id="writeCurrent" class="cn" style="font-size:44px"></span></h3>
+<div style="max-width:560px;margin:10px auto;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<div style="background:#f8fafc;border:1px solid var(--line);border-radius:13px;padding:10px 12px"><small style="font-weight:900;color:var(--m)">PINYIN</small><div id="writePy" class="py" style="font-size:21px;font-weight:900"></div></div>
+<div style="background:#f8fafc;border:1px solid var(--line);border-radius:13px;padding:10px 12px"><small style="font-weight:900;color:var(--m)">NGHĨA</small><div id="writeMeaning" style="font-size:18px;font-weight:900"></div></div>
+</div>
+<div style="max-width:560px;margin:10px auto 16px;background:#fff3b8;border:2px solid #f0bd35;border-radius:15px;padding:14px 15px">
+<div style="font-weight:950;color:#765000;margin-bottom:5px">🧠 MẸO NHỚ CHỮ</div>
+<div id="writeMemory" style="font-size:16px;font-weight:750;color:#3e3000;line-height:1.55"></div>
+</div>
+<div id="writerTarget" style="width:min(100%,420px);height:420px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:14px"></div>
+<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px">
+<button class="audio" onclick="animateChar()">▶ Xem thứ tự nét</button>
+<button class="btn" onclick="quizChar()">✍️ Viết từng nét</button>
+<button class="ghost" onclick="showCharHint()">💡 Gợi ý</button>
+<button class="audio" onclick="speakText(document.getElementById('writeCurrent').textContent)">🔊 Nghe chữ</button>
+</div>
+</div>
+</section>
+<section id="quick"><div class="title"><div class="icon">📌</div><div><h2>Ôn nhanh</h2><p>Mẫu câu và lỗi dễ sai.</p></div></div><div class="grid"><div class="card"><h3>👋 Bài 1</h3><p class="cn">你好！您好！谢谢！不客气！再见！</p></div><div class="card"><h3>🙋 Bài 2</h3><p class="cn">你叫什么名字？<br>我叫……<br>很高兴认识你。</p></div><div class="card"><h3>🌏 Bài 3</h3><p class="cn">我是中国人。<br>这是谁？<br>你是哪国人？</p></div><div class="card"><h3>⚠️ Dễ sai</h3><p class="cn">她法国人是 ❌<br>她是法国人 ✅<br>吗 đặt cuối câu hỏi.</p></div></div></section>
+<script>
+const V=[[1, "你好", "nǐ hǎo", "xin chào"], [1, "王老师", "Wáng lǎoshī", "thầy/cô Vương"], [1, "大家", "dàjiā", "mọi người"], [1, "好", "hǎo", "tốt; khỏe"], [1, "学生", "xuéshēng", "học sinh"], [1, "们", "men", "hậu tố số nhiều"], [1, "老师", "lǎoshī", "giáo viên"], [1, "您", "nín", "ngài; ông/bà"], [1, "你们", "nǐmen", "các bạn"], [1, "谢谢", "xièxie", "cảm ơn"], [1, "不客气", "bú kèqi", "không có gì"], [1, "同学", "tóngxué", "bạn học"], [1, "再见", "zàijiàn", "tạm biệt"], [2, "请问", "qǐngwèn", "xin hỏi"], [2, "你", "nǐ", "bạn"], [2, "叫", "jiào", "tên là; gọi"], [2, "什么", "shénme", "gì"], [2, "名字", "míngzi", "tên"], [2, "我", "wǒ", "tôi"], [2, "不", "bù", "không"], [2, "是", "shì", "là"], [2, "对不起", "duìbuqǐ", "xin lỗi"], [2, "没关系", "méi guānxi", "không sao"], [2, "没事", "méishì", "không sao"], [2, "很", "hěn", "rất"], [2, "高兴", "gāoxìng", "vui"], [2, "认识", "rènshi", "quen; biết"], [2, "也", "yě", "cũng"], [3, "人", "rén", "người"], [3, "的", "de", "trợ từ kết cấu"], [3, "中国", "Zhōngguó", "Trung Quốc"], [3, "法国", "Fǎguó", "Pháp"], [3, "中文", "Zhōngwén", "tiếng Trung"], [3, "这", "zhè", "đây; này"], [3, "谁", "shéi", "ai"], [3, "女朋友", "nǚpéngyou", "bạn gái"], [3, "哪", "nǎ", "nào"], [3, "国", "guó", "nước"], [3, "她", "tā", "cô ấy"], [3, "泰国", "Tàiguó", "Thái Lan"], [3, "喂", "wèi", "alo"], [3, "姐姐", "jiějie", "chị gái"], [3, "工作", "gōngzuò", "công việc; làm việc"], [3, "还", "hái", "vẫn; còn"], [3, "忙", "máng", "bận"], [3, "吗", "ma", "trợ từ nghi vấn"], [3, "对", "duì", "đúng"], [3, "太", "tài", "quá; rất"], [3, "我们", "wǒmen", "chúng tôi/chúng ta"], [3, "想", "xiǎng", "muốn; nghĩ"]];const QUIZ=[["Trong bài khóa 1, AI小语 nói gì trước với 王老师?", ["AI小语，你好！", "王老师，你好！", "大家好！", "谢谢！"], "AI小语，你好！"], ["王老师 đáp lại AI小语 như thế nào?", ["不客气！", "王老师，你好！", "你好，小语！", "同学们，再见！"], "你好，小语！"], ["Khi 王一飞 chào cả lớp, câu nào đúng?", ["你们好！", "大家好！", "老师，再见！", "谢谢！"], "大家好！"], ["学生们 đáp lại 王老师 bằng câu nào?", ["老师，您好！", "你们好！", "不客气！", "同学，你好！"], "老师，您好！"], ["Sau “谢谢！”, đáp án tự nhiên nhất trong bài là gì?", ["没事。", "不客气！", "你好！", "再见！"], "不客气！"], ["Cuối giờ, 王老师 nói gì với 学生们?", ["同学们，再见！", "大家好！", "你们好！", "谢谢！"], "同学们，再见！"], ["学生们 đáp lại thế nào khi tan học?", ["老师，再见！", "老师，您好！", "你好，小语！", "不客气！"], "老师，再见！"], ["“您” trong bài được dùng để làm gì?", ["Nói với bạn rất thân", "Xưng hô kính trọng", "Chỉ số nhiều", "Hỏi tên"], "Xưng hô kính trọng"], ["王一飞 hỏi 陈天中 câu nào?", ["你是哪国人？", "请问，你叫什么名字？", "你工作忙吗？", "这是谁？"], "请问，你叫什么名字？"], ["陈天中 trả lời thế nào?", ["我叫陈天中。", "我是泰国人。", "这是我女朋友。", "我很忙。"], "我叫陈天中。"], ["白家月 nói gì khi 陈天中 gọi nhầm cô là 安妮?", ["我不是安妮，我是白家月。", "我是安妮。", "我叫陈天中。", "没事没事。"], "我不是安妮，我是白家月。"], ["Sau khi 陈天中 nói “对不起！”, 白家月 đáp gì?", ["谢谢！", "再见！", "没关系！", "请问！"], "没关系！"], ["Trong khẩu ngữ, “没关系” còn có thể nói thế nào theo bài?", ["没事 / 没事没事", "不是", "不客气", "很好"], "没事 / 没事没事"], ["Câu nào đúng trật tự S + V + O?", ["我陈天中叫。", "我叫陈天中。", "叫我陈天中。", "陈天中我叫。"], "我叫陈天中。"], ["李文 tự giới thiệu bằng câu nào?", ["你好！我叫李文。", "我不是李文。", "这是李文。", "李文是哪国人？"], "你好！我叫李文。"], ["白家月 nói gì khi làm quen với 李文?", ["对不起！", "很高兴认识你。", "你工作忙吗？", "老师，再见！"], "很高兴认识你。"], ["李文 đáp lại lời làm quen thế nào?", ["认识你我也很高兴。", "没关系。", "不客气。", "我是中国人。"], "认识你我也很高兴。"], ["Điền đúng theo bài: “请问，你叫____名字？”", ["谁", "哪", "什么", "吗"], "什么"], ["Điền đúng: “我____李文。”", ["是", "叫", "认识", "想"], "叫"], ["Điền đúng: “不，我____老师，我____学生。”", ["不是 / 是", "是 / 不是", "不 / 很", "叫 / 是"], "不是 / 是"], ["Điền đúng: “认识你很____！”", ["忙", "高兴", "好", "对"], "高兴"], ["Điền đúng: “我____很高兴认识你！”", ["不", "也", "太", "还"], "也"], ["李文 nói quốc tịch của mình thế nào?", ["我是中国人。", "我是法国人。", "我是泰国人。", "我是老师。"], "我是中国人。"], ["白家月 nói quốc tịch của mình thế nào?", ["我是中国人。", "我是法国人。", "我是泰国人。", "我是加拿大人。"], "我是法国人。"], ["Bạch Gia Nguyệt nói giáo viên tiếng Trung của mình là người nước nào?", ["法国", "泰国", "中国", "美国"], "中国"], ["安妮 hỏi 陈天中 câu nào khi thấy ảnh?", ["这是谁？", "你叫什么名字？", "你忙吗？", "这是书吗？"], "这是谁？"], ["陈天中 trả lời thế nào?", ["这是我姐姐。", "这是我女朋友。", "这是我老师。", "这是安妮。"], "这是我女朋友。"], ["安妮 hỏi tiếp gì về bạn gái của 陈天中?", ["她叫什么名字？", "她是哪国人？", "她忙吗？", "她是老师吗？"], "她是哪国人？"], ["Bạn gái của 陈天中 là người nước nào?", ["中国人", "法国人", "泰国人", "美国人"], "泰国人"], ["Trong cuộc gọi điện, 王一雪 hỏi 王一飞 điều gì?", ["你工作还忙吗？", "你是哪国人？", "你叫什么名字？", "这是谁？"], "你工作还忙吗？"], ["王一飞 trả lời thế nào?", ["不，我不忙。", "对，还很忙。", "我是学生。", "没关系。"], "对，还很忙。"], ["王一雪 nói tình trạng của mình thế nào?", ["我太忙。", "我不太忙。", "我还很忙。", "我不是老师。"], "我不太忙。"], ["王一雪 nói gì với 王一飞?", ["我们很想你。", "我们不认识你。", "我们很忙。", "我们是中国人。"], "我们很想你。"], ["王一飞 đáp lại thế nào?", ["我也想你们。", "我不太忙。", "谢谢。", "再见。"], "我也想你们。"], ["Điền đúng theo bài: “你工作忙（ ）？”", ["谁", "吗", "哪", "的"], "吗"], ["Điền đúng: “我很（ ）你们。”", ["认识", "想", "叫", "是"], "想"], ["A: 你是（ ）国人？", ["吗", "谁", "哪", "这"], "哪"], ["A: 她是（ ）？ B: 她是陈天中的女朋友。", ["谁", "哪", "吗", "的"], "谁"], ["Câu nào sai trật tự?", ["她是法国人。", "我是中国人。", "她法国人是。", "这是书。"], "她法国人是。"], ["Câu phủ định đúng của “她是法国人” là gì?", ["她不法国人。", "她不是法国人。", "她没法国人。", "不是她法国人。"], "她不是法国人。"], ["Câu nào đúng với 的?", ["我老师的", "我的老师", "老师我的", "我的是老师"], "我的老师"], ["Theo bài, khi 的 đứng giữa đại từ nhân xưng và danh từ chỉ người thân/người, điều gì có thể xảy ra?", ["Luôn phải giữ 的", "Có thể lược bỏ 的", "Phải đổi 的 thành 吗", "Phải thêm 是"], "Có thể lược bỏ 的"]];const LISTEN=[["AI小语，你好！", "Xin chào AI Tiểu Ngữ!"], ["王老师，你好！", "Xin chào cô/thầy Vương!"], ["老师，您好！", "Chào thầy/cô ạ!"], ["大家好！", "Xin chào mọi người!"], ["谢谢！", "Cảm ơn!"], ["不客气！", "Không có gì / đừng khách sáo!"], ["同学们，再见！", "Các bạn học sinh, tạm biệt!"], ["老师，再见！", "Thầy/cô, tạm biệt!"], ["请问，你叫什么名字？", "Xin hỏi, bạn tên là gì?"], ["我叫陈天中。", "Tôi tên Trần Thiên Trung."], ["我不是安妮，我是白家月。", "Tôi không phải Annie, tôi là Bạch Gia Nguyệt."], ["对不起！", "Xin lỗi!"], ["没关系！", "Không sao!"], ["很高兴认识你。", "Rất vui được làm quen với bạn."], ["认识你我也很高兴。", "Tôi cũng rất vui được làm quen với bạn."], ["我是中国人。", "Tôi là người Trung Quốc."], ["我是法国人。", "Tôi là người Pháp."], ["我的中文老师也是中国人。", "Giáo viên tiếng Trung của tôi cũng là người Trung Quốc."], ["这是谁？", "Đây là ai?"], ["这是我女朋友。", "Đây là bạn gái của tôi."], ["你女朋友是哪国人？", "Bạn gái của bạn là người nước nào?"], ["她也是泰国人。", "Cô ấy cũng là người Thái Lan."], ["你工作还忙吗？", "Công việc của em vẫn bận à?"], ["对，还很忙。", "Đúng, vẫn rất bận."], ["我不太忙。", "Tôi không quá bận."], ["我们很想你。", "Chúng tôi rất nhớ em."], ["我也想你们。", "Em cũng nhớ mọi người."]];const FILL=[["老师，___好！", "您", "Chào thầy/cô ạ!"], ["___好！", "大家", "Xin chào mọi người!"], ["谢谢！— ___！", "不客气", "Cảm ơn! — Không có gì!"], ["同学们，___！", "再见", "Các bạn học sinh, tạm biệt!"], ["请问，你叫___名字？", "什么", "Xin hỏi, bạn tên là gì?"], ["我___陈天中。", "叫", "Tôi tên Trần Thiên Trung."], ["我___是安妮，我是白家月。", "不", "Tôi không phải Annie, tôi là Bạch Gia Nguyệt."], ["对不起！— 没___！", "关系", "Xin lỗi! — Không sao!"], ["很高兴___你。", "认识", "Rất vui được làm quen với bạn."], ["我___很高兴认识你。", "也", "Tôi cũng rất vui được làm quen với bạn."], ["我___中国人。", "是", "Tôi là người Trung Quốc."], ["她___法国人。", "是", "Cô ấy là người Pháp."], ["我___中文老师也是中国人。", "的", "Giáo viên tiếng Trung của tôi cũng là người Trung Quốc."], ["这___谁？", "是", "Đây là ai?"], ["这是我___朋友。", "女", "Đây là bạn gái của tôi."], ["你女朋友是___国人？", "哪", "Bạn gái của bạn là người nước nào?"], ["她___是泰国人。", "也", "Cô ấy cũng là người Thái Lan."], ["你工作还忙___？", "吗", "Công việc của em vẫn bận à?"], ["对，___很忙。", "还", "Đúng, vẫn rất bận."], ["我不___忙。", "太", "Tôi không quá bận."], ["我们很___你。", "想", "Chúng tôi rất nhớ em."], ["我也想你___。", "们", "Em cũng nhớ mọi người."]];const ORDERS=[["Chào cô Vương.", ["王老师", "你好"], "王老师，你好！"], ["Chào thầy/cô một cách kính trọng.", ["老师", "您好"], "老师，您好！"], ["Các bạn học sinh, tạm biệt.", ["同学们", "再见"], "同学们，再见！"], ["Xin hỏi, bạn tên là gì?", ["请问", "你", "叫", "什么", "名字"], "请问，你叫什么名字？"], ["Tôi tên Trần Thiên Trung.", ["我", "叫", "陈天中"], "我叫陈天中。"], ["Tôi không phải Annie, tôi là Bạch Gia Nguyệt.", ["我", "不是", "安妮", "我是", "白家月"], "我不是安妮，我是白家月。"], ["Rất vui được làm quen với bạn.", ["很高兴", "认识", "你"], "很高兴认识你。"], ["Tôi cũng rất vui được làm quen với bạn.", ["我", "也", "很高兴", "认识", "你"], "我也很高兴认识你。"], ["Tôi là người Trung Quốc.", ["我", "是", "中国人"], "我是中国人。"], ["Giáo viên tiếng Trung của tôi cũng là người Trung Quốc.", ["我的", "中文老师", "也", "是", "中国人"], "我的中文老师也是中国人。"], ["Đây là ai?", ["这", "是", "谁"], "这是谁？"], ["Đây là bạn gái của tôi.", ["这", "是", "我", "女朋友"], "这是我女朋友。"], ["Bạn gái của bạn là người nước nào?", ["你", "女朋友", "是", "哪国人"], "你女朋友是哪国人？"], ["Cô ấy cũng là người Thái Lan.", ["她", "也", "是", "泰国人"], "她也是泰国人。"], ["Công việc của em vẫn bận à?", ["你", "工作", "还", "忙", "吗"], "你工作还忙吗？"], ["Đúng, vẫn rất bận.", ["对", "还", "很忙"], "对，还很忙。"], ["Tôi không quá bận.", ["我", "不太", "忙"], "我不太忙。"], ["Chúng tôi rất nhớ em.", ["我们", "很", "想", "你"], "我们很想你。"], ["Em cũng nhớ mọi người.", ["我", "也", "想", "你们"], "我也想你们。"]];const COMPONENTS=[["亻", "bạn", "尔", "你", ["尔", "门", "乍", "也"]], ["女", "tốt, đẹp", "子", "好", ["子", "也", "且", "马"]], ["亻", "hậu tố số nhiều", "门", "们", ["门", "尔", "也", "乍"]], ["门", "hỏi", "口", "问", ["口", "日", "女", "人"]], ["讠", "xin/mời", "青", "请", ["青", "只", "隹", "尔"]], ["讠", "ai", "隹", "谁", ["隹", "青", "只", "尔"]], ["氵", "pháp, luật", "去", "法", ["去", "玉", "青", "也"]], ["囗", "quốc gia", "玉", "国", ["玉", "口", "门", "也"]], ["女", "cô ấy", "也", "她", ["也", "子", "且", "马"]], ["女", "chị gái", "且", "姐", ["且", "也", "子", "青"]], ["忄", "bận", "亡", "忙", ["亡", "门", "也", "去"]], ["口", "trợ từ nghi vấn", "马", "吗", ["马", "门", "青", "子"]], ["亻", "làm", "乍", "作", ["乍", "尔", "门", "也"]], ["讠", "nhận biết", "只", "识", ["只", "青", "隹", "去"]], ["相", "nhớ, nghĩ", "心", "想", ["心", "口", "女", "人"]], ["白", "của (trợ từ sở hữu)", "勺", "的", ["勺", "口", "也", "门"]], ["又", "đúng", "寸", "对", ["寸", "口", "心", "门"]], ["宀", "nhà, gia đình", "豕", "家", ["豕", "子", "马", "门"]], ["口", "giữa, trung", "丨", "中", ["丨", "一", "人", "女"]], ["讠", "cảm ơn", "身", "谢", ["身", "青", "隹", "门"]], ["木", "không", "一", "不", ["一", "口", "人", "女"]], ["女", "mẹ", "马", "妈", ["马", "子", "也", "且"]], ["口", "mắng", "马", "骂", ["马", "门", "也", "青"]], ["木", "tương, nhìn nhau", "目", "相", ["目", "口", "日", "门"]], ["亻", "cơ thể", "本", "体", ["本", "木", "门", "也"]], ["日", "rõ, sáng", "月", "明", ["月", "口", "心", "门"]], ["女", "em gái", "未", "妹", ["未", "且", "也", "子"]], ["口", "gọi, kêu", "尧", "叫", ["尧", "马", "门", "青"]]];const MEMORY=[["你好", "xin chào"], ["王老师", "thầy/cô Vương"], ["大家", "mọi người"], ["学生", "học sinh"], ["老师", "giáo viên"], ["您", "ngài; ông/bà"], ["你们", "các bạn"], ["谢谢", "cảm ơn"], ["不客气", "không có gì"], ["同学", "bạn học"], ["再见", "tạm biệt"], ["请问", "xin hỏi"], ["名字", "tên"], ["对不起", "xin lỗi"], ["没关系", "không sao"], ["没事", "không sao"], ["高兴", "vui"], ["认识", "quen/biết"], ["中国", "Trung Quốc"], ["法国", "Pháp"], ["中文", "tiếng Trung"], ["谁", "ai"], ["女朋友", "bạn gái"], ["哪", "nào"], ["泰国", "Thái Lan"], ["姐姐", "chị gái"], ["工作", "công việc"], ["忙", "bận"], ["我们", "chúng tôi"], ["想", "nhớ/muốn"], ["她", "cô ấy"], ["人", "người"]];const TF=[["Trong Bài 1, 王老师 nói “大家好！”.", true], ["Trong Bài 1, 学生们 đáp “老师，您好！”.", true], ["“谢谢” được đáp bằng “再见”.", false], ["Cuối bài 1, 王老师 nói “同学们，再见！”.", true], ["Trong Bài 2, 王一飞 hỏi 陈天中 tên gì.", true], ["陈天中 trả lời “我叫李文”.", false], ["白家月 nói “我不是安妮，我是白家月”.", true], ["Sau “对不起”, đáp “没关系” là đúng theo bài.", true], ["Trật tự cơ bản trong bài 2 là S + V + O.", true], ["“我叫白家月” có nghĩa là tôi là người Pháp.", false], ["Trong Bài 3, 李文 là người Trung Quốc.", true], ["白家月 là người Thái Lan.", false], ["陈天中的女朋友 là người Thái Lan.", true], ["安妮 hỏi “这是谁？” trong bài khóa 2 của Bài 3.", true], ["王一雪 hỏi 王一飞 “你工作还忙吗？”.", true], ["王一飞 trả lời “我不太忙”.", false], ["王一雪 nói “我们很想你”.", true], ["王一飞 nói “我也想你们”.", true], ["“吗” đứng cuối câu hỏi yes/no trong bài.", true], ["“她法国人是” là câu đúng.", false]];
+function openTab(id){document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));}
+function pane(prefix,name,btn){document.querySelectorAll('.'+prefix+'-pane').forEach(x=>x.style.display='none');document.getElementById(prefix+'-'+name).style.display='block';btn.parentElement.querySelectorAll('.subtab').forEach(x=>x.classList.remove('active'));btn.classList.add('active')}
+function togglePinyin(){const h=document.body.classList.toggle('hide-pinyin');document.getElementById('pinyinBtn').textContent=h?'👁 Hiện Pinyin':'🙈 Ẩn Pinyin';localStorage.setItem('hidePinyin',h?'1':'0')}if(localStorage.getItem('hidePinyin')==='1'){document.body.classList.add('hide-pinyin');document.getElementById('pinyinBtn').textContent='👁 Hiện Pinyin'}
+let voices=[];function loadVoices(){if(!window.speechSynthesis)return;voices=speechSynthesis.getVoices().filter(v=>/^zh/i.test(v.lang)||/Chinese|Mandarin|Xiaoxiao|Yunxi|Tingting|Meijia/i.test(v.name));const s=document.getElementById('voiceSelect');s.innerHTML=voices.length?voices.map(v=>`<option value="${v.name}">${v.name} · ${v.lang}</option>`).join(''):'<option>Mandarin mặc định</option>'}if(window.speechSynthesis){speechSynthesis.onvoiceschanged=loadVoices;loadVoices();setTimeout(loadVoices,300)}
+function speakText(t){try{speechSynthesis.cancel()}catch(e){}const u=new SpeechSynthesisUtterance(t);u.lang='zh-CN';u.rate=.78;const s=document.getElementById('voiceSelect');const v=voices.find(x=>x.name===s.value)||voices[0];if(v)u.voice=v;try{speechSynthesis.speak(u)}catch(e){try{new Audio('https://translate.google.com/translate_tts?ie=UTF-8&tl=zh-CN&client=tw-ob&q='+encodeURIComponent(t)).play()}catch(_){}}}
+function renderV(level=0){const a=level?V.filter(x=>x[0]===level):V;document.getElementById('vocabGrid').innerHTML=a.map(x=>`<div class="card"><span class="tag">Bài ${x[0]}</span><div class="han cn">${x[1]}</div><div class="py">${x[2]}</div><b>${x[3]}</b><br><button class="audio" onclick="speakText('${x[1]}')">🔊 Nghe</button></div>`).join('')}function filterV(l,b){b.parentElement.querySelectorAll('.subtab').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderV(l)}renderV();
+let li=0;
+function renderListen(){
+ const q=LISTEN[li];
+ const wrong=LISTEN.filter((_,i)=>i!==li).map(x=>x[1]).sort(()=>Math.random()-.5).slice(0,3);
+ const opts=[q[1],...wrong].sort(()=>Math.random()-.5);
+ const root=document.getElementById('listenBox');root.innerHTML='';
+ const title=document.createElement('div');title.className='question';title.textContent=`${li+1}/${LISTEN.length}. Nghe và chọn nghĩa đúng`;
+ const a=document.createElement('button');a.type='button';a.className='audio';a.textContent='🔊 Nghe câu';a.onclick=()=>speakText(q[0]);
+ const w=document.createElement('div');w.className='opts';
+ const fb=document.createElement('div');fb.className='feedback';
+ opts.forEach(o=>{const b=document.createElement('button');b.type='button';b.className='opt';b.textContent=o;b.onclick=()=>{document.querySelectorAll('#listenBox .opt').forEach(x=>x.disabled=true);if(o===q[1]){b.classList.add('correct');fb.textContent='✅ Đúng!'}else{b.classList.add('wrong');fb.textContent='❌ '+q[1];[...document.querySelectorAll('#listenBox .opt')].find(x=>x.textContent===q[1])?.classList.add('correct')}};w.appendChild(b)});
+ const n=document.createElement('button');n.type='button';n.className='btn';n.textContent='Câu tiếp';n.onclick=()=>{li=(li+1)%LISTEN.length;renderListen()};
+ root.append(title,a,w,fb,n);
+}
+renderListen();
+
+let fi=0;function renderFill(){
+ const q=FILL[fi];
+ document.getElementById('fillBox').innerHTML=`
+ <div class="question">${fi+1}/${FILL.length}. <span class="cn">${q[0]}</span></div>
+ <div class="hint" style="margin:8px 0 12px"><b>🇻🇳 Gợi ý tiếng Việt:</b> ${q[2]}</div>
+ <input id="fillInput" autocomplete="off" style="width:100%;max-width:320px;padding:12px;border:1px solid var(--line);border-radius:12px;font-size:18px">
+ <div id="fillFb" class="feedback"></div>
+ <button class="btn" onclick="checkFill()">Kiểm tra</button>
+ <button class="ghost" onclick="fi=(fi+1)%FILL.length;renderFill()">Câu tiếp</button>`;
+}
+function checkFill(){document.getElementById('fillFb').textContent=document.getElementById('fillInput').value.trim()===FILL[fi][1]?'✅ Chính xác!':'❌ Đáp án: '+FILL[fi][1]}renderFill();
+let oi=0,os=[];
+function renderOrder(){
+ const q=ORDERS[oi],parts=[...q[1]].sort(()=>Math.random()-.5);os=[];
+ const root=document.getElementById('orderBox');root.innerHTML='';
+ const title=document.createElement('div');title.className='question';title.textContent=`${oi+1}/${ORDERS.length}. ${q[0]}`;
+ const bank=document.createElement('div');bank.id='orderBank';bank.className='builder-bank';
+ const ans=document.createElement('div');ans.id='orderAnswer';ans.className='builder-answer';
+ const fb=document.createElement('div');fb.className='feedback';
+ parts.forEach(p=>{const b=document.createElement('button');b.type='button';b.className='builder-chip cn';b.textContent=p;b.onclick=()=>{if(b.disabled)return;os.push({text:p,btn:b});b.disabled=true;drawOrder()};bank.appendChild(b)});
+ const c=document.createElement('button');c.type='button';c.className='btn';c.textContent='Kiểm tra';c.onclick=()=>{const cur=os.map(x=>x.text).join('');fb.textContent=cleanS(cur)===cleanS(q[2])?'✅ Chính xác!':'❌ Đáp án: '+q[2]};
+ const r=document.createElement('button');r.type='button';r.className='ghost';r.textContent='Làm lại';r.onclick=renderOrder;
+ const n=document.createElement('button');n.type='button';n.className='ghost';n.textContent='Câu tiếp';n.onclick=()=>{oi=(oi+1)%ORDERS.length;renderOrder()};
+ root.append(title,bank,ans,fb,c,r,n);
+}
+function drawOrder(){const a=document.getElementById('orderAnswer');a.innerHTML='';os.forEach((item,index)=>{const x=document.createElement('button');x.type='button';x.className='builder-chip cn';x.textContent=item.text;x.onclick=()=>{item.btn.disabled=false;os.splice(index,1);drawOrder()};a.appendChild(x)})}
+function cleanS(x){return String(x).replace(/[。？！?!，,]/g,'').replace(/\s+/g,'')}
+renderOrder();
+
+let ci=0,cs=0;
+function renderComponent(){
+ const q=COMPONENTS[ci],opts=[...q[4]].sort(()=>Math.random()-.5);
+ document.getElementById('componentBox').innerHTML=`
+ <div class="question">${ci+1}/${COMPONENTS.length}. Tạo chữ có nghĩa: <b>${q[1]}</b></div>
+ <p style="color:var(--m)">Chỉ cho sẵn một bộ phận. Hãy chọn phần còn lại.</p>
+ <div class="component-formula cn">${q[0]} + ？</div>
+ <div class="component-options">${opts.map(o=>`<button type="button" class="component-option cn" onclick="answerComponent(this,'${o}')">${o}</button>`).join('')}</div>
+ <div id="compFb" class="feedback"></div>
+ <button type="button" id="compNext" class="btn" disabled onclick="nextComponent()">Tiếp</button>`;
+}
+function answerComponent(btn,o){
+ document.querySelectorAll('.component-option').forEach(x=>x.disabled=true);
+ const q=COMPONENTS[ci];
+ if(o===q[2]){
+   btn.classList.add('correct');cs++;
+   document.getElementById('compFb').innerHTML=`✅ Đúng! <span class="cn" style="font-size:24px">${q[0]} + ${q[2]} = ${q[3]}</span>`;
+ }else{
+   btn.classList.add('wrong');
+   [...document.querySelectorAll('.component-option')].find(x=>x.textContent===q[2])?.classList.add('correct');
+   document.getElementById('compFb').innerHTML=`❌ Đáp án: <span class="cn" style="font-size:24px">${q[0]} + ${q[2]} = ${q[3]}</span>`;
+ }
+ document.getElementById('compNext').disabled=false;
+}
+function nextComponent(){
+ ci++;
+ if(ci>=COMPONENTS.length){
+   document.getElementById('componentBox').innerHTML=`<h2>Điểm: ${cs}/${COMPONENTS.length}</h2><button type="button" class="btn" onclick="ci=0;cs=0;renderComponent()">Chơi lại</button>`;
+ }else renderComponent();
+}
+renderComponent();
+
+let deck=[],opened=[],matched=0,lock=false,currentMemoryPairs=[];
+function startMemory(newSet=true){
+ if(newSet || currentMemoryPairs.length===0){
+   currentMemoryPairs=[...MEMORY].sort(()=>Math.random()-.5).slice(0,8);
+ }
+ deck=[];
+ currentMemoryPairs.forEach((p,i)=>{deck.push({id:i,t:p[0]},{id:i,t:p[1]})});
+ deck.sort(()=>Math.random()-.5);
+ opened=[];matched=0;lock=false;
+ document.getElementById('memoryStatus').textContent='Tìm 8 cặp. Muốn luyện từ khác, bấm “Tạo bộ mới”.';
+ document.getElementById('memoryGrid').innerHTML=deck.map((c,i)=>`<button type="button" class="memory-card" data-i="${i}" onclick="flipMemory(${i})">❓</button>`).join('');
+}
+function flipMemory(i){
+ if(lock)return;
+ const b=document.querySelector(`.memory-card[data-i="${i}"]`);
+ if(!b || b.classList.contains('matched') || b.classList.contains('flipped'))return;
+ b.classList.add('flipped');b.textContent=deck[i].t;opened.push(i);
+ if(opened.length===2){
+   lock=true;const [a,c]=opened;
+   if(deck[a].id===deck[c].id){
+     setTimeout(()=>{
+       [a,c].forEach(j=>document.querySelector(`.memory-card[data-i="${j}"]`)?.classList.add('matched'));
+       matched++;
+       document.getElementById('memoryStatus').textContent=`✅ ${matched}/${currentMemoryPairs.length} cặp`;
+       opened=[];lock=false;
+       if(matched===currentMemoryPairs.length){
+         document.getElementById('memoryStatus').textContent='🏆 Hoàn thành! Bấm “Tạo bộ mới” để luyện thêm từ khác.';
+       }
+     },250);
+   }else{
+     setTimeout(()=>{
+       [a,c].forEach(j=>{
+         const x=document.querySelector(`.memory-card[data-i="${j}"]`);
+         if(x){x.classList.remove('flipped');x.textContent='❓'}
+       });
+       opened=[];lock=false;
+     },650);
+   }
+ }
+}
+startMemory(true);
+
+let bi=0,bs=[];
+function renderBuilder(){
+ const q=ORDERS[bi],parts=[...q[1]].sort(()=>Math.random()-.5);bs=[];
+ const bank=document.getElementById('builderBank'),ans=document.getElementById('builderAnswer');
+ bank.innerHTML='';ans.innerHTML='';document.getElementById('builderFeedback').textContent='';
+ document.getElementById('builderQuestion').textContent=`${bi+1}/${ORDERS.length}. ${q[0]}`;
+ parts.forEach(p=>{const b=document.createElement('button');b.type='button';b.className='builder-chip cn';b.textContent=p;b.onclick=()=>{if(b.disabled)return;bs.push({text:p,btn:b});b.disabled=true;drawBuilder()};bank.appendChild(b)});
+}
+function drawBuilder(){const a=document.getElementById('builderAnswer');a.innerHTML='';bs.forEach((item,index)=>{const x=document.createElement('button');x.type='button';x.className='builder-chip cn';x.textContent=item.text;x.onclick=()=>{item.btn.disabled=false;bs.splice(index,1);drawBuilder()};a.appendChild(x)})}
+function checkBuilder(){const q=ORDERS[bi],cur=bs.map(x=>x.text).join('');document.getElementById('builderFeedback').textContent=cleanS(cur)===cleanS(q[2])?'✅ Chính xác!':'❌ Đáp án: '+q[2]}
+function nextBuilder(){bi=(bi+1)%ORDERS.length;renderBuilder()}
+function playBuilder(){speakText(ORDERS[bi][2])}
+renderBuilder();
+
+let qi=0,score=0;
+function renderQuiz(){
+ const root=document.getElementById('quizBox');root.innerHTML='';
+ if(qi>=QUIZ.length){
+   const card=document.createElement('div');card.className='card';
+   const h=document.createElement('h2');h.textContent=`Điểm: ${score}/${QUIZ.length}`;
+   const reset=document.createElement('button');reset.type='button';reset.className='btn';reset.textContent='Làm lại';
+   reset.addEventListener('click',()=>{qi=0;score=0;renderQuiz()});
+   card.append(h,reset);root.appendChild(card);return;
+ }
+ const q=QUIZ[qi],opts=[...q[1]].sort(()=>Math.random()-.5);
+ const card=document.createElement('div');card.className='card';
+ const title=document.createElement('div');title.className='question';title.textContent=`${qi+1}/${QUIZ.length}. ${q[0]}`;
+ const wrap=document.createElement('div');wrap.className='opts';
+ opts.forEach(o=>{
+   const b=document.createElement('button');
+   b.type='button';b.className='opt';b.textContent=o;
+   b.addEventListener('click',()=>answerQuizSafe(b,o,q[2]));
+   wrap.appendChild(b);
+ });
+ const fb=document.createElement('div');fb.id='quizFb';fb.className='feedback';
+ const next=document.createElement('button');next.type='button';next.id='quizNext';next.className='btn';next.textContent='Tiếp';next.disabled=true;
+ next.addEventListener('click',()=>{qi++;renderQuiz()});
+ card.append(title,wrap,fb,next);root.appendChild(card);
+}
+function answerQuizSafe(btn,o,correct){
+ document.querySelectorAll('#quizBox .opt').forEach(x=>x.disabled=true);
+ const fb=document.getElementById('quizFb');
+ if(o===correct){
+   score++;btn.classList.add('correct');fb.textContent='✅ Đúng';
+ }else{
+   btn.classList.add('wrong');fb.textContent='❌ '+correct;
+   [...document.querySelectorAll('#quizBox .opt')].find(x=>x.textContent===correct)?.classList.add('correct');
+ }
+ document.getElementById('quizNext').disabled=false;
+}
+renderQuiz();
+
+let ti=0,ts=0;function renderTF(){if(ti>=TF.length){document.getElementById('tfBox').innerHTML=`<h2>${ts}/${TF.length}</h2><button class="btn" onclick="ti=0;ts=0;renderTF()">Làm lại</button>`;return}document.getElementById('tfBox').innerHTML=`<div class="question">${ti+1}/${TF.length}. ${TF[ti][0]}</div><div class="opts"><button class="opt" onclick="answerTF(this,true)">Đúng</button><button class="opt" onclick="answerTF(this,false)">Sai</button></div><div id="tfFb" class="feedback"></div><button id="tfNext" class="btn" disabled onclick="ti++;renderTF()">Tiếp</button>`}function answerTF(b,v){document.querySelectorAll('#tfBox .opt').forEach(x=>x.disabled=true);if(v===TF[ti][1]){ts++;b.classList.add('correct');document.getElementById('tfFb').textContent='✅ Đúng'}else{b.classList.add('wrong');document.getElementById('tfFb').textContent='❌ '+(TF[ti][1]?'Đúng':'Sai')}document.getElementById('tfNext').disabled=false}renderTF();
+let si=0,ss=0,speed=[];
+function startSpeed(){speed=[...V].sort(()=>Math.random()-.5).slice(0,12);si=0;ss=0;renderSpeed()}
+function renderSpeed(){
+ const root=document.getElementById('speedBox');root.innerHTML='';
+ if(si>=speed.length){const h=document.createElement('h2');h.textContent=`🏁 ${ss}/${speed.length}`;const r=document.createElement('button');r.type='button';r.className='btn';r.textContent='Chơi lại';r.onclick=startSpeed;root.append(h,r);return}
+ const q=speed[si],wrong=V.filter(x=>x[1]!==q[1]).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[3]),opts=[q[3],...wrong].sort(()=>Math.random()-.5);
+ const t=document.createElement('div');t.className='question';t.innerHTML=`${si+1}/${speed.length}. <span class="cn" style="font-size:30px">${q[1]}</span>`;
+ const w=document.createElement('div');w.className='opts';const fb=document.createElement('div');fb.className='feedback';
+ opts.forEach(o=>{const b=document.createElement('button');b.type='button';b.className='opt';b.textContent=o;b.onclick=()=>{document.querySelectorAll('#speedBox .opt').forEach(x=>x.disabled=true);if(o===q[3]){ss++;b.classList.add('correct');fb.textContent='✅ Đúng'}else{b.classList.add('wrong');fb.textContent='❌ '+q[3];[...document.querySelectorAll('#speedBox .opt')].find(x=>x.textContent===q[3])?.classList.add('correct')}setTimeout(()=>{si++;renderSpeed()},650)};w.appendChild(b)});
+ root.append(t,w,fb);
+}
+startSpeed();
+
+const chars=["你", "好", "王", "老", "师", "大", "家", "学", "生", "们", "您", "谢", "不", "客", "气", "同", "再", "见", "请", "问", "叫", "什", "么", "名", "字", "我", "是", "对", "起", "没", "关", "系", "事", "很", "高", "兴", "认", "识", "也", "人", "的", "中", "国", "法", "文", "这", "谁", "女", "朋", "友", "哪", "她", "泰", "喂", "姐", "工", "作", "还", "忙", "吗", "太", "想"];
+const charMeta={"你": ["nǐ", "bạn", "亻 là người + phần bên phải 尔. Hãy nhớ: “người ở trước mặt mình” = bạn."], "好": ["hǎo", "tốt; khỏe", "女 + 子: người xưa ghép “nữ + con” để gợi ý điều tốt đẹp → 好."], "王": ["Wáng", "Vương (họ)", "Ba nét ngang được nối bằng một nét dọc. Nhìn như một người đứng nối trời–đất."], "老": ["lǎo", "già; lão", "Nhớ trong 老师: người nhiều kinh nghiệm → thầy/cô."], "师": ["shī", "thầy; người có nghề", "Gặp rất nhiều trong 老师. Hãy nhớ cả cụm trước rồi tách chữ sau."], "大": ["dà", "lớn", "Hình người dang rộng hai tay → lớn."], "家": ["jiā", "nhà; mọi người trong 大家", "宀 là mái nhà ở trên. Nhìn thấy mái nhà → nhớ 家."], "学": ["xué", "học", "Phần dưới có 子 “đứa trẻ”; tưởng tượng trẻ ngồi dưới mái học bài."], "生": ["shēng", "sinh; học sinh", "Nhìn như mầm cây mọc lên khỏi mặt đất → sinh trưởng."], "们": ["men", "hậu tố số nhiều", "亻 “người” + 门 “cửa”: nhiều người cùng qua một cửa → số nhiều."], "谢": ["xiè", "cảm ơn", "Trong 谢谢 chữ lặp hai lần; nhớ cả cụm “谢谢” trước."], "不": ["bù", "không", "Một nét ngang như chặn lại → “không”."], "客": ["kè", "khách", "宀 mái nhà + phần dưới: người đến nhà mình → khách."], "气": ["qì", "khí; trong 客气", "Nhìn như luồng hơi đang bay → khí."], "同": ["tóng", "cùng; bạn học", "Một khung bao quanh phần bên trong → cùng ở một chỗ."], "再": ["zài", "lại; trong 再见", "Nhớ cụm 再见 = gặp lại; 再 là “lại”."], "见": ["jiàn", "gặp; nhìn thấy", "Phần dưới giống hai chân của người đang nhìn → thấy/gặp."], "请": ["qǐng", "mời; xin", "讠 liên quan lời nói + 青. Dùng lời nói lịch sự → 请."], "问": ["wèn", "hỏi", "门 “cửa” bao 口 “miệng”: mở miệng ở cửa để hỏi → 问."], "叫": ["jiào", "gọi; tên là", "口 là miệng → dùng miệng gọi tên."], "什": ["shén", "gì (trong 什么)", "Thường học theo cụm 什么. Đừng tách nghĩa riêng ở giai đoạn này."], "么": ["me", "gì (trong 什么)", "Nhớ cả cụm 什么 = gì."], "名": ["míng", "tên", "夕 + 口: buổi tối phải gọi tên để biết ai → 名."], "字": ["zì", "chữ", "宀 mái nhà + 子 đứa trẻ: trẻ học chữ trong nhà → 字."], "我": ["wǒ", "tôi", "Hãy liên hệ ngay câu mẫu 我叫… / 我是…: chữ xuất hiện khi tự giới thiệu."], "是": ["shì", "là", "Gặp trong mẫu A 是 B. Hãy nhớ hình chữ cùng công thức “A là B”."], "对": ["duì", "đúng; đối", "Nhớ trong 对不起 và câu trả lời 对。"], "起": ["qǐ", "dậy; trong 对不起", "Ở trình độ này nên nhớ nguyên cụm 对不起 = xin lỗi."], "没": ["méi", "không; chưa", "Thường gặp 没关系 / 没事. Nhớ theo hai cụm quen thuộc này."], "关": ["guān", "liên quan; trong 没关系", "Nhớ nguyên cụm 关系 = quan hệ."], "系": ["xi", "hệ; quan hệ", "Nhớ cùng 关 thành 关系."], "事": ["shì", "việc", "没事 = không sao/không có việc gì. Hãy nhớ qua cụm."], "很": ["hěn", "rất", "Thường đứng trước tính từ: 很高兴、很忙."], "高": ["gāo", "cao; trong 高兴", "Hình giống một tòa nhà cao → cao."], "兴": ["xìng", "hứng; vui trong 高兴", "Nhớ nguyên cụm 高兴 = vui."], "认": ["rèn", "nhận; trong 认识", "讠 gợi lời nói; học theo cụm 认识 = quen/biết."], "识": ["shi", "biết; nhận biết", "Học cùng 认 thành 认识."], "也": ["yě", "cũng", "Đặt trước động/tính từ: 我也很高兴。"], "人": ["rén", "người", "Hai nét giống hai chân người đang bước đi → người."], "的": ["de", "trợ từ sở hữu/kết cấu", "Nhớ mẫu A 的 B: “B của A”."], "中": ["zhōng", "giữa; Trung Quốc", "Một nét dọc xuyên giữa chiếc hộp → ở giữa."], "国": ["guó", "nước; quốc gia", "Khung 囗 bao bên ngoài như biên giới một quốc gia."], "法": ["fǎ", "Pháp; pháp", "氵 gợi liên quan nước; trong bài này nhớ qua 法国 = Pháp."], "文": ["wén", "văn; ngôn ngữ", "Nhớ qua 中文 = tiếng Trung."], "这": ["zhè", "đây; này", "辶 liên quan di chuyển/vị trí; dùng để chỉ “đây/này”."], "谁": ["shéi", "ai", "讠 gợi lời nói: hỏi “ai?” → 谁？"], "女": ["nǚ", "nữ", "Hình cổ mô phỏng người phụ nữ ngồi/quỳ → nữ."], "朋": ["péng", "bạn", "Hai phần giống nhau đứng cạnh nhau → hai người bạn."], "友": ["yǒu", "bạn", "Nhớ cả cụm 朋友 = bạn bè."], "哪": ["nǎ", "nào", "口 + 那. Nhìn thấy 口 để nhớ đây là từ dùng trong câu hỏi."], "她": ["tā", "cô ấy", "女 ở bên trái → đại từ chỉ nữ: cô ấy."], "泰": ["Tài", "Thái (trong 泰国)", "Ở bài này học theo cụm 泰国 = Thái Lan."], "喂": ["wèi", "alo", "Có 口 “miệng” bên trái → mở miệng nghe điện thoại: 喂！"], "姐": ["jiě", "chị gái", "女 bên trái → từ chỉ nữ; 姐姐 = chị gái."], "工": ["gōng", "công; làm", "Hình giống dụng cụ/thanh công cụ → liên tưởng công việc."], "作": ["zuò", "làm", "亻 người + phần phải; người đang làm việc → 作."], "还": ["hái", "vẫn; còn", "Trong bài: 还忙吗？ = vẫn còn bận à?"], "忙": ["máng", "bận", "忄 liên quan tâm trạng + 亡; tâm trí luôn bị chiếm → bận."], "吗": ["ma", "trợ từ nghi vấn", "Có 口 “miệng” bên trái → dùng miệng đặt câu hỏi; thường ở cuối câu."], "太": ["tài", "quá; rất", "大 “lớn” thêm một chấm → lớn quá → 太."], "想": ["xiǎng", "muốn; nghĩ", "心 “tim/tâm” ở dưới → điều mình nghĩ/muốn nằm trong tâm."], "您": ["nín", "ngài; ông/bà", "你 + 心: thêm 心 (tấm lòng) dưới 你 → cách xưng hô kính trọng hơn: 您."]};
+let current=chars[0],writer=null;
+function renderChars(){
+ const box=document.getElementById('writeChars');
+ document.getElementById('charCount').textContent=chars.length;
+ box.innerHTML=chars.map(c=>`<button class="ghost cn" data-char="${c}" onclick="selectChar('${c}')" style="font-size:25px;font-weight:900;padding:10px 6px">${c}</button>`).join('');
+}
+function selectChar(c){
+ current=c;
+ document.getElementById('writeCurrent').textContent=c;
+ const m=charMeta[c]||['','','Hãy nhớ chữ này qua câu mẫu trong bài.'];
+ document.getElementById('writePy').textContent=m[0]||'';
+ document.getElementById('writeMeaning').textContent=m[1]||'';
+ document.getElementById('writeMemory').textContent=m[2]||'';
+ document.querySelectorAll('#writeChars button').forEach(b=>b.classList.toggle('correct',b.dataset.char===c));
+ const target=document.getElementById('writerTarget');
+ target.innerHTML='';
+ if(window.HanziWriter){
+  const w=Math.min(400,Math.max(280,window.innerWidth-60));
+  writer=HanziWriter.create('writerTarget',c,{width:w,height:w,padding:28,showOutline:true,showCharacter:false});
+ }else{
+  target.innerHTML='<p style="padding:30px;text-align:center">Cần Internet để tải Hanzi Writer.</p>';
+ }
+}
+function animateChar(){if(writer)writer.animateCharacter()}
+function quizChar(){if(writer)writer.quiz({showHintAfterMisses:2,highlightOnComplete:true})}
+function showCharHint(){if(writer)writer.animateCharacter()}
+renderChars();selectChar(current);
+
+</script></body></html>
