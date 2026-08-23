@@ -1,0 +1,363 @@
+<!doctype html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Ôn tập HSK1 Bài 4–6</title><style>
+:root{--b:#2563eb;--b2:#eff6ff;--g:#15803d;--r:#dc2626;--ink:#172033;--m:#667085;--bg:#f7f9fc;--line:#dde5ef;--shadow:0 10px 28px rgba(24,55,94,.1)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Arial,sans-serif;padding-bottom:70px}.cn{font-family:"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif}
+header{padding:28px 16px;text-align:center;color:#fff;background:linear-gradient(135deg,#6d3df2,#2f63dc 55%,#159468);border-radius:0 0 28px 28px}.badge{display:inline-block;background:#fde68a;color:#513600;border-radius:999px;padding:5px 12px;font-weight:900;font-size:12px}h1{font-size:clamp(30px,6vw,50px);margin:8px 0 2px}.sub{margin:0}.controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px}.controls button,.controls select{border:0;border-radius:12px;padding:10px 12px;font-weight:850}
+.tabs{position:sticky;top:0;z-index:100;display:flex;gap:7px;overflow-x:auto;white-space:nowrap;background:#fff;padding:9px;border-bottom:1px solid var(--line)}.tabs button{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;font-weight:850}.tabs button.active{background:var(--b);color:#fff}
+section{display:none;max-width:1080px;margin:auto;padding:22px 14px 36px}section.active{display:block}.title{display:flex;gap:10px;align-items:center;margin-bottom:14px}.icon{width:46px;height:46px;border-radius:14px;background:var(--b);color:#fff;display:grid;place-items:center;font-size:22px}.title h2{margin:0}.title p{margin:0;color:var(--m);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:15px}.tag{display:inline-block;border-radius:999px;padding:3px 8px;background:var(--b2);color:#1d4ed8;font-size:12px;font-weight:850}.han{font-size:29px;font-weight:900}.py{color:var(--r);font-style:italic;font-size:14px}.hide-pinyin .py{display:none!important}
+.formula{background:#ecfdf3;border:1px dashed #86cda1;border-radius:12px;padding:9px 11px;font-weight:900}.hint{background:#fff8da;border-left:5px solid #f59e0b;padding:10px 12px}.btn,.audio,.ghost,.subtab{border:0;border-radius:12px;padding:10px 12px;font-weight:850;cursor:pointer}.btn{background:var(--g);color:#fff}.audio{background:var(--b2);color:#174ea6}.ghost,.subtab{background:#fff;border:1px solid var(--line)}.subtabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.subtab.active{background:var(--b);color:#fff}
+.opts{display:grid;gap:8px}.opt{padding:12px;border:2px solid var(--line);border-radius:13px;background:#fff;text-align:left;font-weight:800}.correct{background:#e7f8e7!important;border-color:#19853a!important}.wrong{background:#ffe7e7!important;border-color:#c62e2e!important}.question{font-size:20px;font-weight:900;margin:8px 0 12px}.feedback{font-weight:850;min-height:27px}
+.speak-step{background:#f8fafc;border:1px solid var(--line);border-radius:11px;padding:9px 11px;margin:7px 0}.builder-bank,.builder-answer{display:flex;gap:8px;flex-wrap:wrap;min-height:58px;padding:10px;border:2px dashed #b8c6d8;border-radius:13px;background:#f8fafc;margin:10px 0}.builder-chip{border:1px solid #b8c6d8;border-radius:999px;background:#fff;padding:9px 12px;font-weight:900}
+.component-formula{font-size:32px;font-weight:950;text-align:center;background:#f8fafc;border:2px dashed #b8c6d8;border-radius:15px;padding:15px;margin:12px 0}.component-options{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.component-option{padding:14px;border:2px solid var(--line);border-radius:13px;background:#fff;font-size:26px;font-weight:900}.memory-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.memory-card{min-height:76px;border:2px solid var(--line);border-radius:13px;background:#fff;font-weight:900;padding:8px;display:grid;place-items:center;text-align:center}.memory-card.flipped{background:var(--b2)}.memory-card.matched{background:#e7f8e7;border-color:#19853a}
+.fold-hint{margin-top:12px}.fold-hint summary{cursor:pointer;font-weight:900;list-style:none}.fold-hint summary::-webkit-details-marker{display:none}.fold-hint summary::after{content:'＋';float:right;font-size:20px}.fold-hint[open] summary::after{content:'−'}.hint-content{margin-top:10px}
+button{touch-action:manipulation;-webkit-user-select:none;user-select:none}.opt,.component-option,.memory-card,.builder-chip{pointer-events:auto;cursor:pointer}.opts,.builder-bank,.builder-answer{position:relative;z-index:4}
+@media(max-width:620px){.component-options,.memory-grid{grid-template-columns:1fr 1fr}.controls{display:grid;grid-template-columns:1fr 1fr}.controls select{grid-column:1/-1;width:100%}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.7/dist/hanzi-writer.min.js"></script></head><body>
+<header><span class="badge">HSK 1 · ÔN BÀI 4–6 · V2</span><h1 class="cn">第四课 — 第六课 综合复习</h1>
+<p class="sub">Từ vựng · Ngữ pháp · Luyện nói · Nghe · Trò chơi · Kiểm tra · Luyện viết</p>
+<div class="controls"><button id="pinyinBtn" type="button">🙈 Ẩn Pinyin</button><button id="testVoice" type="button">🔊 Thử âm thanh</button><select id="voiceSelect"></select></div></header>
+
+<nav class="tabs">
+<button class="active" data-tab="home">🏠 Tổng quan</button><button data-tab="study">📚 Học bài</button><button data-tab="speak">🗣️ Luyện nói</button>
+<button data-tab="practice">🎧 Nghe & Điền</button><button data-tab="games">🎮 Trò chơi</button><button data-tab="test">🎯 Kiểm tra</button>
+<button data-tab="writing">✍️ Luyện viết</button><button data-tab="quick">📌 Ôn nhanh</button></nav>
+
+<section id="home" class="active"><div class="title"><div class="icon">🏠</div><div><h2>Tổng quan</h2><p>Gia đình & tuổi → thời gian & khả năng → số điện thoại & kế hoạch.</p></div></div>
+<div class="grid">
+<div class="card"><span class="tag">Bài 4</span><h3 class="cn">我有两个孩子</h3><p>有/没有 · 多少 · gia đình · 几口人 · 呢 · tuổi · số lượng.</p></div>
+<div class="card"><span class="tag">Bài 5</span><h3 class="cn">今天我休息</h3><p>Ngày tháng · thứ · câu vị ngữ danh từ · 会 · nấu ăn · máy tính mới.</p></div>
+<div class="card"><span class="tag">Bài 6</span><h3 class="cn">你的手机号是多少？</h3><p>Số điện thoại · 想 · đi siêu thị · ăn tối · 怎么 · câu liên động.</p></div></div></section>
+
+<section id="study"><div class="title"><div class="icon">📚</div><div><h2>Học bài</h2><p>Toàn bộ từ vựng và ngữ pháp Bài 4–6.</p></div></div>
+<div class="subtabs"><button class="subtab active" data-pane-group="study" data-pane="vocab">📚 Từ vựng</button><button class="subtab" data-pane-group="study" data-pane="grammar">📐 Ngữ pháp</button></div>
+<div id="study-vocab" class="study-pane"><div class="subtabs"><button class="subtab active filter-v" data-level="0">Tất cả</button><button class="subtab filter-v" data-level="4">Bài 4</button><button class="subtab filter-v" data-level="5">Bài 5</button><button class="subtab filter-v" data-level="6">Bài 6</button></div><div id="vocabGrid" class="grid"></div></div>
+<div id="study-grammar" class="study-pane" style="display:none"><div class="grid"><div class="card"><span class="tag">Bài 4</span><h3>1. “有”字句（1） — Câu chữ 有 (1)</h3>
+<p><b>Công dụng:</b> Dùng để nói một người/sự vật có hoặc không có người/sự vật khác.</p><div class="formula">Chủ ngữ + 有 / 没有 + Người / Vật</div><p><b>Công thức:</b> Chủ ngữ + 有 / 没有 + Người / Vật</p>
+<p><b>Ví dụ:</b><br><span class="cn">她有二十个学生。</span> → Cô ấy có 20 học sinh.<br><span class="cn">她有一个姐姐。</span> → Cô ấy có một chị gái.<br><span class="cn">我没有哥哥。</span> → Tôi không có anh trai.</p></div>
+<div class="card"><span class="tag">Bài 4</span><h3>2. 数字的表达 — Cách biểu đạt số đếm</h3>
+<p><b>Công dụng:</b> Dùng để đọc và nói số lượng. Bài nhấn mạnh số 0–99, số từ 100 đến dưới 10.000 và cách dùng 二 / 两.</p><div class="formula">Số từ + Lượng từ + Danh từ</div><p><b>Công thức:</b> Số từ + Lượng từ + Danh từ</p>
+<p><b>Ví dụ:</b><br><span class="cn">二十个学生</span> → 20 học sinh<br><span class="cn">两个哥哥</span> → hai anh trai<br><span class="cn">四口人</span> → bốn người trong gia đình</p></div>
+<div class="card"><span class="tag">Bài 4</span><h3>3. 语气助词“呢”（1） — Trợ từ ngữ khí 呢: “thế còn…?”</h3>
+<p><b>Công dụng:</b> Đặt cuối câu để hỏi lại người nghe về chính thông tin vừa được nhắc đến.</p><div class="formula">A……，B呢？</div><p><b>Công thức:</b> A……，B呢？</p>
+<p><b>Ví dụ:</b><br><span class="cn">我有两个哥哥，你呢？</span> → Tôi có hai anh trai, còn bạn?<br><span class="cn">我叫白家月，你呢？</span> → Tôi tên Bạch Gia Nguyệt, còn bạn?<br><span class="cn">我是中国人，你呢？</span> → Tôi là người Trung Quốc, còn bạn?</p></div>
+<div class="card"><span class="tag">Bài 4</span><h3>4. 名量词和名量结构 — Danh lượng từ và cấu trúc danh lượng từ</h3>
+<p><b>Công dụng:</b> Khi diễn tả số lượng, số từ thường phải đi với lượng từ như 个, 口 trước danh từ.</p><div class="formula">Số từ + Lượng từ + Danh từ</div><p><b>Công thức:</b> Số từ + Lượng từ + Danh từ</p>
+<p><b>Ví dụ:</b><br><span class="cn">两个哥哥</span> → hai anh trai<br><span class="cn">四口人</span> → bốn người trong gia đình<br><span class="cn">二十个学生</span> → 20 học sinh</p></div>
+<div class="card"><span class="tag">Bài 4</span><h3>5. “几岁”与“多大” — Hỏi tuổi với 几岁 và 多大</h3>
+<p><b>Công dụng:</b> Theo bài: 几岁 thường dùng hỏi trẻ dưới 10 tuổi; với người lớn hơn thường hỏi 多大.</p><div class="formula">Người + 几岁？ / Người + 多大？</div><p><b>Công thức:</b> Người + 几岁？ / Người + 多大？</p>
+<p><b>Ví dụ:</b><br><span class="cn">您儿子几岁？</span> → Con trai cô mấy tuổi?<br><span class="cn">他今年五岁。</span> → Năm nay cậu bé 5 tuổi.<br><span class="cn">您女儿多大？</span> → Con gái cô bao nhiêu tuổi?</p></div>
+<div class="card"><span class="tag">Bài 5</span><h3>6. 时间的表达（1） — Biểu đạt thời gian (1)</h3>
+<p><b>Công dụng:</b> Dùng để nói năm, tháng, ngày và thứ. Thứ tự tiếng Trung đi từ đơn vị lớn đến đơn vị nhỏ.</p><div class="formula">年 → 月 → 日 / 号 → 星期</div><p><b>Công thức:</b> 年 → 月 → 日 / 号 → 星期</p>
+<p><b>Ví dụ:</b><br><span class="cn">今天9月8号。</span> → Hôm nay là ngày 8 tháng 9.<br><span class="cn">2024年10月22号，星期二。</span> → Ngày 22/10/2024, thứ Ba.<br><span class="cn">明天星期一。</span> → Ngày mai là thứ Hai.</p></div>
+<div class="card"><span class="tag">Bài 5</span><h3>7. 名词谓语句 — Câu vị ngữ danh từ</h3>
+<p><b>Công dụng:</b> Dùng danh từ hoặc cụm danh từ làm vị ngữ khi nói tuổi, ngày tháng, thứ… mà không nhất thiết dùng 是.</p><div class="formula">Chủ ngữ + Danh từ / Cụm danh từ</div><p><b>Công thức:</b> Chủ ngữ + Danh từ / Cụm danh từ</p>
+<p><b>Ví dụ:</b><br><span class="cn">我十八岁。</span> → Tôi 18 tuổi.<br><span class="cn">今天星期一。</span> → Hôm nay là thứ Hai.<br><span class="cn">今天9月8号。</span> → Hôm nay là ngày 8 tháng 9.</p></div>
+<div class="card"><span class="tag">Bài 5</span><h3>8. 能愿动词“会” — Động từ năng nguyện 会: “biết/có thể”</h3>
+<p><b>Công dụng:</b> Đứng trước động từ để biểu thị khả năng có được nhờ học tập hoặc rèn luyện.</p><div class="formula">Chủ ngữ + 会 / 不会 + V / VP</div><p><b>Công thức:</b> Chủ ngữ + 会 / 不会 + V / VP</p>
+<p><b>Ví dụ:</b><br><span class="cn">我会做饭。</span> → Tôi biết nấu ăn.<br><span class="cn">我不会包饺子。</span> → Tôi không biết gói sủi cảo.<br><span class="cn">你会不会做饭？</span> → Bạn có biết nấu ăn không?</p></div>
+<div class="card"><span class="tag">Bài 6</span><h3>9. 能愿动词“想” — Động từ năng nguyện 想: “muốn/dự định”</h3>
+<p><b>Công dụng:</b> Đứng trước động từ để biểu thị mong muốn hoặc dự định.</p><div class="formula">Chủ ngữ + 想 / 不想 + V / VP</div><p><b>Công thức:</b> Chủ ngữ + 想 / 不想 + V / VP</p>
+<p><b>Ví dụ:</b><br><span class="cn">我想去超市。</span> → Tôi muốn đi siêu thị.<br><span class="cn">我想买些牛奶。</span> → Tôi muốn mua một ít sữa.<br><span class="cn">我不想吃包子。</span> → Tôi không muốn ăn bánh bao.</p></div>
+<div class="card"><span class="tag">Bài 6</span><h3>10. 连动句（1） — Câu liên động (1)</h3>
+<p><b>Công dụng:</b> Vị ngữ có từ hai cụm động từ trở lên. Trong bài dùng để nói mục đích hoặc cách thức của hành động.</p><div class="formula">Chủ ngữ + Động tác 1 + Động tác 2</div><p><b>Công thức:</b> Chủ ngữ + Động tác 1 + Động tác 2</p>
+<p><b>Ví dụ:</b><br><span class="cn">我想去超市买东西。</span> → Tôi muốn đi siêu thị mua đồ.<br><span class="cn">我们去西安饭店吃晚饭。</span> → Chúng tôi đi nhà hàng Tây An ăn tối.<br><span class="cn">我们坐出租车去西安饭店。</span> → Chúng tôi đi taxi đến nhà hàng Tây An.</p></div>
+<div class="card"><span class="tag">Bài 6</span><h3>11. 疑问代词“怎么” — Đại từ nghi vấn 怎么: “như thế nào/làm sao”</h3>
+<p><b>Công dụng:</b> Đứng trước động từ để hỏi cách thức thực hiện hành động.</p><div class="formula">怎么 + V？</div><p><b>Công thức:</b> 怎么 + V？</p>
+<p><b>Ví dụ:</b><br><span class="cn">我们怎么去？</span> → Chúng ta đi bằng cách nào?<br><span class="cn">怎么去学校？</span> → Đi đến trường thế nào?<br><span class="cn">怎么包饺子？</span> → Gói sủi cảo thế nào?</p></div></div></div></section>
+
+<section id="speak"><div class="title"><div class="icon">🗣️</div><div><h2>Luyện nói ứng dụng</h2><p>Liệt kê đầy đủ những nội dung có thể nói sau Bài 4–6. Tự nói trước, chỉ mở gợi ý khi cần.</p></div></div><div class="card" style="margin-bottom:14px"><span class="tag">Bài 4</span><h3>① Nói về việc có / không có người hoặc đồ vật</h3>
+<div class="speak-step"><b>1.</b> Nói bạn có anh/chị/em hay không.</div><div class="speak-step"><b>2.</b> Hỏi người khác có anh/chị/em không.</div><div class="speak-step"><b>3.</b> Nói một người có bao nhiêu học sinh / đồ vật.</div><div class="speak-step"><b>4.</b> Hỏi số lượng bằng 多少.</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">我有两个哥哥。 · 我没有哥哥。 · 你有妹妹吗？ · 她有多少个学生？ · 她有二十个学生。</span>
+<br><button class="audio speak-sample" data-text="我有两个哥哥。 · 我没有哥哥。 · 你有妹妹吗？ · 她有多少个学生？ · 她有二十个学生。">🔊 Nghe gợi ý</button></div></details></div>
+<div class="card" style="margin-bottom:14px"><span class="tag">Bài 4</span><h3>② Nói về gia đình</h3>
+<div class="speak-step"><b>1.</b> Hỏi gia đình người khác có mấy người.</div><div class="speak-step"><b>2.</b> Nói gia đình mình có mấy người.</div><div class="speak-step"><b>3.</b> Liệt kê bố, mẹ, anh/chị/em và bản thân.</div><div class="speak-step"><b>4.</b> Dùng 和 để nối thành viên.</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">你家有几口人？ · 我家有四口人。 · 我家有爸爸、妈妈、妹妹和我。</span>
+<br><button class="audio speak-sample" data-text="你家有几口人？ · 我家有四口人。 · 我家有爸爸、妈妈、妹妹和我。">🔊 Nghe gợi ý</button></div></details></div>
+<div class="card" style="margin-bottom:14px"><span class="tag">Bài 4</span><h3>③ Hỏi lại bằng 呢</h3>
+<div class="speak-step"><b>1.</b> Sau khi nói thông tin về mình, hỏi lại người đối diện.</div><div class="speak-step"><b>2.</b> Áp dụng với tên, quốc tịch, anh chị em, gia đình…</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">我有两个哥哥，你呢？ · 我叫白家月，你呢？ · 我是中国人，你呢？</span>
+<br><button class="audio speak-sample" data-text="我有两个哥哥，你呢？ · 我叫白家月，你呢？ · 我是中国人，你呢？">🔊 Nghe gợi ý</button></div></details></div>
+<div class="card" style="margin-bottom:14px"><span class="tag">Bài 4</span><h3>④ Hỏi và nói tuổi</h3>
+<div class="speak-step"><b>1.</b> Hỏi tuổi trẻ nhỏ bằng 几岁.</div><div class="speak-step"><b>2.</b> Hỏi tuổi người lớn hơn bằng 多大.</div><div class="speak-step"><b>3.</b> Nói tuổi hiện tại với 今年 + số + 岁.</div><div class="speak-step"><b>4.</b> Giới thiệu tuổi của con, anh/chị/em, bố mẹ.</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">您儿子几岁？ · 他今年五岁。 · 您女儿多大？ · 我哥哥今年十八岁。</span>
+<br><button class="audio speak-sample" data-text="您儿子几岁？ · 他今年五岁。 · 您女儿多大？ · 我哥哥今年十八岁。">🔊 Nghe gợi ý</button></div></details></div>
+<div class="card" style="margin-bottom:14px"><span class="tag">Bài 5</span><h3>⑤ Nói ngày, tháng và thứ</h3>
+<div class="speak-step"><b>1.</b> Hỏi hôm nay ngày mấy.</div><div class="speak-step"><b>2.</b> Hỏi hôm nay thứ mấy.</div><div class="speak-step"><b>3.</b> Nói ngày tháng hiện tại.</div><div class="speak-step"><b>4.</b> Nói một ngày cụ thể theo thứ tự 年→月→日/号→星期.</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">今天几号？ · 今天9月8号。 · 今天星期几？ · 今天星期日。</span>
+<br><button class="audio speak-sample" data-text="今天几号？ · 今天9月8号。 · 今天星期几？ · 今天星期日。">🔊 Nghe gợi ý</button></div></details></div>
+<div class="card" style="margin-bottom:14px"><span class="tag">Bài 5</span><h3>⑥ Nói hôm nay làm gì / có nghỉ không</h3>
+<div class="speak-step"><b>1.</b> Nói hôm nay nghỉ.</div><div class="speak-step"><b>2.</b> Nói hôm nay đi học/đi làm.</div><div class="speak-step"><b>3.</b> Kết hợp ngày trong tuần với hoạt động.</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">今天我休息。 · 今天我去学校。 · 星期天我也做饭。</span>
+<br><button class="audio speak-sample" data-text="今天我休息。 · 今天我去学校。 · 星期天我也做饭。">🔊 Nghe gợi ý</button></div></details></div>
+<div class="card" style="margin-bottom:14px"><span class="tag">Bài 5</span><h3>⑦ Nói về khả năng với 会</h3>
+<div class="speak-step"><b>1.</b> Hỏi người khác biết nấu ăn không.</div><div class="speak-step"><b>2.</b> Nói mình biết hoặc không biết làm gì.</div><div class="speak-step"><b>3.</b> Hỏi biết làm món gì.</div><div class="speak-step"><b>4.</b> Liệt kê nhiều món và dùng 也.</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">你会做饭吗？ · 我会做。 · 你会做什么？ · 我会做面条儿、饺子，也会做一些菜。 · 我不会包饺子。</span>
+<br><button class="audio speak-sample" data-text="你会做饭吗？ · 我会做。 · 你会做什么？ · 我会做面条儿、饺子，也会做一些菜。 · 我不会包饺子。">🔊 Nghe gợi ý</button></div></details></div>
+<div class="card" style="margin-bottom:14px"><span class="tag">Bài 5</span><h3>⑧ Nói về một đồ vật mới</h3>
+<div class="speak-step"><b>1.</b> Hỏi đồ vật đó có phải của người kia không.</div><div class="speak-step"><b>2.</b> Nói đó là máy tính mới của mình.</div><div class="speak-step"><b>3.</b> Khen đồ vật đẹp.</div><div class="speak-step"><b>4.</b> Nói mình thích nó.</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">这是你的新电脑吗？ · 是的，是我的新电脑。 · 真好看！ · 我也很喜欢它。</span>
+<br><button class="audio speak-sample" data-text="这是你的新电脑吗？ · 是的，是我的新电脑。 · 真好看！ · 我也很喜欢它。">🔊 Nghe gợi ý</button></div></details></div>
+<div class="card" style="margin-bottom:14px"><span class="tag">Bài 6</span><h3>⑨ Hỏi và đọc số điện thoại</h3>
+<div class="speak-step"><b>1.</b> Hỏi số điện thoại của người khác.</div><div class="speak-step"><b>2.</b> Đọc số điện thoại từng chữ số.</div><div class="speak-step"><b>3.</b> Nhớ trong số điện thoại, số 1 đọc yāo.</div><div class="speak-step"><b>4.</b> Xác nhận bằng 好的.</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">你的手机号是多少？ · 我的手机号是…… · 好的。</span>
+<br><button class="audio speak-sample" data-text="你的手机号是多少？ · 我的手机号是…… · 好的。">🔊 Nghe gợi ý</button></div></details></div>
+<div class="card" style="margin-bottom:14px"><span class="tag">Bài 6</span><h3>⑩ Nói kế hoạch ngày mai</h3>
+<div class="speak-step"><b>1.</b> Hỏi ngày mai người khác đi đâu.</div><div class="speak-step"><b>2.</b> Nói mình muốn đi đâu.</div><div class="speak-step"><b>3.</b> Dùng 想 / 不想 để nói dự định.</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">明天你去哪儿？ · 我想去超市。 · 我不想去学校。</span>
+<br><button class="audio speak-sample" data-text="明天你去哪儿？ · 我想去超市。 · 我不想去学校。">🔊 Nghe gợi ý</button></div></details></div>
+<div class="card" style="margin-bottom:14px"><span class="tag">Bài 6</span><h3>⑪ Nói kế hoạch mua sắm</h3>
+<div class="speak-step"><b>1.</b> Nói đi siêu thị mua đồ.</div><div class="speak-step"><b>2.</b> Hỏi người khác muốn mua gì.</div><div class="speak-step"><b>3.</b> Nói muốn mua một ít sữa hoặc đồ khác.</div><div class="speak-step"><b>4.</b> Dùng 些 / 一些.</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">我想去超市买东西。 · 你去超市买什么？ · 我想买些牛奶。</span>
+<br><button class="audio speak-sample" data-text="我想去超市买东西。 · 你去超市买什么？ · 我想买些牛奶。">🔊 Nghe gợi ý</button></div></details></div>
+<div class="card" style="margin-bottom:14px"><span class="tag">Bài 6</span><h3>⑫ Nói về ăn uống</h3>
+<div class="speak-step"><b>1.</b> Hỏi muốn ăn gì.</div><div class="speak-step"><b>2.</b> Nói muốn / không muốn ăn món nào.</div><div class="speak-step"><b>3.</b> Khen món ăn ngon.</div><div class="speak-step"><b>4.</b> Nói một món rất ngon bằng 非常.</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">你想吃什么？ · 我想吃米饭。 · 我不想吃包子。 · 那边的包子非常好吃。</span>
+<br><button class="audio speak-sample" data-text="你想吃什么？ · 我想吃米饭。 · 我不想吃包子。 · 那边的包子非常好吃。">🔊 Nghe gợi ý</button></div></details></div>
+<div class="card" style="margin-bottom:14px"><span class="tag">Bài 6</span><h3>⑬ Nói kế hoạch đi ăn tối</h3>
+<div class="speak-step"><b>1.</b> Hỏi cả nhóm đi đâu ăn tối.</div><div class="speak-step"><b>2.</b> Nói địa điểm muốn đến.</div><div class="speak-step"><b>3.</b> Nói mục đích: đi đâu để ăn tối.</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">星期天我们去哪儿吃晚饭？ · 我还想去西安饭店。 · 我们去西安饭店吃晚饭。</span>
+<br><button class="audio speak-sample" data-text="星期天我们去哪儿吃晚饭？ · 我还想去西安饭店。 · 我们去西安饭店吃晚饭。">🔊 Nghe gợi ý</button></div></details></div>
+<div class="card" style="margin-bottom:14px"><span class="tag">Bài 6</span><h3>⑭ Hỏi và nói cách di chuyển</h3>
+<div class="speak-step"><b>1.</b> Hỏi đi như thế nào bằng 怎么.</div><div class="speak-step"><b>2.</b> Nói đi taxi / xe buýt / tàu điện.</div><div class="speak-step"><b>3.</b> Dùng câu liên động để nói phương tiện + địa điểm.</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">我们怎么去？ · 坐出租车去。 · 我们坐出租车去西安饭店。</span>
+<br><button class="audio speak-sample" data-text="我们怎么去？ · 坐出租车去。 · 我们坐出租车去西安饭店。">🔊 Nghe gợi ý</button></div></details></div>
+<div class="card" style="margin-bottom:14px"><span class="tag">Bài 6</span><h3>⑮ Nói tổng hợp 60–90 giây</h3>
+<div class="speak-step"><b>1.</b> Nói gia đình và tuổi.</div><div class="speak-step"><b>2.</b> Nói ngày/thứ và hoạt động hôm nay.</div><div class="speak-step"><b>3.</b> Nói khả năng nấu ăn.</div><div class="speak-step"><b>4.</b> Nói một đồ vật mới.</div><div class="speak-step"><b>5.</b> Nói số điện thoại.</div><div class="speak-step"><b>6.</b> Nói kế hoạch ngày mai, mua gì, ăn gì và đi bằng gì.</div>
+<details class="hint fold-hint"><summary>💡 Mở gợi ý khi cần</summary><div class="hint-content"><span class="cn">我家有……口人。 → 我今年……岁。 → 今天……月……号，星期……。 → 我会……。 → 这是我的新……。 → 我的手机号是……。 → 明天我想去……买……。 → 我想吃……。 → 我坐……去……。</span>
+<br><button class="audio speak-sample" data-text="我家有……口人。 → 我今年……岁。 → 今天……月……号，星期……。 → 我会……。 → 这是我的新……。 → 我的手机号是……。 → 明天我想去……买……。 → 我想吃……。 → 我坐……去……。">🔊 Nghe gợi ý</button></div></details></div></section>
+
+<section id="practice"><div class="title"><div class="icon">🎧</div><div><h2>Nghe & Điền</h2><p>27 câu nghe · 24 câu điền · 22 câu sắp xếp.</p></div></div>
+<div class="subtabs"><button class="subtab active" data-pane-group="practice" data-pane="listen">🎧 Nghe chọn</button><button class="subtab" data-pane-group="practice" data-pane="fill">✍️ Điền từ</button><button class="subtab" data-pane-group="practice" data-pane="order">🧩 Sắp xếp</button></div>
+<div id="practice-listen" class="practice-pane"><div class="card"><div id="listenBox"></div></div></div>
+<div id="practice-fill" class="practice-pane" style="display:none"><div class="card"><div id="fillBox"></div></div></div>
+<div id="practice-order" class="practice-pane" style="display:none"><div class="card"><div id="orderBox"></div></div></div></section>
+
+<section id="games"><div class="title"><div class="icon">🎮</div><div><h2>Trò chơi</h2><p>Ghép bộ phận chữ Hán · Memory tạo bộ mới · Xây câu.</p></div></div>
+<div class="subtabs"><button class="subtab active" data-pane-group="game" data-pane="component">🧱 Ghép bộ phận chữ</button><button class="subtab" data-pane-group="game" data-pane="memory">🧠 Memory</button><button class="subtab" data-pane-group="game" data-pane="builder">🚂 Xây câu</button></div>
+<div id="game-component" class="game-pane"><div class="card"><div id="componentBox"></div></div></div>
+<div id="game-memory" class="game-pane" style="display:none"><div class="card"><p id="memoryStatus" class="feedback"></p><div id="memoryGrid" class="memory-grid"></div><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button id="memoryReplay" type="button" class="btn">Chơi lại bộ này</button><button id="memoryNew" type="button" class="ghost">🔄 Tạo bộ mới</button></div></div></div>
+<div id="game-builder" class="game-pane" style="display:none"><div class="card"><div id="builderQuestion" class="question"></div><div id="builderBank" class="builder-bank"></div><div id="builderAnswer" class="builder-answer"></div><div id="builderFeedback" class="feedback"></div><button id="builderCheck" class="btn" type="button">Kiểm tra</button><button id="builderNext" class="ghost" type="button">Câu tiếp</button><button id="builderListen" class="audio" type="button">🔊 Nghe</button></div></div></section>
+
+<section id="test"><div class="title"><div class="icon">🎯</div><div><h2>Kiểm tra</h2><p>Câu hỏi bám sát bài khóa, tình huống và ngữ pháp Bài 4–6.</p></div></div>
+<div class="subtabs"><button class="subtab active" data-pane-group="test" data-pane="quiz">🎯 Quiz tổng hợp</button><button class="subtab" data-pane-group="test" data-pane="tf">✅ Đúng/Sai</button><button class="subtab" data-pane-group="test" data-pane="speed">⏱️ Speed</button></div>
+<div id="test-quiz" class="test-pane"><div id="quizBox"></div></div>
+<div id="test-tf" class="test-pane" style="display:none"><div class="card"><div id="tfBox"></div></div></div>
+<div id="test-speed" class="test-pane" style="display:none"><div class="card"><div id="speedBox"></div></div></div></section>
+
+<section id="writing"><div class="title"><div class="icon">✍️</div><div><h2>Luyện viết chữ Hán</h2><p>Đầy đủ <b>79</b> chữ Hán xuất hiện trong từ vựng Bài 4–6 · xem nét · pinyin · nghĩa · mẹo nhớ.</p></div></div>
+<div class="card" style="margin-bottom:14px"><h3>Chọn chữ</h3><p style="color:var(--m)">Có <b id="charCount"></b> chữ. Chạm vào chữ để xem chi tiết và luyện viết.</p><div id="writeChars" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(52px,1fr));gap:8px"></div></div>
+<div class="card"><h3 style="text-align:center">Chữ: <span id="writeCurrent" class="cn" style="font-size:44px"></span></h3>
+<div style="max-width:560px;margin:10px auto;display:grid;grid-template-columns:1fr 1fr;gap:10px"><div style="background:#f8fafc;border:1px solid var(--line);border-radius:13px;padding:10px 12px"><small style="font-weight:900;color:var(--m)">PINYIN</small><div id="writePy" class="py" style="font-size:21px;font-weight:900"></div></div><div style="background:#f8fafc;border:1px solid var(--line);border-radius:13px;padding:10px 12px"><small style="font-weight:900;color:var(--m)">NGHĨA</small><div id="writeMeaning" style="font-size:18px;font-weight:900"></div></div></div>
+<div style="max-width:560px;margin:10px auto 16px;background:#fff3b8;border:2px solid #f0bd35;border-radius:15px;padding:14px 15px"><div style="font-weight:950;color:#765000;margin-bottom:5px">🧠 MẸO NHỚ CHỮ</div><div id="writeMemory" style="font-size:16px;font-weight:750;color:#3e3000;line-height:1.55"></div></div>
+<div id="writerTarget" style="width:min(100%,420px);height:420px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:14px"></div>
+<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px"><button id="animateChar" class="audio" type="button">▶ Xem thứ tự nét</button><button id="quizChar" class="btn" type="button">✍️ Viết từng nét</button><button id="showCharHint" class="ghost" type="button">💡 Gợi ý</button><button id="speakChar" class="audio" type="button">🔊 Nghe chữ</button></div></div></section>
+
+<section id="quick"><div class="title"><div class="icon">📌</div><div><h2>Ôn nhanh</h2><p>Mẫu câu và điểm trọng tâm.</p></div></div><div class="grid">
+<div class="card"><h3>👨‍👩‍👧‍👦 Bài 4</h3><p class="cn">我有两个哥哥，你呢？<br>你家有几口人？<br>您儿子几岁？<br>您女儿多大？</p></div>
+<div class="card"><h3>📅 Bài 5</h3><p class="cn">今天几号？星期几？<br>今天我休息。<br>你会做饭吗？<br>这是你的新电脑吗？</p></div>
+<div class="card"><h3>📱 Bài 6</h3><p class="cn">你的手机号是多少？<br>明天你去哪儿？<br>我想去超市买东西。<br>我们怎么去？</p></div>
+<div class="card"><h3>⚠️ Dễ sai</h3><p class="cn">两个哥哥 ✅ / 二个哥哥 ❌<br>我没有哥哥 ✅<br>我会做饭 ✅<br>我想去超市买东西 ✅<br>怎么 + V？</p></div></div></section>
+
+<script>
+const V=[[4, "有", "yǒu", "có", "我有两个哥哥。", "Tôi có hai anh trai."], [4, "多少", "duōshao", "bao nhiêu", "她有多少个学生？", "Cô ấy có bao nhiêu học sinh?"], [4, "个", "gè", "cái; lượng từ phổ biến", "她有二十个学生。", "Cô ấy có 20 học sinh."], [4, "哥哥", "gēge", "anh trai", "我有两个哥哥。", "Tôi có hai anh trai."], [4, "呢", "ne", "thế còn…?", "我有两个哥哥，你呢？", "Tôi có hai anh trai, còn bạn?"], [4, "没有", "méiyǒu", "không có", "我没有哥哥。", "Tôi không có anh trai."], [4, "家", "jiā", "nhà; gia đình", "你家有几口人？", "Nhà bạn có mấy người?"], [4, "几", "jǐ", "mấy; bao nhiêu", "你家有几口人？", "Nhà bạn có mấy người?"], [4, "口", "kǒu", "lượng từ cho thành viên gia đình", "我家有四口人。", "Nhà tôi có bốn người."], [4, "爸爸", "bàba", "bố", "我家有爸爸、妈妈、妹妹和我。", "Nhà tôi có bố, mẹ, em gái và tôi."], [4, "妈妈", "māma", "mẹ", "我妈妈今年三十六岁。", "Năm nay mẹ tôi 36 tuổi."], [4, "妹妹", "mèimei", "em gái", "我有一个妹妹。", "Tôi có một em gái."], [4, "和", "hé", "và", "爸爸、妈妈、妹妹和我。", "Bố, mẹ, em gái và tôi."], [4, "儿子", "érzi", "con trai", "这是您儿子吗？", "Đây là con trai của cô ạ?"], [4, "孩子", "háizi", "con; trẻ em", "我有两个孩子。", "Tôi có hai đứa con."], [4, "女儿", "nǚ'ér", "con gái", "我有一个女儿。", "Tôi có một con gái."], [4, "岁", "suì", "tuổi", "他今年五岁。", "Năm nay cậu bé 5 tuổi."], [4, "他", "tā", "anh ấy; cậu ấy", "他今年五岁。", "Năm nay cậu bé 5 tuổi."], [4, "今年", "jīnnián", "năm nay", "我哥哥今年十八岁。", "Năm nay anh trai tôi 18 tuổi."], [4, "多", "duō", "bao nhiêu; nhiều", "您女儿多大？", "Con gái cô bao nhiêu tuổi?"], [4, "大", "dà", "lớn; bao nhiêu tuổi trong 多大", "你今年多大？", "Năm nay bạn bao nhiêu tuổi?"], [5, "今天", "jīntiān", "hôm nay", "今天9月8号。", "Hôm nay là ngày 8 tháng 9."], [5, "号", "hào", "ngày; số", "今天几号？", "Hôm nay ngày mấy?"], [5, "月", "yuè", "tháng", "今天9月8号。", "Hôm nay là ngày 8 tháng 9."], [5, "日", "rì", "ngày", "三月五日。", "Ngày 5 tháng 3."], [5, "星期", "xīngqī", "tuần; thứ", "今天星期几？", "Hôm nay thứ mấy?"], [5, "星期日", "xīngqīrì", "Chủ nhật", "今天星期日。", "Hôm nay là Chủ nhật."], [5, "星期天", "xīngqītiān", "Chủ nhật", "星期天我也做饭。", "Chủ nhật tôi cũng nấu ăn."], [5, "休息", "xiūxi", "nghỉ ngơi", "今天我休息。", "Hôm nay tôi nghỉ."], [5, "会", "huì", "biết; có thể do đã học", "你会做饭吗？", "Bạn biết nấu ăn không?"], [5, "做饭", "zuòfàn", "nấu ăn", "我会做饭。", "Tôi biết nấu ăn."], [5, "做", "zuò", "làm", "你会做什么？", "Bạn biết làm gì?"], [5, "面条儿", "miàntiáor", "mì", "我会做面条儿。", "Tôi biết làm mì."], [5, "饺子", "jiǎozi", "sủi cảo", "我会做饺子。", "Tôi biết làm sủi cảo."], [5, "一些", "yìxiē", "một số; một ít", "我会做一些菜。", "Tôi biết nấu một số món."], [5, "菜", "cài", "món ăn; rau", "这个菜很好吃。", "Món này rất ngon."], [5, "下班", "xiàbān", "tan làm", "同乐，下班吗？", "Đồng Lạc, tan làm rồi à?"], [5, "新", "xīn", "mới", "这是我的新电脑。", "Đây là máy tính mới của tôi."], [5, "电脑", "diànnǎo", "máy tính", "这是你的新电脑吗？", "Đây là máy tính mới của bạn à?"], [5, "真", "zhēn", "thật; thật là", "真好看！", "Đẹp thật!"], [5, "好看", "hǎokàn", "đẹp; dễ nhìn", "你的电脑真好看。", "Máy tính của bạn đẹp thật."], [5, "喜欢", "xǐhuan", "thích", "我也很喜欢它。", "Tôi cũng rất thích nó."], [5, "它", "tā", "nó (chỉ vật)", "我也很喜欢它。", "Tôi cũng rất thích nó."], [6, "手机", "shǒujī", "điện thoại di động", "你的手机号是多少？", "Số điện thoại của bạn là bao nhiêu?"], [6, "电话", "diànhuà", "điện thoại; cuộc gọi", "这是我的电话。", "Đây là điện thoại của tôi."], [6, "号", "hào", "số; số điện thoại", "我的手机号是……", "Số điện thoại của tôi là…"], [6, "明天", "míngtiān", "ngày mai", "明天你去哪儿？", "Ngày mai bạn đi đâu?"], [6, "去", "qù", "đi", "我想去超市。", "Tôi muốn đi siêu thị."], [6, "哪儿", "nǎr", "đâu; ở đâu", "明天你去哪儿？", "Ngày mai bạn đi đâu?"], [6, "想", "xiǎng", "muốn; dự định", "我想去超市买东西。", "Tôi muốn đi siêu thị mua đồ."], [6, "超市", "chāoshì", "siêu thị", "我想去超市。", "Tôi muốn đi siêu thị."], [6, "买", "mǎi", "mua", "你去超市买什么？", "Bạn đi siêu thị mua gì?"], [6, "东西", "dōngxi", "đồ; thứ", "我想去超市买东西。", "Tôi muốn đi siêu thị mua đồ."], [6, "些", "xiē", "một ít; một số", "我想买些牛奶。", "Tôi muốn mua một ít sữa."], [6, "牛奶", "niúnǎi", "sữa bò", "我想买些牛奶。", "Tôi muốn mua một ít sữa."], [6, "吃", "chī", "ăn", "你想吃什么？", "Bạn muốn ăn gì?"], [6, "晚饭", "wǎnfàn", "bữa tối", "我们去哪儿吃晚饭？", "Chúng ta đi đâu ăn tối?"], [6, "那边", "nàbian", "bên kia; ở đó", "那边的包子非常好吃。", "Bánh bao ở đó rất ngon."], [6, "包子", "bāozi", "bánh bao", "我想吃包子。", "Tôi muốn ăn bánh bao."], [6, "非常", "fēicháng", "rất; vô cùng", "那边的包子非常好吃。", "Bánh bao ở đó rất ngon."], [6, "好吃", "hǎochī", "ngon", "这个菜很好吃。", "Món này rất ngon."], [6, "米饭", "mǐfàn", "cơm trắng", "我想吃米饭。", "Tôi muốn ăn cơm."], [6, "怎么", "zěnme", "như thế nào; làm sao", "我们怎么去？", "Chúng ta đi bằng cách nào?"], [6, "坐", "zuò", "ngồi; đi bằng phương tiện", "坐出租车去。", "Đi taxi."], [6, "出租车", "chūzūchē", "taxi", "我们坐出租车去。", "Chúng ta đi bằng taxi."]];
+const LISTEN=[["她有多少个学生？", "Cô ấy có bao nhiêu học sinh?"], ["我有两个哥哥，你呢？", "Tôi có hai anh trai, còn bạn?"], ["你家有几口人？", "Nhà bạn có mấy người?"], ["我家有四口人，爸爸、妈妈、妹妹和我。", "Nhà tôi có bốn người: bố, mẹ, em gái và tôi."], ["这是您儿子吗？", "Đây là con trai của cô ạ?"], ["您儿子几岁？", "Con trai cô mấy tuổi?"], ["您女儿多大？", "Con gái cô bao nhiêu tuổi?"], ["今天几号？", "Hôm nay ngày mấy?"], ["今天9月8号。", "Hôm nay là ngày 8 tháng 9."], ["星期几？", "Thứ mấy?"], ["星期日。今天我休息。", "Chủ nhật. Hôm nay tôi nghỉ."], ["你会做饭吗？", "Bạn biết nấu ăn không?"], ["你会做什么？", "Bạn biết làm gì?"], ["我会做面条儿、饺子，也会做一些菜。", "Tôi biết làm mì, sủi cảo và một số món."], ["这是你的新电脑吗？", "Đây là máy tính mới của bạn à?"], ["真好看！", "Đẹp thật!"], ["我也很喜欢它。", "Tôi cũng rất thích nó."], ["你的手机号是多少？", "Số điện thoại của bạn là bao nhiêu?"], ["明天你去哪儿？", "Ngày mai bạn đi đâu?"], ["我想去超市买东西。", "Tôi muốn đi siêu thị mua đồ."], ["你去超市买什么？", "Bạn đi siêu thị mua gì?"], ["我想买些牛奶。", "Tôi muốn mua một ít sữa."], ["星期天我们去哪儿吃晚饭？", "Chủ nhật chúng ta đi đâu ăn tối?"], ["那边的包子非常好吃。", "Bánh bao ở đó rất ngon."], ["我想吃米饭，不想吃包子。", "Tôi muốn ăn cơm, không muốn ăn bánh bao."], ["我们怎么去？", "Chúng ta đi bằng cách nào?"], ["坐出租车去。", "Đi taxi."]];
+const FILL=[["我___两个哥哥。", "有", "Tôi có hai anh trai."], ["我___哥哥。", "没有", "Tôi không có anh trai."], ["你家有几___人？", "口", "Nhà bạn có mấy người?"], ["我家有四口人，爸爸、妈妈、妹妹___我。", "和", "Nhà tôi có bốn người: bố, mẹ, em gái và tôi."], ["我有两个哥哥，你___？", "呢", "Tôi có hai anh trai, còn bạn?"], ["他今年五___。", "岁", "Năm nay cậu bé 5 tuổi."], ["您女儿多___？", "大", "Con gái cô bao nhiêu tuổi?"], ["今天9月8___。", "号", "Hôm nay là ngày 8 tháng 9."], ["今天___日。", "星期", "Hôm nay là Chủ nhật."], ["今天我___。", "休息", "Hôm nay tôi nghỉ."], ["你___做饭吗？", "会", "Bạn biết nấu ăn không?"], ["我___会包饺子。", "不", "Tôi không biết gói sủi cảo."], ["我会做面条儿、饺子，也会做一___菜。", "些", "Tôi biết làm mì, sủi cảo và một số món."], ["这是你的___电脑吗？", "新", "Đây là máy tính mới của bạn à?"], ["我也很喜欢___。", "它", "Tôi cũng rất thích nó."], ["你的手___号是多少？", "机", "Số điện thoại của bạn là bao nhiêu?"], ["明天你去___？", "哪儿", "Ngày mai bạn đi đâu?"], ["我___去超市买东西。", "想", "Tôi muốn đi siêu thị mua đồ."], ["我想买___牛奶。", "些", "Tôi muốn mua một ít sữa."], ["我想___米饭。", "吃", "Tôi muốn ăn cơm."], ["那边的包子___好吃。", "非常", "Bánh bao ở đó rất ngon."], ["我们___去？", "怎么", "Chúng ta đi bằng cách nào?"], ["___出租车去。", "坐", "Đi taxi."], ["我想去超市___东西。", "买", "Tôi muốn đi siêu thị mua đồ."]];
+const ORDERS=[["Tôi có hai anh trai.", ["我", "有", "两个", "哥哥"], "我有两个哥哥。"], ["Tôi không có anh trai.", ["我", "没有", "哥哥"], "我没有哥哥。"], ["Nhà bạn có mấy người?", ["你家", "有", "几口", "人"], "你家有几口人？"], ["Nhà tôi có bốn người.", ["我家", "有", "四口", "人"], "我家有四口人。"], ["Con trai cô mấy tuổi?", ["您儿子", "几岁"], "您儿子几岁？"], ["Năm nay cậu bé 5 tuổi.", ["他", "今年", "五岁"], "他今年五岁。"], ["Hôm nay ngày mấy?", ["今天", "几号"], "今天几号？"], ["Hôm nay là ngày 8 tháng 9.", ["今天", "9月", "8号"], "今天9月8号。"], ["Hôm nay tôi nghỉ.", ["今天", "我", "休息"], "今天我休息。"], ["Bạn biết nấu ăn không?", ["你", "会", "做饭", "吗"], "你会做饭吗？"], ["Bạn biết làm gì?", ["你", "会", "做", "什么"], "你会做什么？"], ["Tôi biết làm một số món.", ["我", "会", "做", "一些菜"], "我会做一些菜。"], ["Đây là máy tính mới của bạn à?", ["这", "是", "你的", "新电脑", "吗"], "这是你的新电脑吗？"], ["Tôi cũng rất thích nó.", ["我", "也", "很", "喜欢", "它"], "我也很喜欢它。"], ["Số điện thoại của bạn là bao nhiêu?", ["你的", "手机号", "是", "多少"], "你的手机号是多少？"], ["Ngày mai bạn đi đâu?", ["明天", "你", "去", "哪儿"], "明天你去哪儿？"], ["Tôi muốn đi siêu thị mua đồ.", ["我", "想", "去超市", "买东西"], "我想去超市买东西。"], ["Tôi muốn mua một ít sữa.", ["我", "想", "买些", "牛奶"], "我想买些牛奶。"], ["Chúng ta đi đâu ăn tối?", ["我们", "去哪儿", "吃晚饭"], "我们去哪儿吃晚饭？"], ["Tôi không muốn ăn bánh bao.", ["我", "不想", "吃", "包子"], "我不想吃包子。"], ["Chúng ta đi bằng cách nào?", ["我们", "怎么", "去"], "我们怎么去？"], ["Đi taxi.", ["坐", "出租车", "去"], "坐出租车去。"]];
+const QUIZ=[["Trong Bài 4, 一飞 có bao nhiêu học sinh?", ["10", "20", "30", "40"], "20"], ["“她有多少个学生？” dùng để hỏi gì?", ["tuổi", "số lượng học sinh", "nghề nghiệp", "quốc tịch"], "số lượng học sinh"], ["“我有两个哥哥，你呢？” nghĩa là gì?", ["Tôi có hai anh trai, còn bạn?", "Tôi không có anh trai", "Bạn có hai anh trai à?", "Anh trai bạn là ai?"], "Tôi có hai anh trai, còn bạn?"], ["Lượng từ dùng cho số người trong gia đình là:", ["个", "本", "口", "张"], "口"], ["杨同乐家 có mấy người?", ["3", "4", "5", "6"], "4"], ["Gia đình 杨同乐 gồm:", ["爸爸、妈妈、妹妹和我", "爸爸、妈妈、哥哥和我", "妈妈、姐姐和我", "爸爸、弟弟和我"], "爸爸、妈妈、妹妹和我"], ["王一雪 có mấy người con?", ["1", "2", "3", "4"], "2"], ["王一雪 có:", ["hai con trai", "hai con gái", "một con trai và một con gái", "một con gái"], "một con trai và một con gái"], ["Con trai 王一雪 bao nhiêu tuổi?", ["5", "8", "10", "12"], "5"], ["Con gái 王一雪 bao nhiêu tuổi?", ["5", "8", "10", "12"], "12"], ["Theo bài, trẻ nhỏ dưới 10 tuổi thường hỏi:", ["多少？", "多大？", "几岁？", "几口？"], "几岁？"], ["Cấu trúc đúng để nói số lượng là:", ["Lượng từ + số + danh từ", "Số + lượng từ + danh từ", "Danh từ + số + lượng từ", "Số + danh từ"], "Số + lượng từ + danh từ"], ["Trong Bài 5, hôm nay là ngày nào?", ["8/9", "9/8", "8/8", "9/9"], "8/9"], ["Hôm đó là thứ mấy?", ["星期一", "星期六", "星期日", "星期二"], "星期日"], ["王一雪 hôm đó làm gì?", ["上班", "去学校", "休息", "买东西"], "休息"], ["Trật tự biểu đạt ngày tháng trong bài là:", ["日→月→年", "年→月→日/号→星期", "星期→日→月", "月→年→日"], "年→月→日/号→星期"], ["“会” trong 我会做饭 biểu thị:", ["mong muốn", "khả năng do học được", "sở hữu", "thời gian"], "khả năng do học được"], ["杨同乐 có biết nấu ăn không?", ["会", "不会", "không rõ", "chỉ biết ăn"], "会"], ["杨同乐 biết làm gì?", ["chỉ mì", "mì, sủi cảo và một số món", "chỉ sủi cảo", "không biết nấu"], "mì, sủi cảo và một số món"], ["杨同乐 khi nào cũng nấu ăn theo bài?", ["星期一", "星期三", "星期六", "星期日"], "星期日"], ["Câu hỏi đúng với 会 là:", ["你会做饭吗？", "你做饭会吗？", "会你做饭吗？", "你吗会做饭？"], "你会做饭吗？"], ["Đồ vật mới của 杨同乐 là:", ["手机", "电脑", "书", "出租车"], "电脑"], ["王一雪 khen máy tính thế nào?", ["非常好吃", "真好看", "很忙", "我不会"], "真好看"], ["杨同乐 nói gì về máy tính?", ["我也很喜欢它。", "我不想买它。", "它是你的。", "我不会做。"], "我也很喜欢它。"], ["Khi đọc số điện thoại, số 1 được bài hướng dẫn đọc:", ["yī", "yí", "yì", "yāo"], "yāo"], ["Câu hỏi số điện thoại đúng là:", ["你的手机号是多少？", "你的手机是谁？", "你手机号去哪儿？", "你的手机几岁？"], "你的手机号是多少？"], ["Ngày mai 白家月 muốn đi đâu?", ["学校", "超市", "饭店", "北京"], "超市"], ["白家月 đi siêu thị để làm gì?", ["休息", "买东西", "吃晚饭", "做饭"], "买东西"], ["白家月 muốn mua gì?", ["菜", "牛奶", "米饭", "包子"], "牛奶"], ["“想 + V” biểu thị:", ["số lượng", "mong muốn/dự định", "khả năng đã học", "sở hữu"], "mong muốn/dự định"], ["Câu liên động chỉ mục đích là:", ["我有两个哥哥。", "我想去超市买东西。", "今天星期日。", "真好看。"], "我想去超市买东西。"], ["王一雪 muốn ăn gì ở 西安饭店?", ["米饭", "包子", "饺子", "面条儿"], "包子"], ["刘小明 muốn ăn gì?", ["包子", "米饭", "牛奶", "饺子"], "米饭"], ["刘小明 không muốn ăn gì?", ["包子", "米饭", "菜", "牛奶"], "包子"], ["Gia đình đi 西安饭店 bằng gì?", ["公交车", "地铁", "出租车", "走路"], "出租车"], ["“怎么” trong 我们怎么去？ hỏi:", ["ai", "số lượng", "cách thức", "thời gian"], "cách thức"], ["Câu liên động chỉ cách thức là:", ["我们坐出租车去西安饭店。", "我有两个孩子。", "今天我休息。", "你会做饭吗？"], "我们坐出租车去西安饭店。"]];
+const TF=[["她有二十个学生。", true], ["杨同乐有两个哥哥。", false], ["杨同乐家有四口人。", true], ["王一雪有一个儿子，一个女儿。", true], ["王一雪的儿子今年十二岁。", false], ["“你呢？” có thể dùng để hỏi lại cùng thông tin vừa nói.", true], ["“四口人” có cấu trúc Số + Lượng từ + Danh từ.", true], ["今天9月8号，星期日。", true], ["王一雪今天上班。", false], ["“会” đứng trước động từ để biểu thị khả năng đã học.", true], ["杨同乐不会做饭。", false], ["杨同乐会做面条儿、饺子，也会做一些菜。", true], ["杨同乐不喜欢新电脑。", false], ["Số 1 trong số điện thoại được bài hướng dẫn đọc yāo.", true], ["白家月明天想去超市。", true], ["白家月想买些牛奶。", true], ["刘小明想吃包子。", false], ["王一雪想吃包子。", true], ["“怎么” có thể dùng trước động từ để hỏi cách thức.", true], ["坐出租车去 là cách nói phương tiện + hành động đi.", true]];
+const MEMORY=[["有", "có"], ["多少", "bao nhiêu"], ["个", "cái; lượng từ phổ biến"], ["哥哥", "anh trai"], ["呢", "thế còn…?"], ["没有", "không có"], ["家", "nhà; gia đình"], ["几", "mấy; bao nhiêu"], ["口", "lượng từ cho thành viên gia đình"], ["爸爸", "bố"], ["妈妈", "mẹ"], ["妹妹", "em gái"], ["和", "và"], ["儿子", "con trai"], ["孩子", "con; trẻ em"], ["女儿", "con gái"], ["岁", "tuổi"], ["他", "anh ấy; cậu ấy"], ["今年", "năm nay"], ["多", "bao nhiêu; nhiều"], ["大", "lớn; bao nhiêu tuổi trong 多大"], ["今天", "hôm nay"], ["号", "ngày; số"], ["月", "tháng"], ["日", "ngày"], ["星期", "tuần; thứ"], ["星期日", "Chủ nhật"], ["星期天", "Chủ nhật"], ["休息", "nghỉ ngơi"], ["会", "biết; có thể do đã học"], ["做饭", "nấu ăn"], ["做", "làm"], ["面条儿", "mì"], ["饺子", "sủi cảo"], ["一些", "một số; một ít"], ["菜", "món ăn; rau"], ["下班", "tan làm"], ["新", "mới"], ["电脑", "máy tính"], ["真", "thật; thật là"], ["好看", "đẹp; dễ nhìn"], ["喜欢", "thích"], ["它", "nó (chỉ vật)"], ["手机", "điện thoại di động"], ["电话", "điện thoại; cuộc gọi"], ["号", "số; số điện thoại"], ["明天", "ngày mai"], ["去", "đi"], ["哪儿", "đâu; ở đâu"], ["想", "muốn; dự định"], ["超市", "siêu thị"], ["买", "mua"], ["东西", "đồ; thứ"], ["些", "một ít; một số"], ["牛奶", "sữa bò"], ["吃", "ăn"], ["晚饭", "bữa tối"], ["那边", "bên kia; ở đó"], ["包子", "bánh bao"], ["非常", "rất; vô cùng"], ["好吃", "ngon"], ["米饭", "cơm trắng"], ["怎么", "như thế nào; làm sao"], ["坐", "ngồi; đi bằng phương tiện"], ["出租车", "taxi"]];
+const COMPONENTS=[["女", "mẹ", "马", "妈", ["马", "未", "也", "子"]], ["女", "em gái", "未", "妹", ["未", "马", "且", "也"]], ["亻", "anh ấy", "也", "他", ["也", "木", "寸", "尔"]], ["宀", "nhà/gia đình", "豕", "家", ["豕", "子", "木", "口"]], ["子", "con/trẻ em", "亥", "孩", ["亥", "也", "未", "马"]], ["亻", "nghỉ", "木", "休", ["木", "也", "本", "未"]], ["亻", "làm", "故", "做", ["故", "木", "也", "寸"]], ["饣", "cơm/bữa ăn", "反", "饭", ["反", "交", "包", "且"]], ["饣", "sủi cảo", "交", "饺", ["交", "反", "包", "马"]], ["艹", "món/rau", "采", "菜", ["采", "木", "未", "反"]], ["木", "máy/cơ", "几", "机", ["几", "木", "也", "口"]], ["又", "thích", "欠", "欢", ["欠", "木", "心", "口"]], ["日", "sáng/ngày mai", "月", "明", ["月", "木", "目", "口"]], ["相", "muốn/nghĩ", "心", "想", ["心", "口", "木", "日"]], ["口", "ăn", "乞", "吃", ["乞", "也", "木", "寸"]], ["女", "sữa", "乃", "奶", ["乃", "马", "未", "也"]], ["日", "tối/muộn", "免", "晚", ["免", "月", "木", "也"]], ["辶", "bên/cạnh", "力", "边", ["力", "木", "口", "日"]], ["女", "tốt", "子", "好", ["子", "马", "也", "未"]], ["讠", "lời/điện thoại", "舌", "话", ["舌", "青", "也", "木"]], ["口", "đâu/nào", "那", "哪", ["那", "马", "木", "日"]], ["禾", "thuê", "且", "租", ["且", "马", "未", "木"]], ["走", "vượt/quá", "召", "超", ["召", "口", "木", "也"]], ["其", "kỳ/thời kỳ", "月", "期", ["月", "木", "日", "口"]]];
+const WRITE_CHARS=["有", "多", "少", "个", "哥", "呢", "没", "家", "几", "口", "爸", "妈", "妹", "和", "儿", "子", "孩", "女", "岁", "他", "今", "年", "大", "天", "号", "月", "日", "星", "期", "休", "息", "会", "做", "饭", "面", "条", "饺", "一", "些", "菜", "下", "班", "新", "电", "脑", "真", "好", "看", "喜", "欢", "它", "手", "机", "话", "明", "去", "哪", "想", "超", "市", "买", "东", "西", "牛", "奶", "吃", "晚", "那", "边", "包", "非", "常", "米", "怎", "么", "坐", "出", "租", "车"];
+const CHAR_META={"有": ["yǒu", "có", "Hãy nhớ chữ 有 qua từ 有 (có) trong bài."], "多": ["duō", "nhiều; bao nhiêu", "Hãy nhớ chữ 多 qua từ 多少 (bao nhiêu) trong bài."], "少": ["shǎo", "ít", "Hãy nhớ chữ 少 qua từ 多少 (bao nhiêu) trong bài."], "个": ["gè", "cái; lượng từ", "Hãy nhớ chữ 个 qua từ 个 (cái; lượng từ phổ biến) trong bài."], "哥": ["gē", "anh trai", "Hãy nhớ chữ 哥 qua từ 哥哥 (anh trai) trong bài."], "呢": ["ne", "thế còn...?", "Hãy nhớ chữ 呢 qua từ 呢 (thế còn…?) trong bài."], "没": ["méi", "không; chưa", "Hãy nhớ chữ 没 qua từ 没有 (không có) trong bài."], "家": ["jiā", "nhà; gia đình", "宀 là mái nhà; dưới mái nhà là 豕 → 家, nơi gia đình ở."], "几": ["jǐ", "mấy", "Hãy nhớ chữ 几 qua từ 几 (mấy; bao nhiêu) trong bài."], "口": ["kǒu", "miệng; lượng từ", "Hãy nhớ chữ 口 qua từ 口 (lượng từ cho thành viên gia đình) trong bài."], "爸": ["bà", "bố", "Hãy nhớ chữ 爸 qua từ 爸爸 (bố) trong bài."], "妈": ["mā", "mẹ", "女 + 马 → 妈. Hãy nhớ chữ qua từ 妈妈 (mẹ)."], "妹": ["mèi", "em gái", "女 + 未 → 妹. Hãy nhớ chữ qua 妹妹 (em gái)."], "和": ["hé", "và", "Hãy nhớ chữ 和 qua từ 和 (và) trong bài."], "儿": ["ér", "con; nhi", "Hãy nhớ chữ 儿 qua từ 儿子 (con trai) trong bài."], "子": ["zǐ", "con; trẻ", "Hãy nhớ chữ 子 qua từ 儿子 (con trai) trong bài."], "孩": ["hái", "trẻ; con", "子 gợi trẻ em + 亥 → 孩. Nhớ qua 孩子."], "女": ["nǚ", "nữ; con gái", "Hãy nhớ chữ 女 qua từ 女儿 (con gái) trong bài."], "岁": ["suì", "tuổi", "Hãy nhớ chữ 岁 qua từ 岁 (tuổi) trong bài."], "他": ["tā", "anh ấy", "亻 (người) + 也 → 他 (anh ấy)."], "今": ["jīn", "nay", "Hãy nhớ chữ 今 qua từ 今年 (năm nay) trong bài."], "年": ["nián", "năm", "Hãy nhớ chữ 年 qua từ 今年 (năm nay) trong bài."], "大": ["dà", "lớn", "Hãy nhớ chữ 大 qua từ 大 (lớn; bao nhiêu tuổi trong 多大) trong bài."], "天": ["tiān", "ngày; trời", "Hãy nhớ chữ 天 qua từ 今天 (hôm nay) trong bài."], "号": ["hào", "số; ngày", "Hãy nhớ chữ 号 qua từ 号 (ngày; số) trong bài."], "月": ["yuè", "tháng; mặt trăng", "Hãy nhớ chữ 月 qua từ 月 (tháng) trong bài."], "日": ["rì", "ngày; mặt trời", "Hãy nhớ chữ 日 qua từ 日 (ngày) trong bài."], "星": ["xīng", "sao", "Hãy nhớ chữ 星 qua từ 星期 (tuần; thứ) trong bài."], "期": ["qī", "kỳ; thời kỳ", "其 + 月 → 期; nhớ 星期 = tuần/thứ."], "休": ["xiū", "nghỉ", "亻 (người) tựa vào 木 (cây) → nghỉ: 休."], "息": ["xī", "nghỉ; hơi thở", "Hãy nhớ chữ 息 qua từ 休息 (nghỉ ngơi) trong bài."], "会": ["huì", "biết; có thể", "Hãy nhớ chữ 会 qua từ 会 (biết; có thể do đã học) trong bài."], "做": ["zuò", "làm", "亻 liên quan người thực hiện hành động → 做 = làm."], "饭": ["fàn", "cơm; bữa ăn", "饣 là bộ ăn uống → 饭 = cơm/bữa ăn."], "面": ["miàn", "mặt; mì", "Hãy nhớ chữ 面 qua từ 面条儿 (mì) trong bài."], "条": ["tiáo", "sợi; lượng từ", "Hãy nhớ chữ 条 qua từ 面条儿 (mì) trong bài."], "饺": ["jiǎo", "sủi cảo", "饣 là bộ ăn uống + 交 → 饺, nhớ trong 饺子."], "一": ["yī", "một", "Hãy nhớ chữ 一 qua từ 一些 (một số; một ít) trong bài."], "些": ["xiē", "một số", "Hãy nhớ chữ 些 qua từ 一些 (một số; một ít) trong bài."], "菜": ["cài", "món ăn; rau", "艹 gợi thực vật/rau + 采 → 菜."], "下": ["xià", "xuống; dưới", "Hãy nhớ chữ 下 qua từ 下班 (tan làm) trong bài."], "班": ["bān", "ca làm; lớp", "Hãy nhớ chữ 班 qua từ 下班 (tan làm) trong bài."], "新": ["xīn", "mới", "Hãy nhớ chữ 新 qua từ 新 (mới) trong bài."], "电": ["diàn", "điện", "Hãy nhớ chữ 电 qua từ 电脑 (máy tính) trong bài."], "脑": ["nǎo", "não", "月 (bộ nhục, cơ thể) + phần phải → 脑 = não; nhớ 电脑."], "真": ["zhēn", "thật", "Hãy nhớ chữ 真 qua từ 真 (thật; thật là) trong bài."], "好": ["hǎo", "tốt; đẹp", "女 + 子 → 好; chữ rất quen để nhớ cấu tạo."], "看": ["kàn", "nhìn; xem", "Phần trên như tay che trên 目 (mắt) để nhìn → 看."], "喜": ["xǐ", "vui; thích", "Hãy nhớ chữ 喜 qua từ 喜欢 (thích) trong bài."], "欢": ["huān", "vui; thích", "又 + 欠 → 欢, nhớ cả từ 喜欢 = thích."], "它": ["tā", "nó", "Hãy nhớ chữ 它 qua từ 它 (nó (chỉ vật)) trong bài."], "手": ["shǒu", "tay", "Hãy nhớ chữ 手 qua từ 手机 (điện thoại di động) trong bài."], "机": ["jī", "máy; cơ", "木 + 几 → 机, nhớ trong 手机 / 电脑 máy móc."], "话": ["huà", "lời nói", "讠 liên quan lời nói + 舌 → 话 = lời nói."], "明": ["míng", "sáng; ngày mai", "日 + 月 → mặt trời + mặt trăng đều sáng → 明."], "去": ["qù", "đi", "Hãy nhớ chữ 去 qua từ 去 (đi) trong bài."], "哪": ["nǎ", "nào", "口 + 那 → 哪, dùng để hỏi “nào/đâu”."], "想": ["xiǎng", "muốn; nghĩ", "相 + 心 → điều nằm trong lòng/tâm trí → 想."], "超": ["chāo", "vượt; siêu", "走 + 召 → 超, nhớ 超市 = siêu thị."], "市": ["shì", "chợ; thành phố", "Hãy nhớ chữ 市 qua từ 超市 (siêu thị) trong bài."], "买": ["mǎi", "mua", "Nhớ cặp 买 = mua và 卖 = bán; 买 ít nét hơn."], "东": ["dōng", "đông", "Hãy nhớ chữ 东 qua từ 东西 (đồ; thứ) trong bài."], "西": ["xī", "tây; đồ trong 东西", "Hãy nhớ chữ 西 qua từ 东西 (đồ; thứ) trong bài."], "牛": ["niú", "bò", "Hãy nhớ chữ 牛 qua từ 牛奶 (sữa bò) trong bài."], "奶": ["nǎi", "sữa", "女 + 乃 → 奶; nhớ trong 牛奶 = sữa bò."], "吃": ["chī", "ăn", "口 là miệng → 吃 = ăn."], "晚": ["wǎn", "tối; muộn", "日 + 免 → 晚, nhớ 晚饭 = bữa tối."], "那": ["nà", "kia; đó", "Hãy nhớ chữ 那 qua từ 那边 (bên kia; ở đó) trong bài."], "边": ["biān", "bên; cạnh", "辶 gợi di chuyển/vị trí + 力 → 边 = bên/cạnh."], "包": ["bāo", "gói; bánh bao", "Hãy nhớ chữ 包 qua từ 包子 (bánh bao) trong bài."], "非": ["fēi", "không; phi", "Hãy nhớ chữ 非 qua từ 非常 (rất; vô cùng) trong bài."], "常": ["cháng", "thường", "Hãy nhớ chữ 常 qua từ 非常 (rất; vô cùng) trong bài."], "米": ["mǐ", "gạo", "Hãy nhớ chữ 米 qua từ 米饭 (cơm trắng) trong bài."], "怎": ["zěn", "thế nào", "Hãy nhớ chữ 怎 qua từ 怎么 (như thế nào; làm sao) trong bài."], "么": ["me", "hậu tố trong 怎么/什么", "Hãy nhớ chữ 么 qua từ 怎么 (như thế nào; làm sao) trong bài."], "坐": ["zuò", "ngồi", "Hai 人 ở trên 土 → cùng ngồi xuống: 坐."], "出": ["chū", "ra", "Hãy nhớ chữ 出 qua từ 出租车 (taxi) trong bài."], "租": ["zū", "thuê", "禾 + 且 → 租; nhớ trong 出租车 = taxi."], "车": ["chē", "xe", "Hãy nhớ chữ 车 qua từ 出租车 (taxi) trong bài."]};
+
+function openTab(id){
+ document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('active',b.dataset.tab===id));
+ window.scrollTo({top:document.querySelector('.tabs').offsetTop,behavior:'smooth'});
+}
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>openTab(b.dataset.tab)));
+
+function showPane(group,name,btn){
+ document.querySelectorAll('.'+group+'-pane').forEach(x=>x.style.display='none');
+ const target=document.getElementById(group+'-'+name); if(target)target.style.display='block';
+ btn.parentElement.querySelectorAll('.subtab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
+}
+document.querySelectorAll('[data-pane-group]').forEach(b=>b.addEventListener('click',()=>showPane(b.dataset.paneGroup,b.dataset.pane,b)));
+
+document.getElementById('pinyinBtn').addEventListener('click',()=>{
+ const h=document.body.classList.toggle('hide-pinyin');
+ document.getElementById('pinyinBtn').textContent=h?'👁 Hiện Pinyin':'🙈 Ẩn Pinyin';
+});
+
+let voices=[];
+function loadVoices(){
+ if(!window.speechSynthesis)return;
+ voices=speechSynthesis.getVoices().filter(v=>/^zh/i.test(v.lang)||/Chinese|Mandarin|Xiaoxiao|Yunxi|Tingting|Meijia/i.test(v.name));
+ const sel=document.getElementById('voiceSelect');
+ sel.innerHTML=voices.length?voices.map(v=>`<option value="${v.name}">${v.name} · ${v.lang}</option>`).join(''):'<option value="">Mandarin mặc định</option>';
+}
+if(window.speechSynthesis){speechSynthesis.onvoiceschanged=loadVoices;loadVoices();setTimeout(loadVoices,300)}
+function speakText(t){
+ try{speechSynthesis.cancel()}catch(e){}
+ if(window.speechSynthesis){
+   const u=new SpeechSynthesisUtterance(String(t));u.lang='zh-CN';u.rate=.78;u.pitch=1;
+   const sel=document.getElementById('voiceSelect');const v=voices.find(x=>x.name===sel.value)||voices[0];if(v)u.voice=v;
+   try{speechSynthesis.speak(u);return}catch(e){}
+ }
+ try{new Audio('https://translate.google.com/translate_tts?ie=UTF-8&tl=zh-CN&client=tw-ob&q='+encodeURIComponent(String(t).slice(0,180))).play()}catch(e){}
+}
+document.getElementById('testVoice').addEventListener('click',()=>speakText('我有两个孩子。今天我休息。你的手机号是多少？'));
+document.querySelectorAll('.speak-sample').forEach(b=>b.addEventListener('click',()=>speakText(b.dataset.text)));
+
+// Vocabulary
+function renderV(level=0){
+ const rows=level?V.filter(x=>x[0]===level):V;
+ const root=document.getElementById('vocabGrid');root.innerHTML='';
+ rows.forEach(x=>{
+   const c=document.createElement('div');c.className='card';
+   c.innerHTML=`<span class="tag">Bài ${x[0]}</span><div class="han cn">${x[1]}</div><div class="py">${x[2]}</div><div><b>${x[3]}</b></div><div class="hint" style="margin:9px 0"><span class="cn">${x[4]}</span><br><span>${x[5]}</span></div>`;
+   const b=document.createElement('button');b.type='button';b.className='audio';b.textContent='🔊 Nghe';b.addEventListener('click',()=>speakText(x[1]+'。'+x[4]));c.appendChild(b);root.appendChild(c);
+ });
+}
+document.querySelectorAll('.filter-v').forEach(b=>b.addEventListener('click',()=>{b.parentElement.querySelectorAll('.filter-v').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderV(Number(b.dataset.level))}));
+renderV();
+
+// Listen
+let li=0;
+function renderListen(){
+ const q=LISTEN[li],wrong=LISTEN.filter((_,i)=>i!==li).map(x=>x[1]).sort(()=>Math.random()-.5).slice(0,3),opts=[q[1],...wrong].sort(()=>Math.random()-.5);
+ const root=document.getElementById('listenBox');root.innerHTML='';
+ const title=document.createElement('div');title.className='question';title.textContent=`${li+1}/${LISTEN.length}. Nghe và chọn nghĩa đúng`;
+ const ab=document.createElement('button');ab.type='button';ab.className='audio';ab.textContent='🔊 Nghe câu';ab.addEventListener('click',()=>speakText(q[0]));
+ const wrap=document.createElement('div');wrap.className='opts';
+ const fb=document.createElement('div');fb.className='feedback';
+ opts.forEach(o=>{const b=document.createElement('button');b.type='button';b.className='opt';b.textContent=o;b.addEventListener('click',()=>{wrap.querySelectorAll('button').forEach(x=>x.disabled=true);if(o===q[1]){b.classList.add('correct');fb.textContent='✅ Đúng!'}else{b.classList.add('wrong');fb.textContent='❌ '+q[1];[...wrap.querySelectorAll('button')].find(x=>x.textContent===q[1])?.classList.add('correct')}});wrap.appendChild(b)});
+ const next=document.createElement('button');next.type='button';next.className='btn';next.textContent='Câu tiếp';next.addEventListener('click',()=>{li=(li+1)%LISTEN.length;renderListen()});
+ root.append(title,ab,wrap,fb,next);
+}
+renderListen();
+
+// Fill
+let fi=0;
+function renderFill(){
+ const q=FILL[fi],root=document.getElementById('fillBox');root.innerHTML='';
+ root.innerHTML=`<div class="question">${fi+1}/${FILL.length}. <span class="cn">${q[0]}</span></div><div class="hint"><b>🇻🇳 Gợi ý tiếng Việt:</b> ${q[2]}</div>`;
+ const input=document.createElement('input');input.style.cssText='width:100%;max-width:320px;padding:12px;border:1px solid #ccd5e1;border-radius:12px;font-size:18px;margin:10px 0';
+ const fb=document.createElement('div');fb.className='feedback';
+ const check=document.createElement('button');check.className='btn';check.type='button';check.textContent='Kiểm tra';check.addEventListener('click',()=>fb.textContent=input.value.trim()===q[1]?'✅ Chính xác!':'❌ Đáp án: '+q[1]);
+ const next=document.createElement('button');next.className='ghost';next.type='button';next.textContent='Câu tiếp';next.addEventListener('click',()=>{fi=(fi+1)%FILL.length;renderFill()});
+ root.append(input,fb,check,next);
+}
+renderFill();
+
+function cleanSentence(s){return String(s).replace(/[。？！?!，,]/g,'').replace(/\s+/g,'')}
+
+// Order
+let oi=0,orderSel=[];
+function renderOrder(){
+ const q=ORDERS[oi],parts=[...q[1]].sort(()=>Math.random()-.5);orderSel=[];
+ const root=document.getElementById('orderBox');root.innerHTML='';
+ const title=document.createElement('div');title.className='question';title.textContent=`${oi+1}/${ORDERS.length}. ${q[0]}`;
+ const bank=document.createElement('div');bank.className='builder-bank';const ans=document.createElement('div');ans.className='builder-answer';const fb=document.createElement('div');fb.className='feedback';
+ function draw(){ans.innerHTML='';orderSel.forEach((it,i)=>{const c=document.createElement('button');c.type='button';c.className='builder-chip cn';c.textContent=it.text;c.addEventListener('click',()=>{it.button.disabled=false;orderSel.splice(i,1);draw()});ans.appendChild(c)})}
+ parts.forEach(p=>{const b=document.createElement('button');b.type='button';b.className='builder-chip cn';b.textContent=p;b.addEventListener('click',()=>{if(b.disabled)return;b.disabled=true;orderSel.push({text:p,button:b});draw()});bank.appendChild(b)});
+ const check=document.createElement('button');check.type='button';check.className='btn';check.textContent='Kiểm tra';check.addEventListener('click',()=>{const cur=orderSel.map(x=>x.text).join('');fb.textContent=cleanSentence(cur)===cleanSentence(q[2])?'✅ Chính xác!':'❌ Đáp án: '+q[2]});
+ const reset=document.createElement('button');reset.type='button';reset.className='ghost';reset.textContent='Làm lại';reset.addEventListener('click',renderOrder);
+ const next=document.createElement('button');next.type='button';next.className='ghost';next.textContent='Câu tiếp';next.addEventListener('click',()=>{oi=(oi+1)%ORDERS.length;renderOrder()});
+ root.append(title,bank,ans,fb,check,reset,next);
+}
+renderOrder();
+
+// Component game
+let ci=0,cs=0;
+function renderComponent(){
+ const q=COMPONENTS[ci],opts=[...q[4]].sort(()=>Math.random()-.5),root=document.getElementById('componentBox');root.innerHTML='';
+ root.innerHTML=`<div class="question">${ci+1}/${COMPONENTS.length}. Tạo chữ có nghĩa: <b>${q[1]}</b></div><p style="color:var(--m)">Chỉ cho sẵn một bộ phận. Chọn phần còn lại.</p><div class="component-formula cn">${q[0]} + ？</div>`;
+ const wrap=document.createElement('div');wrap.className='component-options';const fb=document.createElement('div');fb.className='feedback';
+ opts.forEach(o=>{const b=document.createElement('button');b.type='button';b.className='component-option cn';b.textContent=o;b.addEventListener('click',()=>{wrap.querySelectorAll('button').forEach(x=>x.disabled=true);if(o===q[2]){cs++;b.classList.add('correct');fb.innerHTML=`✅ <span class="cn">${q[0]} + ${q[2]} = ${q[3]}</span>`}else{b.classList.add('wrong');fb.innerHTML=`❌ Đáp án: <span class="cn">${q[0]} + ${q[2]} = ${q[3]}</span>`;[...wrap.querySelectorAll('button')].find(x=>x.textContent===q[2])?.classList.add('correct')};next.disabled=false});wrap.appendChild(b)});
+ const next=document.createElement('button');next.type='button';next.className='btn';next.textContent='Tiếp';next.disabled=true;next.addEventListener('click',()=>{ci++;if(ci>=COMPONENTS.length){root.innerHTML=`<h2>Điểm: ${cs}/${COMPONENTS.length}</h2>`;const r=document.createElement('button');r.className='btn';r.textContent='Chơi lại';r.addEventListener('click',()=>{ci=0;cs=0;renderComponent()});root.appendChild(r)}else renderComponent()});
+ root.append(wrap,fb,next);
+}
+renderComponent();
+
+// Memory
+let currentMemory=[],deck=[],opened=[],matched=0,memLock=false;
+function startMemory(newSet=true){
+ if(newSet||currentMemory.length===0)currentMemory=[...MEMORY].sort(()=>Math.random()-.5).slice(0,10);
+ deck=[];currentMemory.forEach((p,i)=>{deck.push({id:i,text:p[0]},{id:i,text:p[1]})});deck.sort(()=>Math.random()-.5);opened=[];matched=0;memLock=false;
+ const grid=document.getElementById('memoryGrid');grid.innerHTML='';document.getElementById('memoryStatus').textContent='Tìm 10 cặp. Bấm “Tạo bộ mới” để đổi sang từ khác.';
+ deck.forEach((c,i)=>{const b=document.createElement('button');b.type='button';b.className='memory-card';b.textContent='❓';b.addEventListener('click',()=>flipMemory(i,b));grid.appendChild(b)});
+}
+function flipMemory(i,b){
+ if(memLock||b.classList.contains('matched')||b.dataset.open)return;b.dataset.open='1';b.classList.add('flipped');b.textContent=deck[i].text;opened.push([i,b]);
+ if(opened.length===2){memLock=true;const a=opened[0],c=opened[1];if(deck[a[0]].id===deck[c[0]].id){a[1].classList.add('matched');c[1].classList.add('matched');matched++;opened=[];memLock=false;document.getElementById('memoryStatus').textContent=`✅ ${matched}/${currentMemory.length} cặp`;if(matched===currentMemory.length)document.getElementById('memoryStatus').textContent='🏆 Hoàn thành! Tạo bộ mới để luyện thêm.'}else setTimeout(()=>{opened.forEach(x=>{x[1].textContent='❓';x[1].classList.remove('flipped');delete x[1].dataset.open});opened=[];memLock=false},650)}
+}
+document.getElementById('memoryReplay').addEventListener('click',()=>startMemory(false));document.getElementById('memoryNew').addEventListener('click',()=>startMemory(true));startMemory(true);
+
+// Builder
+let bi=0,bsel=[];
+function renderBuilder(){
+ const q=ORDERS[bi],parts=[...q[1]].sort(()=>Math.random()-.5);bsel=[];
+ document.getElementById('builderQuestion').textContent=`${bi+1}/${ORDERS.length}. ${q[0]}`;document.getElementById('builderFeedback').textContent='';
+ const bank=document.getElementById('builderBank'),ans=document.getElementById('builderAnswer');bank.innerHTML='';ans.innerHTML='';
+ function draw(){ans.innerHTML='';bsel.forEach((it,i)=>{const c=document.createElement('button');c.type='button';c.className='builder-chip cn';c.textContent=it.text;c.addEventListener('click',()=>{it.button.disabled=false;bsel.splice(i,1);draw()});ans.appendChild(c)})}
+ parts.forEach(p=>{const b=document.createElement('button');b.type='button';b.className='builder-chip cn';b.textContent=p;b.addEventListener('click',()=>{if(b.disabled)return;b.disabled=true;bsel.push({text:p,button:b});draw()});bank.appendChild(b)});
+}
+document.getElementById('builderCheck').addEventListener('click',()=>{const q=ORDERS[bi],cur=bsel.map(x=>x.text).join('');document.getElementById('builderFeedback').textContent=cleanSentence(cur)===cleanSentence(q[2])?'✅ Chính xác!':'❌ Đáp án: '+q[2]});
+document.getElementById('builderNext').addEventListener('click',()=>{bi=(bi+1)%ORDERS.length;renderBuilder()});
+document.getElementById('builderListen').addEventListener('click',()=>speakText(ORDERS[bi][2]));renderBuilder();
+
+// Quiz
+let qi=0,qscore=0;
+function renderQuiz(){
+ const root=document.getElementById('quizBox');root.innerHTML='';
+ if(qi>=QUIZ.length){root.innerHTML=`<div class="card"><h2>Điểm: ${qscore}/${QUIZ.length}</h2></div>`;const r=document.createElement('button');r.className='btn';r.textContent='Làm lại';r.addEventListener('click',()=>{qi=0;qscore=0;renderQuiz()});root.firstChild.appendChild(r);return}
+ const q=QUIZ[qi],opts=[...q[1]].sort(()=>Math.random()-.5),card=document.createElement('div');card.className='card';const title=document.createElement('div');title.className='question';title.textContent=`${qi+1}/${QUIZ.length}. ${q[0]}`;const wrap=document.createElement('div');wrap.className='opts';const fb=document.createElement('div');fb.className='feedback';const next=document.createElement('button');next.className='btn';next.textContent='Tiếp';next.disabled=true;
+ opts.forEach(o=>{const b=document.createElement('button');b.type='button';b.className='opt';b.textContent=o;b.addEventListener('click',()=>{wrap.querySelectorAll('button').forEach(x=>x.disabled=true);if(o===q[2]){qscore++;b.classList.add('correct');fb.textContent='✅ Đúng'}else{b.classList.add('wrong');fb.textContent='❌ '+q[2];[...wrap.querySelectorAll('button')].find(x=>x.textContent===q[2])?.classList.add('correct')};next.disabled=false});wrap.appendChild(b)});
+ next.addEventListener('click',()=>{qi++;renderQuiz()});card.append(title,wrap,fb,next);root.appendChild(card);
+}
+renderQuiz();
+
+// TF
+let ti=0,ts=0;
+function renderTF(){
+ const root=document.getElementById('tfBox');root.innerHTML='';
+ if(ti>=TF.length){root.innerHTML=`<h2>Điểm: ${ts}/${TF.length}</h2>`;const r=document.createElement('button');r.className='btn';r.textContent='Làm lại';r.addEventListener('click',()=>{ti=0;ts=0;renderTF()});root.appendChild(r);return}
+ const q=TF[ti],title=document.createElement('div');title.className='question';title.textContent=`${ti+1}/${TF.length}. ${q[0]}`;const wrap=document.createElement('div');wrap.className='opts';const fb=document.createElement('div');fb.className='feedback';const next=document.createElement('button');next.className='btn';next.textContent='Tiếp';next.disabled=true;
+ [['Đúng',true],['Sai',false]].forEach(([lab,val])=>{const b=document.createElement('button');b.className='opt';b.textContent=lab;b.addEventListener('click',()=>{wrap.querySelectorAll('button').forEach(x=>x.disabled=true);if(val===q[1]){ts++;b.classList.add('correct');fb.textContent='✅ Đúng'}else{b.classList.add('wrong');fb.textContent='❌ Đáp án: '+(q[1]?'Đúng':'Sai')};next.disabled=false});wrap.appendChild(b)});
+ next.addEventListener('click',()=>{ti++;renderTF()});root.append(title,wrap,fb,next);
+}
+renderTF();
+
+// Speed
+let speedDeck=[],si=0,ss=0;
+function startSpeed(){speedDeck=[...V].sort(()=>Math.random()-.5).slice(0,15);si=0;ss=0;renderSpeed()}
+function renderSpeed(){
+ const root=document.getElementById('speedBox');root.innerHTML='';
+ if(si>=speedDeck.length){root.innerHTML=`<h2>🏁 ${ss}/${speedDeck.length}</h2>`;const r=document.createElement('button');r.className='btn';r.textContent='Chơi lại';r.addEventListener('click',startSpeed);root.appendChild(r);return}
+ const q=speedDeck[si],wrong=V.filter(x=>x[1]!==q[1]).sort(()=>Math.random()-.5).slice(0,3).map(x=>x[3]),opts=[q[3],...wrong].sort(()=>Math.random()-.5);const title=document.createElement('div');title.className='question';title.innerHTML=`${si+1}/${speedDeck.length}. <span class="cn" style="font-size:32px">${q[1]}</span>`;const wrap=document.createElement('div');wrap.className='opts';const fb=document.createElement('div');fb.className='feedback';
+ opts.forEach(o=>{const b=document.createElement('button');b.type='button';b.className='opt';b.textContent=o;b.addEventListener('click',()=>{wrap.querySelectorAll('button').forEach(x=>x.disabled=true);if(o===q[3]){ss++;b.classList.add('correct');fb.textContent='✅ Đúng'}else{b.classList.add('wrong');fb.textContent='❌ '+q[3];[...wrap.querySelectorAll('button')].find(x=>x.textContent===q[3])?.classList.add('correct')};setTimeout(()=>{si++;renderSpeed()},650)});wrap.appendChild(b)});
+ root.append(title,wrap,fb);
+}
+startSpeed();
+
+// Writing
+let currentChar=WRITE_CHARS[0],writer=null;
+function renderWriteChars(){
+ document.getElementById('charCount').textContent=WRITE_CHARS.length;const box=document.getElementById('writeChars');box.innerHTML='';
+ WRITE_CHARS.forEach(c=>{const b=document.createElement('button');b.type='button';b.className='ghost cn';b.dataset.char=c;b.style.cssText='font-size:25px;font-weight:900;padding:10px 6px';b.textContent=c;b.addEventListener('click',()=>selectChar(c));box.appendChild(b)});
+}
+function selectChar(c){
+ currentChar=c;document.getElementById('writeCurrent').textContent=c;const m=CHAR_META[c];document.getElementById('writePy').textContent=m[0];document.getElementById('writeMeaning').textContent=m[1];document.getElementById('writeMemory').textContent=m[2];document.querySelectorAll('#writeChars button').forEach(b=>b.classList.toggle('correct',b.dataset.char===c));
+ const target=document.getElementById('writerTarget');target.innerHTML='';writer=null;
+ if(window.HanziWriter){const w=Math.min(400,Math.max(280,window.innerWidth-60));writer=HanziWriter.create('writerTarget',c,{width:w,height:w,padding:28,showOutline:true,showCharacter:false})}else target.innerHTML='<p style="padding:30px;text-align:center">Cần Internet để tải Hanzi Writer.</p>';
+}
+document.getElementById('animateChar').addEventListener('click',()=>{if(writer)writer.animateCharacter()});
+document.getElementById('quizChar').addEventListener('click',()=>{if(writer)writer.quiz({showHintAfterMisses:2,highlightOnComplete:true})});
+document.getElementById('showCharHint').addEventListener('click',()=>{if(writer)writer.animateCharacter()});
+document.getElementById('speakChar').addEventListener('click',()=>speakText(currentChar));
+renderWriteChars();selectChar(currentChar);
+</script></body></html>
